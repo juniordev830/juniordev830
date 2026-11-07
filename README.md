@@ -1,66 +1,101 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/juniordev830/juniordev830/main/assets/banner.webp" alt="Engenheiro de Software — Web, APIs, Automação, Dados e Cloud" width="100%" />
+  <img src="https://raw.githubusercontent.com/juniordev830/juniordev830/main/assets/banner.webp" alt="Banner profissional de João Júnior — desenvolvimento de software, APIs e automação" width="100%" />
+
+  <h1>João Júnior</h1>
+
+  <p><strong>Engenharia de Software em formação</strong></p>
+  <p>Desenvolvimento Full Stack &nbsp;•&nbsp; APIs REST &nbsp;•&nbsp; Automação &nbsp;•&nbsp; Cloud</p>
+  <p>Construindo aplicações e serviços com foco em organização, documentação e evolução contínua.</p>
+
+  <p>
+    <a href="#projetos"><img src="https://img.shields.io/badge/EXPLORAR%20PROJETOS-0F172A?style=for-the-badge&amp;logo=github&amp;logoColor=white" alt="Explorar projetos" /></a>
+    <a href="#tecnologias"><img src="https://img.shields.io/badge/TECNOLOGIAS-0891B2?style=for-the-badge&amp;logo=stackshare&amp;logoColor=white" alt="Ver tecnologias" /></a>
+  </p>
 </div>
 
-<br />
+---
 
-<div align="center">
-  <strong>João Júnior</strong> · Engenharia de Software em formação
+<a id="sobre"></a>
+## Sobre mim
 
-  <p>Desenvolvendo soluções modernas com foco em aplicações web, APIs, automação e arquitetura de software.</p>
-</div>
+Sou estudante de **Engenharia de Software**, com formação técnica em Informática e projetos práticos em desenvolvimento web, APIs e sistemas. Meu portfólio reúne experiências com diferentes linguagens e arquiteturas, sempre com espaço para aprender, testar e melhorar.
 
-<h3 align="center">Principais Tecnologias</h3>
+**Áreas de interesse:** back-end, full stack, integração de sistemas, automação e engenharia de software.
 
-<table align="center">
-  <tr>
-    <th align="center" width="35%">Front-end</th>
-    <th align="center" width="38%">Back-end &amp; APIs</th>
-    <th align="center" width="27%">Cloud &amp; DevOps</th>
-  </tr>
-  <tr>
-    <td align="center">
-      <img src="https://skillicons.dev/icons?i=react,ts,js&amp;theme=dark" alt="React, TypeScript e JavaScript" width="210" />
-    </td>
-    <td align="center">
-      <img src="https://skillicons.dev/icons?i=java,spring,py&amp;theme=dark" alt="Java, Spring Boot e Python" width="210" />
-    </td>
-    <td align="center">
-      <img src="https://skillicons.dev/icons?i=docker,aws&amp;theme=dark" alt="Docker e AWS" width="145" />
-    </td>
-  </tr>
-</table>
-
-<h3 align="center">Projetos em Destaque</h3>
+<a id="tecnologias"></a>
+## Tecnologias e ferramentas
 
 <table>
   <tr>
-    <td width="33%" valign="top">
-      <a href="https://github.com/juniordev830/plataforma-de-recrutamento"><strong>Plataforma de Recrutamento</strong></a>
-      <p>Vagas, candidaturas e API REST com autenticação.</p>
-      <p><code>Node.js</code> <code>Express</code> <code>SQLite</code></p>
-      <a href="https://github.com/juniordev830/plataforma-de-recrutamento">Ver projeto</a>
+    <td align="center" width="50%" valign="top">
+      <strong>Front-end</strong><br /><br />
+      <img src="https://skillicons.dev/icons?i=react,ts,js,html,css&amp;theme=dark" alt="React, TypeScript, JavaScript, HTML e CSS" width="220" /><br />
+      <sub>Interfaces, componentes e aplicações web</sub>
     </td>
-    <td width="33%" valign="top">
-      <a href="https://github.com/juniordev830/sentinel-atlas"><strong>Sentinel Atlas</strong></a>
-      <p>Monitoramento geoespacial experimental e globo 3D.</p>
-      <p><code>Python</code> <code>FastAPI</code> <code>3D</code></p>
-      <a href="https://github.com/juniordev830/sentinel-atlas">Ver projeto</a>
+    <td align="center" width="50%" valign="top">
+      <strong>Back-end &amp; APIs</strong><br /><br />
+      <img src="https://skillicons.dev/icons?i=nodejs,java,spring,py,cs&amp;theme=dark" alt="Node.js, Java, Spring Boot, Python e C#" width="220" /><br />
+      <sub>APIs REST, serviços e lógica de negócio</sub>
     </td>
-    <td width="33%" valign="top">
-      <a href="https://github.com/juniordev830/controle-gastos-residenciais"><strong>Controle de Gastos</strong></a>
-      <p>API para organizar receitas e despesas familiares.</p>
-      <p><code>C#</code> <code>.NET</code> <code>SQLite</code></p>
-      <a href="https://github.com/juniordev830/controle-gastos-residenciais">Ver projeto</a>
+  </tr>
+  <tr>
+    <td align="center" valign="top">
+      <strong>Dados</strong><br /><br />
+      <img src="https://skillicons.dev/icons?i=postgres&amp;theme=dark" alt="PostgreSQL" width="46" /><br />
+      <sub>PostgreSQL · SQLite · SQL</sub>
+    </td>
+    <td align="center" valign="top">
+      <strong>Cloud &amp; DevOps</strong><br /><br />
+      <img src="https://skillicons.dev/icons?i=docker,aws,git,github&amp;theme=dark" alt="Docker, AWS, Git e GitHub" width="176" /><br />
+      <sub>Versionamento, ambientes e infraestrutura</sub>
     </td>
   </tr>
 </table>
 
+<a id="projetos"></a>
+## Projetos em destaque
+
+<table>
+  <tr>
+    <td>
+      <h3><a href="https://github.com/juniordev830/plataforma-de-recrutamento">Plataforma de Recrutamento</a></h3>
+      <p>Aplicação demonstrativa para vagas, candidatos e recrutadores, com autenticação e persistência de dados. <strong>Em desenvolvimento.</strong></p>
+      <p><code>Node.js</code> <code>Express</code> <code>SQLite</code> <code>JavaScript</code></p>
+      <a href="https://github.com/juniordev830/plataforma-de-recrutamento">Código e documentação</a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <h3><a href="https://github.com/juniordev830/sentinel-atlas">Sentinel Atlas</a></h3>
+      <p>Plataforma geoespacial experimental com API, painel web e visualização 3D. Algumas camadas usam dados simulados e integrações opcionais.</p>
+      <p><code>Python</code> <code>FastAPI</code> <code>WebSocket</code> <code>3D</code></p>
+      <a href="https://github.com/juniordev830/sentinel-atlas">Código e documentação</a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <h3><a href="https://github.com/juniordev830/controle-gastos-residenciais">Controle de Gastos Residenciais</a></h3>
+      <p>Protótipo de API para organizar pessoas, receitas e despesas domésticas, com armazenamento local. A interface web ainda não integra esta versão.</p>
+      <p><code>C#</code> <code>.NET 8</code> <code>SQLite</code> <code>REST API</code></p>
+      <a href="https://github.com/juniordev830/controle-gastos-residenciais">Código e documentação</a>
+    </td>
+  </tr>
+</table>
+
+## Como desenvolvo
+
+- **Organização:** versionamento com Git e documentação clara.
+- **Qualidade:** revisão de código, testes e atenção às regras de negócio.
+- **Evolução:** desenvolvimento incremental e melhorias contínuas nos projetos.
+
+---
+
 <div align="center">
-  <h3>Explore meu trabalho</h3>
+  <strong>Explore outros projetos e acompanhe minha evolução.</strong>
+
   <p>
     <a href="https://github.com/juniordev830?tab=repositories">Todos os repositórios</a>
     &nbsp;·&nbsp;
-    <a href="https://github.com/juniordev830?tab=overview">Atividade e contribuições</a>
+    <a href="https://github.com/juniordev830?tab=overview">Atividade no GitHub</a>
   </p>
 </div>
