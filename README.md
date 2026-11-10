@@ -56,6 +56,14 @@
   </tr>
 </table>
 
+<h3 align="center">Contribuições Diárias</h3>
+
+<div align="center">
+  <img src="./assets/contribuicoes-diarias.svg" alt="Gráfico das contribuições diárias dos últimos 14 dias, com quantidades de cada dia, hoje, ontem, resumo semanal e total anual" width="100%" />
+</div>
+
+<p align="center"><sub>Contagens obtidas no calendário do GitHub. Atualização automática a cada 6 horas (somente quando houver mudança). O painel mostra apenas os dados disponibilizados pela API.</sub></p>
+
 <div align="center">
   <h3>Explore meu trabalho</h3>
   <p>
