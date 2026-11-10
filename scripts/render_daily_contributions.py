@@ -1,4 +1,4 @@
-"""Gera um painel SVG fosco usando o calendário oficial de contribuições.
+"""Atualiza o painel nativo do README com o calendário oficial de contribuições.
 
 Uso:
     GITHUB_TOKEN=... python scripts/render_daily_contributions.py
@@ -15,7 +15,9 @@ from urllib.request import Request, urlopen
 from zoneinfo import ZoneInfo
 
 LOGIN = "juniordev830"
-OUTPUT = Path("assets/contribuicoes-diarias.svg")
+README = Path("README.md")
+START = "<!-- CONTRIBUTIONS:START -->"
+END = "<!-- CONTRIBUTIONS:END -->"
 TZ = ZoneInfo("America/Fortaleza")
 QUERY = """
 query($login: String!) {
@@ -170,13 +172,67 @@ def render_svg(data: dict, generated_at: datetime) -> str:
     return "\n".join(parts) + "\n"
 
 
+def render_markdown(data: dict, generated_at: datetime) -> str:
+    """Render numbers and expandable history without images or JavaScript."""
+    labels = ("Hoje", "Ontem", "Últimos 7 dias", "Últimos 12 meses")
+    numbers = (data["today"], data["yesterday"], data["week_total"], data["year_total"])
+    headers = "".join(f"<th>{label}</th>" for label in labels)
+    cells = "".join(
+        f'<td align="center"><strong>{number:,}</strong></td>'.replace(",", ".")
+        for number in numbers
+    )
+    average = f'{data["week_average"]:.1f}'.replace(".", ",")
+    day = generated_at.astimezone(TZ).strftime("%d/%m/%Y")
+    parts = [
+        '<table align="center">',
+        f"<thead><tr>{headers}</tr></thead>",
+        f"<tbody><tr>{cells}</tr></tbody>",
+        "</table>",
+        "",
+        f'<p align="center">Média dos últimos 7 dias: <strong>{average}</strong> contribuições por dia.</p>',
+        "",
+        "<details>",
+        "<summary>Ver contribuições por dia — últimos 14 dias</summary>",
+        "",
+        "| Data (RN) | Contribuições |",
+        "| :--- | ---: |",
+    ]
+    for when, count in reversed(list(zip(data["days"], data["counts"]))):
+        parts.append(f"| {when:%d/%m/%Y} | {count:,} |".replace(",", "."))
+    parts.extend([
+        "",
+        "</details>",
+        "",
+        f'<p align="center"><sub>Dados de {day}. Consulta programada a cada 5 minutos, '
+        'sujeita a atrasos do GitHub. As novas contagens aparecem ao recarregar o perfil. '
+        '<a href="https://github.com/juniordev830/juniordev830/actions/workflows/contribuicoes-diarias.yml">'
+        'Ver última execução</a>.</sub></p>',
+    ])
+    return "\n".join(parts)
+
+
+def update_readme(document: str, panel: str) -> str:
+    """Replace exactly one marked block, preserving the rest of the profile."""
+    if document.count(START) != 1 or document.count(END) != 1:
+        raise ValueError("README deve conter exatamente um par de marcadores do painel")
+    start = document.index(START) + len(START)
+    end = document.index(END)
+    if end < start:
+        raise ValueError("Marcadores do painel estão fora de ordem")
+    return document[:start] + "\n\n" + panel + "\n\n" + document[end:]
+
+
 def main() -> None:
     calendar = fetch_calendar(os.environ.get("GITHUB_TOKEN", ""))
     now = datetime.now(TZ)
-    svg = render_svg(metrics(calendar, now.date()), now)
-    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT.write_text(svg, encoding="utf-8")
-    print(f"Painel atualizado: {OUTPUT}")
+    panel = render_markdown(metrics(calendar, now.date()), now)
+    original = README.read_text(encoding="utf-8")
+    updated = update_readme(original, panel)
+    if updated != original:
+        README.write_text(updated, encoding="utf-8")
+        print(f"Painel atualizado: {README}")
+    else:
+        print("Contagens e data não mudaram; README preservado")
 
 
 if __name__ == "__main__":

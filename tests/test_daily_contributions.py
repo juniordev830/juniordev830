@@ -1,9 +1,14 @@
 """Testes do painel: dados reais, sem preencher dias ausentes artificialmente."""
 import unittest
 from datetime import date, datetime, timedelta, timezone
+from pathlib import Path
+from tempfile import TemporaryDirectory
+from unittest.mock import patch
 from xml.etree import ElementTree
 
-from scripts.render_daily_contributions import metrics, render_svg, fetch_calendar
+from scripts.render_daily_contributions import (
+    START, END, metrics, render_svg, render_markdown, update_readme, fetch_calendar, main,
+)
 
 
 TODAY = date(2026, 11, 10)
@@ -55,6 +60,50 @@ class DashboardTests(unittest.TestCase):
     def test_missing_token_fails_before_network(self):
         with self.assertRaisesRegex(ValueError, "GITHUB_TOKEN"):
             fetch_calendar("")
+
+    def test_text_panel_includes_counts_and_expandable_daily_history(self):
+        output = render_markdown(metrics(fake_calendar(), TODAY),
+                                 datetime(2026, 11, 10, 17, tzinfo=timezone.utc))
+        self.assertIn("<strong>13</strong>", output)
+        self.assertIn("<strong>2.012</strong>", output)
+        self.assertIn("<details>", output)
+        self.assertIn("| 10/11/2026 | 13 |", output)
+        self.assertIn("| 28/10/2026 | 0 |", output)
+        self.assertLess(output.index("| 10/11/2026"), output.index("| 28/10/2026"))
+        self.assertIn("5 minutos", output)
+        for forbidden in ("<img", "<svg", "<script", "<iframe"):
+            self.assertNotIn(forbidden, output)
+
+    def test_refresh_does_not_change_unchanged_counts_during_same_day(self):
+        data = metrics(fake_calendar(), TODAY)
+        morning = render_markdown(data, datetime(2026, 11, 10, 12, tzinfo=timezone.utc))
+        evening = render_markdown(data, datetime(2026, 11, 10, 22, tzinfo=timezone.utc))
+        self.assertEqual(morning, evening)
+
+    def test_replacement_preserves_everything_outside_the_panel(self):
+        prefix = "# João Júnior\n\nTecnologias e projetos aprovados.\n\n"
+        suffix = "\n\nExplore meu trabalho — links originais.\n"
+        original = prefix + START + "\nold\n" + END + suffix
+        updated = update_readme(original, "novo painel")
+        self.assertEqual(updated, prefix + START + "\n\nnovo painel\n\n" + END + suffix)
+        self.assertEqual(update_readme(updated, "novo painel"), updated)
+
+    def test_ambiguous_or_missing_boundaries_are_rejected(self):
+        for document in ("sem marcadores", START, END + START,
+                         START + START + END, START + END + END):
+            with self.subTest(document=document), self.assertRaises(ValueError):
+                update_readme(document, "novo painel")
+
+    def test_fetch_failure_never_replaces_the_previous_panel(self):
+        with TemporaryDirectory() as directory:
+            readme = Path(directory) / "README.md"
+            original = "perfil aprovado\n" + START + "\nanterior\n" + END
+            readme.write_text(original, encoding="utf-8")
+            with patch("scripts.render_daily_contributions.README", readme), \
+                 patch("scripts.render_daily_contributions.fetch_calendar", side_effect=ValueError("API indisponível")):
+                with self.assertRaises(ValueError):
+                    main()
+            self.assertEqual(readme.read_text(encoding="utf-8"), original)
 
 
 if __name__ == "__main__":
