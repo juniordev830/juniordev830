@@ -158,12 +158,12 @@ def render_svg(data: dict, generated_at: datetime) -> str:
             f'fill="{green if is_today else secondary}">{day:%d/%m}</text>'
         )
     avg = f'{data["week_average"]:.1f}'.replace(".", ",")
-    updated = generated_at.astimezone(TZ).strftime("%d/%m/%Y às %H:%M")
+    updated = generated_at.astimezone(TZ).strftime("%d/%m/%Y")
     parts.extend([
         f'<text x="30" y="438" font-family="Arial, sans-serif" font-size="13" '
         f'fill="{secondary}">Média (7 dias): {avg} por dia</text>',
         f'<text x="908" y="438" text-anchor="end" font-family="Arial, sans-serif" '
-        f'font-size="12" fill="{secondary}">Atualizado em {updated} (RN)</text>',
+        f'font-size="12" fill="{secondary}">Dados de {updated} (RN)</text>',
         '</svg>',
     ])
     return "\n".join(parts) + "\n"
