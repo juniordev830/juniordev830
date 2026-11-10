@@ -11,7 +11,13 @@ on:
       - tests/test_daily_contributions.py
       - .github/workflows/contribuicoes-diarias.yml
   schedule:
-    - cron: '17 3,9,15,21 * * *'
+    - cron: '2-59/5 * * * *'
+  pull_request:
+    paths:
+      - README.md
+      - scripts/render_daily_contributions.py
+      - tests/test_daily_contributions.py
+      - .github/workflows/contribuicoes-diarias.yml
   workflow_dispatch:
 
 permissions:
@@ -22,8 +28,20 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  test:
+    if: github.event_name == 'pull_request'
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p 'test_daily_contributions.py' -v
   update:
-    if: github.repository == 'juniordev830/juniordev830'
+    if: github.event_name != 'pull_request' && github.repository == 'juniordev830/juniordev830'
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
@@ -35,13 +53,13 @@ jobs:
           python-version: '3.12'
       - name: Testar gerador do painel
         run: python -m unittest discover -s tests -p 'test_daily_contributions.py' -v
-      - name: Consultar API oficial e gerar SVG
+      - name: Consultar API oficial e atualizar painel em texto
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/render_daily_contributions.py
-      - name: Salvar SVG somente quando os números ou a data mudarem
+      - name: Salvar README somente quando os números ou a data mudarem
         run: |
-          git add assets/contribuicoes-diarias.svg
+          git add README.md
           if ! git diff --cached --quiet; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'

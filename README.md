@@ -58,11 +58,40 @@
 
 <h3 align="center">Contribuições Diárias</h3>
 
-<div align="center">
-  <img src="./assets/contribuicoes-diarias.svg" alt="Gráfico das contribuições diárias dos últimos 14 dias, com quantidades de cada dia, hoje, ontem, resumo semanal e total anual" width="100%" />
-</div>
+<!-- CONTRIBUTIONS:START -->
 
-<p align="center"><sub>Contagens obtidas no calendário do GitHub. Atualização automática a cada 6 horas (somente quando houver mudança). O painel mostra apenas os dados disponibilizados pela API.</sub></p>
+<table align="center">
+<thead><tr><th>Hoje</th><th>Ontem</th><th>Últimos 7 dias</th><th>Últimos 12 meses</th></tr></thead>
+<tbody><tr><td align="center"><strong>100</strong></td><td align="center"><strong>111</strong></td><td align="center"><strong>804</strong></td><td align="center"><strong>2.178</strong></td></tr></tbody>
+</table>
+
+<p align="center">Média dos últimos 7 dias: <strong>114,9</strong> contribuições por dia.</p>
+
+<details>
+<summary>Ver contribuições por dia — últimos 14 dias</summary>
+
+| Data (RN) | Contribuições |
+| :--- | ---: |
+| 10/11/2026 | 100 |
+| 09/11/2026 | 111 |
+| 08/11/2026 | 142 |
+| 07/11/2026 | 91 |
+| 06/11/2026 | 114 |
+| 05/11/2026 | 166 |
+| 04/11/2026 | 80 |
+| 03/11/2026 | 227 |
+| 02/11/2026 | 553 |
+| 01/11/2026 | 428 |
+| 31/10/2026 | 2 |
+| 30/10/2026 | 5 |
+| 29/10/2026 | 1 |
+| 28/10/2026 | 3 |
+
+</details>
+
+<p align="center"><sub>Dados de 10/11/2026. Consulta programada a cada 5 minutos, sujeita a atrasos do GitHub. As novas contagens aparecem ao recarregar o perfil. <a href="https://github.com/juniordev830/juniordev830/actions/workflows/contribuicoes-diarias.yml">Ver última execução</a>.</sub></p>
+
+<!-- CONTRIBUTIONS:END -->
 
 <div align="center">
   <h3>Explore meu trabalho</h3>
