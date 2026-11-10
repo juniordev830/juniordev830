@@ -50,7 +50,7 @@ class DashboardTests(unittest.TestCase):
         output = render_svg(result, datetime(2026, 11, 10, 17, tzinfo=timezone.utc))
         root = ElementTree.fromstring(output)
         self.assertTrue(root.tag.endswith("svg"))
-        self.assertIn("Ritmo de contribuições", output)
+        self.assertIn("VISÃO GERAL", output)
         self.assertIn("Últimos 14 dias", output)
         self.assertIn("10/11", output)
         self.assertIn(">13</text>", output)
@@ -59,6 +59,23 @@ class DashboardTests(unittest.TestCase):
     def test_missing_token_fails_before_network(self):
         with self.assertRaisesRegex(ValueError, "GITHUB_TOKEN"):
             fetch_calendar("")
+
+    def test_donut_totals_use_disjoint_weeks_and_observed_days(self):
+        data = metrics(fake_calendar(), TODAY)
+        svg = render_svg(data, datetime(2026, 11, 10, tzinfo=timezone.utc))
+        root = ElementTree.fromstring(svg)
+        values = [e.attrib['data-donut-values'] for e in root.iter() if 'data-donut-values' in e.attrib]
+        self.assertEqual(values, ['70,21', '0,14'])
+        data['counts'] = [0] * 14
+        output = render_svg(data, datetime(2026, 11, 10, tzinfo=timezone.utc))
+        self.assertNotIn('NaN', output)
+        self.assertNotIn('inf', output)
+
+    def test_chart_cache_changes_when_annual_total_changes(self):
+        data = metrics(fake_calendar(), TODAY)
+        original = render_chart(data)
+        data['year_total'] += 1
+        self.assertNotEqual(original, render_chart(data))
 
     def test_text_panel_includes_counts_and_expandable_daily_history(self):
         output = render_markdown(metrics(fake_calendar(), TODAY),
@@ -96,9 +113,9 @@ class DashboardTests(unittest.TestCase):
             svg = render_svg(metrics(calendar, TODAY), datetime(2026, 11, 10, tzinfo=timezone.utc))
             root = ElementTree.fromstring(svg)
             for e in root.iter():
-                if e.tag.endswith("rect") and "url(#" in e.attrib.get("fill", ""):
-                    self.assertGreaterEqual(float(e.attrib["y"]), 102)
-                    self.assertLessEqual(float(e.attrib["y"]) + float(e.attrib["height"]), 300.02)
+                if e.attrib.get("data-chart-bar") == "true":
+                    self.assertGreaterEqual(float(e.attrib["y"]), float(e.attrib["data-plot-top"]) - .01)
+                    self.assertLessEqual(float(e.attrib["y"]) + float(e.attrib["height"]), float(e.attrib["data-plot-bottom"]) + .02)
 
     def test_chart_is_outside_the_collapsed_daily_table_and_cache_tracks_data(self):
         data = metrics(fake_calendar(), TODAY)
