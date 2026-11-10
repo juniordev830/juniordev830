@@ -172,8 +172,27 @@ def render_svg(data: dict, generated_at: datetime) -> str:
     return "\n".join(parts) + "\n"
 
 
+def render_chart(data: dict) -> str:
+    """Use GitHub's native Mermaid renderer, with every observed day intact."""
+    maximum = max(1, *data["counts"])
+    step = 10 ** (len(str(maximum)) - 1)
+    ceiling = ((maximum + step - 1) // step) * step
+    labels = json.dumps([day.strftime("%d/%m") for day in data["days"]])
+    values = json.dumps(data["counts"])
+    return "\n".join([
+        "```mermaid",
+        "xychart-beta",
+        '    title "Contribuições — últimos 14 dias"',
+        f"    x-axis {labels}",
+        f'    y-axis "Contribuições" 0 --> {ceiling}',
+        f"    bar {values}",
+        f"    line {values}",
+        "```",
+    ])
+
+
 def render_markdown(data: dict, generated_at: datetime) -> str:
-    """Render numbers and expandable history without images or JavaScript."""
+    """Render native numbers, a chart and expandable history without image assets."""
     labels = ("Hoje", "Ontem", "Últimos 7 dias", "Últimos 12 meses")
     numbers = (data["today"], data["yesterday"], data["week_total"], data["year_total"])
     headers = "".join(f"<th>{label}</th>" for label in labels)
@@ -190,6 +209,8 @@ def render_markdown(data: dict, generated_at: datetime) -> str:
         "</table>",
         "",
         f'<p align="center">Média dos últimos 7 dias: <strong>{average}</strong> contribuições por dia.</p>',
+        "",
+        render_chart(data),
         "",
         "<details>",
         "<summary>Ver contribuições por dia — últimos 14 dias</summary>",

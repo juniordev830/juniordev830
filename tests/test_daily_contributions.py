@@ -7,7 +7,7 @@ from unittest.mock import patch
 from xml.etree import ElementTree
 
 from scripts.render_daily_contributions import (
-    START, END, metrics, render_svg, render_markdown, update_readme, fetch_calendar, main,
+    START, END, metrics, render_svg, render_chart, render_markdown, update_readme, fetch_calendar, main,
 )
 
 
@@ -79,6 +79,29 @@ class DashboardTests(unittest.TestCase):
         morning = render_markdown(data, datetime(2026, 11, 10, 12, tzinfo=timezone.utc))
         evening = render_markdown(data, datetime(2026, 11, 10, 22, tzinfo=timezone.utc))
         self.assertEqual(morning, evening)
+
+    def test_chart_keeps_all_dates_and_values_in_chronological_order(self):
+        data = metrics(fake_calendar(), TODAY)
+        chart = render_chart(data)
+        self.assertIn('"28/10", "29/10"', chart)
+        self.assertIn('"09/11", "10/11"', chart)
+        self.assertIn("bar [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]", chart)
+        self.assertIn("line [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]", chart)
+        self.assertIn('y-axis "Contribuições" 0 --> 20', chart)
+
+    def test_chart_does_not_clip_peaks_or_create_a_degenerate_zero_axis(self):
+        calendar = fake_calendar()
+        for day in calendar["weeks"][0]["contributionDays"]:
+            day["contributionCount"] = 0
+        self.assertIn('0 --> 1', render_chart(metrics(calendar, TODAY)))
+        calendar["weeks"][0]["contributionDays"][-1]["contributionCount"] = 553
+        self.assertIn('0 --> 600', render_chart(metrics(calendar, TODAY)))
+
+    def test_chart_is_outside_the_collapsed_daily_table(self):
+        output = render_markdown(metrics(fake_calendar(), TODAY),
+                                 datetime(2026, 11, 10, 17, tzinfo=timezone.utc))
+        self.assertLess(output.index("```mermaid"), output.index("<details>"))
+        self.assertEqual(output.count("```mermaid"), 1)
 
     def test_replacement_preserves_everything_outside_the_panel(self):
         prefix = "# João Júnior\n\nTecnologias e projetos aprovados.\n\n"
