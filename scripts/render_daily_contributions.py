@@ -93,6 +93,35 @@ def metrics(calendar: dict, today: date) -> dict:
     }
 
 
+def period_insights(data: dict) -> dict:
+    """Summarize the observed window; never infer activity outside these 14 days."""
+    counts, days = data['counts'], data['days']
+    previous, recent = sum(counts[:7]), sum(counts[7:])
+    cumulative, running = [], 0
+    weekdays = [0] * 7
+    for day, count in zip(days, counts):
+        running += count
+        cumulative.append(running)
+        weekdays[day.weekday()] += count
+    streak = 0
+    for count in reversed(counts):
+        if count == 0:
+            break
+        streak += 1
+    peak_index = counts.index(max(counts))
+    return {
+        'total': running,
+        'average': running / len(counts),
+        'active_days': sum(n > 0 for n in counts),
+        'streak': streak,
+        'peak_count': counts[peak_index],
+        'peak_day': days[peak_index],
+        'week_delta_percent': (recent - previous) * 100 / previous if previous else None,
+        'cumulative': cumulative,
+        'weekdays': weekdays,
+    }
+
+
 def render_svg(data: dict, generated_at: datetime) -> str:
     """Render an accessible README dashboard with only observed calendar data."""
     from html import escape
@@ -102,17 +131,18 @@ def render_svg(data: dict, generated_at: datetime) -> str:
     previous, recent = sum(counts[:7]), sum(counts[7:])
     total = previous + recent
     achieved = sum(n >= 100 for n in counts)
+    insights = period_insights(data)
     fmt = lambda n: f"{n:,}".replace(",", ".")
     parts = [
-        '<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="560" viewBox="0 0 1040 560" role="img" aria-labelledby="title desc">',
+        '<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="936" viewBox="0 0 1040 936" role="img" aria-labelledby="title desc">',
         '<title id="title">Visão geral — contribuições no GitHub</title>',
-        '<desc id="desc">Indicadores, comparação entre semanas, histórico diário, distribuição das contribuições e cinco dias mais ativos. Dados reais do calendário do GitHub; meta diária de 100.</desc>',
+        '<desc id="desc">Indicadores, comparação entre semanas, histórico diário, distribuição das contribuições, ranking dos dias mais ativos, evolução acumulada, atividade por dia da semana e mapa de intensidade. Dados reais dos últimos 14 dias; meta diária de 100. A sequência informada é limitada à janela observada.</desc>',
         '<defs>',
     ]
     for name, a, b in [('blue','#606dff','#0755b8'),('purple','#c456e3','#8744d6'),('pink','#f45cbd','#d285e9'),('orange','#ef6d25','#ff947c')]:
         parts.append(f'<linearGradient id="{name}" x1="0" x2="1" y1="0" y2="1"><stop stop-color="{a}"/><stop offset="1" stop-color="{b}"/></linearGradient>')
-    parts += ['</defs>', '<rect x="1" y="1" width="1038" height="558" rx="22" fill="#1b1d33" stroke="#484263"/>',
-              '<path d="M22 1H46V559H22Q1 559 1 538V22Q1 1 22 1" fill="#242640"/>',
+    parts += ['</defs>', '<rect x="1" y="1" width="1038" height="934" rx="22" fill="#1b1d33" stroke="#484263"/>',
+              '<path d="M22 1H46V935H22Q1 935 1 914V22Q1 1 22 1" fill="#242640"/>',
               '<g font-family="Arial, Helvetica, sans-serif">']
 
     def text(x, y, value, size=11, color='#aeb1cd', weight='400', anchor='start'):
@@ -222,8 +252,75 @@ def render_svg(data: dict, generated_at: datetime) -> str:
         if count:
             rect(809,y-3,max(1,183*count/max_rank),23,'#5662f0',3)
         text(985,y+12,fmt(count),10,'#ffffff','700','end')
-    text(68,543,f'Média (7 dias): {data["week_average"]:.1f}'.replace('.',','),10)
-    text(1010,543,f'Dados de {generated_at.astimezone(TZ):%d/%m/%Y} (RN) · meta: 100/dia',9,anchor='end')
+    # Secondary metrics describe only the dates actually present in the source.
+    delta = insights['week_delta_percent']
+    delta_text = f'{delta:+.1f}%'.replace('.', ',') if delta is not None else 'Sem base'
+    detail_cards = [
+        ('TOTAL EM 14 DIAS', fmt(insights['total']), 'Contribuições na janela'),
+        ('MÉDIA EM 14 DIAS', f'{insights["average"]:.1f}'.replace('.', ','), 'Contribuições por dia'),
+        ('MELHOR DIA', fmt(insights['peak_count']), f'{insights["peak_day"]:%d/%m/%Y}'),
+        ('DIAS ATIVOS', f'{insights["active_days"]}/14', 'Dias com contribuições'),
+        ('SEQUÊNCIA ATUAL', f'{insights["streak"]} dias', 'Limitada à janela de 14 dias'),
+        ('VARIAÇÃO SEMANAL', delta_text, 'Últimos 7 vs. 7 anteriores'),
+    ]
+    for i, (label, value, caption) in enumerate(detail_cards):
+        x = 68 + i * 159
+        rect(x, 536, 147, 79, '#242943')
+        rect(x, 547, 3, 20, '#8e6be3', 1)
+        text(x+12, 554, label, 8, '#b6b4d2', '700')
+        text(x+12, 582, value, 22, '#f2edff', '700')
+        text(x+12, 602, caption, 7)
+
+    panel(68,632,449,248,'Evolução acumulada','Soma progressiva das contribuições nos 14 dias')
+    panel(525,632,213,248,'Por dia da semana','Soma das duas ocorrências na janela')
+    panel(750,632,260,248,'Mapa de intensidade','Cada célula representa um dia real')
+    # Area chart starts from an explicit zero baseline; its final value equals total.
+    left, right, top, bottom = 111, 498, 695, 828
+    scale = max(1, insights['total'])
+    for fraction in (0,.5,1):
+        y = bottom - fraction * (bottom-top)
+        parts.append(f'<line x1="{left}" x2="{right}" y1="{y}" y2="{y}" stroke="#454966" stroke-dasharray="2 4"/>')
+        text(left-8,y+3,fmt(round(scale*fraction)),8,anchor='end')
+    points = [(left+i*(right-left)/13, bottom-value/scale*(bottom-top))
+              for i,value in enumerate(insights['cumulative'])]
+    polyline = ' '.join(f'{x:.2f},{y:.2f}' for x,y in points)
+    parts.append(f'<polygon points="{left},{bottom} {polyline} {right},{bottom}" fill="#7462df" fill-opacity=".23"/>')
+    parts.append(f'<polyline points="{polyline}" fill="none" stroke="#a18aff" stroke-width="3" stroke-linejoin="round"/>')
+    for i, ((x,y),value) in enumerate(zip(points,insights['cumulative'])):
+        parts.append(f'<circle cx="{x:.2f}" cy="{y:.2f}" r="2.5" fill="#c7b5ff" data-cumulative="{value}"/>')
+        if i in (0,6,13):
+            text(x,850,f'{days[i]:%d/%m}',8,anchor='middle')
+    text(498,865,f'Total: {fmt(insights["total"])}',9,'#c3b3ff','700','end')
+
+    # Weekday totals account for date rollover instead of assuming a starting weekday.
+    weekday_names = ('Seg','Ter','Qua','Qui','Sex','Sáb','Dom')
+    weekday_max = max(1,*insights['weekdays'])
+    for i,(name,value) in enumerate(zip(weekday_names,insights['weekdays'])):
+        y = 694 + i*24
+        text(539,y+10,name,9,'#d7d3ee')
+        rect(568,y,113,13,'#363a59',3)
+        if value:
+            rect(568,y,113*value/weekday_max,13,'#bc83de',3)
+        text(724,y+11,fmt(value),9,'#f0e7ff','700','end')
+
+    heat_colors = ('#333651','#5c487e','#8958b1','#b46bd8','#dfa0f5')
+    max_count = max(1,*counts)
+    for i,(day,count) in enumerate(zip(days,counts)):
+        row,col = divmod(i,7)
+        x,y = 764+col*33,710+row*61
+        level = 0 if not count else min(4,1+int(count/max_count*3))
+        text(x+14,y-8,f'{day:%d/%m}',7,anchor='middle')
+        rect(x,y,28,34,heat_colors[level],5,data_heat_date=day.isoformat(),data_heat_count=count)
+        text(x+14,y+21,count,8,'#ffffff','700','middle')
+    text(764,834,'Menos',8)
+    for i,color in enumerate(heat_colors):
+        rect(803+i*17,824,12,12,color,2)
+    text(997,834,'Mais',8,anchor='end')
+    text(764,859,f'Meta atingida em {achieved} de 14 dias',9,'#d8b4ef')
+
+    parts.append('<line x1="68" x2="1010" y1="895" y2="895" stroke="#3a3a55"/>')
+    text(68,915,f'Média (7 dias): {data["week_average"]:.1f}'.replace('.',','),9)
+    text(1010,915,f'Dados de {generated_at.astimezone(TZ):%d/%m/%Y} (RN) · dia atual parcial · meta: 100/dia',9,anchor='end')
     parts.append('</g></svg>')
     return '\n'.join(parts)+'\n'
 
@@ -232,13 +329,13 @@ def render_chart(data: dict) -> str:
     """Version the image by its data so changed counts get a new cache URL."""
     from hashlib import sha256
 
-    version = sha256(json.dumps({"design": "overview-v1", "year_total": data["year_total"], "days": [d.isoformat() for d in data["days"]],
+    version = sha256(json.dumps({"design": "overview-v2-complete", "year_total": data["year_total"], "days": [d.isoformat() for d in data["days"]],
                                  "counts": data["counts"],
                                  "week_average": data["week_average"]}, sort_keys=True).encode()).hexdigest()[:12]
     return '\n'.join([
         '<p align="center">',
         '<a href="https://joao-github-dashboard.joaosilva42333.chatgpt.site">',
-        f'<img src="https://raw.githubusercontent.com/{LOGIN}/{LOGIN}/main/assets/contribuicoes-diarias.svg?v={version}" width="1040" alt="Visão geral GitHub: quatro indicadores, comparação semanal, histórico diário, gráficos de rosca e cinco dias mais ativos."/>',
+        f'<img src="https://raw.githubusercontent.com/{LOGIN}/{LOGIN}/main/assets/contribuicoes-diarias.svg?v={version}" width="1040" alt="Painel completo GitHub: indicadores, comparação semanal, histórico, roscas, ranking, evolução acumulada, atividade por dia da semana e mapa de intensidade."/>',
         '</a>',
         '</p>',
     ])
