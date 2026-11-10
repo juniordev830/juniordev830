@@ -5,16 +5,16 @@
 <text x="30" y="67" font-family="Arial, sans-serif" font-size="13" fill="#aebbc1">Últimos 14 dias · dados do GitHub</text>
 <rect x="30" y="87" width="200" height="75" rx="12" fill="#192329" stroke="#354148"/>
 <text x="46" y="111" font-family="Arial, sans-serif" font-size="13" fill="#aebbc1">Hoje</text>
-<text x="46" y="143" font-family="Arial. sans-serif" font-weight="700" font-size="27" fill="#79be92">17</text>
+<text x="46" y="143" font-family="Arial, sans-serif" font-weight="700" font-size="27" fill="#79be92">17</text>
 <rect x="258" y="87" width="200" height="75" rx="12" fill="#192329" stroke="#354148"/>
 <text x="274" y="111" font-family="Arial, sans-serif" font-size="13" fill="#aebbc1">Ontem</text>
-<text x="274" y="143" font-family="Arial. sans-serif" font-weight="700" font-size="27" fill="#edf2f3">85</text>
+<text x="274" y="143" font-family="Arial, sans-serif" font-weight="700" font-size="27" fill="#edf2f3">85</text>
 <rect x="486" y="87" width="200" height="75" rx="12" fill="#192329" stroke="#354148"/>
 <text x="502" y="111" font-family="Arial, sans-serif" font-size="13" fill="#aebbc1">Últimos 7 dias</text>
-<text x="502" y="143" font-family="Arial. sans-serif" font-weight="700" font-size="27" fill="#edf2f3">638</text>
+<text x="502" y="143" font-family="Arial, sans-serif" font-weight="700" font-size="27" fill="#edf2f3">638</text>
 <rect x="714" y="87" width="200" height="75" rx="12" fill="#192329" stroke="#354148"/>
 <text x="730" y="111" font-family="Arial, sans-serif" font-size="13" fill="#aebbc1">Últimos 12 meses</text>
-<text x="730" y="143" font-family="Arial. sans-serif" font-weight="700" font-size="27" fill="#edf2f3">2.012</text>
+<text x="730" y="143" font-family="Arial, sans-serif" font-weight="700" font-size="27" fill="#edf2f3">2.012</text>
 <line x1="30" x2="908" y1="384.0" y2="384.0" stroke="#354148" stroke-width="1" opacity=".7"/>
 <line x1="30" x2="908" y1="297.0" y2="297.0" stroke="#354148" stroke-width="1" opacity=".7"/>
 <line x1="30" x2="908" y1="210.0" y2="210.0" stroke="#354148" stroke-width="1" opacity=".7"/>
