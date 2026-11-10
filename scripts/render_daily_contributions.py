@@ -123,10 +123,11 @@ def render_svg(data: dict, generated_at: datetime) -> str:
             f'<text x="{x+16}" y="111" font-family="Arial, sans-serif" '
             f'font-size="13" fill="{secondary}">{label}</text>'
         )
+        formatted_number = f"{number:,}".replace(",", ".")
         parts.append(
             f'<text x="{x+16}" y="143" font-family="Arial, sans-serif" '
             f'font-weight="700" font-size="27" '
-            f'fill="{green if i == 0 else text}">{number:,}</text>'.replace(",", ".")
+            f'fill="{green if i == 0 else text}">{formatted_number}</text>'
         )
 
     chart_bottom, chart_top = 384, 210
