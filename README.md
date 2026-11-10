@@ -62,14 +62,14 @@
 
 <table align="center">
 <thead><tr><th>Hoje</th><th>Ontem</th><th>Últimos 7 dias</th><th>Últimos 12 meses</th></tr></thead>
-<tbody><tr><td align="center"><strong>112</strong></td><td align="center"><strong>111</strong></td><td align="center"><strong>816</strong></td><td align="center"><strong>2.190</strong></td></tr></tbody>
+<tbody><tr><td align="center"><strong>114</strong></td><td align="center"><strong>111</strong></td><td align="center"><strong>818</strong></td><td align="center"><strong>2.192</strong></td></tr></tbody>
 </table>
 
-<p align="center">Média dos últimos 7 dias: <strong>116,6</strong> contribuições por dia.</p>
+<p align="center">Média dos últimos 7 dias: <strong>116,9</strong> contribuições por dia.</p>
 
 <p align="center">
 <a href="https://joao-github-dashboard.joaosilva42333.chatgpt.site">
-<img src="https://raw.githubusercontent.com/juniordev830/juniordev830/main/assets/contribuicoes-diarias.svg?v=7291f0d96bea" width="1040" alt="Painel completo GitHub: indicadores, comparação semanal, histórico, roscas, ranking, evolução acumulada, atividade por dia da semana e mapa de intensidade."/>
+<img src="https://raw.githubusercontent.com/juniordev830/juniordev830/main/assets/contribuicoes-diarias.svg?v=55ec5dd844ea" width="1040" alt="Painel completo GitHub: indicadores, comparação semanal, histórico, roscas, ranking, evolução acumulada, atividade por dia da semana e mapa de intensidade."/>
 </a>
 </p>
 
@@ -78,7 +78,7 @@
 
 | Data (RN) | Contribuições |
 | :--- | ---: |
-| 10/11/2026 | 112 |
+| 10/11/2026 | 114 |
 | 09/11/2026 | 111 |
 | 08/11/2026 | 142 |
 | 07/11/2026 | 91 |
