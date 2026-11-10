@@ -67,14 +67,11 @@
 
 <p align="center">Média dos últimos 7 dias: <strong>116,0</strong> contribuições por dia.</p>
 
-```mermaid
-xychart-beta
-    title "Contribuições — últimos 14 dias"
-    x-axis ["28/10", "29/10", "30/10", "31/10", "01/11", "02/11", "03/11", "04/11", "05/11", "06/11", "07/11", "08/11", "09/11", "10/11"]
-    y-axis "Contribuições" 0 --> 600
-    bar [3, 1, 5, 2, 428, 553, 227, 80, 166, 114, 91, 142, 111, 108]
-    line [3, 1, 5, 2, 428, 553, 227, 80, 166, 114, 91, 142, 111, 108]
-```
+<p align="center">
+<a href="https://joao-github-dashboard.joaosilva42333.chatgpt.site">
+<img src="https://raw.githubusercontent.com/juniordev830/juniordev830/main/assets/contribuicoes-diarias.svg?v=ac32070dfb49" width="940" alt="Contribuições dos últimos 14 dias: barras azuis, destaque verde no dia mais recente e meta diária de 100."/>
+</a>
+</p>
 
 <details>
 <summary>Ver contribuições por dia — últimos 14 dias</summary>

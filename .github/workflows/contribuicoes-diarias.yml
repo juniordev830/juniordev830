@@ -53,13 +53,13 @@ jobs:
           python-version: '3.12'
       - name: Testar gerador do painel
         run: python -m unittest discover -s tests -p 'test_daily_contributions.py' -v
-      - name: Consultar API oficial e atualizar painel em texto
+      - name: Consultar API oficial e atualizar painel e gráfico
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/render_daily_contributions.py
       - name: Salvar README somente quando os números ou a data mudarem
         run: |
-          git add README.md
+          git add README.md assets/contribuicoes-diarias.svg
           if ! git diff --cached --quiet; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
