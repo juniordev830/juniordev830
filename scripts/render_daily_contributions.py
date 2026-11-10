@@ -139,13 +139,13 @@ def render_svg(data: dict, generated_at: datetime) -> str:
         '<desc id="desc">Indicadores, comparação entre semanas, histórico diário, distribuição das contribuições, ranking dos dias mais ativos, evolução acumulada, atividade por dia da semana e mapa de intensidade. Dados reais dos últimos 14 dias; meta diária de 100. A sequência informada é limitada à janela observada.</desc>',
         '<defs>',
     ]
-    for name, a, b in [('blue','#606dff','#0755b8'),('purple','#c456e3','#8744d6'),('pink','#f45cbd','#d285e9'),('orange','#ef6d25','#ff947c')]:
+    for name, a, b in [('blue','#182932','#121e26'),('purple','#172a29','#121f23'),('pink','#222735','#141f28'),('orange','#2a2b24','#191f22')]:
         parts.append(f'<linearGradient id="{name}" x1="0" x2="1" y1="0" y2="1"><stop stop-color="{a}"/><stop offset="1" stop-color="{b}"/></linearGradient>')
-    parts += ['</defs>', '<rect x="1" y="1" width="1038" height="934" rx="22" fill="#1b1d33" stroke="#484263"/>',
-              '<path d="M22 1H46V935H22Q1 935 1 914V22Q1 1 22 1" fill="#242640"/>',
-              '<g font-family="Arial, Helvetica, sans-serif">']
+    parts += ['</defs>', '<rect x="1" y="1" width="1038" height="934" rx="22" fill="#0c1217" stroke="#293740"/>',
+              '<path d="M22 1H46V935H22Q1 935 1 914V22Q1 1 22 1" fill="#10191f"/>',
+              '<g font-family="Segoe UI, Arial, Helvetica, sans-serif">']
 
-    def text(x, y, value, size=11, color='#aeb1cd', weight='400', anchor='start'):
+    def text(x, y, value, size=11, color='#91a4af', weight='400', anchor='start'):
         parts.append(f'<text x="{x:.2f}" y="{y:.2f}" font-size="{size}" fill="{color}" font-weight="{weight}" text-anchor="{anchor}">{escape(str(value))}</text>')
 
     def rect(x, y, w, h, fill, radius=8, **attrs):
@@ -153,15 +153,15 @@ def render_svg(data: dict, generated_at: datetime) -> str:
         parts.append(f'<rect x="{x:.2f}" y="{y:.2f}" width="{w:.2f}" height="{h:.2f}" rx="{radius}" fill="{fill}"{extra}/>')
 
     def panel(x, y, w, h, title, subtitle=None):
-        rect(x,y,w,h,'#272b49')
-        text(x+14,y+22,title,12,'#e4e6fa','700')
+        rect(x,y,w,h,'#141e25',12,stroke='#293b44',stroke_width='.8')
+        text(x+14,y+22,title,12,'#dce7ed','700')
         if subtitle:
             text(x+14,y+39,subtitle,9)
 
     def donut(cx, cy, radius, values, colors, center, caption):
         parts.append(f'<g data-donut-values="{",".join(str(v) for v in values)}">')
         circumference = 2*pi*radius
-        parts.append(f'<circle cx="{cx}" cy="{cy}" r="{radius}" fill="none" stroke="#383c5e" stroke-width="15"/>')
+        parts.append(f'<circle cx="{cx}" cy="{cy}" r="{radius}" fill="none" stroke="#263840" stroke-width="15"/>')
         amount = sum(values)
         offset = 0
         if amount:
@@ -170,19 +170,19 @@ def render_svg(data: dict, generated_at: datetime) -> str:
                 if length:
                     parts.append(f'<circle cx="{cx}" cy="{cy}" r="{radius}" fill="none" stroke="{color}" stroke-width="15" stroke-dasharray="{length:.4f} {circumference-length:.4f}" stroke-dashoffset="{-offset:.4f}" transform="rotate(-90 {cx} {cy})"/>')
                 offset += length
-        text(cx,cy+2,center,21,'#f5f5ff','700','middle')
-        text(cx,cy+19,caption,9,'#aeb1cd','400','middle')
+        text(cx,cy+2,center,21,'#eef5f6','700','middle')
+        text(cx,cy+19,caption,9,'#91a4af','400','middle')
         parts.append('</g>')
 
     # Decorative rail, intentionally without controls that cannot run in a README.
-    parts.append('<path d="M12 32L23 21L34 28M14 18L23 28L34 15" fill="none" stroke="#626dff" stroke-width="3" stroke-linecap="round"/><path d="M12 32L23 21" stroke="#24d2d3" stroke-width="3"/>')
-    parts.append('<line x1="10" x2="36" y1="52" y2="52" stroke="#484965"/>')
-    for y in (91,145,199):
-        rect(15,y,4,12,'#626dff',1);rect(22,y-7,4,19,'#a28be1',1);rect(29,y-13,4,25,'#626dff',1)
-    text(68,34,'VISÃO GERAL',17,'#f6f5ff','700')
-    text(68,53,'GITHUB ANALYTICS  /  @juniordev830',9,'#aeb1cd')
-    text(1010,31,f'{days[0]:%d/%m} — {days[-1]:%d/%m/%Y}',11,'#e5dcfb','700','end')
-    text(1010,49,'Últimos 14 dias · dados reais',9,'#aeb1cd','400','end')
+    parts.append('<path d="M12 32L23 21L34 28M14 18L23 28L34 15" fill="none" stroke="#82c5b6" stroke-width="3" stroke-linecap="round"/><path d="M12 32L23 21" stroke="#a5e2ce" stroke-width="3"/>')
+    parts.append('<line x1="10" x2="36" y1="52" y2="52" stroke="#293a42"/>')
+    for y in (97,169,241):
+        rect(15,y,4,12,'#82c5b6',1);rect(22,y-7,4,19,'#54808a',1);rect(29,y-13,4,25,'#82c5b6',1)
+    text(68,34,'VISÃO GERAL',19,'#e7f0f2','700')
+    text(68,53,'JOÃO JÚNIOR  /  ENGENHARIA DE SOFTWARE',9,'#91a4af')
+    text(1010,31,f'{days[0]:%d/%m} — {days[-1]:%d/%m/%Y}',11,'#bdcfd7','700','end')
+    text(1010,49,'Últimos 14 dias · dados reais',9,'#91a4af','400','end')
 
     # Four KPIs use the same calendar source as the text table.
     cards = [('HOJE',fmt(data['today']),'Contribuições no dia','blue'),
@@ -191,12 +191,14 @@ def render_svg(data: dict, generated_at: datetime) -> str:
              ('META DIÁRIA',f"{data['today']}%",'Referência: 100 por dia','orange')]
     for i,(label,value,caption,color) in enumerate(cards):
         x=68+i*239
-        rect(x,72,225,74,f'url(#{color})')
-        rect(x+13,91,32,32,'#ffffff',6,fill_opacity='.14')
-        parts.append(f'<path d="M{x+23} 113L{x+28} 106L{x+32} 109L{x+38} 100" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>')
-        text(x+57,91,label,8,'#f5eaff','700')
-        text(x+57,115,value,21,'#ffffff','700')
-        text(x+57,132,caption,9,'#f5eaff')
+        rect(x,72,225,74,f'url(#{color})',10,stroke='#30424a',stroke_width='.8')
+        accent = ('#8ec6db','#a0d7c3','#b9bedb','#d7c99e')[i]
+        rect(x+13,72,32,2,accent,1)
+        rect(x+13,91,32,32,'#334b54',8,fill_opacity='.45')
+        parts.append(f'<path d="M{x+23} 113L{x+28} 106L{x+32} 109L{x+38} 100" stroke="#b7d6d8" stroke-width="2" fill="none" stroke-linecap="round"/>')
+        text(x+57,91,label,8,'#9bb0bc','700')
+        text(x+57,116,value,24,accent,'700')
+        text(x+57,133,caption,8,'#a4b7c1')
 
     panel(68,162,449,180,'Comparação entre semanas','Mesma posição na semana · contagens por dia')
     panel(525,162,213,180,'Contribuições por semana')
@@ -208,49 +210,49 @@ def render_svg(data: dict, generated_at: datetime) -> str:
     plot_top, plot_bottom = 223,309
     for fraction in (0,.5,1):
         y=plot_bottom-fraction*(plot_bottom-plot_top)
-        parts.append(f'<line x1="100" x2="502" y1="{y}" y2="{y}" stroke="#454966" stroke-dasharray="2 4"/>')
+        parts.append(f'<line x1="100" x2="502" y1="{y}" y2="{y}" stroke="#2a3942" stroke-dasharray="2 4"/>')
         text(94,y+3,round(ceiling*fraction),8,anchor='end')
-    rect(82,210,5,5,'#515dff',2);text(91,215,'7 dias anteriores',8)
-    rect(179,210,5,5,'#a0aad4',2);text(188,215,'Últimos 7 dias',8)
+    rect(82,210,5,5,'#466d84',2);text(91,215,'7 dias anteriores',8)
+    rect(179,210,5,5,'#81c7b3',2);text(188,215,'Últimos 7 dias',8)
     for i in range(7):
         x=104+i*57
-        for j,(count,color) in enumerate(((counts[i],'#515dff'),(counts[i+7],'#a0aad4'))):
+        for j,(count,color) in enumerate(((counts[i],'#466d84'),(counts[i+7],'#81c7b3'))):
             h=count/ceiling*(plot_bottom-plot_top)
             if count:
                 rect(x+j*17,plot_bottom-h,15,h,color,1,data_chart_bar='true',data_plot_top=plot_top,data_plot_bottom=plot_bottom)
         text(x+16,326,f'{days[i+7]:%d/%m}',8,anchor='middle')
     recent_pct=round(100*recent/total) if total else 0
-    donut(631,253,42,[recent,previous],['#515dff','#a0aad4'],f'{recent_pct}%','na semana atual')
-    text(539,318,f'● Atual: {fmt(recent)}',8,'#a5aaff')
-    text(725,330,f'Anterior: {fmt(previous)}',8,'#bec5e0',anchor='end')
+    donut(631,253,42,[recent,previous],['#81c7b3','#466d84'],f'{recent_pct}%','na semana atual')
+    text(539,318,f'● Atual: {fmt(recent)}',8,'#91d8c3')
+    text(725,330,f'Anterior: {fmt(previous)}',8,'#a9bdc8',anchor='end')
 
     # Daily history retains every observation, including zero-valued days.
     left,right,top,bottom=90,503,405,484
     for fraction in (0,.5,1):
         y=bottom-fraction*(bottom-top)
-        parts.append(f'<line x1="{left}" x2="{right}" y1="{y}" y2="{y}" stroke="#454966" stroke-dasharray="2 4"/>')
+        parts.append(f'<line x1="{left}" x2="{right}" y1="{y}" y2="{y}" stroke="#2a3942" stroke-dasharray="2 4"/>')
     for i,(day,count) in enumerate(zip(days,counts)):
         x=left+(i+.5)*(right-left)/14
         h=count/ceiling*(bottom-top)
         parts.append(f'<g data-date="{day.isoformat()}" data-count="{count}"><title>{day:%d/%m/%Y}: {count} contribuições</title>')
         if count:
-            rect(x-8,bottom-h,16,h,'#65d8bf' if i==13 else '#bc83de',1,data_chart_bar='true',data_plot_top=top,data_plot_bottom=bottom)
-        text(x,bottom-h-5,count,7,'#f6eeff','700','middle')
-        text(x,503,f'{day:%d}',8,'#d5c2e6',anchor='middle')
+            rect(x-8,bottom-h,16,h,'#9cdec5' if i==13 else '#72a5bd',1,data_chart_bar='true',data_plot_top=top,data_plot_bottom=bottom)
+        text(x,bottom-h-5,count,7,'#e0edf1','700','middle')
+        text(x,503,f'{day:%d}',8,'#94adb9',anchor='middle')
         parts.append('</g>')
     achieved_pct=round(100*achieved/len(counts))
-    donut(631,437,35,[achieved,len(counts)-achieved],['#bc83de','#7254a0'],f'{achieved_pct}%','dos dias na meta')
-    text(539,503,f'≥100: {achieved} dias',8,'#d8a8f0')
-    text(725,503,f'<100: {len(counts)-achieved} dias',8,'#b6a0d5',anchor='end')
+    donut(631,437,35,[achieved,len(counts)-achieved],['#72a5bd','#354f5b'],f'{achieved_pct}%','dos dias na meta')
+    text(539,503,f'≥100: {achieved} dias',8,'#9fc9d8')
+    text(725,503,f'<100: {len(counts)-achieved} dias',8,'#839ba8',anchor='end')
     # Sorted values are direct calendar observations, not repository estimates.
     ranking=sorted(zip(days,counts),key=lambda pair:(-pair[1],pair[0]))[:5]
     max_rank=max(1,*(n for _,n in ranking))
     for i,(day,count) in enumerate(ranking):
         y=231+i*55
-        text(764,y+11,f'{day:%d/%m}',10,'#e6e2fa','700')
-        rect(809,y-3,183,23,'#333853',3)
+        text(764,y+11,f'{day:%d/%m}',10,'#cbdce4','700')
+        rect(809,y-3,183,23,'#25353d',3)
         if count:
-            rect(809,y-3,max(1,183*count/max_rank),23,'#5662f0',3)
+            rect(809,y-3,max(1,183*count/max_rank),23,'#6e9fb4',3)
         text(985,y+12,fmt(count),10,'#ffffff','700','end')
     # Secondary metrics describe only the dates actually present in the source.
     delta = insights['week_delta_percent']
@@ -265,10 +267,10 @@ def render_svg(data: dict, generated_at: datetime) -> str:
     ]
     for i, (label, value, caption) in enumerate(detail_cards):
         x = 68 + i * 159
-        rect(x, 536, 147, 79, '#242943')
-        rect(x, 547, 3, 20, '#8e6be3', 1)
-        text(x+12, 554, label, 8, '#b6b4d2', '700')
-        text(x+12, 582, value, 22, '#f2edff', '700')
+        rect(x, 536, 147, 79, '#121d24', 10, stroke='#263943', stroke_width='.8')
+        rect(x, 547, 3, 20, '#76b5a6', 1)
+        text(x+12, 554, label, 8, '#93abb7', '700')
+        text(x+12, 582, value, 22, '#dcebee', '700')
         text(x+12, 602, caption, 7)
 
     panel(68,632,449,248,'Evolução acumulada','Soma progressiva das contribuições nos 14 dias')
@@ -279,31 +281,31 @@ def render_svg(data: dict, generated_at: datetime) -> str:
     scale = max(1, insights['total'])
     for fraction in (0,.5,1):
         y = bottom - fraction * (bottom-top)
-        parts.append(f'<line x1="{left}" x2="{right}" y1="{y}" y2="{y}" stroke="#454966" stroke-dasharray="2 4"/>')
+        parts.append(f'<line x1="{left}" x2="{right}" y1="{y}" y2="{y}" stroke="#2a3942" stroke-dasharray="2 4"/>')
         text(left-8,y+3,fmt(round(scale*fraction)),8,anchor='end')
     points = [(left+i*(right-left)/13, bottom-value/scale*(bottom-top))
               for i,value in enumerate(insights['cumulative'])]
     polyline = ' '.join(f'{x:.2f},{y:.2f}' for x,y in points)
-    parts.append(f'<polygon points="{left},{bottom} {polyline} {right},{bottom}" fill="#7462df" fill-opacity=".23"/>')
-    parts.append(f'<polyline points="{polyline}" fill="none" stroke="#a18aff" stroke-width="3" stroke-linejoin="round"/>')
+    parts.append(f'<polygon points="{left},{bottom} {polyline} {right},{bottom}" fill="#4c8290" fill-opacity=".23"/>')
+    parts.append(f'<polyline points="{polyline}" fill="none" stroke="#8ac6c5" stroke-width="3" stroke-linejoin="round"/>')
     for i, ((x,y),value) in enumerate(zip(points,insights['cumulative'])):
-        parts.append(f'<circle cx="{x:.2f}" cy="{y:.2f}" r="2.5" fill="#c7b5ff" data-cumulative="{value}"/>')
+        parts.append(f'<circle cx="{x:.2f}" cy="{y:.2f}" r="2.5" fill="#c5e9de" data-cumulative="{value}"/>')
         if i in (0,6,13):
             text(x,850,f'{days[i]:%d/%m}',8,anchor='middle')
-    text(498,865,f'Total: {fmt(insights["total"])}',9,'#c3b3ff','700','end')
+    text(498,865,f'Total: {fmt(insights["total"])}',9,'#a1cfc9','700','end')
 
     # Weekday totals account for date rollover instead of assuming a starting weekday.
     weekday_names = ('Seg','Ter','Qua','Qui','Sex','Sáb','Dom')
     weekday_max = max(1,*insights['weekdays'])
     for i,(name,value) in enumerate(zip(weekday_names,insights['weekdays'])):
         y = 694 + i*24
-        text(539,y+10,name,9,'#d7d3ee')
-        rect(568,y,113,13,'#363a59',3)
+        text(539,y+10,name,9,'#c7d7df')
+        rect(568,y,113,13,'#263842',3)
         if value:
-            rect(568,y,113*value/weekday_max,13,'#bc83de',3)
-        text(724,y+11,fmt(value),9,'#f0e7ff','700','end')
+            rect(568,y,113*value/weekday_max,13,'#72a5bd',3)
+        text(724,y+11,fmt(value),9,'#dcebee','700','end')
 
-    heat_colors = ('#333651','#5c487e','#8958b1','#b46bd8','#dfa0f5')
+    heat_colors = ('#24343c','#345b5b','#4b8880','#76b4a2','#a9ddc7')
     max_count = max(1,*counts)
     for i,(day,count) in enumerate(zip(days,counts)):
         row,col = divmod(i,7)
@@ -316,9 +318,9 @@ def render_svg(data: dict, generated_at: datetime) -> str:
     for i,color in enumerate(heat_colors):
         rect(803+i*17,824,12,12,color,2)
     text(997,834,'Mais',8,anchor='end')
-    text(764,859,f'Meta atingida em {achieved} de 14 dias',9,'#d8b4ef')
+    text(764,859,f'Meta atingida em {achieved} de 14 dias',9,'#a4c9d6')
 
-    parts.append('<line x1="68" x2="1010" y1="895" y2="895" stroke="#3a3a55"/>')
+    parts.append('<line x1="68" x2="1010" y1="895" y2="895" stroke="#273b44"/>')
     text(68,915,f'Média (7 dias): {data["week_average"]:.1f}'.replace('.',','),9)
     text(1010,915,f'Dados de {generated_at.astimezone(TZ):%d/%m/%Y} (RN) · dia atual parcial · meta: 100/dia',9,anchor='end')
     parts.append('</g></svg>')
@@ -329,7 +331,7 @@ def render_chart(data: dict) -> str:
     """Version the image by its data so changed counts get a new cache URL."""
     from hashlib import sha256
 
-    version = sha256(json.dumps({"design": "overview-v2-complete", "year_total": data["year_total"], "days": [d.isoformat() for d in data["days"]],
+    version = sha256(json.dumps({"design": "overview-v3-matte", "year_total": data["year_total"], "days": [d.isoformat() for d in data["days"]],
                                  "counts": data["counts"],
                                  "week_average": data["week_average"]}, sort_keys=True).encode()).hexdigest()[:12]
     return '\n'.join([
