@@ -50,10 +50,9 @@ class DashboardTests(unittest.TestCase):
         output = render_svg(result, datetime(2026, 11, 10, 17, tzinfo=timezone.utc))
         root = ElementTree.fromstring(output)
         self.assertTrue(root.tag.endswith("svg"))
-        self.assertIn("Contribuições diárias", output)
+        self.assertIn("Ritmo de contribuições", output)
         self.assertIn("Últimos 14 dias", output)
         self.assertIn("10/11", output)
-        self.assertIn("2012", output.replace(".", ""))
         self.assertIn(">13</text>", output)
         self.assertIn("Média (7 dias): 10,0", output)
 
@@ -71,7 +70,7 @@ class DashboardTests(unittest.TestCase):
         self.assertIn("| 28/10/2026 | 0 |", output)
         self.assertLess(output.index("| 10/11/2026"), output.index("| 28/10/2026"))
         self.assertIn("5 minutos", output)
-        for forbidden in ("<img", "<svg", "<script", "<iframe"):
+        for forbidden in ("<svg", "<script", "<iframe", "```mermaid"):
             self.assertNotIn(forbidden, output)
 
     def test_refresh_does_not_change_unchanged_counts_during_same_day(self):
@@ -82,26 +81,34 @@ class DashboardTests(unittest.TestCase):
 
     def test_chart_keeps_all_dates_and_values_in_chronological_order(self):
         data = metrics(fake_calendar(), TODAY)
-        chart = render_chart(data)
-        self.assertIn('"28/10", "29/10"', chart)
-        self.assertIn('"09/11", "10/11"', chart)
-        self.assertIn("bar [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]", chart)
-        self.assertIn("line [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]", chart)
-        self.assertIn('y-axis "Contribuições" 0 --> 20', chart)
+        root = ElementTree.fromstring(render_svg(data, datetime(2026, 11, 10, tzinfo=timezone.utc)))
+        bars = [e for e in root.iter() if "data-date" in e.attrib]
+        self.assertEqual([e.attrib["data-date"] for e in bars], [d.isoformat() for d in data["days"]])
+        self.assertEqual([int(e.attrib["data-count"]) for e in bars], list(range(14)))
+        self.assertNotIn("<script", ElementTree.tostring(root, encoding="unicode"))
 
     def test_chart_does_not_clip_peaks_or_create_a_degenerate_zero_axis(self):
         calendar = fake_calendar()
         for day in calendar["weeks"][0]["contributionDays"]:
             day["contributionCount"] = 0
-        self.assertIn('0 --> 1', render_chart(metrics(calendar, TODAY)))
-        calendar["weeks"][0]["contributionDays"][-1]["contributionCount"] = 553
-        self.assertIn('0 --> 600', render_chart(metrics(calendar, TODAY)))
+        for peak in (0, 553, 10000):
+            calendar["weeks"][0]["contributionDays"][-1]["contributionCount"] = peak
+            svg = render_svg(metrics(calendar, TODAY), datetime(2026, 11, 10, tzinfo=timezone.utc))
+            root = ElementTree.fromstring(svg)
+            for e in root.iter():
+                if e.tag.endswith("rect") and "url(#" in e.attrib.get("fill", ""):
+                    self.assertGreaterEqual(float(e.attrib["y"]), 102)
+                    self.assertLessEqual(float(e.attrib["y"]) + float(e.attrib["height"]), 300.02)
 
-    def test_chart_is_outside_the_collapsed_daily_table(self):
-        output = render_markdown(metrics(fake_calendar(), TODAY),
-                                 datetime(2026, 11, 10, 17, tzinfo=timezone.utc))
-        self.assertLess(output.index("```mermaid"), output.index("<details>"))
-        self.assertEqual(output.count("```mermaid"), 1)
+    def test_chart_is_outside_the_collapsed_daily_table_and_cache_tracks_data(self):
+        data = metrics(fake_calendar(), TODAY)
+        output = render_markdown(data, datetime(2026, 11, 10, 17, tzinfo=timezone.utc))
+        self.assertLess(output.index("<img"), output.index("<details>"))
+        self.assertNotIn("```mermaid", output)
+        chart = render_chart(data)
+        self.assertEqual(chart, render_chart(data))
+        data["counts"][-1] += 1
+        self.assertNotEqual(chart, render_chart(data))
 
     def test_replacement_preserves_everything_outside_the_panel(self):
         prefix = "# João Júnior\n\nTecnologias e projetos aprovados.\n\n"
@@ -127,6 +134,23 @@ class DashboardTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     main()
             self.assertEqual(readme.read_text(encoding="utf-8"), original)
+
+    def test_main_updates_both_chart_and_readme_and_leaves_unchanged_files_alone(self):
+        with TemporaryDirectory() as directory:
+            readme = Path(directory) / "README.md"
+            chart = Path(directory) / "assets/chart.svg"
+            readme.write_text("perfil\n" + START + "\nanterior\n" + END)
+            with patch("scripts.render_daily_contributions.README", readme), \
+                 patch("scripts.render_daily_contributions.CHART", chart), \
+                 patch("scripts.render_daily_contributions.fetch_calendar", return_value=fake_calendar()), \
+                 patch("scripts.render_daily_contributions.datetime") as clock:
+                clock.now.return_value = datetime(2026, 11, 10, 17, tzinfo=timezone.utc)
+                main()
+                self.assertTrue(chart.exists())
+                self.assertIn("<img", readme.read_text())
+                before = (readme.stat().st_mtime_ns, chart.stat().st_mtime_ns)
+                main()
+                self.assertEqual(before, (readme.stat().st_mtime_ns, chart.stat().st_mtime_ns))
 
 
 if __name__ == "__main__":

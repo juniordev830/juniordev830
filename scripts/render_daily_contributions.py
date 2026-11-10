@@ -16,6 +16,7 @@ from zoneinfo import ZoneInfo
 
 LOGIN = "juniordev830"
 README = Path("README.md")
+CHART = Path("assets/contribuicoes-diarias.svg")
 START = "<!-- CONTRIBUTIONS:START -->"
 END = "<!-- CONTRIBUTIONS:END -->"
 TZ = ZoneInfo("America/Fortaleza")
@@ -93,106 +94,75 @@ def metrics(calendar: dict, today: date) -> dict:
 
 
 def render_svg(data: dict, generated_at: datetime) -> str:
-    days = data["days"]
-    counts = data["counts"]
-    maximum = max(1, *counts)
-    bg, panel, border = "#10181d", "#192329", "#354148"
-    text, secondary, green = "#edf2f3", "#aebbc1", "#79be92"
+    """Render a script-free chart styled to match the interactive dashboard."""
+    from html import escape
+
+    counts, days = data["counts"], data["days"]
+    maximum = max(100, *counts)
+    step = 10 ** (len(str(maximum)) - 1)
+    ceiling = ((maximum + step - 1) // step) * step
+    left, right, top, bottom = 66, 908, 102, 300
+    height = bottom - top
     parts = [
-        '<svg xmlns="http://www.w3.org/2000/svg" width="940" height="470" '
-        'viewBox="0 0 940 470" role="img" aria-label="Contribuições diárias no GitHub">',
-        '<rect width="940" height="470" rx="18" fill="' + bg + '"/>',
-        '<rect x="1" y="1" width="938" height="468" rx="17" fill="none" stroke="' + border + '"/>',
-        '<text x="30" y="44" font-family="Arial, sans-serif" font-size="23" '
-        'font-weight="700" fill="' + text + '">Contribuições diárias</text>',
-        '<text x="30" y="67" font-family="Arial, sans-serif" font-size="13" '
-        'fill="' + secondary + '">Últimos 14 dias · dados do GitHub</text>',
+        '<svg xmlns="http://www.w3.org/2000/svg" width="940" height="390" viewBox="0 0 940 390" role="img" aria-labelledby="title desc">',
+        '<title id="title">Contribuições — últimos 14 dias</title>',
+        '<desc id="desc">Barras com contagens reais do GitHub. A linha pontilhada marca a meta de 100 contribuições por dia.</desc>',
+        '<defs><linearGradient id="blue" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#4d95ff"/><stop offset="1" stop-color="#275cc1"/></linearGradient><linearGradient id="teal" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#42d7bc"/><stop offset="1" stop-color="#209780"/></linearGradient></defs>',
+        '<rect x="1" y="1" width="938" height="388" rx="18" fill="#0f192b" stroke="#25344c"/>',
+        '<g font-family="Arial, Helvetica, sans-serif">',
+        '<text x="28" y="36" fill="#edf2fa" font-size="19" font-weight="700">Ritmo de contribuições</text>',
+        f'<text x="28" y="59" fill="#91a1ba" font-size="12">Últimos 14 dias · {days[0]:%d/%m} a {days[-1]:%d/%m/%Y}</text>',
+        '<rect x="752" y="23" width="160" height="29" rx="14" fill="#132d30" stroke="#20574c"/>',
+        '<circle cx="769" cy="37" r="3" fill="#40d7b1"/><text x="782" y="41" fill="#71dfc5" font-size="11">Dados reais do GitHub</text>',
+        '<rect x="28" y="78" width="7" height="7" rx="2" fill="#4d95ff"/><text x="41" y="85" fill="#91a1ba" font-size="11">Contribuições</text>',
+        '<line x1="145" x2="162" y1="82" y2="82" stroke="#e6b64c" stroke-dasharray="4 3"/><text x="168" y="85" fill="#91a1ba" font-size="11">Meta diária: 100</text>',
     ]
-
-    cards = [
-        ("Hoje", data["today"]),
-        ("Ontem", data["yesterday"]),
-        ("Últimos 7 dias", data["week_total"]),
-        ("Últimos 12 meses", data["year_total"]),
-    ]
-    for i, (label, number) in enumerate(cards):
-        x = 30 + i * 228
-        parts.append(
-            f'<rect x="{x}" y="87" width="200" height="75" rx="12" '
-            f'fill="{panel}" stroke="{border}"/>'
-        )
-        parts.append(
-            f'<text x="{x+16}" y="111" font-family="Arial, sans-serif" '
-            f'font-size="13" fill="{secondary}">{label}</text>'
-        )
-        formatted_number = f"{number:,}".replace(",", ".")
-        parts.append(
-            f'<text x="{x+16}" y="143" font-family="Arial, sans-serif" '
-            f'font-weight="700" font-size="27" '
-            f'fill="{green if i == 0 else text}">{formatted_number}</text>'
-        )
-
-    chart_bottom, chart_top = 384, 210
-    for fraction in (0, .5, 1):
-        y = chart_bottom - fraction * (chart_bottom - chart_top)
-        parts.append(
-            f'<line x1="30" x2="908" y1="{y:.1f}" y2="{y:.1f}" '
-            f'stroke="{border}" stroke-width="1" opacity=".7"/>'
-        )
+    for fraction in (0, .25, .5, .75, 1):
+        y = bottom - fraction * height
+        parts.append(f'<line x1="{left}" x2="{right}" y1="{y:.2f}" y2="{y:.2f}" stroke="#2a3850" stroke-dasharray="3 5" opacity=".7"/>')
+        parts.append(f'<text x="52" y="{y+4:.2f}" text-anchor="end" fill="#7e90ab" font-size="11">{ceiling*fraction:g}</text>')
+    goal_y = bottom - 100 / ceiling * height
+    parts.append(f'<line x1="{left}" x2="{right}" y1="{goal_y:.2f}" y2="{goal_y:.2f}" stroke="#e6b64c" stroke-dasharray="5 5" opacity=".8"/>')
+    slot = (right - left) / len(counts)
     for i, (day, count) in enumerate(zip(days, counts)):
-        x = 40 + i * 62
-        height = round(count / maximum * 134, 1)
-        y = chart_bottom - height
-        is_today = i == 13
-        fill = "#8bce9e" if is_today else "#427d60"
-        if height:
-            parts.append(
-                f'<rect x="{x}" y="{y:.1f}" width="36" height="{height:.1f}" '
-                f'rx="5" fill="{fill}"/>'
-            )
-        parts.append(
-            f'<text x="{x + 18}" y="{max(chart_top, y - 10):.1f}" '
-            f'text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" '
-            f'font-size="14" fill="{text}">{count}</text>'
-        )
-        parts.append(
-            f'<text x="{x + 18}" y="404" text-anchor="middle" '
-            f'font-family="Arial, sans-serif" font-size="12" '
-            f'fill="{green if is_today else secondary}">{day:%d/%m}</text>'
-        )
-    avg = f'{data["week_average"]:.1f}'.replace(".", ",")
-    updated = generated_at.astimezone(TZ).strftime("%d/%m/%Y")
+        x = left + slot * i + slot / 2
+        bar_height = count / ceiling * height
+        y = bottom - bar_height
+        fill = 'teal' if i == len(counts) - 1 else 'blue'
+        parts.append(f'<g data-date="{day.isoformat()}" data-count="{count}"><title>{day:%d/%m/%Y}: {count} contribuições</title>')
+        if count:
+            parts.append(f'<rect x="{x-17:.2f}" y="{y:.2f}" width="34" height="{bar_height:.2f}" rx="4" fill="url(#{fill})"/>')
+        parts.append(f'<text x="{x:.2f}" y="{y-9:.2f}" text-anchor="middle" fill="#dce8fb" font-size="11" font-weight="700">{count}</text>')
+        parts.append(f'<text x="{x:.2f}" y="323" text-anchor="middle" fill="{"#60d9bd" if fill == "teal" else "#91a1ba"}" font-size="10">{day:%d/%m}</text></g>')
+    average = f'{data["week_average"]:.1f}'.replace('.', ',')
+    updated = generated_at.astimezone(TZ).strftime('%d/%m/%Y')
     parts.extend([
-        f'<text x="30" y="438" font-family="Arial, sans-serif" font-size="13" '
-        f'fill="{secondary}">Média (7 dias): {avg} por dia</text>',
-        f'<text x="908" y="438" text-anchor="end" font-family="Arial, sans-serif" '
-        f'font-size="12" fill="{secondary}">Dados de {updated} (RN)</text>',
-        '</svg>',
+        '<line x1="28" x2="912" y1="343" y2="343" stroke="#25344c"/>',
+        f'<text x="28" y="369" fill="#91a1ba" font-size="12">Média (7 dias): {average} por dia</text>',
+        f'<text x="912" y="369" text-anchor="end" fill="#91a1ba" font-size="11">Dados de {escape(updated)} (RN)</text>',
+        '</g></svg>',
     ])
-    return "\n".join(parts) + "\n"
+    return '\n'.join(parts) + '\n'
 
 
 def render_chart(data: dict) -> str:
-    """Use GitHub's native Mermaid renderer, with every observed day intact."""
-    maximum = max(1, *data["counts"])
-    step = 10 ** (len(str(maximum)) - 1)
-    ceiling = ((maximum + step - 1) // step) * step
-    labels = json.dumps([day.strftime("%d/%m") for day in data["days"]])
-    values = json.dumps(data["counts"])
-    return "\n".join([
-        "```mermaid",
-        "xychart-beta",
-        '    title "Contribuições — últimos 14 dias"',
-        f"    x-axis {labels}",
-        f'    y-axis "Contribuições" 0 --> {ceiling}',
-        f"    bar {values}",
-        f"    line {values}",
-        "```",
+    """Version the image by its data so changed counts get a new cache URL."""
+    from hashlib import sha256
+
+    version = sha256(json.dumps({"days": [d.isoformat() for d in data["days"]],
+                                 "counts": data["counts"],
+                                 "week_average": data["week_average"]}, sort_keys=True).encode()).hexdigest()[:12]
+    return '\n'.join([
+        '<p align="center">',
+        '<a href="https://joao-github-dashboard.joaosilva42333.chatgpt.site">',
+        f'<img src="https://raw.githubusercontent.com/{LOGIN}/{LOGIN}/main/assets/contribuicoes-diarias.svg?v={version}" width="940" alt="Contribuições dos últimos 14 dias: barras azuis, destaque verde no dia mais recente e meta diária de 100."/>',
+        '</a>',
+        '</p>',
     ])
 
 
 def render_markdown(data: dict, generated_at: datetime) -> str:
-    """Render native numbers, a chart and expandable history without image assets."""
+    """Render native numbers, a styled vector chart and expandable history."""
     labels = ("Hoje", "Ontem", "Últimos 7 dias", "Últimos 12 meses")
     numbers = (data["today"], data["yesterday"], data["week_total"], data["year_total"])
     headers = "".join(f"<th>{label}</th>" for label in labels)
@@ -246,9 +216,14 @@ def update_readme(document: str, panel: str) -> str:
 def main() -> None:
     calendar = fetch_calendar(os.environ.get("GITHUB_TOKEN", ""))
     now = datetime.now(TZ)
-    panel = render_markdown(metrics(calendar, now.date()), now)
+    data = metrics(calendar, now.date())
+    panel = render_markdown(data, now)
+    chart = render_svg(data, now)
     original = README.read_text(encoding="utf-8")
     updated = update_readme(original, panel)
+    if not CHART.exists() or CHART.read_text(encoding="utf-8") != chart:
+        CHART.parent.mkdir(parents=True, exist_ok=True)
+        CHART.write_text(chart, encoding="utf-8")
     if updated != original:
         README.write_text(updated, encoding="utf-8")
         print(f"Painel atualizado: {README}")
