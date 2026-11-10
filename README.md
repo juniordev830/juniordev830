@@ -62,17 +62,17 @@
 
 <table align="center">
 <thead><tr><th>Hoje</th><th>Ontem</th><th>Últimos 7 dias</th><th>Últimos 12 meses</th></tr></thead>
-<tbody><tr><td align="center"><strong>100</strong></td><td align="center"><strong>111</strong></td><td align="center"><strong>804</strong></td><td align="center"><strong>2.178</strong></td></tr></tbody>
+<tbody><tr><td align="center"><strong>103</strong></td><td align="center"><strong>111</strong></td><td align="center"><strong>807</strong></td><td align="center"><strong>2.181</strong></td></tr></tbody>
 </table>
 
-<p align="center">Média dos últimos 7 dias: <strong>114,9</strong> contribuições por dia.</p>
+<p align="center">Média dos últimos 7 dias: <strong>115,3</strong> contribuições por dia.</p>
 
 <details>
 <summary>Ver contribuições por dia — últimos 14 dias</summary>
 
 | Data (RN) | Contribuições |
 | :--- | ---: |
-| 10/11/2026 | 100 |
+| 10/11/2026 | 103 |
 | 09/11/2026 | 111 |
 | 08/11/2026 | 142 |
 | 07/11/2026 | 91 |
