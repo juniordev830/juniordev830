@@ -62,18 +62,18 @@
 
 <table align="center">
 <thead><tr><th>Hoje</th><th>Ontem</th><th>Últimos 7 dias</th><th>Últimos 12 meses</th></tr></thead>
-<tbody><tr><td align="center"><strong>103</strong></td><td align="center"><strong>111</strong></td><td align="center"><strong>807</strong></td><td align="center"><strong>2.181</strong></td></tr></tbody>
+<tbody><tr><td align="center"><strong>106</strong></td><td align="center"><strong>111</strong></td><td align="center"><strong>810</strong></td><td align="center"><strong>2.184</strong></td></tr></tbody>
 </table>
 
-<p align="center">Média dos últimos 7 dias: <strong>115,3</strong> contribuições por dia.</p>
+<p align="center">Média dos últimos 7 dias: <strong>115,7</strong> contribuições por dia.</p>
 
 ```mermaid
 xychart-beta
     title "Contribuições — últimos 14 dias"
     x-axis ["28/10", "29/10", "30/10", "31/10", "01/11", "02/11", "03/11", "04/11", "05/11", "06/11", "07/11", "08/11", "09/11", "10/11"]
     y-axis "Contribuições" 0 --> 600
-    bar [3, 1, 5, 2, 428, 553, 227, 80, 166, 114, 91, 142, 111, 103]
-    line [3, 1, 5, 2, 428, 553, 227, 80, 166, 114, 91, 142, 111, 103]
+    bar [3, 1, 5, 2, 428, 553, 227, 80, 166, 114, 91, 142, 111, 106]
+    line [3, 1, 5, 2, 428, 553, 227, 80, 166, 114, 91, 142, 111, 106]
 ```
 
 <details>
@@ -81,7 +81,7 @@ xychart-beta
 
 | Data (RN) | Contribuições |
 | :--- | ---: |
-| 10/11/2026 | 103 |
+| 10/11/2026 | 106 |
 | 09/11/2026 | 111 |
 | 08/11/2026 | 142 |
 | 07/11/2026 | 91 |
