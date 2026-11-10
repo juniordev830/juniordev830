@@ -69,7 +69,7 @@
 
 <p align="center">
 <a href="https://joao-github-dashboard.joaosilva42333.chatgpt.site">
-<img src="https://raw.githubusercontent.com/juniordev830/juniordev830/main/assets/contribuicoes-diarias.svg?v=8f193b843e28" width="940" alt="Contribuições dos últimos 14 dias: barras azuis, destaque verde no dia mais recente e meta diária de 100."/>
+<img src="https://raw.githubusercontent.com/juniordev830/juniordev830/main/assets/contribuicoes-diarias.svg?v=d8b7a6103589" width="1040" alt="Visão geral GitHub: quatro indicadores, comparação semanal, histórico diário, gráficos de rosca e cinco dias mais ativos."/>
 </a>
 </p>
 
