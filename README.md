@@ -102,6 +102,11 @@ xychart-beta
 
 <!-- CONTRIBUTIONS:END -->
 
+<p align="center">
+  <a href="https://joao-github-dashboard.joaosilva42333.chatgpt.site"><strong>📊 Abrir painel interativo completo ↗</strong></a><br>
+  <sub>Gráficos, filtros e exportação CSV · acesso pessoal com a conta ChatGPT do proprietário.</sub>
+</p>
+
 <div align="center">
   <h3>Explore meu trabalho</h3>
   <p>
