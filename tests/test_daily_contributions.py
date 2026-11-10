@@ -7,7 +7,7 @@ from unittest.mock import patch
 from xml.etree import ElementTree
 
 from scripts.render_daily_contributions import (
-    START, END, metrics, render_svg, render_chart, render_markdown, update_readme, fetch_calendar, main,
+    START, END, metrics, period_insights, render_svg, render_chart, render_markdown, update_readme, fetch_calendar, main,
 )
 
 
@@ -26,6 +26,40 @@ def fake_calendar(length=14):
 
 
 class DashboardTests(unittest.TestCase):
+    def test_period_insights_preserve_totals_and_group_actual_weekdays(self):
+        data = metrics(fake_calendar(), TODAY)
+        result = period_insights(data)
+        self.assertEqual(result['total'], 91)
+        self.assertEqual(result['average'], 6.5)
+        self.assertEqual(result['active_days'], 13)
+        self.assertEqual(result['streak'], 13)
+        self.assertEqual(result['peak_count'], 13)
+        self.assertEqual(result['peak_day'], TODAY)
+        self.assertEqual(result['weekdays'], [17,19,7,9,11,13,15])
+        self.assertEqual(result['cumulative'][-1], 91)
+        self.assertAlmostEqual(result['week_delta_percent'], 100 * (70-21) / 21)
+
+    def test_empty_activity_and_streak_are_limited_to_observed_window(self):
+        data = metrics(fake_calendar(), TODAY)
+        data['counts'] = [0]*14
+        result = period_insights(data)
+        self.assertEqual(result['streak'], 0)
+        self.assertEqual(result['total'], 0)
+        self.assertIsNone(result['week_delta_percent'])
+        data['counts'] = [1]*14
+        self.assertEqual(period_insights(data)['streak'], 14)
+        data['counts'][-3] = 0
+        self.assertEqual(period_insights(data)['streak'], 2)
+
+    def test_complete_dashboard_heatmap_and_accumulation_keep_source_values(self):
+        data = metrics(fake_calendar(), TODAY)
+        root = ElementTree.fromstring(render_svg(data, datetime(2026,11,10,tzinfo=timezone.utc)))
+        cells = [e for e in root.iter() if 'data-heat-date' in e.attrib]
+        self.assertEqual([int(e.attrib['data-heat-count']) for e in cells], data['counts'])
+        self.assertEqual([e.attrib['data-heat-date'] for e in cells], [d.isoformat() for d in data['days']])
+        cumulative = [int(e.attrib['data-cumulative']) for e in root.iter() if 'data-cumulative' in e.attrib]
+        self.assertEqual(cumulative, [sum(range(i+1)) for i in range(14)])
+
     def test_exact_daily_counts_and_week_summary(self):
         result = metrics(fake_calendar(), TODAY)
         self.assertEqual(result["counts"], list(range(14)))
@@ -69,7 +103,7 @@ class DashboardTests(unittest.TestCase):
         data['counts'] = [0] * 14
         output = render_svg(data, datetime(2026, 11, 10, tzinfo=timezone.utc))
         self.assertNotIn('NaN', output)
-        self.assertNotIn('inf', output)
+        self.assertNotRegex(output, r'(?i)\b(?:nan|inf)\b')
 
     def test_chart_cache_changes_when_annual_total_changes(self):
         data = metrics(fake_calendar(), TODAY)
