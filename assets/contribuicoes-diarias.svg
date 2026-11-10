@@ -5,16 +5,16 @@
 <text x="30" y="67" font-family="Arial, sans-serif" font-size="13" fill="#aebbc1">Últimos 14 dias · dados do GitHub</text>
 <rect x="30" y="87" width="200" height="75" rx="12" fill="#192329" stroke="#354148"/>
 <text x="46" y="111" font-family="Arial, sans-serif" font-size="13" fill="#aebbc1">Hoje</text>
-<text x="46" y="143" font-family="Arial, sans-serif" font-weight="700" font-size="27" fill="#79be92">17</text>
+<text x="46" y="143" font-family="Arial, sans-serif" font-weight="700" font-size="27" fill="#79be92">19</text>
 <rect x="258" y="87" width="200" height="75" rx="12" fill="#192329" stroke="#354148"/>
 <text x="274" y="111" font-family="Arial, sans-serif" font-size="13" fill="#aebbc1">Ontem</text>
 <text x="274" y="143" font-family="Arial, sans-serif" font-weight="700" font-size="27" fill="#edf2f3">85</text>
 <rect x="486" y="87" width="200" height="75" rx="12" fill="#192329" stroke="#354148"/>
 <text x="502" y="111" font-family="Arial, sans-serif" font-size="13" fill="#aebbc1">Últimos 7 dias</text>
-<text x="502" y="143" font-family="Arial, sans-serif" font-weight="700" font-size="27" fill="#edf2f3">638</text>
+<text x="502" y="143" font-family="Arial, sans-serif" font-weight="700" font-size="27" fill="#edf2f3">640</text>
 <rect x="714" y="87" width="200" height="75" rx="12" fill="#192329" stroke="#354148"/>
 <text x="730" y="111" font-family="Arial, sans-serif" font-size="13" fill="#aebbc1">Últimos 12 meses</text>
-<text x="730" y="143" font-family="Arial, sans-serif" font-weight="700" font-size="27" fill="#edf2f3">2.012</text>
+<text x="730" y="143" font-family="Arial, sans-serif" font-weight="700" font-size="27" fill="#edf2f3">2.014</text>
 <line x1="30" x2="908" y1="384.0" y2="384.0" stroke="#354148" stroke-width="1" opacity=".7"/>
 <line x1="30" x2="908" y1="297.0" y2="297.0" stroke="#354148" stroke-width="1" opacity=".7"/>
 <line x1="30" x2="908" y1="210.0" y2="210.0" stroke="#354148" stroke-width="1" opacity=".7"/>
@@ -57,9 +57,9 @@
 <rect x="784" y="363.4" width="36" height="20.6" rx="5" fill="#427d60"/>
 <text x="802" y="353.4" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="14" fill="#edf2f3">85</text>
 <text x="802" y="404" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#aebbc1">09/11</text>
-<rect x="846" y="379.9" width="36" height="4.1" rx="5" fill="#8bce9e"/>
-<text x="864" y="369.9" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="14" fill="#edf2f3">17</text>
+<rect x="846" y="379.4" width="36" height="4.6" rx="5" fill="#8bce9e"/>
+<text x="864" y="369.4" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="14" fill="#edf2f3">19</text>
 <text x="864" y="404" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#79be92">10/11</text>
-<text x="30" y="438" font-family="Arial, sans-serif" font-size="13" fill="#aebbc1">Média (7 dias): 91,1 por dia</text>
+<text x="30" y="438" font-family="Arial, sans-serif" font-size="13" fill="#aebbc1">Média (7 dias): 91,4 por dia</text>
 <text x="908" y="438" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#aebbc1">Dados de 10/11/2026 (RN)</text>
 </svg>
