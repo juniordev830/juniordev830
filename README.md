@@ -62,14 +62,14 @@
 
 <table align="center">
 <thead><tr><th>Hoje</th><th>Ontem</th><th>Últimos 7 dias</th><th>Últimos 12 meses</th></tr></thead>
-<tbody><tr><td align="center"><strong>108</strong></td><td align="center"><strong>111</strong></td><td align="center"><strong>812</strong></td><td align="center"><strong>2.186</strong></td></tr></tbody>
+<tbody><tr><td align="center"><strong>110</strong></td><td align="center"><strong>111</strong></td><td align="center"><strong>814</strong></td><td align="center"><strong>2.188</strong></td></tr></tbody>
 </table>
 
-<p align="center">Média dos últimos 7 dias: <strong>116,0</strong> contribuições por dia.</p>
+<p align="center">Média dos últimos 7 dias: <strong>116,3</strong> contribuições por dia.</p>
 
 <p align="center">
 <a href="https://joao-github-dashboard.joaosilva42333.chatgpt.site">
-<img src="https://raw.githubusercontent.com/juniordev830/juniordev830/main/assets/contribuicoes-diarias.svg?v=ac32070dfb49" width="940" alt="Contribuições dos últimos 14 dias: barras azuis, destaque verde no dia mais recente e meta diária de 100."/>
+<img src="https://raw.githubusercontent.com/juniordev830/juniordev830/main/assets/contribuicoes-diarias.svg?v=8f193b843e28" width="940" alt="Contribuições dos últimos 14 dias: barras azuis, destaque verde no dia mais recente e meta diária de 100."/>
 </a>
 </p>
 
@@ -78,7 +78,7 @@
 
 | Data (RN) | Contribuições |
 | :--- | ---: |
-| 10/11/2026 | 108 |
+| 10/11/2026 | 110 |
 | 09/11/2026 | 111 |
 | 08/11/2026 | 142 |
 | 07/11/2026 | 91 |
