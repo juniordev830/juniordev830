@@ -123,206 +123,170 @@ def period_insights(data: dict) -> dict:
 
 
 def render_svg(data: dict, generated_at: datetime) -> str:
-    """Render an accessible README dashboard with only observed calendar data."""
+    """Render a spacious, script-free analytics board for a GitHub README."""
     from html import escape
     from math import pi
 
-    counts, days = data["counts"], data["days"]
+    counts, days = data['counts'], data['days']
+    insight = period_insights(data)
     previous, recent = sum(counts[:7]), sum(counts[7:])
     total = previous + recent
     achieved = sum(n >= 100 for n in counts)
-    insights = period_insights(data)
-    fmt = lambda n: f"{n:,}".replace(",", ".")
+    fmt = lambda n: f'{n:,}'.replace(',', '.')
+    blue, mint, muted, white = '#79aaff', '#70dfbe', '#93a4bc', '#edf3ff'
     parts = [
-        '<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="936" viewBox="0 0 1040 936" role="img" aria-labelledby="title desc">',
-        '<title id="title">Visão geral — contribuições no GitHub</title>',
-        '<desc id="desc">Indicadores, comparação entre semanas, histórico diário, distribuição das contribuições, ranking dos dias mais ativos, evolução acumulada, atividade por dia da semana e mapa de intensidade. Dados reais dos últimos 14 dias; meta diária de 100. A sequência informada é limitada à janela observada.</desc>',
-        '<defs>',
+        '<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="1148" viewBox="0 0 1040 1148" role="img" aria-labelledby="title desc">',
+        '<title id="title">Visão geral — seu código em movimento</title>',
+        '<desc id="desc">Painel com dez indicadores, contribuições diárias, distribuição semanal, dias na meta, evolução acumulada, ranking, atividade por dia da semana e mapa de intensidade. Dados reais dos últimos 14 dias; sequência limitada à janela observada; meta diária de 100.</desc>',
+        '<defs><linearGradient id="hero" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#172c42"/><stop offset="1" stop-color="#111c2b"/></linearGradient><linearGradient id="bar" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#80afff"/><stop offset="1" stop-color="#466ed0"/></linearGradient><linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#68b8d4" stop-opacity=".3"/><stop offset="1" stop-color="#68b8d4" stop-opacity="0"/></linearGradient></defs>',
+        '<rect x="1" y="1" width="1038" height="1146" rx="24" fill="#0b1019" stroke="#233044"/>',
+        '<g font-family="Segoe UI, Arial, Helvetica, sans-serif">',
     ]
-    for name, a, b in [('blue','#182932','#121e26'),('purple','#172a29','#121f23'),('pink','#222735','#141f28'),('orange','#2a2b24','#191f22')]:
-        parts.append(f'<linearGradient id="{name}" x1="0" x2="1" y1="0" y2="1"><stop stop-color="{a}"/><stop offset="1" stop-color="{b}"/></linearGradient>')
-    parts += ['</defs>', '<rect x="1" y="1" width="1038" height="934" rx="22" fill="#0c1217" stroke="#293740"/>',
-              '<path d="M22 1H46V935H22Q1 935 1 914V22Q1 1 22 1" fill="#10191f"/>',
-              '<g font-family="Segoe UI, Arial, Helvetica, sans-serif">']
 
-    def text(x, y, value, size=11, color='#91a4af', weight='400', anchor='start'):
-        parts.append(f'<text x="{x:.2f}" y="{y:.2f}" font-size="{size}" fill="{color}" font-weight="{weight}" text-anchor="{anchor}">{escape(str(value))}</text>')
+    def text(x,y,value,size=11,color=muted,weight='400',anchor='start'):
+        parts.append(f'<text x="{x:.2f}" y="{y:.2f}" fill="{color}" font-size="{size}" font-weight="{weight}" text-anchor="{anchor}">{escape(str(value))}</text>')
 
-    def rect(x, y, w, h, fill, radius=8, **attrs):
-        extra = ''.join(f' {k.replace("_", "-")}="{v}"' for k, v in attrs.items())
+    def rect(x,y,w,h,fill='#111a27',radius=14,**attrs):
+        extra=''.join(f' {k.replace("_","-")}="{v}"' for k,v in attrs.items())
         parts.append(f'<rect x="{x:.2f}" y="{y:.2f}" width="{w:.2f}" height="{h:.2f}" rx="{radius}" fill="{fill}"{extra}/>')
 
-    def panel(x, y, w, h, title, subtitle=None):
-        rect(x,y,w,h,'#141e25',12,stroke='#293b44',stroke_width='.8')
-        text(x+14,y+22,title,12,'#dce7ed','700')
-        if subtitle:
-            text(x+14,y+39,subtitle,9)
+    def panel(x,y,w,h,title,subtitle):
+        rect(x,y,w,h,stroke='#233044',stroke_width='.8')
+        text(x+20,y+29,title,16,white,'700')
+        text(x+20,y+49,subtitle,10)
 
-    def donut(cx, cy, radius, values, colors, center, caption):
-        parts.append(f'<g data-donut-values="{",".join(str(v) for v in values)}">')
-        circumference = 2*pi*radius
-        parts.append(f'<circle cx="{cx}" cy="{cy}" r="{radius}" fill="none" stroke="#263840" stroke-width="15"/>')
-        amount = sum(values)
-        offset = 0
-        if amount:
-            for value, color in zip(values, colors):
-                length = circumference*value/amount
-                if length:
-                    parts.append(f'<circle cx="{cx}" cy="{cy}" r="{radius}" fill="none" stroke="{color}" stroke-width="15" stroke-dasharray="{length:.4f} {circumference-length:.4f}" stroke-dashoffset="{-offset:.4f}" transform="rotate(-90 {cx} {cy})"/>')
-                offset += length
-        text(cx,cy+2,center,21,'#eef5f6','700','middle')
-        text(cx,cy+19,caption,9,'#91a4af','400','middle')
+    def line(x1,y1,x2,y2,color='#253348',dash=None):
+        extra=f' stroke-dasharray="{dash}"' if dash else ''
+        parts.append(f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{color}"{extra}/>')
+
+    def donut(cx,cy,values,color,label,caption):
+        parts.append(f'<g data-donut-values="{",".join(str(n) for n in values)}">')
+        r=40; circumference=2*pi*r
+        parts.append(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="#29384d" stroke-width="10"/>')
+        if sum(values):
+            length=circumference*values[0]/sum(values)
+            parts.append(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="{color}" stroke-width="10" stroke-linecap="butt" stroke-dasharray="{length:.4f} {circumference-length:.4f}" transform="rotate(-90 {cx} {cy})"/>')
+        text(cx,cy+7,label,23,white,'700','middle')
+        text(cx,cy+66,caption,10,muted,anchor='middle')
         parts.append('</g>')
 
-    # Decorative rail, intentionally without controls that cannot run in a README.
-    parts.append('<path d="M12 32L23 21L34 28M14 18L23 28L34 15" fill="none" stroke="#82c5b6" stroke-width="3" stroke-linecap="round"/><path d="M12 32L23 21" stroke="#a5e2ce" stroke-width="3"/>')
-    parts.append('<line x1="10" x2="36" y1="52" y2="52" stroke="#293a42"/>')
-    for y in (97,169,241):
-        rect(15,y,4,12,'#82c5b6',1);rect(22,y-7,4,19,'#54808a',1);rect(29,y-13,4,25,'#82c5b6',1)
-    text(68,34,'VISÃO GERAL',19,'#e7f0f2','700')
-    text(68,53,'JOÃO JÚNIOR  /  ENGENHARIA DE SOFTWARE',9,'#91a4af')
-    text(1010,31,f'{days[0]:%d/%m} — {days[-1]:%d/%m/%Y}',11,'#bdcfd7','700','end')
-    text(1010,49,'Últimos 14 dias · dados reais',9,'#91a4af','400','end')
+    # Editorial header replaces the old ornamental sidebar.
+    rect(32,27,132,25,'#172a34',12)
+    parts.append('<circle cx="46" cy="39" r="3" fill="#70dfbe"/>')
+    text(56,43,'VISÃO GERAL',9,mint,'700')
+    text(1008,42,'@juniordev830',11,white,'600','end')
+    text(32,94,'Seu código em movimento.',32,white,'700')
+    text(32,120,'João Júnior  /  Engenharia de Software',12)
+    text(1008,98,f'{days[0]:%d/%m} — {days[-1]:%d/%m/%Y}',12,white,'600','end')
+    text(1008,120,'Últimos 14 dias · calendário oficial do GitHub',10,anchor='end')
 
-    # Four KPIs use the same calendar source as the text table.
-    cards = [('HOJE',fmt(data['today']),'Contribuições no dia','blue'),
-             ('ÚLTIMOS 7 DIAS',fmt(recent),'Ritmo da semana','purple'),
-             ('ÚLTIMOS 12 MESES',fmt(data['year_total']),'Total do calendário','pink'),
-             ('META DIÁRIA',f"{data['today']}%",'Referência: 100 por dia','orange')]
+    cards=[('CONTRIBUIÇÕES HOJE',fmt(data['today']),'Dia atual em andamento',blue),
+           ('ÚLTIMOS 7 DIAS',fmt(recent),'Contribuições na semana',mint),
+           ('ÚLTIMOS 12 MESES',fmt(data['year_total']),'Total do calendário','#b5a6ee'),
+           ('META DIÁRIA',f"{data['today']}%",'Referência: 100 por dia','#e2c393')]
     for i,(label,value,caption,color) in enumerate(cards):
-        x=68+i*239
-        rect(x,72,225,74,f'url(#{color})',10,stroke='#30424a',stroke_width='.8')
-        accent = ('#8ec6db','#a0d7c3','#b9bedb','#d7c99e')[i]
-        rect(x+13,72,32,2,accent,1)
-        rect(x+13,91,32,32,'#334b54',8,fill_opacity='.45')
-        parts.append(f'<path d="M{x+23} 113L{x+28} 106L{x+32} 109L{x+38} 100" stroke="#b7d6d8" stroke-width="2" fill="none" stroke-linecap="round"/>')
-        text(x+57,91,label,8,'#9bb0bc','700')
-        text(x+57,116,value,24,accent,'700')
-        text(x+57,133,caption,8,'#a4b7c1')
+        x=32+i*248
+        rect(x,148,232,112,'url(#hero)' if i==0 else '#131c29',16,stroke='#2b3c52',stroke_width='.8')
+        text(x+18,174,label,9,muted,'600')
+        text(x+18,216,value,36,color,'700')
+        text(x+18,241,caption,10)
+        rect(x+193,165,20,20,'none',5,stroke=color,stroke_opacity='.45')
+        line(x+198,177,x+198,180,color);line(x+203,173,x+203,180,color);line(x+208,170,x+208,180,color)
 
-    panel(68,162,449,180,'Comparação entre semanas','Mesma posição na semana · contagens por dia')
-    panel(525,162,213,180,'Contribuições por semana')
-    panel(750,162,260,358,'Top 5 dias mais ativos','Ranking dentro dos últimos 14 dias')
-    panel(68,354,449,166,'Histórico de contribuições','Últimos 14 dias · valores absolutos')
-    panel(525,354,213,166,'Consistência da meta')
-    # Grouped bars compare consecutive non-overlapping seven-day windows.
-    ceiling = max(1,*counts)
-    plot_top, plot_bottom = 223,309
-    for fraction in (0,.5,1):
-        y=plot_bottom-fraction*(plot_bottom-plot_top)
-        parts.append(f'<line x1="100" x2="502" y1="{y}" y2="{y}" stroke="#2a3942" stroke-dasharray="2 4"/>')
-        text(94,y+3,round(ceiling*fraction),8,anchor='end')
-    rect(82,210,5,5,'#466d84',2);text(91,215,'7 dias anteriores',8)
-    rect(179,210,5,5,'#81c7b3',2);text(188,215,'Últimos 7 dias',8)
-    for i in range(7):
-        x=104+i*57
-        for j,(count,color) in enumerate(((counts[i],'#466d84'),(counts[i+7],'#81c7b3'))):
-            h=count/ceiling*(plot_bottom-plot_top)
-            if count:
-                rect(x+j*17,plot_bottom-h,15,h,color,1,data_chart_bar='true',data_plot_top=plot_top,data_plot_bottom=plot_bottom)
-        text(x+16,326,f'{days[i+7]:%d/%m}',8,anchor='middle')
-    recent_pct=round(100*recent/total) if total else 0
-    donut(631,253,42,[recent,previous],['#81c7b3','#466d84'],f'{recent_pct}%','na semana atual')
-    text(539,318,f'● Atual: {fmt(recent)}',8,'#91d8c3')
-    text(725,330,f'Anterior: {fmt(previous)}',8,'#a9bdc8',anchor='end')
-
-    # Daily history retains every observation, including zero-valued days.
-    left,right,top,bottom=90,503,405,484
+    panel(32,280,650,270,'Ritmo diário','Contagens reais · valores por dia')
+    panel(700,280,308,270,'Foco & constância','Participação semanal e meta de 100/dia')
+    text(662,310,f'Média: {data["week_average"]:.1f}/dia'.replace('.',','),10,mint,'600','end')
+    maximum=max(100,*counts)
+    step=10**(len(str(maximum))-1)
+    ceiling=((maximum+step-1)//step)*step
+    left,right,top,bottom=78,662,357,497
     for fraction in (0,.5,1):
         y=bottom-fraction*(bottom-top)
-        parts.append(f'<line x1="{left}" x2="{right}" y1="{y}" y2="{y}" stroke="#2a3942" stroke-dasharray="2 4"/>')
+        line(left,y,right,y,dash='2 5')
+        text(left-10,y+3,fmt(round(ceiling*fraction)),9,anchor='end')
+    goal_y=bottom-100/ceiling*(bottom-top)
+    line(left,goal_y,right,goal_y,'#bca279','4 5')
+    text(662,337,'— Meta: 100',9,'#d8bb8d',anchor='end')
+    slot=(right-left)/14
     for i,(day,count) in enumerate(zip(days,counts)):
-        x=left+(i+.5)*(right-left)/14
-        h=count/ceiling*(bottom-top)
+        x=left+(i+.5)*slot; h=count/ceiling*(bottom-top)
         parts.append(f'<g data-date="{day.isoformat()}" data-count="{count}"><title>{day:%d/%m/%Y}: {count} contribuições</title>')
         if count:
-            rect(x-8,bottom-h,16,h,'#9cdec5' if i==13 else '#72a5bd',1,data_chart_bar='true',data_plot_top=top,data_plot_bottom=bottom)
-        text(x,bottom-h-5,count,7,'#e0edf1','700','middle')
-        text(x,503,f'{day:%d}',8,'#94adb9',anchor='middle')
+            rect(x-11,bottom-h,22,h,mint if i==13 else 'url(#bar)',4,data_chart_bar='true',data_plot_top=top,data_plot_bottom=bottom)
+        text(x,bottom-h-7,count,9,white,'600','middle')
+        text(x,520,f'{day:%d/%m}',8,mint if i==13 else muted,anchor='middle')
         parts.append('</g>')
-    achieved_pct=round(100*achieved/len(counts))
-    donut(631,437,35,[achieved,len(counts)-achieved],['#72a5bd','#354f5b'],f'{achieved_pct}%','dos dias na meta')
-    text(539,503,f'≥100: {achieved} dias',8,'#9fc9d8')
-    text(725,503,f'<100: {len(counts)-achieved} dias',8,'#839ba8',anchor='end')
-    # Sorted values are direct calendar observations, not repository estimates.
-    ranking=sorted(zip(days,counts),key=lambda pair:(-pair[1],pair[0]))[:5]
-    max_rank=max(1,*(n for _,n in ranking))
-    for i,(day,count) in enumerate(ranking):
-        y=231+i*55
-        text(764,y+11,f'{day:%d/%m}',10,'#cbdce4','700')
-        rect(809,y-3,183,23,'#25353d',3)
-        if count:
-            rect(809,y-3,max(1,183*count/max_rank),23,'#6e9fb4',3)
-        text(985,y+12,fmt(count),10,'#ffffff','700','end')
-    # Secondary metrics describe only the dates actually present in the source.
-    delta = insights['week_delta_percent']
-    delta_text = f'{delta:+.1f}%'.replace('.', ',') if delta is not None else 'Sem base'
-    detail_cards = [
-        ('TOTAL EM 14 DIAS', fmt(insights['total']), 'Contribuições na janela'),
-        ('MÉDIA EM 14 DIAS', f'{insights["average"]:.1f}'.replace('.', ','), 'Contribuições por dia'),
-        ('MELHOR DIA', fmt(insights['peak_count']), f'{insights["peak_day"]:%d/%m/%Y}'),
-        ('DIAS ATIVOS', f'{insights["active_days"]}/14', 'Dias com contribuições'),
-        ('SEQUÊNCIA ATUAL', f'{insights["streak"]} dias', 'Limitada à janela de 14 dias'),
-        ('VARIAÇÃO SEMANAL', delta_text, 'Últimos 7 vs. 7 anteriores'),
-    ]
-    for i, (label, value, caption) in enumerate(detail_cards):
-        x = 68 + i * 159
-        rect(x, 536, 147, 79, '#121d24', 10, stroke='#263943', stroke_width='.8')
-        rect(x, 547, 3, 20, '#76b5a6', 1)
-        text(x+12, 554, label, 8, '#93abb7', '700')
-        text(x+12, 582, value, 22, '#dcebee', '700')
-        text(x+12, 602, caption, 7)
+    recent_pct=round(100*recent/total) if total else 0
+    donut(777,391,[recent,previous],blue,f'{recent_pct}%','Semana recente')
+    donut(931,391,[achieved,14-achieved],mint,f'{round(100*achieved/14)}%','Dias na meta')
+    text(720,489,f'7 dias: {fmt(recent)}',10,blue,'600')
+    text(720,514,f'Anterior: {fmt(previous)}',10)
+    text(988,489,f'{achieved} de 14 dias',10,mint,'600','end')
+    text(988,514,f'Abaixo: {14-achieved} dias',10,anchor='end')
 
-    panel(68,632,449,248,'Evolução acumulada','Soma progressiva das contribuições nos 14 dias')
-    panel(525,632,213,248,'Por dia da semana','Soma das duas ocorrências na janela')
-    panel(750,632,260,248,'Mapa de intensidade','Cada célula representa um dia real')
-    # Area chart starts from an explicit zero baseline; its final value equals total.
-    left, right, top, bottom = 111, 498, 695, 828
-    scale = max(1, insights['total'])
+    # The ten metrics remain available, now with a clearer visual hierarchy.
+    delta=insight['week_delta_percent']
+    details=[('TOTAL EM 14 DIAS',fmt(total),'Contribuições'),
+             ('MÉDIA EM 14 DIAS',f'{insight["average"]:.1f}'.replace('.',','),'Por dia'),
+             ('MELHOR DIA',fmt(insight['peak_count']),f'{insight["peak_day"]:%d/%m/%Y}'),
+             ('DIAS ATIVOS',f'{insight["active_days"]}/14','Na janela observada'),
+             ('SEQUÊNCIA ATUAL',f'{insight["streak"]} dias','Limitada aos 14 dias'),
+             ('VARIAÇÃO SEMANAL',f'{delta:+.1f}%'.replace('.',',') if delta is not None else 'Sem base','Últimos 7 vs. anteriores')]
+    for i,(label,value,caption) in enumerate(details):
+        x=32+i*164
+        rect(x,570,156,86,'#101925',12,stroke='#1e2e42',stroke_width='.8')
+        text(x+13,591,label,8,muted,'600')
+        text(x+13,620,value,25,white,'700')
+        text(x+13,642,caption,8)
+
+    panel(32,676,478,200,'Evolução acumulada','Soma progressiva das contribuições na janela')
+    panel(526,676,482,200,'Dias de maior atividade','Top 5 dentro dos últimos 14 dias')
+    left,right,top,bottom=78,490,743,829
+    scale=max(1,total)
     for fraction in (0,.5,1):
-        y = bottom - fraction * (bottom-top)
-        parts.append(f'<line x1="{left}" x2="{right}" y1="{y}" y2="{y}" stroke="#2a3942" stroke-dasharray="2 4"/>')
+        y=bottom-fraction*(bottom-top);line(left,y,right,y,dash='2 5')
         text(left-8,y+3,fmt(round(scale*fraction)),8,anchor='end')
-    points = [(left+i*(right-left)/13, bottom-value/scale*(bottom-top))
-              for i,value in enumerate(insights['cumulative'])]
-    polyline = ' '.join(f'{x:.2f},{y:.2f}' for x,y in points)
-    parts.append(f'<polygon points="{left},{bottom} {polyline} {right},{bottom}" fill="#4c8290" fill-opacity=".23"/>')
-    parts.append(f'<polyline points="{polyline}" fill="none" stroke="#8ac6c5" stroke-width="3" stroke-linejoin="round"/>')
-    for i, ((x,y),value) in enumerate(zip(points,insights['cumulative'])):
-        parts.append(f'<circle cx="{x:.2f}" cy="{y:.2f}" r="2.5" fill="#c5e9de" data-cumulative="{value}"/>')
-        if i in (0,6,13):
-            text(x,850,f'{days[i]:%d/%m}',8,anchor='middle')
-    text(498,865,f'Total: {fmt(insights["total"])}',9,'#a1cfc9','700','end')
+    points=[(left+i*(right-left)/13,bottom-n/scale*(bottom-top)) for i,n in enumerate(insight['cumulative'])]
+    coords=' '.join(f'{x:.2f},{y:.2f}' for x,y in points)
+    parts.append(f'<polygon points="{left},{bottom} {coords} {right},{bottom}" fill="url(#area)"/>')
+    parts.append(f'<polyline points="{coords}" fill="none" stroke="#8bd2dc" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>')
+    for i,((x,y),n) in enumerate(zip(points,insight['cumulative'])):
+        parts.append(f'<circle cx="{x:.2f}" cy="{y:.2f}" r="2.5" fill="#a5e6e5" data-cumulative="{n}"/>')
+        if i in (0,6,13):text(x,853,f'{days[i]:%d/%m}',9,anchor='middle')
+    ranking=sorted(zip(days,counts),key=lambda p:(-p[1],p[0]))[:5]
+    rank_max=max(1,*(n for _,n in ranking))
+    for i,(day,n) in enumerate(ranking):
+        y=741+i*25
+        text(548,y+11,f'{i+1:02}',9,'#62748f')
+        text(574,y+11,f'{day:%d/%m}',10,white,'600')
+        rect(620,y,315,13,'#233047',5)
+        if n:rect(620,y,315*n/rank_max,13,'#7199d7',5)
+        text(988,y+11,fmt(n),10,white,'600','end')
 
-    # Weekday totals account for date rollover instead of assuming a starting weekday.
-    weekday_names = ('Seg','Ter','Qua','Qui','Sex','Sáb','Dom')
-    weekday_max = max(1,*insights['weekdays'])
-    for i,(name,value) in enumerate(zip(weekday_names,insights['weekdays'])):
-        y = 694 + i*24
-        text(539,y+10,name,9,'#c7d7df')
-        rect(568,y,113,13,'#263842',3)
-        if value:
-            rect(568,y,113*value/weekday_max,13,'#72a5bd',3)
-        text(724,y+11,fmt(value),9,'#dcebee','700','end')
-
-    heat_colors = ('#24343c','#345b5b','#4b8880','#76b4a2','#a9ddc7')
-    max_count = max(1,*counts)
-    for i,(day,count) in enumerate(zip(days,counts)):
-        row,col = divmod(i,7)
-        x,y = 764+col*33,710+row*61
-        level = 0 if not count else min(4,1+int(count/max_count*3))
-        text(x+14,y-8,f'{day:%d/%m}',7,anchor='middle')
-        rect(x,y,28,34,heat_colors[level],5,data_heat_date=day.isoformat(),data_heat_count=count)
-        text(x+14,y+21,count,8,'#ffffff','700','middle')
-    text(764,834,'Menos',8)
-    for i,color in enumerate(heat_colors):
-        rect(803+i*17,824,12,12,color,2)
-    text(997,834,'Mais',8,anchor='end')
-    text(764,859,f'Meta atingida em {achieved} de 14 dias',9,'#a4c9d6')
-
-    parts.append('<line x1="68" x2="1010" y1="895" y2="895" stroke="#273b44"/>')
-    text(68,915,f'Média (7 dias): {data["week_average"]:.1f}'.replace('.',','),9)
-    text(1010,915,f'Dados de {generated_at.astimezone(TZ):%d/%m/%Y} (RN) · dia atual parcial · meta: 100/dia',9,anchor='end')
+    panel(32,892,478,210,'Atividade por dia da semana','Soma das duas ocorrências de cada dia na janela')
+    panel(526,892,482,210,'Mapa de intensidade','Cada célula mostra a data e a contagem observada')
+    left,right,top,bottom=62,490,960,1060
+    weekday_max=max(1,*insight['weekdays'])
+    for fraction in (0,.5,1):line(left,bottom-fraction*(bottom-top),right,bottom-fraction*(bottom-top),dash='2 5')
+    for i,(name,n) in enumerate(zip(('Seg','Ter','Qua','Qui','Sex','Sáb','Dom'),insight['weekdays'])):
+        x=left+(i+.5)*(right-left)/7;h=n/weekday_max*(bottom-top)
+        if n:rect(x-14,bottom-h,28,h,'#7d97d7',4,data_chart_bar='true',data_plot_top=top,data_plot_bottom=bottom)
+        text(x,bottom-h-8,fmt(n),10,white,'600','middle')
+        text(x,1084,name,10,anchor='middle')
+    heat=('#263549','#385967','#468e90','#63b6a7','#9de0c3')
+    heat_max=max(1,*counts)
+    for i,(day,n) in enumerate(zip(days,counts)):
+        row,col=divmod(i,7);x=548+col*62;y=958+row*65
+        text(x+25,y-7,f'{day:%d/%m}',9,anchor='middle')
+        level=0 if n==0 else min(4,1+int(n/heat_max*3))
+        rect(x,y,50,42,heat[level],8,data_heat_date=day.isoformat(),data_heat_count=n)
+        text(x+25,y+27,n,12,'#f0f9f6','600','middle')
+    text(548,1086,'Menos',9)
+    for i,color in enumerate(heat):rect(592+i*19,1076,13,13,color,3)
+    text(701,1086,'Mais',9)
+    line(32,1120,1008,1120)
+    text(32,1138,f'Média (7 dias): {data["week_average"]:.1f}'.replace('.',','),9)
+    text(1008,1138,f'{generated_at.astimezone(TZ):%d/%m/%Y} (RN) · dia atual parcial · consulta programada: 5 min',9,anchor='end')
     parts.append('</g></svg>')
     return '\n'.join(parts)+'\n'
 
@@ -331,7 +295,7 @@ def render_chart(data: dict) -> str:
     """Version the image by its data so changed counts get a new cache URL."""
     from hashlib import sha256
 
-    version = sha256(json.dumps({"design": "overview-v3-matte", "year_total": data["year_total"], "days": [d.isoformat() for d in data["days"]],
+    version = sha256(json.dumps({"design": "overview-v4-modern", "year_total": data["year_total"], "days": [d.isoformat() for d in data["days"]],
                                  "counts": data["counts"],
                                  "week_average": data["week_average"]}, sort_keys=True).encode()).hexdigest()[:12]
     return '\n'.join([
