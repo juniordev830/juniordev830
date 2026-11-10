@@ -5,16 +5,16 @@
 <text x="30" y="67" font-family="Arial, sans-serif" font-size="13" fill="#aebbc1">Últimos 14 dias · dados do GitHub</text>
 <rect x="30" y="87" width="200" height="75" rx="12" fill="#192329" stroke="#354148"/>
 <text x="46" y="111" font-family="Arial, sans-serif" font-size="13" fill="#aebbc1">Hoje</text>
-<text x="46" y="143" font-family="Arial, sans-serif" font-weight="700" font-size="27" fill="#79be92">19</text>
+<text x="46" y="143" font-family="Arial, sans-serif" font-weight="700" font-size="27" fill="#79be92">100</text>
 <rect x="258" y="87" width="200" height="75" rx="12" fill="#192329" stroke="#354148"/>
 <text x="274" y="111" font-family="Arial, sans-serif" font-size="13" fill="#aebbc1">Ontem</text>
-<text x="274" y="143" font-family="Arial, sans-serif" font-weight="700" font-size="27" fill="#edf2f3">85</text>
+<text x="274" y="143" font-family="Arial, sans-serif" font-weight="700" font-size="27" fill="#edf2f3">111</text>
 <rect x="486" y="87" width="200" height="75" rx="12" fill="#192329" stroke="#354148"/>
 <text x="502" y="111" font-family="Arial, sans-serif" font-size="13" fill="#aebbc1">Últimos 7 dias</text>
-<text x="502" y="143" font-family="Arial, sans-serif" font-weight="700" font-size="27" fill="#edf2f3">640</text>
+<text x="502" y="143" font-family="Arial, sans-serif" font-weight="700" font-size="27" fill="#edf2f3">804</text>
 <rect x="714" y="87" width="200" height="75" rx="12" fill="#192329" stroke="#354148"/>
 <text x="730" y="111" font-family="Arial, sans-serif" font-size="13" fill="#aebbc1">Últimos 12 meses</text>
-<text x="730" y="143" font-family="Arial, sans-serif" font-weight="700" font-size="27" fill="#edf2f3">2.014</text>
+<text x="730" y="143" font-family="Arial, sans-serif" font-weight="700" font-size="27" fill="#edf2f3">2.178</text>
 <line x1="30" x2="908" y1="384.0" y2="384.0" stroke="#354148" stroke-width="1" opacity=".7"/>
 <line x1="30" x2="908" y1="297.0" y2="297.0" stroke="#354148" stroke-width="1" opacity=".7"/>
 <line x1="30" x2="908" y1="210.0" y2="210.0" stroke="#354148" stroke-width="1" opacity=".7"/>
@@ -39,8 +39,8 @@
 <rect x="412" y="329.0" width="36" height="55.0" rx="5" fill="#427d60"/>
 <text x="430" y="319.0" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="14" fill="#edf2f3">227</text>
 <text x="430" y="404" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#aebbc1">03/11</text>
-<rect x="474" y="365.3" width="36" height="18.7" rx="5" fill="#427d60"/>
-<text x="492" y="355.3" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="14" fill="#edf2f3">77</text>
+<rect x="474" y="364.6" width="36" height="19.4" rx="5" fill="#427d60"/>
+<text x="492" y="354.6" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="14" fill="#edf2f3">80</text>
 <text x="492" y="404" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#aebbc1">04/11</text>
 <rect x="536" y="343.8" width="36" height="40.2" rx="5" fill="#427d60"/>
 <text x="554" y="333.8" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="14" fill="#edf2f3">166</text>
@@ -48,18 +48,18 @@
 <rect x="598" y="356.4" width="36" height="27.6" rx="5" fill="#427d60"/>
 <text x="616" y="346.4" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="14" fill="#edf2f3">114</text>
 <text x="616" y="404" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#aebbc1">06/11</text>
-<rect x="660" y="366.1" width="36" height="17.9" rx="5" fill="#427d60"/>
-<text x="678" y="356.1" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="14" fill="#edf2f3">74</text>
+<rect x="660" y="361.9" width="36" height="22.1" rx="5" fill="#427d60"/>
+<text x="678" y="351.9" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="14" fill="#edf2f3">91</text>
 <text x="678" y="404" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#aebbc1">07/11</text>
-<rect x="722" y="358.6" width="36" height="25.4" rx="5" fill="#427d60"/>
-<text x="740" y="348.6" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="14" fill="#edf2f3">105</text>
+<rect x="722" y="349.6" width="36" height="34.4" rx="5" fill="#427d60"/>
+<text x="740" y="339.6" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="14" fill="#edf2f3">142</text>
 <text x="740" y="404" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#aebbc1">08/11</text>
-<rect x="784" y="363.4" width="36" height="20.6" rx="5" fill="#427d60"/>
-<text x="802" y="353.4" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="14" fill="#edf2f3">85</text>
+<rect x="784" y="357.1" width="36" height="26.9" rx="5" fill="#427d60"/>
+<text x="802" y="347.1" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="14" fill="#edf2f3">111</text>
 <text x="802" y="404" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#aebbc1">09/11</text>
-<rect x="846" y="379.4" width="36" height="4.6" rx="5" fill="#8bce9e"/>
-<text x="864" y="369.4" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="14" fill="#edf2f3">19</text>
+<rect x="846" y="359.8" width="36" height="24.2" rx="5" fill="#8bce9e"/>
+<text x="864" y="349.8" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="14" fill="#edf2f3">100</text>
 <text x="864" y="404" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#79be92">10/11</text>
-<text x="30" y="438" font-family="Arial, sans-serif" font-size="13" fill="#aebbc1">Média (7 dias): 91,4 por dia</text>
+<text x="30" y="438" font-family="Arial, sans-serif" font-size="13" fill="#aebbc1">Média (7 dias): 114,9 por dia</text>
 <text x="908" y="438" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#aebbc1">Dados de 10/11/2026 (RN)</text>
 </svg>
