@@ -83,6 +83,8 @@ def metrics(calendar: dict, today: date) -> dict:
     if any(day not in observed for day in days):
         raise ValueError("GitHub não forneceu os 14 dias esperados; gráfico não atualizado")
     counts = [observed[day] for day in days]
+    if sum(counts) > total:
+        raise ValueError("Soma dos últimos 14 dias excede o total do calendário do GitHub")
     week_total = sum(counts[-7:])
     return {
         "days": days,
@@ -360,6 +362,12 @@ def render_snapshot(data: dict) -> str:
         "schemaVersion": 1,
         "user": LOGIN,
         "dailyGoal": DAILY_GOAL,
+        "observedOn": data["days"][-1].isoformat(),
+        "goalProgress": {
+            "remainingToday": max(0, DAILY_GOAL - data["today"]),
+            "reachedToday": data["today"] >= DAILY_GOAL,
+            "percentToday": round(data["today"] * 100 / DAILY_GOAL, 2),
+        },
         "stats": {"today": data["today"], "yesterday": data["yesterday"],
                   "week": data["week_total"], "year": data["year_total"]},
         "days": [{"date": day.isoformat(), "count": count}
