@@ -1,6 +1,6 @@
 import json
 import unittest
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from unittest.mock import patch
 
 from scripts.render_daily_contributions import metrics, render_snapshot, render_svg, render_chart
@@ -42,9 +42,12 @@ class SnapshotTests(unittest.TestCase):
     def test_snapshot_changes_when_calendar_day_changes(self):
         data = metrics(fake_calendar(), TODAY)
         original = json.loads(render_snapshot(data))
-        data['days'] = [day.replace(day=day.day) for day in data['days']]
+        data['days'] = [day + timedelta(days=1) for day in data['days']]
+        updated = json.loads(render_snapshot(data))
         self.assertEqual(original['observedOn'], TODAY.isoformat())
-        self.assertEqual(original['days'][-1]['date'], original['observedOn'])
+        self.assertEqual(updated['observedOn'], (TODAY + timedelta(days=1)).isoformat())
+        self.assertEqual(updated['days'][-1]['date'], updated['observedOn'])
+        self.assertNotEqual(original['observedOn'], updated['observedOn'])
 
     def test_percentage_and_chart_goal_use_250(self):
         data = metrics(fake_calendar(), TODAY)
