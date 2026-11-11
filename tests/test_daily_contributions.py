@@ -97,6 +97,14 @@ class DashboardTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "inválida"):
             metrics(calendar, TODAY)
 
+    def test_inconsistent_annual_total_is_rejected_before_rendering(self):
+        calendar = fake_calendar()
+        calendar["totalContributions"] = 90  # 14 dias somam 91
+        with self.assertRaisesRegex(ValueError, "excede o total"):
+            metrics(calendar, TODAY)
+        calendar["totalContributions"] = 91
+        self.assertEqual(metrics(calendar, TODAY)["year_total"], 91)
+
     def test_render_is_valid_svg_and_displays_every_count(self):
         result = metrics(fake_calendar(), TODAY)
         output = render_svg(result, datetime(2026, 11, 10, 17, tzinfo=timezone.utc))
