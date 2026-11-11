@@ -69,7 +69,7 @@
 
 <p align="center">
 <a href="https://joao-github-dashboard.joaosilva42333.chatgpt.site">
-<img src="https://raw.githubusercontent.com/juniordev830/juniordev830/main/assets/contribuicoes-diarias.svg?v=70214bdc6995" width="1040" alt="Painel completo GitHub: indicadores, comparação semanal, histórico, roscas, ranking, evolução acumulada, atividade por dia da semana e mapa de intensidade."/>
+<img src="https://raw.githubusercontent.com/juniordev830/juniordev830/main/assets/contribuicoes-diarias.svg?v=6345c7e6433d" width="1040" alt="Relatório de contribuições: indicadores, gráfico diário, evolução acumulada, resumo do período e intensidade em tons discretos."/>
 </a>
 </p>
 
@@ -92,6 +92,31 @@
 | 30/10/2026 | 5 |
 | 29/10/2026 | 1 |
 | 28/10/2026 | 3 |
+
+</details>
+
+<details>
+<summary>Análise complementar — dias da semana e ranking</summary>
+
+| Dia da semana | Contribuições nos 14 dias |
+| :--- | ---: |
+| Segunda | 664 |
+| Terça | 345 |
+| Quarta | 83 |
+| Quinta | 167 |
+| Sexta | 119 |
+| Sábado | 93 |
+| Domingo | 570 |
+
+Cinco dias mais ativos na janela:
+
+| Posição | Data | Contribuições |
+| ---: | :--- | ---: |
+| 1 | 02/11/2026 | 553 |
+| 2 | 01/11/2026 | 428 |
+| 3 | 03/11/2026 | 227 |
+| 4 | 05/11/2026 | 166 |
+| 5 | 08/11/2026 | 142 |
 
 </details>
 

@@ -94,11 +94,11 @@ class DashboardTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "GITHUB_TOKEN"):
             fetch_calendar("")
 
-    def test_donut_totals_use_disjoint_weeks_and_observed_days(self):
+    def test_summary_totals_use_disjoint_weeks_and_observed_days(self):
         data = metrics(fake_calendar(), TODAY)
         svg = render_svg(data, datetime(2026, 11, 10, tzinfo=timezone.utc))
         root = ElementTree.fromstring(svg)
-        values = [e.attrib['data-donut-values'] for e in root.iter() if 'data-donut-values' in e.attrib]
+        values = [e.attrib['data-summary-values'] for e in root.iter() if 'data-summary-values' in e.attrib]
         self.assertEqual(values, ['70,21', '0,14'])
         data['counts'] = [0] * 14
         output = render_svg(data, datetime(2026, 11, 10, tzinfo=timezone.utc))
