@@ -16,6 +16,35 @@ class SnapshotTests(unittest.TestCase):
         self.assertEqual(snapshot['stats'], {'today':13,'yesterday':12,'week':70,'year':2012})
         self.assertEqual([day['count'] for day in snapshot['days']], list(range(14)))
         self.assertEqual(snapshot['dailyGoal'], 250)
+        self.assertEqual(snapshot['observedOn'], TODAY.isoformat())
+        self.assertEqual(snapshot['goalProgress'], {
+            'remainingToday': 237,
+            'reachedToday': False,
+            'percentToday': 5.2,
+        })
+
+    def test_goal_progress_reflects_overachievement_without_capping(self):
+        data = metrics(fake_calendar(), TODAY)
+        data['today'] = 300
+        data['counts'][-1] = 300
+        progress = json.loads(render_snapshot(data))['goalProgress']
+        self.assertEqual(progress, {
+            'remainingToday': 0,
+            'reachedToday': True,
+            'percentToday': 120.0,
+        })
+        data['today'] = 250
+        data['counts'][-1] = 250
+        self.assertEqual(
+            json.loads(render_snapshot(data))['goalProgress']['remainingToday'], 0,
+        )
+
+    def test_snapshot_changes_when_calendar_day_changes(self):
+        data = metrics(fake_calendar(), TODAY)
+        original = json.loads(render_snapshot(data))
+        data['days'] = [day.replace(day=day.day) for day in data['days']]
+        self.assertEqual(original['observedOn'], TODAY.isoformat())
+        self.assertEqual(original['days'][-1]['date'], original['observedOn'])
 
     def test_percentage_and_chart_goal_use_250(self):
         data = metrics(fake_calendar(), TODAY)
