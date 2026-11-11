@@ -31,31 +31,6 @@
   </tr>
 </table>
 
-<h3 align="center">Projetos em Destaque</h3>
-
-<table>
-  <tr>
-    <td width="33%" valign="top">
-      <a href="https://github.com/juniordev830/plataforma-de-recrutamento"><strong>Plataforma de Recrutamento</strong></a>
-      <p>Vagas, candidaturas e API REST com autenticação.</p>
-      <p><code>Node.js</code> <code>Express</code> <code>SQLite</code></p>
-      <a href="https://github.com/juniordev830/plataforma-de-recrutamento">Ver projeto</a>
-    </td>
-    <td width="33%" valign="top">
-      <a href="https://github.com/juniordev830/sentinel-atlas"><strong>Sentinel Atlas</strong></a>
-      <p>Monitoramento geoespacial experimental e globo 3D.</p>
-      <p><code>Python</code> <code>FastAPI</code> <code>3D</code></p>
-      <a href="https://github.com/juniordev830/sentinel-atlas">Ver projeto</a>
-    </td>
-    <td width="33%" valign="top">
-      <a href="https://github.com/juniordev830/controle-gastos-residenciais"><strong>Controle de Gastos</strong></a>
-      <p>API para organizar receitas e despesas familiares.</p>
-      <p><code>C#</code> <code>.NET</code> <code>SQLite</code></p>
-      <a href="https://github.com/juniordev830/controle-gastos-residenciais">Ver projeto</a>
-    </td>
-  </tr>
-</table>
-
 <!-- CONTRIBUTIONS:START -->
 
 <!-- CONTRIBUTIONS:METRICS <strong>4</strong><strong>123</strong><strong>751</strong><strong>2.205</strong> -->
@@ -116,6 +91,19 @@ Cinco dias mais ativos na janela:
 <p align="center"><sub>Dados de 11/11/2026. Consulta programada a cada 5 minutos, sujeita a atrasos do GitHub. As novas contagens aparecem ao recarregar o perfil. <a href="https://github.com/juniordev830/juniordev830/actions/workflows/contribuicoes-diarias.yml">Ver última execução</a>.</sub></p>
 
 <!-- CONTRIBUTIONS:END -->
+
+<div align="center">
+  <a href="https://github.com/juniordev830?tab=repositories">
+    <img src="./assets/projetos-painel.svg" width="1040" alt="Projetos em destaque: Plataforma de Recrutamento, Atlas Sentinela e Controle de Gastos" />
+  </a>
+  <p>
+    <a href="https://github.com/juniordev830/plataforma-de-recrutamento">Plataforma de Recrutamento</a>
+    &nbsp;·&nbsp;
+    <a href="https://github.com/juniordev830/sentinel-atlas">Atlas Sentinela</a>
+    &nbsp;·&nbsp;
+    <a href="https://github.com/juniordev830/controle-gastos-residenciais">Controle de Gastos</a>
+  </p>
+</div>
 
 <p align="center">
   <a href="https://joao-github-dashboard.joaosilva42333.chatgpt.site"><strong>📊 Abrir painel interativo completo ↗</strong></a><br>
