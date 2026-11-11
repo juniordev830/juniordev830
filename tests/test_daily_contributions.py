@@ -7,7 +7,7 @@ from unittest.mock import patch
 from xml.etree import ElementTree
 
 from scripts.render_daily_contributions import (
-    START, END, metrics, period_insights, render_svg, render_chart, render_markdown, update_readme, fetch_calendar, main,
+    START, END, metrics, period_insights, render_svg, render_chart, render_markdown, update_readme, fetch_calendar, main, render_snapshot, DAILY_GOAL,
 )
 
 
@@ -97,6 +97,14 @@ class DashboardTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "inválida"):
             metrics(calendar, TODAY)
 
+    def test_inconsistent_annual_total_is_rejected_before_rendering(self):
+        calendar = fake_calendar()
+        calendar["totalContributions"] = 90  # 14 dias somam 91
+        with self.assertRaisesRegex(ValueError, "excede o total"):
+            metrics(calendar, TODAY)
+        calendar["totalContributions"] = 91
+        self.assertEqual(metrics(calendar, TODAY)["year_total"], 91)
+
     def test_render_is_valid_svg_and_displays_every_count(self):
         result = metrics(fake_calendar(), TODAY)
         output = render_svg(result, datetime(2026, 11, 10, 17, tzinfo=timezone.utc))
@@ -183,6 +191,8 @@ class DashboardTests(unittest.TestCase):
             day["contributionCount"] = 0
         for peak in (0, 553, 10000):
             calendar["weeks"][0]["contributionDays"][-1]["contributionCount"] = peak
+            # O fixture deve manter o total anual consistente com os dias.
+            calendar["totalContributions"] = max(2012, peak)
             svg = render_svg(metrics(calendar, TODAY), datetime(2026, 11, 10, tzinfo=timezone.utc))
             root = ElementTree.fromstring(svg)
             for e in root.iter():
@@ -229,19 +239,23 @@ class DashboardTests(unittest.TestCase):
         with TemporaryDirectory() as directory:
             readme = Path(directory) / "README.md"
             chart = Path(directory) / "assets/chart.svg"
+            snapshot = Path(directory) / "assets/contribuicoes.json"
             readme.write_text("perfil\n" + START + "\nanterior\n" + END)
             with patch("scripts.render_daily_contributions.README", readme), \
                  patch("scripts.render_daily_contributions.CHART", chart), \
+                 patch("scripts.render_daily_contributions.SNAPSHOT", snapshot), \
                  patch("scripts.render_daily_contributions.fetch_calendar", return_value=fake_calendar()), \
                  patch("scripts.render_daily_contributions.datetime") as clock:
                 clock.now.return_value = datetime(2026, 11, 10, 17, tzinfo=timezone.utc)
                 main()
                 self.assertTrue(chart.exists())
+                self.assertTrue(snapshot.exists())
                 self.assertIn("<img", readme.read_text())
-                before = (readme.stat().st_mtime_ns, chart.stat().st_mtime_ns)
+                before = (readme.stat().st_mtime_ns, chart.stat().st_mtime_ns, snapshot.stat().st_mtime_ns)
                 main()
-                self.assertEqual(before, (readme.stat().st_mtime_ns, chart.stat().st_mtime_ns))
+                self.assertEqual(before, (readme.stat().st_mtime_ns, chart.stat().st_mtime_ns, snapshot.stat().st_mtime_ns))
 
 
 if __name__ == "__main__":
     unittest.main()
+

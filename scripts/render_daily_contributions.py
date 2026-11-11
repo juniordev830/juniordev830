@@ -17,6 +17,8 @@ from zoneinfo import ZoneInfo
 LOGIN = "juniordev830"
 README = Path("README.md")
 CHART = Path("assets/contribuicoes-diarias.svg")
+SNAPSHOT = Path("assets/contribuicoes.json")
+DAILY_GOAL = 250
 START = "<!-- CONTRIBUTIONS:START -->"
 END = "<!-- CONTRIBUTIONS:END -->"
 TZ = ZoneInfo("America/Fortaleza")
@@ -81,6 +83,8 @@ def metrics(calendar: dict, today: date) -> dict:
     if any(day not in observed for day in days):
         raise ValueError("GitHub não forneceu os 14 dias esperados; gráfico não atualizado")
     counts = [observed[day] for day in days]
+    if sum(counts) > total:
+        raise ValueError("Soma dos últimos 14 dias excede o total do calendário do GitHub")
     week_total = sum(counts[-7:])
     return {
         "days": days,
@@ -129,13 +133,13 @@ def render_svg(data: dict, generated_at: datetime) -> str:
     counts, days = data['counts'], data['days']
     insight = period_insights(data)
     previous, recent = sum(counts[:7]), sum(counts[7:])
-    achieved = sum(n >= 100 for n in counts)
+    achieved = sum(n >= DAILY_GOAL for n in counts)
     fmt = lambda n: f'{n:,}'.replace(',', '.')
     ink, secondary = '#d8dde1', '#a2aab1'
     parts = [
         '<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="1084" viewBox="0 0 1040 1084" role="img" aria-labelledby="title desc">',
         '<title id="title">Atividade de desenvolvimento — visão geral</title>',
-        '<desc id="desc">Relatório de contribuições e projetos em destaque, com indicadores, histórico diário, acumulado, resumo e intensidade. Dados reais dos últimos 14 dias, meta de 100 por dia e sequência limitada à janela observada.</desc>',
+        '<desc id="desc">Relatório de contribuições e projetos em destaque, com indicadores, histórico diário, acumulado, resumo e intensidade. Dados reais dos últimos 14 dias, meta de 250 por dia e sequência limitada à janela observada.</desc>',
         '<rect x="1" y="1" width="1038" height="1082" rx="16" fill="#1b2025" stroke="#343b42"/>',
         '<g font-family="Segoe UI, Arial, Helvetica, sans-serif">',
     ]
@@ -161,7 +165,7 @@ def render_svg(data: dict, generated_at: datetime) -> str:
     cards=[('Hoje',fmt(data['today']),'Dia atual parcial'),
            ('Últimos 7 dias',fmt(recent),'Contribuições'),
            ('Últimos 12 meses',fmt(data['year_total']),'Total do calendário'),
-           ('Meta diária',f"{data['today']}%",'Referência: 100/dia')]
+           ('Meta diária',f"{100 * data['today'] / DAILY_GOAL:.0f}%",f'Referência: {DAILY_GOAL}/dia')]
     for i,(label,value,caption) in enumerate(cards):
         x=40+i*248
         if i:line(x-20,117,x-20,179,'#343b42')
@@ -173,16 +177,16 @@ def render_svg(data: dict, generated_at: datetime) -> str:
     text(40,238,'Contribuições diárias',15,ink,'600')
     text(40,260,'Últimos 14 dias',10)
     text(1000,238,f'Média (7 dias): {data["week_average"]:.1f}'.replace('.',','),11,secondary,anchor='end')
-    text(1000,260,'Linha tracejada · meta de 100/dia',10,secondary,anchor='end')
+    text(1000,260,f'Linha tracejada · meta de {DAILY_GOAL}/dia',10,secondary,anchor='end')
     left,right,top,bottom=78,1000,291,430
-    maximum=max(100,*counts)
+    maximum=max(DAILY_GOAL,*counts)
     step=10**(len(str(maximum))-1)
     ceiling=((maximum+step-1)//step)*step
     for fraction in (0,.5,1):
         y=bottom-fraction*(bottom-top)
         line(left,y,right,y,'#30383f')
         text(left-13,y+4,fmt(round(ceiling*fraction)),9,anchor='end')
-    goal_y=bottom-100/ceiling*(bottom-top)
+    goal_y=bottom-DAILY_GOAL/ceiling*(bottom-top)
     line(left,goal_y,right,goal_y,'#65716f','4 6')
     slot=(right-left)/14
     peak_index=counts.index(max(counts))
@@ -270,7 +274,7 @@ def render_chart(data: dict) -> str:
     """Version the image by its data so changed counts get a new cache URL."""
     from hashlib import sha256
 
-    version = sha256(json.dumps({"design": "overview-v6-unified-portfolio", "year_total": data["year_total"], "days": [d.isoformat() for d in data["days"]],
+    version = sha256(json.dumps({"design": "overview-v7-accurate-goal", "daily_goal": DAILY_GOAL, "year_total": data["year_total"], "days": [d.isoformat() for d in data["days"]],
                                  "counts": data["counts"],
                                  "week_average": data["week_average"]}, sort_keys=True).encode()).hexdigest()[:12]
     return '\n'.join([
@@ -352,17 +356,45 @@ def update_readme(document: str, panel: str) -> str:
     return document[:start] + "\n\n" + panel + "\n\n" + document[end:]
 
 
+def render_snapshot(data: dict) -> str:
+    """Stable machine-readable values; unchanged observations do not create commits."""
+    return json.dumps({
+        "schemaVersion": 1,
+        "user": LOGIN,
+        "dailyGoal": DAILY_GOAL,
+        "observedOn": data["days"][-1].isoformat(),
+        "goalProgress": {
+            "remainingToday": max(0, DAILY_GOAL - data["today"]),
+            "reachedToday": data["today"] >= DAILY_GOAL,
+            "percentToday": round(data["today"] * 100 / DAILY_GOAL, 2),
+        },
+        "stats": {"today": data["today"], "yesterday": data["yesterday"],
+                  "week": data["week_total"], "year": data["year_total"]},
+        "days": [{"date": day.isoformat(), "count": count}
+                 for day, count in zip(data["days"], data["counts"])],
+        "source": "https://api.github.com/graphql",
+    }, ensure_ascii=False, indent=2) + "\n"
+
+
+def write_if_changed(path: Path, content: str) -> bool:
+    if path.exists() and path.read_text(encoding="utf-8") == content:
+        return False
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(content, encoding="utf-8")
+    return True
+
+
 def main() -> None:
     calendar = fetch_calendar(os.environ.get("GITHUB_TOKEN", ""))
     now = datetime.now(TZ)
     data = metrics(calendar, now.date())
     panel = render_markdown(data, now)
     chart = render_svg(data, now)
+    snapshot = render_snapshot(data)
     original = README.read_text(encoding="utf-8")
     updated = update_readme(original, panel)
-    if not CHART.exists() or CHART.read_text(encoding="utf-8") != chart:
-        CHART.parent.mkdir(parents=True, exist_ok=True)
-        CHART.write_text(chart, encoding="utf-8")
+    write_if_changed(CHART, chart)
+    write_if_changed(SNAPSHOT, snapshot)
     if updated != original:
         README.write_text(updated, encoding="utf-8")
         print(f"Painel atualizado: {README}")
@@ -372,3 +404,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
