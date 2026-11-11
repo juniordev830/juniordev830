@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="248" viewBox="0 0 1040 248" role="img" aria-labelledby="title desc">
+<title id="title">Projetos em destaque — João Júnior</title>
+<desc id="desc">Plataforma de Recrutamento, Atlas Sentinela e Controle de Gastos, com descrições e tecnologias.</desc>
+<rect width="1040" height="248" rx="18" fill="#171d24"/>
+<rect x="1" y="1" width="1038" height="246" rx="17" fill="none" stroke="#33414e"/>
+<text x="30" y="31" fill="#9db3ca" font-family="Arial, sans-serif" font-size="10" letter-spacing="1.2">PORTFÓLIO / GITHUB</text>
+<text x="30" y="61" fill="#edf4ff" font-family="Arial, sans-serif" font-size="21" font-weight="700">Projetos em destaque</text>
+<line x1="30" y1="76" x2="1010" y2="76" stroke="#33414e"/>
+<g font-family="Arial, sans-serif">
+  <rect x="30" y="94" width="310" height="127" rx="10" fill="#1c2733" stroke="#3c4b5a"/>
+  <text x="46" y="119" fill="#a3cfff" font-size="15" font-weight="700">Plataforma de Recrutamento</text>
+  <text x="46" y="143" fill="#d2dbe5" font-size="12">Vagas, candidaturas e API REST</text>
+  <text x="46" y="161" fill="#d2dbe5" font-size="12">com autenticação.</text>
+  <rect x="46" y="181" width="63" height="23" rx="5" fill="#2b3a4c"/>
+  <text x="53" y="197" fill="#e3edfa" font-size="11">Node.js</text>
+  <rect x="115" y="181" width="62" height="23" rx="5" fill="#2b3a4c"/>
+  <text x="123" y="197" fill="#e3edfa" font-size="11">Express</text>
+  <rect x="183" y="181" width="55" height="23" rx="5" fill="#2b3a4c"/>
+  <text x="191" y="197" fill="#e3edfa" font-size="11">SQLite</text>
+  <rect x="365" y="94" width="310" height="127" rx="10" fill="#1c2733" stroke="#3c4b5a"/>
+  <text x="381" y="119" fill="#a3cfff" font-size="15" font-weight="700">Atlas Sentinela</text>
+  <text x="381" y="143" fill="#d2dbe5" font-size="12">Monitoramento geoespacial</text>
+  <text x="381" y="161" fill="#d2dbe5" font-size="12">experimental e globo 3D.</text>
+  <rect x="381" y="181" width="60" height="23" rx="5" fill="#2b3a4c"/>
+  <text x="389" y="197" fill="#e3edfa" font-size="11">Python</text>
+  <rect x="447" y="181" width="61" height="23" rx="5" fill="#2b3a4c"/>
+  <text x="454" y="197" fill="#e3edfa" font-size="11">FastAPI</text>
+  <rect x="514" y="181" width="32" height="23" rx="5" fill="#2b3a4c"/>
+  <text x="522" y="197" fill="#e3edfa" font-size="11">3D</text>
+  <rect x="700" y="94" width="310" height="127" rx="10" fill="#1c2733" stroke="#3c4b5a"/>
+  <text x="716" y="119" fill="#a3cfff" font-size="15" font-weight="700">Controle de Gastos</text>
+  <text x="716" y="143" fill="#d2dbe5" font-size="12">API para organizar receitas</text>
+  <text x="716" y="161" fill="#d2dbe5" font-size="12">e despesas familiares.</text>
+  <rect x="716" y="181" width="33" height="23" rx="5" fill="#2b3a4c"/>
+  <text x="725" y="197" fill="#e3edfa" font-size="11">C#</text>
+  <rect x="755" y="181" width="45" height="23" rx="5" fill="#2b3a4c"/>
+  <text x="763" y="197" fill="#e3edfa" font-size="11">.NET</text>
+  <rect x="806" y="181" width="55" height="23" rx="5" fill="#2b3a4c"/>
+  <text x="814" y="197" fill="#e3edfa" font-size="11">SQLite</text>
+</g>
+</svg>
