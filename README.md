@@ -33,28 +33,11 @@
 
 <h3 align="center">Projetos em Destaque</h3>
 
-<table>
-  <tr>
-    <td width="33%" valign="top">
-      <a href="https://github.com/juniordev830/plataforma-de-recrutamento"><strong>Plataforma de Recrutamento</strong></a>
-      <p>Vagas, candidaturas e API REST com autenticação.</p>
-      <p><code>Node.js</code> <code>Express</code> <code>SQLite</code></p>
-      <a href="https://github.com/juniordev830/plataforma-de-recrutamento">Ver projeto</a>
-    </td>
-    <td width="33%" valign="top">
-      <a href="https://github.com/juniordev830/sentinel-atlas"><strong>Sentinel Atlas</strong></a>
-      <p>Monitoramento geoespacial experimental e globo 3D.</p>
-      <p><code>Python</code> <code>FastAPI</code> <code>3D</code></p>
-      <a href="https://github.com/juniordev830/sentinel-atlas">Ver projeto</a>
-    </td>
-    <td width="33%" valign="top">
-      <a href="https://github.com/juniordev830/controle-gastos-residenciais"><strong>Controle de Gastos</strong></a>
-      <p>API para organizar receitas e despesas familiares.</p>
-      <p><code>C#</code> <code>.NET</code> <code>SQLite</code></p>
-      <a href="https://github.com/juniordev830/controle-gastos-residenciais">Ver projeto</a>
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <a href="https://github.com/juniordev830/plataforma-de-recrutamento"><img src="assets/projetos/recrutamento.svg" width="32%" alt="Plataforma de Recrutamento: vagas, candidaturas e API REST com autenticação. Node.js, Express e SQLite." /></a>
+  <a href="https://github.com/juniordev830/sentinel-atlas"><img src="assets/projetos/sentinel.svg" width="32%" alt="Sentinel Atlas: monitoramento geoespacial experimental e globo 3D. Python e FastAPI." /></a>
+  <a href="https://github.com/juniordev830/controle-gastos-residenciais"><img src="assets/projetos/gastos.svg" width="32%" alt="Controle de Gastos: API para receitas e despesas familiares. C#, .NET e SQLite." /></a>
+</p>
 
 <!-- CONTRIBUTIONS:START -->
 
