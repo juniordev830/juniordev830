@@ -37,7 +37,7 @@
 
 <p align="center">
 <a href="https://joao-github-dashboard.joaosilva42333.chatgpt.site">
-<img src="https://raw.githubusercontent.com/juniordev830/juniordev830/main/assets/contribuicoes-diarias.svg?v=54868741d2d6" width="1040" alt="Relatório de contribuições: indicadores, gráfico diário, evolução acumulada, resumo do período e intensidade em tons discretos."/>
+<img src="https://raw.githubusercontent.com/juniordev830/juniordev830/main/assets/contribuicoes-diarias.svg?v=54868741d2d6" width="1040" alt="Painel unificado de contribuições, evolução diária, intensidade e projetos em destaque."/>
 </a>
 </p>
 
@@ -90,20 +90,17 @@ Cinco dias mais ativos na janela:
 
 <p align="center"><sub>Dados de 11/11/2026. Consulta programada a cada 5 minutos, sujeita a atrasos do GitHub. As novas contagens aparecem ao recarregar o perfil. <a href="https://github.com/juniordev830/juniordev830/actions/workflows/contribuicoes-diarias.yml">Ver última execução</a>.</sub></p>
 
-<!-- CONTRIBUTIONS:END -->
+<details>
+<summary>Links dos projetos em destaque</summary>
 
-<div align="center">
-  <a href="https://github.com/juniordev830?tab=repositories">
-    <img src="./assets/projetos-painel.svg" width="1040" alt="Projetos em destaque: Plataforma de Recrutamento, Atlas Sentinela e Controle de Gastos" />
-  </a>
-  <p>
-    <a href="https://github.com/juniordev830/plataforma-de-recrutamento">Plataforma de Recrutamento</a>
-    &nbsp;·&nbsp;
-    <a href="https://github.com/juniordev830/sentinel-atlas">Atlas Sentinela</a>
-    &nbsp;·&nbsp;
-    <a href="https://github.com/juniordev830/controle-gastos-residenciais">Controle de Gastos</a>
-  </p>
-</div>
+<p align="center">
+<a href="https://github.com/juniordev830/plataforma-de-recrutamento">Plataforma de Recrutamento</a> · 
+<a href="https://github.com/juniordev830/sentinel-atlas">Atlas Sentinela</a> · 
+<a href="https://github.com/juniordev830/controle-gastos-residenciais">Controle de Gastos</a>
+</p>
+</details>
+
+<!-- CONTRIBUTIONS:END -->
 
 <p align="center">
   <a href="https://joao-github-dashboard.joaosilva42333.chatgpt.site"><strong>📊 Abrir painel interativo completo ↗</strong></a><br>
