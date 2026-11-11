@@ -191,6 +191,8 @@ class DashboardTests(unittest.TestCase):
             day["contributionCount"] = 0
         for peak in (0, 553, 10000):
             calendar["weeks"][0]["contributionDays"][-1]["contributionCount"] = peak
+            # O fixture deve manter o total anual consistente com os dias.
+            calendar["totalContributions"] = max(2012, peak)
             svg = render_svg(metrics(calendar, TODAY), datetime(2026, 11, 10, tzinfo=timezone.utc))
             root = ElementTree.fromstring(svg)
             for e in root.iter():
