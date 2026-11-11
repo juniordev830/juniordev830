@@ -62,14 +62,14 @@
 
 <table align="center">
 <thead><tr><th>Hoje</th><th>Ontem</th><th>Últimos 7 dias</th><th>Últimos 12 meses</th></tr></thead>
-<tbody><tr><td align="center"><strong>118</strong></td><td align="center"><strong>111</strong></td><td align="center"><strong>822</strong></td><td align="center"><strong>2.196</strong></td></tr></tbody>
+<tbody><tr><td align="center"><strong>120</strong></td><td align="center"><strong>111</strong></td><td align="center"><strong>824</strong></td><td align="center"><strong>2.198</strong></td></tr></tbody>
 </table>
 
-<p align="center">Média dos últimos 7 dias: <strong>117,4</strong> contribuições por dia.</p>
+<p align="center">Média dos últimos 7 dias: <strong>117,7</strong> contribuições por dia.</p>
 
 <p align="center">
 <a href="https://joao-github-dashboard.joaosilva42333.chatgpt.site">
-<img src="https://raw.githubusercontent.com/juniordev830/juniordev830/main/assets/contribuicoes-diarias.svg?v=6345c7e6433d" width="1040" alt="Relatório de contribuições: indicadores, gráfico diário, evolução acumulada, resumo do período e intensidade em tons discretos."/>
+<img src="https://raw.githubusercontent.com/juniordev830/juniordev830/main/assets/contribuicoes-diarias.svg?v=84d556d7cc80" width="1040" alt="Relatório de contribuições: indicadores, gráfico diário, evolução acumulada, resumo do período e intensidade em tons discretos."/>
 </a>
 </p>
 
@@ -78,7 +78,7 @@
 
 | Data (RN) | Contribuições |
 | :--- | ---: |
-| 10/11/2026 | 118 |
+| 10/11/2026 | 120 |
 | 09/11/2026 | 111 |
 | 08/11/2026 | 142 |
 | 07/11/2026 | 91 |
@@ -101,7 +101,7 @@
 | Dia da semana | Contribuições nos 14 dias |
 | :--- | ---: |
 | Segunda | 664 |
-| Terça | 345 |
+| Terça | 347 |
 | Quarta | 83 |
 | Quinta | 167 |
 | Sexta | 119 |
