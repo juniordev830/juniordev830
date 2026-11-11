@@ -60,6 +60,24 @@ class DashboardTests(unittest.TestCase):
         cumulative = [int(e.attrib['data-cumulative']) for e in root.iter() if 'data-cumulative' in e.attrib]
         self.assertEqual(cumulative, [sum(range(i+1)) for i in range(14)])
 
+    def test_portfolio_is_part_of_the_same_svg_as_contributions(self):
+        data = metrics(fake_calendar(), TODAY)
+        xml = render_svg(data, datetime(2026, 11, 10, tzinfo=timezone.utc))
+        root = ElementTree.fromstring(xml)
+        self.assertEqual(root.attrib["height"], "1084")
+        for title in ("Projetos em destaque", "Plataforma de Recrutamento",
+                      "Atlas Sentinela", "Controle de Gastos"):
+            self.assertIn(title, xml)
+        self.assertIn("Contribuições diárias", xml)
+        self.assertNotIn("<image", xml)
+
+    def test_portfolio_links_remain_accessible_but_collapsed(self):
+        result = render_markdown(metrics(fake_calendar(), TODAY),
+                                 datetime(2026, 11, 10, tzinfo=timezone.utc))
+        self.assertIn("<summary>Links dos projetos em destaque</summary>", result)
+        self.assertIn("https://github.com/juniordev830/sentinel-atlas", result)
+        self.assertEqual(result.count("<img"), 1)
+
     def test_exact_daily_counts_and_week_summary(self):
         result = metrics(fake_calendar(), TODAY)
         self.assertEqual(result["counts"], list(range(14)))

@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="840" viewBox="0 0 1040 840" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="1084" viewBox="0 0 1040 1084" role="img" aria-labelledby="title desc">
 <title id="title">Atividade de desenvolvimento — visão geral</title>
-<desc id="desc">Relatório de contribuições com indicadores, histórico diário, acumulado, resumo e intensidade. Dados reais dos últimos 14 dias, meta de 100 por dia e sequência limitada à janela observada.</desc>
-<rect x="1" y="1" width="1038" height="838" rx="16" fill="#1b2025" stroke="#343b42"/>
+<desc id="desc">Relatório de contribuições e projetos em destaque, com indicadores, histórico diário, acumulado, resumo e intensidade. Dados reais dos últimos 14 dias, meta de 100 por dia e sequência limitada à janela observada.</desc>
+<rect x="1" y="1" width="1038" height="1082" rx="16" fill="#1b2025" stroke="#343b42"/>
 <g font-family="Segoe UI, Arial, Helvetica, sans-serif">
 <text x="40.00" y="35.00" fill="#a2aab1" font-size="10" font-weight="600" text-anchor="start">VISÃO GERAL  /  GITHUB</text>
 <text x="40.00" y="70.00" fill="#d8dde1" font-size="25" font-weight="600" text-anchor="start">Atividade de desenvolvimento</text>
@@ -179,4 +179,37 @@
 <text x="40.00" y="821.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="start">Meta cumprida: 8 de 14 dias · sequência limitada à janela exibida</text>
 </g>
 <text x="1000.00" y="821.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="end">11/11/2026 (RN) · consulta programada: 5 min</text>
+<line x1="40" y1="852" x2="1000" y2="852" stroke="#353d45"/>
+<text x="40.00" y="879.00" fill="#a2aab1" font-size="10" font-weight="600" text-anchor="start">PORTFÓLIO  /  GITHUB</text>
+<text x="40.00" y="912.00" fill="#d8dde1" font-size="20" font-weight="600" text-anchor="start">Projetos em destaque</text>
+<rect x="40.00" y="931.00" width="304.00" height="123.00" rx="10" fill="#222d38" stroke="#3c4b5a"/>
+<text x="56.00" y="958.00" fill="#a3cfff" font-size="15" font-weight="600" text-anchor="start">Plataforma de Recrutamento</text>
+<text x="56.00" y="983.00" fill="#d2dbe5" font-size="12" font-weight="400" text-anchor="start">Vagas, candidaturas e API REST</text>
+<text x="56.00" y="1000.00" fill="#d2dbe5" font-size="12" font-weight="400" text-anchor="start">com autenticação.</text>
+<rect x="56.00" y="1015.00" width="65.00" height="23.00" rx="5" fill="#304050"/>
+<text x="64.00" y="1031.00" fill="#e3edfa" font-size="11" font-weight="600" text-anchor="start">Node.js</text>
+<rect x="127.00" y="1015.00" width="65.00" height="23.00" rx="5" fill="#304050"/>
+<text x="135.00" y="1031.00" fill="#e3edfa" font-size="11" font-weight="600" text-anchor="start">Express</text>
+<rect x="198.00" y="1015.00" width="58.00" height="23.00" rx="5" fill="#304050"/>
+<text x="206.00" y="1031.00" fill="#e3edfa" font-size="11" font-weight="600" text-anchor="start">SQLite</text>
+<rect x="368.00" y="931.00" width="304.00" height="123.00" rx="10" fill="#222d38" stroke="#3c4b5a"/>
+<text x="384.00" y="958.00" fill="#a3cfff" font-size="15" font-weight="600" text-anchor="start">Atlas Sentinela</text>
+<text x="384.00" y="983.00" fill="#d2dbe5" font-size="12" font-weight="400" text-anchor="start">Monitoramento geoespacial</text>
+<text x="384.00" y="1000.00" fill="#d2dbe5" font-size="12" font-weight="400" text-anchor="start">experimental e globo 3D.</text>
+<rect x="384.00" y="1015.00" width="58.00" height="23.00" rx="5" fill="#304050"/>
+<text x="392.00" y="1031.00" fill="#e3edfa" font-size="11" font-weight="600" text-anchor="start">Python</text>
+<rect x="448.00" y="1015.00" width="65.00" height="23.00" rx="5" fill="#304050"/>
+<text x="456.00" y="1031.00" fill="#e3edfa" font-size="11" font-weight="600" text-anchor="start">FastAPI</text>
+<rect x="519.00" y="1015.00" width="33.00" height="23.00" rx="5" fill="#304050"/>
+<text x="527.00" y="1031.00" fill="#e3edfa" font-size="11" font-weight="600" text-anchor="start">3D</text>
+<rect x="696.00" y="931.00" width="304.00" height="123.00" rx="10" fill="#222d38" stroke="#3c4b5a"/>
+<text x="712.00" y="958.00" fill="#a3cfff" font-size="15" font-weight="600" text-anchor="start">Controle de Gastos</text>
+<text x="712.00" y="983.00" fill="#d2dbe5" font-size="12" font-weight="400" text-anchor="start">API para organizar receitas</text>
+<text x="712.00" y="1000.00" fill="#d2dbe5" font-size="12" font-weight="400" text-anchor="start">e despesas familiares.</text>
+<rect x="712.00" y="1015.00" width="33.00" height="23.00" rx="5" fill="#304050"/>
+<text x="720.00" y="1031.00" fill="#e3edfa" font-size="11" font-weight="600" text-anchor="start">C#</text>
+<rect x="751.00" y="1015.00" width="44.00" height="23.00" rx="5" fill="#304050"/>
+<text x="759.00" y="1031.00" fill="#e3edfa" font-size="11" font-weight="600" text-anchor="start">.NET</text>
+<rect x="801.00" y="1015.00" width="58.00" height="23.00" rx="5" fill="#304050"/>
+<text x="809.00" y="1031.00" fill="#e3edfa" font-size="11" font-weight="600" text-anchor="start">SQLite</text>
 </g></svg>
