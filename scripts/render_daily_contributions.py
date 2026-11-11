@@ -133,10 +133,10 @@ def render_svg(data: dict, generated_at: datetime) -> str:
     fmt = lambda n: f'{n:,}'.replace(',', '.')
     ink, secondary = '#d8dde1', '#a2aab1'
     parts = [
-        '<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="840" viewBox="0 0 1040 840" role="img" aria-labelledby="title desc">',
+        '<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="1084" viewBox="0 0 1040 1084" role="img" aria-labelledby="title desc">',
         '<title id="title">Atividade de desenvolvimento — visão geral</title>',
-        '<desc id="desc">Relatório de contribuições com indicadores, histórico diário, acumulado, resumo e intensidade. Dados reais dos últimos 14 dias, meta de 100 por dia e sequência limitada à janela observada.</desc>',
-        '<rect x="1" y="1" width="1038" height="838" rx="16" fill="#1b2025" stroke="#343b42"/>',
+        '<desc id="desc">Relatório de contribuições e projetos em destaque, com indicadores, histórico diário, acumulado, resumo e intensidade. Dados reais dos últimos 14 dias, meta de 100 por dia e sequência limitada à janela observada.</desc>',
+        '<rect x="1" y="1" width="1038" height="1082" rx="16" fill="#1b2025" stroke="#343b42"/>',
         '<g font-family="Segoe UI, Arial, Helvetica, sans-serif">',
     ]
 
@@ -240,6 +240,28 @@ def render_svg(data: dict, generated_at: datetime) -> str:
     text(40,821,f'Meta cumprida: {achieved} de 14 dias · sequência limitada à janela exibida',9)
     parts.append('</g>')
     text(1000,821,f'{generated_at.astimezone(TZ):%d/%m/%Y} (RN) · consulta programada: 5 min',9,anchor='end')
+    # Portfolio stays inside the same SVG surface as the live activity charts.
+    # No image embedding or external fonts: GitHub's README image sanitizer can render it.
+    line(40,852,1000,852)
+    text(40,879,'PORTFÓLIO  /  GITHUB',10,secondary,'600')
+    text(40,912,'Projetos em destaque',20,ink,'600')
+    projects = [
+        ('Plataforma de Recrutamento', ('Vagas, candidaturas e API REST', 'com autenticação.'), ('Node.js','Express','SQLite')),
+        ('Atlas Sentinela', ('Monitoramento geoespacial', 'experimental e globo 3D.'), ('Python','FastAPI','3D')),
+        ('Controle de Gastos', ('API para organizar receitas', 'e despesas familiares.'), ('C#','.NET','SQLite')),
+    ]
+    for i, (name, description, tags) in enumerate(projects):
+        x = 40 + i * 328
+        rect(x, 931, 304, 123, '#222d38', 10, stroke='#3c4b5a')
+        text(x+16, 958, name, 15, '#a3cfff', '600')
+        text(x+16, 983, description[0], 12, '#d2dbe5')
+        text(x+16, 1000, description[1], 12, '#d2dbe5')
+        tag_x = x+16
+        for tag in tags:
+            width = max(33, len(tag)*7+16)
+            rect(tag_x, 1015, width, 23, '#304050', 5)
+            text(tag_x+8, 1031, tag, 11, '#e3edfa', '600')
+            tag_x += width+6
     parts.append('</g></svg>')
     return '\n'.join(parts)+'\n'
 
@@ -248,13 +270,13 @@ def render_chart(data: dict) -> str:
     """Version the image by its data so changed counts get a new cache URL."""
     from hashlib import sha256
 
-    version = sha256(json.dumps({"design": "overview-v5-enterprise-minimal", "year_total": data["year_total"], "days": [d.isoformat() for d in data["days"]],
+    version = sha256(json.dumps({"design": "overview-v6-unified-portfolio", "year_total": data["year_total"], "days": [d.isoformat() for d in data["days"]],
                                  "counts": data["counts"],
                                  "week_average": data["week_average"]}, sort_keys=True).encode()).hexdigest()[:12]
     return '\n'.join([
         '<p align="center">',
         '<a href="https://joao-github-dashboard.joaosilva42333.chatgpt.site">',
-        f'<img src="https://raw.githubusercontent.com/{LOGIN}/{LOGIN}/main/assets/contribuicoes-diarias.svg?v={version}" width="1040" alt="Relatório de contribuições: indicadores, gráfico diário, evolução acumulada, resumo do período e intensidade em tons discretos."/>',
+        f'<img src="https://raw.githubusercontent.com/{LOGIN}/{LOGIN}/main/assets/contribuicoes-diarias.svg?v={version}" width="1040" alt="Painel unificado de contribuições, evolução diária, intensidade e projetos em destaque."/>',
         '</a>',
         '</p>',
     ])
@@ -303,6 +325,18 @@ def render_markdown(data: dict, generated_at: datetime) -> str:
         'sujeita a atrasos do GitHub. As novas contagens aparecem ao recarregar o perfil. '
         '<a href="https://github.com/juniordev830/juniordev830/actions/workflows/contribuicoes-diarias.yml">'
         'Ver última execução</a>.</sub></p>',
+    ])
+    parts.extend([
+        '',
+        '<details>',
+        '<summary>Links dos projetos em destaque</summary>',
+        '',
+        '<p align="center">',
+        '<a href="https://github.com/juniordev830/plataforma-de-recrutamento">Plataforma de Recrutamento</a> · ',
+        '<a href="https://github.com/juniordev830/sentinel-atlas">Atlas Sentinela</a> · ',
+        '<a href="https://github.com/juniordev830/controle-gastos-residenciais">Controle de Gastos</a>',
+        '</p>',
+        '</details>',
     ])
     return "\n".join(parts)
 
