@@ -56,16 +56,9 @@
   </tr>
 </table>
 
-<h3 align="center">Contribuições Diárias</h3>
-
 <!-- CONTRIBUTIONS:START -->
 
-<table align="center">
-<thead><tr><th>Hoje</th><th>Ontem</th><th>Últimos 7 dias</th><th>Últimos 12 meses</th></tr></thead>
-<tbody><tr><td align="center"><strong>120</strong></td><td align="center"><strong>111</strong></td><td align="center"><strong>824</strong></td><td align="center"><strong>2.198</strong></td></tr></tbody>
-</table>
-
-<p align="center">Média dos últimos 7 dias: <strong>117,7</strong> contribuições por dia.</p>
+<!-- CONTRIBUTIONS:METRICS <strong>120</strong><strong>111</strong><strong>824</strong><strong>2.198</strong> -->
 
 <p align="center">
 <a href="https://joao-github-dashboard.joaosilva42333.chatgpt.site">

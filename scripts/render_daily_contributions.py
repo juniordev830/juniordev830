@@ -261,23 +261,17 @@ def render_chart(data: dict) -> str:
 
 
 def render_markdown(data: dict, generated_at: datetime) -> str:
-    """Render native numbers, a styled vector chart and expandable history."""
-    labels = ("Hoje", "Ontem", "Últimos 7 dias", "Últimos 12 meses")
+    """Show the chart and history; retain raw metrics for the standalone dashboard."""
     numbers = (data["today"], data["yesterday"], data["week_total"], data["year_total"])
-    headers = "".join(f"<th>{label}</th>" for label in labels)
-    cells = "".join(
-        f'<td align="center"><strong>{number:,}</strong></td>'.replace(",", ".")
+    # The HTML dashboard reads these four values from the raw README. An HTML
+    # comment preserves that contract without duplicating the visible SVG KPIs.
+    raw_metrics = "".join(
+        f'<strong>{number:,}</strong>'.replace(",", ".")
         for number in numbers
     )
-    average = f'{data["week_average"]:.1f}'.replace(".", ",")
     day = generated_at.astimezone(TZ).strftime("%d/%m/%Y")
     parts = [
-        '<table align="center">',
-        f"<thead><tr>{headers}</tr></thead>",
-        f"<tbody><tr>{cells}</tr></tbody>",
-        "</table>",
-        "",
-        f'<p align="center">Média dos últimos 7 dias: <strong>{average}</strong> contribuições por dia.</p>',
+        f'<!-- CONTRIBUTIONS:METRICS {raw_metrics} -->',
         "",
         render_chart(data),
         "",

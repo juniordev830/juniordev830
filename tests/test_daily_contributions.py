@@ -130,6 +130,27 @@ class DashboardTests(unittest.TestCase):
         evening = render_markdown(data, datetime(2026, 11, 10, 22, tzinfo=timezone.utc))
         self.assertEqual(morning, evening)
 
+    def test_duplicate_summary_stays_invisible_without_breaking_raw_dashboard_metrics(self):
+        from html.parser import HTMLParser
+
+        class VisibleText(HTMLParser):
+            def __init__(self):
+                super().__init__()
+                self.chunks = []
+
+            def handle_data(self, text):
+                self.chunks.append(text)
+
+        output = render_markdown(metrics(fake_calendar(), TODAY),
+                                 datetime(2026, 11, 10, 17, tzinfo=timezone.utc))
+        self.assertIn('<!-- CONTRIBUTIONS:METRICS <strong>13</strong><strong>12</strong><strong>70</strong><strong>2.012</strong> -->', output)
+        visible = VisibleText()
+        visible.feed(output)
+        self.assertNotIn('2.012', ''.join(visible.chunks))
+        self.assertNotIn('<table', output)
+        self.assertNotIn('Média dos últimos 7 dias:', output)
+        self.assertIn('<img', output)
+
     def test_chart_keeps_all_dates_and_values_in_chronological_order(self):
         data = metrics(fake_calendar(), TODAY)
         root = ElementTree.fromstring(render_svg(data, datetime(2026, 11, 10, tzinfo=timezone.utc)))
