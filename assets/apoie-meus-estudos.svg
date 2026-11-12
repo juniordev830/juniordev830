@@ -1,55 +1,54 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="460" viewBox="0 0 800 460" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="440" viewBox="0 0 1600 440" role="img" aria-labelledby="title desc">
 <title id="title">Apoie meus estudos</title>
-<desc id="desc">Contribuições voluntárias via Pix para apoiar meus estudos e formação em tecnologia. O QR Code Pix original está preservado. Clique para abrir o QR Code em tamanho maior.</desc>
+<desc id="desc">Contribuições voluntárias via Pix para apoiar meus estudos e formação em tecnologia. O QR Code Pix original está preservado; clique para abrir em tamanho maior.</desc>
 <defs>
   <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#101820"/><stop offset="1" stop-color="#17232d"/></linearGradient>
   <style>
-    .title{font:700 34px 'Segoe UI',Arial,sans-serif;fill:#f1f5f9}
-    .body{font:400 18px 'Segoe UI',Arial,sans-serif;fill:#d2dce5}
-    .label{font:600 16px 'Segoe UI',Arial,sans-serif;fill:#e7edf3}
-    .small{font:400 15px 'Segoe UI',Arial,sans-serif;fill:#aebdca}
-    .icon{fill:none;stroke:#83c9eb;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
-    .line{stroke:#354854;stroke-width:1}
+    .title{font:700 42px 'Segoe UI',Arial,sans-serif;fill:#f1f5f9}
+    .body{font:400 27px 'Segoe UI',Arial,sans-serif;fill:#d2dce5}
+    .label{font:600 23px 'Segoe UI',Arial,sans-serif;fill:#e7edf3}
+    .small{font:400 21px 'Segoe UI',Arial,sans-serif;fill:#aebdca}
+    .icon{fill:none;stroke:#83c9eb;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+    .line{stroke:#354854;stroke-width:2}
   </style>
 </defs>
-<rect x="1" y="1" width="798" height="458" rx="20" fill="url(#bg)" stroke="#364957" stroke-width="2"/>
-<rect x="28" y="30" width="42" height="42" rx="12" fill="#1b2b36" stroke="#3d596b"/>
-<path d="M39 43l10-5 10 5-10 5-10-5zm0 8 10-5 10 5-10 5-10-5zm0 8 10-5 10 5-10 5-10-5z" class="icon"/>
-<text x="88" y="59" class="title">Apoie meus estudos</text>
-<text x="30" y="111" class="body">Se algum dos meus projetos te ajudou, considere contribuir</text>
-<text x="30" y="138" class="body">voluntariamente para apoiar meus estudos e formação em tecnologia.</text>
-<rect x="606" y="22" width="166" height="166" rx="12" fill="#fff" stroke="#617989" stroke-width="2"/>
-<svg x="616" y="32" width="146" height="146" viewBox="0 0 57 57" aria-label="QR Code Pix">
+<rect x="2" y="2" width="1596" height="436" rx="28" fill="url(#bg)" stroke="#364957" stroke-width="3"/>
+<rect x="60" y="54" width="58" height="58" rx="16" fill="#1b2b36" stroke="#3d596b" stroke-width="2"/>
+<path d="M75 71l14-7 14 7-14 7-14-7zm0 12 14-7 14 7-14 7-14-7zm0 12 14-7 14 7-14 7-14-7z" class="icon"/>
+<text x="146" y="98" class="title">Apoie meus estudos</text>
+<text x="62" y="158" class="body">Se algum dos meus projetos te ajudou, considere contribuir</text>
+<text x="62" y="196" class="body">voluntariamente para apoiar meus estudos e formação em tecnologia.</text>
+<rect x="1358" y="28" width="214" height="214" rx="16" fill="#fff" stroke="#617989" stroke-width="3"/>
+<svg x="1371" y="41" width="188" height="188" viewBox="0 0 57 57" aria-label="QR Code Pix">
 <rect width="57" height="57" fill="#fff"/><path d="M4 4h7v1h-7zM13 4h2v1h-2zM16 4h1v1h-1zM19 4h1v1h-1zM22 4h2v1h-2zM27 4h2v1h-2zM30 4h5v1h-5zM36 4h4v1h-4zM44 4h1v1h-1zM46 4h7v1h-7zM4 5h1v1h-1zM10 5h1v1h-1zM13 5h2v1h-2zM16 5h3v1h-3zM22 5h4v1h-4zM29 5h1v1h-1zM31 5h3v1h-3zM35 5h1v1h-1zM37 5h2v1h-2zM41 5h4v1h-4zM46 5h1v1h-1zM52 5h1v1h-1zM4 6h1v1h-1zM6 6h3v1h-3zM10 6h1v1h-1zM13 6h1v1h-1zM15 6h2v1h-2zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h2v1h-2zM28 6h3v1h-3zM34 6h1v1h-1zM38 6h3v1h-3zM43 6h2v1h-2zM46 6h1v1h-1zM48 6h3v1h-3zM52 6h1v1h-1zM4 7h1v1h-1zM6 7h3v1h-3zM10 7h1v1h-1zM14 7h1v1h-1zM25 7h1v1h-1zM27 7h1v1h-1zM29 7h1v1h-1zM31 7h1v1h-1zM33 7h2v1h-2zM36 7h1v1h-1zM39 7h3v1h-3zM43 7h1v1h-1zM46 7h1v1h-1zM48 7h3v1h-3zM52 7h1v1h-1zM4 8h1v1h-1zM6 8h3v1h-3zM10 8h1v1h-1zM13 8h2v1h-2zM17 8h1v1h-1zM21 8h11v1h-11zM35 8h1v1h-1zM40 8h2v1h-2zM46 8h1v1h-1zM48 8h3v1h-3zM52 8h1v1h-1zM4 9h1v1h-1zM10 9h1v1h-1zM12 9h1v1h-1zM14 9h2v1h-2zM20 9h1v1h-1zM24 9h1v1h-1zM26 9h1v1h-1zM30 9h1v1h-1zM32 9h1v1h-1zM38 9h5v1h-5zM46 9h1v1h-1zM52 9h1v1h-1zM4 10h7v1h-7zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM18 10h1v1h-1zM20 10h1v1h-1zM22 10h1v1h-1zM24 10h1v1h-1zM26 10h1v1h-1zM28 10h1v1h-1zM30 10h1v1h-1zM32 10h1v1h-1zM34 10h1v1h-1zM36 10h1v1h-1zM38 10h1v1h-1zM40 10h1v1h-1zM42 10h1v1h-1zM44 10h1v1h-1zM46 10h7v1h-7zM13 11h1v1h-1zM15 11h2v1h-2zM18 11h5v1h-5zM26 11h1v1h-1zM30 11h3v1h-3zM36 11h1v1h-1zM39 11h4v1h-4zM44 11h1v1h-1zM4 12h1v1h-1zM7 12h1v1h-1zM9 12h2v1h-2zM12 12h1v1h-1zM15 12h3v1h-3zM19 12h3v1h-3zM23 12h1v1h-1zM26 12h5v1h-5zM32 12h3v1h-3zM36 12h1v1h-1zM38 12h3v1h-3zM43 12h1v1h-1zM45 12h1v1h-1zM47 12h1v1h-1zM6 13h4v1h-4zM15 13h3v1h-3zM21 13h1v1h-1zM25 13h1v1h-1zM29 13h3v1h-3zM33 13h1v1h-1zM35 13h1v1h-1zM38 13h5v1h-5zM45 13h1v1h-1zM47 13h1v1h-1zM49 13h3v1h-3zM6 14h1v1h-1zM9 14h2v1h-2zM13 14h1v1h-1zM17 14h4v1h-4zM22 14h1v1h-1zM28 14h2v1h-2zM33 14h2v1h-2zM39 14h3v1h-3zM43 14h1v1h-1zM46 14h2v1h-2zM49 14h1v1h-1zM6 15h1v1h-1zM8 15h2v1h-2zM13 15h2v1h-2zM17 15h1v1h-1zM19 15h1v1h-1zM21 15h1v1h-1zM25 15h1v1h-1zM29 15h3v1h-3zM33 15h4v1h-4zM38 15h2v1h-2zM47 15h1v1h-1zM5 16h2v1h-2zM10 16h1v1h-1zM12 16h1v1h-1zM18 16h3v1h-3zM24 16h1v1h-1zM27 16h1v1h-1zM30 16h2v1h-2zM34 16h3v1h-3zM38 16h3v1h-3zM42 16h1v1h-1zM46 16h2v1h-2zM49 16h1v1h-1zM51 16h1v1h-1zM4 17h2v1h-2zM7 17h1v1h-1zM14 17h1v1h-1zM18 17h1v1h-1zM20 17h5v1h-5zM31 17h1v1h-1zM33 17h1v1h-1zM37 17h2v1h-2zM40 17h1v1h-1zM43 17h1v1h-1zM46 17h2v1h-2zM49 17h3v1h-3zM7 18h2v1h-2zM10 18h2v1h-2zM14 18h1v1h-1zM16 18h1v1h-1zM21 18h1v1h-1zM24 18h1v1h-1zM27 18h2v1h-2zM31 18h3v1h-3zM35 18h1v1h-1zM39 18h1v1h-1zM42 18h4v1h-4zM47 18h2v1h-2zM50 18h3v1h-3zM5 19h1v1h-1zM7 19h2v1h-2zM11 19h1v1h-1zM13 19h1v1h-1zM15 19h5v1h-5zM21 19h2v1h-2zM24 19h1v1h-1zM26 19h2v1h-2zM30 19h2v1h-2zM33 19h1v1h-1zM36 19h1v1h-1zM43 19h2v1h-2zM47 19h2v1h-2zM51 19h1v1h-1zM4 20h1v1h-1zM6 20h3v1h-3zM10 20h4v1h-4zM19 20h3v1h-3zM24 20h1v1h-1zM27 20h1v1h-1zM30 20h3v1h-3zM35 20h2v1h-2zM39 20h4v1h-4zM44 20h1v1h-1zM47 20h3v1h-3zM52 20h1v1h-1zM5 21h3v1h-3zM9 21h1v1h-1zM11 21h1v1h-1zM14 21h1v1h-1zM16 21h2v1h-2zM21 21h1v1h-1zM31 21h2v1h-2zM35 21h2v1h-2zM39 21h7v1h-7zM47 21h3v1h-3zM51 21h2v1h-2zM4 22h3v1h-3zM10 22h4v1h-4zM17 22h2v1h-2zM20 22h3v1h-3zM24 22h1v1h-1zM28 22h1v1h-1zM31 22h1v1h-1zM33 22h1v1h-1zM36 22h2v1h-2zM40 22h2v1h-2zM43 22h2v1h-2zM47 22h1v1h-1zM50 22h2v1h-2zM4 23h1v1h-1zM6 23h1v1h-1zM8 23h1v1h-1zM11 23h2v1h-2zM14 23h1v1h-1zM16 23h4v1h-4zM21 23h1v1h-1zM24 23h1v1h-1zM26 23h2v1h-2zM29 23h6v1h-6zM39 23h1v1h-1zM41 23h1v1h-1zM44 23h1v1h-1zM46 23h1v1h-1zM49 23h2v1h-2zM4 24h1v1h-1zM6 24h1v1h-1zM9 24h3v1h-3zM14 24h2v1h-2zM17 24h1v1h-1zM20 24h1v1h-1zM23 24h1v1h-1zM26 24h1v1h-1zM28 24h1v1h-1zM30 24h2v1h-2zM33 24h1v1h-1zM36 24h2v1h-2zM39 24h3v1h-3zM44 24h3v1h-3zM50 24h3v1h-3zM4 25h1v1h-1zM6 25h1v1h-1zM9 25h1v1h-1zM12 25h5v1h-5zM18 25h3v1h-3zM22 25h6v1h-6zM30 25h1v1h-1zM33 25h2v1h-2zM39 25h1v1h-1zM44 25h2v1h-2zM48 25h1v1h-1zM4 26h2v1h-2zM8 26h6v1h-6zM16 26h2v1h-2zM19 26h1v1h-1zM21 26h2v1h-2zM24 26h1v1h-1zM26 26h7v1h-7zM34 26h1v1h-1zM37 26h4v1h-4zM44 26h7v1h-7zM52 26h1v1h-1zM4 27h1v1h-1zM8 27h1v1h-1zM12 27h2v1h-2zM15 27h2v1h-2zM18 27h1v1h-1zM21 27h1v1h-1zM23 27h2v1h-2zM26 27h1v1h-1zM30 27h2v1h-2zM34 27h3v1h-3zM43 27h2v1h-2zM48 27h2v1h-2zM52 27h1v1h-1zM4 28h3v1h-3zM8 28h1v1h-1zM10 28h1v1h-1zM12 28h2v1h-2zM15 28h2v1h-2zM21 28h1v1h-1zM26 28h1v1h-1zM28 28h1v1h-1zM30 28h1v1h-1zM32 28h1v1h-1zM35 28h1v1h-1zM40 28h1v1h-1zM42 28h1v1h-1zM44 28h1v1h-1zM46 28h1v1h-1zM48 28h1v1h-1zM50 28h1v1h-1zM52 28h1v1h-1zM5 29h1v1h-1zM7 29h2v1h-2zM12 29h2v1h-2zM20 29h1v1h-1zM22 29h1v1h-1zM25 29h2v1h-2zM30 29h4v1h-4zM37 29h1v1h-1zM39 29h2v1h-2zM43 29h2v1h-2zM48 29h4v1h-4zM4 30h1v1h-1zM7 30h6v1h-6zM16 30h4v1h-4zM23 30h2v1h-2zM26 30h5v1h-5zM32 30h1v1h-1zM34 30h3v1h-3zM38 30h1v1h-1zM40 30h1v1h-1zM42 30h10v1h-10zM6 31h1v1h-1zM9 31h1v1h-1zM12 31h2v1h-2zM15 31h3v1h-3zM19 31h1v1h-1zM21 31h1v1h-1zM25 31h2v1h-2zM28 31h2v1h-2zM31 31h2v1h-2zM35 31h1v1h-1zM42 31h6v1h-6zM50 31h3v1h-3zM5 32h3v1h-3zM10 32h1v1h-1zM14 32h2v1h-2zM18 32h2v1h-2zM21 32h1v1h-1zM24 32h3v1h-3zM28 32h1v1h-1zM30 32h1v1h-1zM34 32h3v1h-3zM39 32h1v1h-1zM41 32h1v1h-1zM45 32h4v1h-4zM50 32h3v1h-3zM5 33h1v1h-1zM8 33h1v1h-1zM11 33h4v1h-4zM16 33h1v1h-1zM18 33h3v1h-3zM23 33h3v1h-3zM27 33h3v1h-3zM31 33h2v1h-2zM35 33h3v1h-3zM39 33h2v1h-2zM42 33h2v1h-2zM47 33h1v1h-1zM49 33h2v1h-2zM4 34h3v1h-3zM10 34h1v1h-1zM15 34h1v1h-1zM21 34h5v1h-5zM31 34h2v1h-2zM34 34h1v1h-1zM36 34h1v1h-1zM38 34h2v1h-2zM42 34h3v1h-3zM46 34h2v1h-2zM49 34h1v1h-1zM4 35h1v1h-1zM6 35h4v1h-4zM12 35h3v1h-3zM17 35h3v1h-3zM21 35h2v1h-2zM25 35h1v1h-1zM28 35h1v1h-1zM30 35h3v1h-3zM35 35h2v1h-2zM38 35h3v1h-3zM43 35h2v1h-2zM49 35h3v1h-3zM4 36h1v1h-1zM10 36h2v1h-2zM13 36h3v1h-3zM17 36h1v1h-1zM19 36h4v1h-4zM26 36h2v1h-2zM32 36h1v1h-1zM38 36h1v1h-1zM40 36h1v1h-1zM42 36h1v1h-1zM44 36h2v1h-2zM49 36h4v1h-4zM4 37h2v1h-2zM8 37h2v1h-2zM13 37h4v1h-4zM18 37h3v1h-3zM22 37h1v1h-1zM24 37h4v1h-4zM31 37h1v1h-1zM36 37h2v1h-2zM40 37h1v1h-1zM43 37h2v1h-2zM47 37h1v1h-1zM51 37h2v1h-2zM4 38h1v1h-1zM7 38h2v1h-2zM10 38h2v1h-2zM13 38h1v1h-1zM16 38h4v1h-4zM21 38h2v1h-2zM24 38h1v1h-1zM27 38h2v1h-2zM31 38h1v1h-1zM34 38h6v1h-6zM41 38h1v1h-1zM46 38h1v1h-1zM51 38h1v1h-1zM5 39h1v1h-1zM7 39h1v1h-1zM9 39h1v1h-1zM11 39h1v1h-1zM14 39h1v1h-1zM18 39h1v1h-1zM20 39h1v1h-1zM24 39h4v1h-4zM29 39h5v1h-5zM35 39h1v1h-1zM37 39h2v1h-2zM40 39h1v1h-1zM42 39h2v1h-2zM47 39h3v1h-3zM52 39h1v1h-1zM7 40h4v1h-4zM12 40h3v1h-3zM16 40h1v1h-1zM18 40h3v1h-3zM24 40h2v1h-2zM28 40h3v1h-3zM34 40h1v1h-1zM36 40h2v1h-2zM40 40h2v1h-2zM44 40h2v1h-2zM50 40h3v1h-3zM6 41h2v1h-2zM9 41h1v1h-1zM11 41h1v1h-1zM13 41h1v1h-1zM15 41h1v1h-1zM17 41h2v1h-2zM21 41h1v1h-1zM26 41h2v1h-2zM31 41h1v1h-1zM35 41h1v1h-1zM38 41h2v1h-2zM45 41h1v1h-1zM48 41h1v1h-1zM50 41h3v1h-3zM5 42h1v1h-1zM9 42h2v1h-2zM12 42h1v1h-1zM14 42h1v1h-1zM16 42h1v1h-1zM19 42h1v1h-1zM23 42h1v1h-1zM27 42h2v1h-2zM31 42h1v1h-1zM33 42h1v1h-1zM35 42h2v1h-2zM42 42h1v1h-1zM44 42h2v1h-2zM47 42h1v1h-1zM52 42h1v1h-1zM5 43h3v1h-3zM11 43h3v1h-3zM15 43h3v1h-3zM20 43h2v1h-2zM24 43h2v1h-2zM27 43h2v1h-2zM34 43h2v1h-2zM39 43h1v1h-1zM42 43h2v1h-2zM45 43h1v1h-1zM49 43h4v1h-4zM4 44h3v1h-3zM10 44h3v1h-3zM17 44h2v1h-2zM20 44h1v1h-1zM23 44h2v1h-2zM26 44h5v1h-5zM34 44h1v1h-1zM38 44h5v1h-5zM44 44h5v1h-5zM50 44h3v1h-3zM12 45h3v1h-3zM16 45h4v1h-4zM21 45h1v1h-1zM24 45h1v1h-1zM26 45h1v1h-1zM30 45h2v1h-2zM33 45h1v1h-1zM35 45h3v1h-3zM40 45h2v1h-2zM43 45h2v1h-2zM48 45h3v1h-3zM52 45h1v1h-1zM4 46h7v1h-7zM13 46h4v1h-4zM18 46h4v1h-4zM24 46h3v1h-3zM28 46h1v1h-1zM30 46h1v1h-1zM32 46h1v1h-1zM35 46h1v1h-1zM39 46h2v1h-2zM42 46h1v1h-1zM44 46h1v1h-1zM46 46h1v1h-1zM48 46h1v1h-1zM50 46h1v1h-1zM4 47h1v1h-1zM10 47h1v1h-1zM12 47h2v1h-2zM16 47h3v1h-3zM21 47h6v1h-6zM30 47h5v1h-5zM36 47h2v1h-2zM39 47h6v1h-6zM48 47h2v1h-2zM4 48h1v1h-1zM6 48h3v1h-3zM10 48h1v1h-1zM13 48h1v1h-1zM20 48h3v1h-3zM26 48h7v1h-7zM34 48h2v1h-2zM39 48h1v1h-1zM41 48h1v1h-1zM44 48h5v1h-5zM50 48h1v1h-1zM52 48h1v1h-1zM4 49h1v1h-1zM6 49h3v1h-3zM10 49h1v1h-1zM12 49h1v1h-1zM14 49h1v1h-1zM16 49h1v1h-1zM18 49h1v1h-1zM20 49h1v1h-1zM22 49h1v1h-1zM24 49h4v1h-4zM29 49h1v1h-1zM31 49h1v1h-1zM39 49h1v1h-1zM41 49h1v1h-1zM44 49h1v1h-1zM46 49h2v1h-2zM4 50h1v1h-1zM6 50h3v1h-3zM10 50h1v1h-1zM16 50h3v1h-3zM22 50h2v1h-2zM26 50h2v1h-2zM30 50h3v1h-3zM34 50h2v1h-2zM38 50h1v1h-1zM41 50h1v1h-1zM43 50h1v1h-1zM45 50h2v1h-2zM48 50h1v1h-1zM50 50h1v1h-1zM52 50h1v1h-1zM4 51h1v1h-1zM10 51h1v1h-1zM13 51h4v1h-4zM19 51h4v1h-4zM26 51h1v1h-1zM28 51h3v1h-3zM32 51h1v1h-1zM40 51h1v1h-1zM42 51h9v1h-9zM52 51h1v1h-1zM4 52h7v1h-7zM12 52h1v1h-1zM14 52h2v1h-2zM17 52h1v1h-1zM19 52h1v1h-1zM21 52h1v1h-1zM24 52h7v1h-7zM32 52h1v1h-1zM36 52h1v1h-1zM39 52h3v1h-3zM44 52h1v1h-1zM48 52h1v1h-1zM50 52h1v1h-1zM52 52h1v1h-1z" fill="#000"/>
 </svg>
-<text x="689" y="211" text-anchor="middle" class="label">Pix — Apoio aos Estudos</text>
-<line x1="28" y1="235" x2="772" y2="235" class="line"/>
-<g transform="translate(34 264)">
-  <rect width="350" height="58" rx="12" fill="#131f28" stroke="#2d414e"/>
-  <path d="M17 19h22v20H17zM22 14h22v20" class="icon"/>
-  <text x="58" y="25" class="label">Mantém projetos ativos</text>
-  <text x="58" y="45" class="small">Mais tempo para cuidar do que já existe.</text>
+<text x="1465" y="268" text-anchor="middle" class="label">Pix — Apoio aos Estudos</text>
+<line x1="60" y1="284" x2="1540" y2="284" class="line"/>
+<g transform="translate(78 314)">
+  <path d="M0 11h34v30H0zM8 3h34v30" class="icon"/>
+  <text x="60" y="22" class="label">Mantém projetos</text>
+  <text x="60" y="51" class="label">ativos</text>
 </g>
-<g transform="translate(416 264)">
-  <rect width="350" height="58" rx="12" fill="#131f28" stroke="#2d414e"/>
-  <path d="M18 22l14-8 14 8-14 8-14-8zm0 9 14 8 14-8" class="icon"/>
-  <text x="58" y="25" class="label">Viabiliza novas ideias</text>
-  <text x="58" y="45" class="small">Abre espaço para novos projetos.</text>
+<line x1="425" y1="307" x2="425" y2="370" class="line"/>
+<g transform="translate(468 314)">
+  <path d="M0 16l27-14 27 14-27 14L0 16zm0 17 27 14 27-14" class="icon"/>
+  <text x="72" y="22" class="label">Viabiliza</text>
+  <text x="72" y="51" class="label">novas ideias</text>
 </g>
-<g transform="translate(34 334)">
-  <rect width="350" height="58" rx="12" fill="#131f28" stroke="#2d414e"/>
-  <path d="M18 42c2-13 11-22 27-27-2 16-11 25-27 27zm5-2 18-18" class="icon"/>
-  <text x="58" y="25" class="label">Acelera evoluções</text>
-  <text x="58" y="45" class="small">Ajuda a implementar melhorias.</text>
+<line x1="805" y1="307" x2="805" y2="370" class="line"/>
+<g transform="translate(850 314)">
+  <path d="M0 47C3 25 20 9 50 1 46 31 29 45 0 47zm9-4L41 11" class="icon"/>
+  <text x="70" y="22" class="label">Acelera</text>
+  <text x="70" y="51" class="label">evoluções</text>
 </g>
-<g transform="translate(416 334)">
-  <rect width="350" height="58" rx="12" fill="#131f28" stroke="#2d414e"/>
-  <path d="M18 20l14-7 14 7-14 7-14-7zm5 4v17q9 7 18 0V24m5-4v18" class="icon"/>
-  <text x="58" y="25" class="label">Apoia meus estudos</text>
-  <text x="58" y="45" class="small">Contribui com minha formação.</text>
+<line x1="1170" y1="307" x2="1170" y2="370" class="line"/>
+<g transform="translate(1208 314)">
+  <path d="M0 14L27 1l27 13-27 13L0 14zm9 5v27q18 12 36 0V19m9-5v30" class="icon"/>
+  <text x="72" y="22" class="label">Apoia meus</text>
+  <text x="72" y="51" class="label">estudos</text>
 </g>
-<line x1="28" y1="414" x2="772" y2="414" class="line"/>
-<path d="M34 435l8 8 15-17" class="icon"/>
-<text x="67" y="441" class="small">Contribuição 100% voluntária e segura.</text>
-<text x="765" y="441" text-anchor="end" class="small">Obrigado pelo apoio! <tspan fill="#83c9eb">💙</tspan></text>
+<line x1="60" y1="386" x2="1540" y2="386" class="line"/>
+<path d="M68 412l11 11 21-24" class="icon"/>
+<text x="120" y="423" class="small">Contribuição 100% voluntária e segura.</text>
+<text x="1530" y="423" text-anchor="end" class="small">Obrigado pelo apoio! <tspan fill="#83c9eb">💙</tspan></text>
 </svg>
