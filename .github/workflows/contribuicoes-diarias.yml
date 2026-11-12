@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - feat/painel-contribuicoes-diarias
     paths:
       - README.md
       - scripts/render_daily_contributions.py
@@ -23,9 +22,10 @@ on:
 permissions:
   contents: write
 
+# Serializa os trabalhos no mesmo branch, em vez de cancelar uma atualização no meio.
 concurrency:
-  group: daily-contributions-${{ github.ref }}
-  cancel-in-progress: true
+  group: profile-contributions-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   test:
@@ -40,8 +40,9 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m unittest discover -s tests -p 'test_daily_contributions.py' -v
+
   update:
-    if: github.event_name != 'pull_request' && github.repository == 'juniordev830/juniordev830'
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && github.repository == 'juniordev830/juniordev830'
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
@@ -51,18 +52,40 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Testar gerador do painel
+      - name: Validar o gerador do painel
         run: python -m unittest discover -s tests -p 'test_daily_contributions.py' -v
-      - name: Consultar API oficial e atualizar painel e gráfico
+      - name: Consultar GitHub e publicar painel com retry seguro
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python scripts/render_daily_contributions.py
-      - name: Salvar README somente quando os números ou a data mudarem
+        shell: bash
         run: |
-          git add README.md assets/contribuicoes-diarias.svg
-          if ! git diff --cached --quiet; then
-            git config user.name 'github-actions[bot]'
-            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git commit -m 'chore(profile): atualizar contagens diárias reais'
-            git push
-          fi
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
+          # Em caso de push concorrente, sempre recomeçar com o remoto atualizado.
+          # Só os arquivos gerados são adicionados ao commit: nada de force-push.
+          for attempt in 1 2 3 4 5; do
+            echo "Atualização do painel: tentativa ${attempt}/5"
+            git fetch origin main
+            git reset --hard origin/main
+            python scripts/render_daily_contributions.py
+            git add README.md assets/contribuicoes-diarias.svg assets/contribuicoes-diarias.json
+
+            if git diff --cached --quiet; then
+              echo "Calendário ainda sem mudanças confirmadas pelo GitHub."
+              exit 0
+            fi
+
+            git commit -m 'chore(profile): sincronizar contagens oficiais'
+            if git push origin HEAD:main; then
+              echo "Dados do painel publicados na main."
+              exit 0
+            fi
+
+            echo "A main mudou durante a publicação; consultando novamente."
+            sleep "${attempt}"
+          done
+
+          echo "::error::Não foi possível publicar após cinco tentativas; números antigos preservados."
+          exit 1
