@@ -126,3 +126,7 @@ Cinco dias mais ativos na janela:
     <a href="https://github.com/juniordev830?tab=overview">Atividade e contribuições</a>
   </p>
 </div>
+
+## Documentação de desenvolvimento
+
+O [guia de validação e evolução](docs/MANUTENCAO_DO_PERFIL.md) registra o estado atual, os testes e os próximos incrementos deste projeto.
