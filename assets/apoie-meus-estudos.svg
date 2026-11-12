@@ -1,61 +1,75 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="520" viewBox="0 0 1600 520" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="680" viewBox="0 0 1600 680" role="img" aria-labelledby="title desc">
 <title id="title">Apoie meus estudos</title>
-<desc id="desc">Contribuições voluntárias via Pix para apoiar meus estudos e formação em tecnologia. QR Code Pix original preservado; clique para abrir em tamanho maior.</desc>
+<desc id="desc">Se algum dos meus projetos te ajudou, considere contribuir voluntariamente para apoiar meus estudos e formação em tecnologia. Contribuição via Pix. O QR Code original está preservado; clique para abrir em tamanho maior.</desc>
 <defs>
-  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#101820"/><stop offset="1" stop-color="#182631"/></linearGradient>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#09141c"/><stop offset="1" stop-color="#101e28"/></linearGradient>
+  <linearGradient id="card" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#111d26"/><stop offset="1" stop-color="#14232d"/></linearGradient>
+  <linearGradient id="blue" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#59c9f3"/><stop offset="1" stop-color="#60aefa"/></linearGradient>
   <style>
-    .title{font:700 50px 'Segoe UI',Arial,sans-serif;fill:#f2f6fa}
-    .eyebrow{font:600 18px 'Segoe UI',Arial,sans-serif;letter-spacing:1.6px;fill:#83c9eb}
-    .body{font:400 27px 'Segoe UI',Arial,sans-serif;fill:#d5dfe7}
-    .benefit{font:600 27px 'Segoe UI',Arial,sans-serif;fill:#edf3f7}
-    .detail{font:400 21px 'Segoe UI',Arial,sans-serif;fill:#b5c3ce}
-    .qrlabel{font:600 20px 'Segoe UI',Arial,sans-serif;fill:#e7edf3}
-    .footer{font:400 20px 'Segoe UI',Arial,sans-serif;fill:#b5c3ce}
-    .icon{fill:none;stroke:#83c9eb;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
-    .line{stroke:#354854;stroke-width:2}
+    .title{font:700 51px 'Segoe UI',Arial,sans-serif;fill:#f4f7fa}
+    .accent{font:700 51px 'Segoe UI',Arial,sans-serif;fill:url(#blue)}
+    .body{font:400 25px 'Segoe UI',Arial,sans-serif;fill:#d1dce5}
+    .cta{font:700 43px 'Segoe UI',Arial,sans-serif;fill:#f4f7fa}
+    .sub{font:400 24px 'Segoe UI',Arial,sans-serif;fill:#b8c7d1}
+    .pill{font:600 22px 'Segoe UI',Arial,sans-serif;fill:#dce7ee}
+    .benefit{font:600 20px 'Segoe UI',Arial,sans-serif;fill:#e6edf2}
+    .footer{font:400 21px 'Segoe UI',Arial,sans-serif;fill:#bdcbd4}
+    .icon{fill:none;stroke:#51c7f1;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+    .line{stroke:#314a58;stroke-width:2}
   </style>
 </defs>
-<rect x="2" y="2" width="1596" height="516" rx="30" fill="url(#bg)" stroke="#3b5362" stroke-width="3"/>
-<rect x="61" y="52" width="58" height="58" rx="17" fill="#1b2b36" stroke="#3d596b" stroke-width="2"/>
-<path d="M76 68l14-7 14 7-14 7-14-7zm0 13 14-7 14 7-14 7-14-7zm0 13 14-7 14 7-14 7-14-7z" class="icon"/>
-<text x="146" y="67" class="eyebrow">APOIO VOLUNTÁRIO</text>
-<text x="146" y="114" class="title">Apoie meus estudos</text>
-<text x="146" y="161" class="body">Se algum dos meus projetos te ajudou, considere contribuir</text>
-<text x="146" y="199" class="body">voluntariamente para apoiar meus estudos e formação em tecnologia.</text>
-<line x1="1305" y1="34" x2="1305" y2="273" class="line"/>
-<rect x="1333" y="24" width="234" height="250" rx="20" fill="#141f28" stroke="#304651" stroke-width="2"/>
-<rect x="1350" y="38" width="200" height="200" rx="14" fill="#fff" stroke="#7893a1" stroke-width="2"/>
-<svg x="1362" y="50" width="176" height="176" viewBox="0 0 57 57" aria-label="QR Code Pix original">
+<rect x="2" y="2" width="1596" height="676" rx="28" fill="url(#bg)" stroke="#2e5367" stroke-width="3"/>
+<rect x="55" y="39" width="72" height="62" rx="14" fill="#101e28" stroke="#278bb7" stroke-width="2"/>
+<path d="M70 56l12-10h25L95 56m-25 0 12 10h25L95 56m-25 0h25m-6-9h.1m-19 9h.1m19 9h.1" class="icon" style="stroke-width:3"/>
+<line x1="168" y1="42" x2="168" y2="100" stroke="#69c7ef" stroke-width="2"/>
+<text x="204" y="82" class="title">Apoie meus </text><text x="566" y="82" class="accent">estudos</text>
+<line x1="810" y1="56" x2="1510" y2="56" stroke="url(#blue)" stroke-width="2" opacity=".72"/>
+<circle cx="1510" cy="56" r="5" fill="#55c6f3"/>
+<text x="60" y="140" class="body">Se algum dos meus projetos te ajudou, considere contribuir voluntariamente para apoiar</text>
+<text x="60" y="174" class="body">meus estudos e formação em tecnologia.</text>
+<rect x="50" y="208" width="1500" height="438" rx="28" fill="url(#card)" stroke="#34566a" stroke-width="2"/>
+<rect x="88" y="246" width="128" height="128" rx="24" fill="#172630" stroke="#304d5c" stroke-width="2"/>
+<path d="M152 352C135 337 111 317 111 294c0-17 12-29 28-29 10 0 18 5 23 14 5-9 14-14 24-14 16 0 28 12 28 29 0 23-24 43-62 58z" class="icon" style="stroke-width:5"/>
+<text x="250" y="292" class="cta">Contribua via </text><text x="592" y="292" class="accent" style="font-size:43px">Pix</text>
+<text x="250" y="331" class="sub">Seu apoio faz a diferença!</text>
+<rect x="88" y="397" width="955" height="58" rx="15" fill="#15232d" stroke="#3b5968" stroke-width="2"/>
+<path d="M116 426a13 13 0 1 1 26 0c0 9-13 21-13 21s-13-12-13-21z" class="icon" style="stroke-width:2.7"/>
+<circle cx="129" cy="426" r="4" fill="#51c7f1"/>
+<text x="165" y="433" class="pill">Apoio voluntário via Pix</text>
+<line x1="485" y1="410" x2="485" y2="443" class="line"/>
+<text x="515" y="433" class="pill">Contribua pelo seu app bancário</text>
+<line x1="1104" y1="236" x2="1104" y2="565" class="line"/>
+<line x1="1104" y1="332" x2="1104" y2="370" stroke="#42bfe9" stroke-width="4" stroke-linecap="round"/>
+<g transform="translate(89 495)">
+  <path d="M0 8h31v27H0zM7 1h31v27" class="icon" style="stroke-width:3"/>
+  <text x="50" y="15" class="benefit">Mantém projetos</text><text x="50" y="40" class="benefit">ativos</text>
+</g>
+<line x1="333" y1="486" x2="333" y2="548" class="line"/>
+<g transform="translate(365 495)">
+  <path d="M0 16l23-13 23 13-23 13L0 16zm0 16 23 13 23-13" class="icon" style="stroke-width:3"/>
+  <text x="62" y="15" class="benefit">Viabiliza</text><text x="62" y="40" class="benefit">novas ideias</text>
+</g>
+<line x1="609" y1="486" x2="609" y2="548" class="line"/>
+<g transform="translate(640 495)">
+  <path d="M0 44C3 24 17 9 40 2 37 25 23 40 0 44zm8-4L33 13" class="icon" style="stroke-width:3"/>
+  <text x="55" y="15" class="benefit">Acelera</text><text x="55" y="40" class="benefit">evoluções</text>
+</g>
+<line x1="835" y1="486" x2="835" y2="548" class="line"/>
+<g transform="translate(865 495)">
+  <path d="M0 13L23 1l23 12-23 12L0 13zm8 7v24q15 10 30 0V20m8-7v31" class="icon" style="stroke-width:3"/>
+  <text x="62" y="15" class="benefit">Apoia meus</text><text x="62" y="40" class="benefit">estudos</text>
+</g>
+<rect x="1197" y="235" width="290" height="290" rx="24" fill="#101b24" stroke="#2d4d5c" stroke-width="2"/>
+<rect x="1218" y="256" width="248" height="248" rx="17" fill="#fff"/>
+<svg x="1231" y="269" width="222" height="222" viewBox="0 0 57 57" aria-label="QR Code Pix original">
 <rect width="57" height="57" fill="#fff"/><path d="M4 4h7v1h-7zM13 4h2v1h-2zM16 4h1v1h-1zM19 4h1v1h-1zM22 4h2v1h-2zM27 4h2v1h-2zM30 4h5v1h-5zM36 4h4v1h-4zM44 4h1v1h-1zM46 4h7v1h-7zM4 5h1v1h-1zM10 5h1v1h-1zM13 5h2v1h-2zM16 5h3v1h-3zM22 5h4v1h-4zM29 5h1v1h-1zM31 5h3v1h-3zM35 5h1v1h-1zM37 5h2v1h-2zM41 5h4v1h-4zM46 5h1v1h-1zM52 5h1v1h-1zM4 6h1v1h-1zM6 6h3v1h-3zM10 6h1v1h-1zM13 6h1v1h-1zM15 6h2v1h-2zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h2v1h-2zM28 6h3v1h-3zM34 6h1v1h-1zM38 6h3v1h-3zM43 6h2v1h-2zM46 6h1v1h-1zM48 6h3v1h-3zM52 6h1v1h-1zM4 7h1v1h-1zM6 7h3v1h-3zM10 7h1v1h-1zM14 7h1v1h-1zM25 7h1v1h-1zM27 7h1v1h-1zM29 7h1v1h-1zM31 7h1v1h-1zM33 7h2v1h-2zM36 7h1v1h-1zM39 7h3v1h-3zM43 7h1v1h-1zM46 7h1v1h-1zM48 7h3v1h-3zM52 7h1v1h-1zM4 8h1v1h-1zM6 8h3v1h-3zM10 8h1v1h-1zM13 8h2v1h-2zM17 8h1v1h-1zM21 8h11v1h-11zM35 8h1v1h-1zM40 8h2v1h-2zM46 8h1v1h-1zM48 8h3v1h-3zM52 8h1v1h-1zM4 9h1v1h-1zM10 9h1v1h-1zM12 9h1v1h-1zM14 9h2v1h-2zM20 9h1v1h-1zM24 9h1v1h-1zM26 9h1v1h-1zM30 9h1v1h-1zM32 9h1v1h-1zM38 9h5v1h-5zM46 9h1v1h-1zM52 9h1v1h-1zM4 10h7v1h-7zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM18 10h1v1h-1zM20 10h1v1h-1zM22 10h1v1h-1zM24 10h1v1h-1zM26 10h1v1h-1zM28 10h1v1h-1zM30 10h1v1h-1zM32 10h1v1h-1zM34 10h1v1h-1zM36 10h1v1h-1zM38 10h1v1h-1zM40 10h1v1h-1zM42 10h1v1h-1zM44 10h1v1h-1zM46 10h7v1h-7zM13 11h1v1h-1zM15 11h2v1h-2zM18 11h5v1h-5zM26 11h1v1h-1zM30 11h3v1h-3zM36 11h1v1h-1zM39 11h4v1h-4zM44 11h1v1h-1zM4 12h1v1h-1zM7 12h1v1h-1zM9 12h2v1h-2zM12 12h1v1h-1zM15 12h3v1h-3zM19 12h3v1h-3zM23 12h1v1h-1zM26 12h5v1h-5zM32 12h3v1h-3zM36 12h1v1h-1zM38 12h3v1h-3zM43 12h1v1h-1zM45 12h1v1h-1zM47 12h1v1h-1zM6 13h4v1h-4zM15 13h3v1h-3zM21 13h1v1h-1zM25 13h1v1h-1zM29 13h3v1h-3zM33 13h1v1h-1zM35 13h1v1h-1zM38 13h5v1h-5zM45 13h1v1h-1zM47 13h1v1h-1zM49 13h3v1h-3zM6 14h1v1h-1zM9 14h2v1h-2zM13 14h1v1h-1zM17 14h4v1h-4zM22 14h1v1h-1zM28 14h2v1h-2zM33 14h2v1h-2zM39 14h3v1h-3zM43 14h1v1h-1zM46 14h2v1h-2zM49 14h1v1h-1zM6 15h1v1h-1zM8 15h2v1h-2zM13 15h2v1h-2zM17 15h1v1h-1zM19 15h1v1h-1zM21 15h1v1h-1zM25 15h1v1h-1zM29 15h3v1h-3zM33 15h4v1h-4zM38 15h2v1h-2zM47 15h1v1h-1zM5 16h2v1h-2zM10 16h1v1h-1zM12 16h1v1h-1zM18 16h3v1h-3zM24 16h1v1h-1zM27 16h1v1h-1zM30 16h2v1h-2zM34 16h3v1h-3zM38 16h3v1h-3zM42 16h1v1h-1zM46 16h2v1h-2zM49 16h1v1h-1zM51 16h1v1h-1zM4 17h2v1h-2zM7 17h1v1h-1zM14 17h1v1h-1zM18 17h1v1h-1zM20 17h5v1h-5zM31 17h1v1h-1zM33 17h1v1h-1zM37 17h2v1h-2zM40 17h1v1h-1zM43 17h1v1h-1zM46 17h2v1h-2zM49 17h3v1h-3zM7 18h2v1h-2zM10 18h2v1h-2zM14 18h1v1h-1zM16 18h1v1h-1zM21 18h1v1h-1zM24 18h1v1h-1zM27 18h2v1h-2zM31 18h3v1h-3zM35 18h1v1h-1zM39 18h1v1h-1zM42 18h4v1h-4zM47 18h2v1h-2zM50 18h3v1h-3zM5 19h1v1h-1zM7 19h2v1h-2zM11 19h1v1h-1zM13 19h1v1h-1zM15 19h5v1h-5zM21 19h2v1h-2zM24 19h1v1h-1zM26 19h2v1h-2zM30 19h2v1h-2zM33 19h1v1h-1zM36 19h1v1h-1zM43 19h2v1h-2zM47 19h2v1h-2zM51 19h1v1h-1zM4 20h1v1h-1zM6 20h3v1h-3zM10 20h4v1h-4zM19 20h3v1h-3zM24 20h1v1h-1zM27 20h1v1h-1zM30 20h3v1h-3zM35 20h2v1h-2zM39 20h4v1h-4zM44 20h1v1h-1zM47 20h3v1h-3zM52 20h1v1h-1zM5 21h3v1h-3zM9 21h1v1h-1zM11 21h1v1h-1zM14 21h1v1h-1zM16 21h2v1h-2zM21 21h1v1h-1zM31 21h2v1h-2zM35 21h2v1h-2zM39 21h7v1h-7zM47 21h3v1h-3zM51 21h2v1h-2zM4 22h3v1h-3zM10 22h4v1h-4zM17 22h2v1h-2zM20 22h3v1h-3zM24 22h1v1h-1zM28 22h1v1h-1zM31 22h1v1h-1zM33 22h1v1h-1zM36 22h2v1h-2zM40 22h2v1h-2zM43 22h2v1h-2zM47 22h1v1h-1zM50 22h2v1h-2zM4 23h1v1h-1zM6 23h1v1h-1zM8 23h1v1h-1zM11 23h2v1h-2zM14 23h1v1h-1zM16 23h4v1h-4zM21 23h1v1h-1zM24 23h1v1h-1zM26 23h2v1h-2zM29 23h6v1h-6zM39 23h1v1h-1zM41 23h1v1h-1zM44 23h1v1h-1zM46 23h1v1h-1zM49 23h2v1h-2zM4 24h1v1h-1zM6 24h1v1h-1zM9 24h3v1h-3zM14 24h2v1h-2zM17 24h1v1h-1zM20 24h1v1h-1zM23 24h1v1h-1zM26 24h1v1h-1zM28 24h1v1h-1zM30 24h2v1h-2zM33 24h1v1h-1zM36 24h2v1h-2zM39 24h3v1h-3zM44 24h3v1h-3zM50 24h3v1h-3zM4 25h1v1h-1zM6 25h1v1h-1zM9 25h1v1h-1zM12 25h5v1h-5zM18 25h3v1h-3zM22 25h6v1h-6zM30 25h1v1h-1zM33 25h2v1h-2zM39 25h1v1h-1zM44 25h2v1h-2zM48 25h1v1h-1zM4 26h2v1h-2zM8 26h6v1h-6zM16 26h2v1h-2zM19 26h1v1h-1zM21 26h2v1h-2zM24 26h1v1h-1zM26 26h7v1h-7zM34 26h1v1h-1zM37 26h4v1h-4zM44 26h7v1h-7zM52 26h1v1h-1zM4 27h1v1h-1zM8 27h1v1h-1zM12 27h2v1h-2zM15 27h2v1h-2zM18 27h1v1h-1zM21 27h1v1h-1zM23 27h2v1h-2zM26 27h1v1h-1zM30 27h2v1h-2zM34 27h3v1h-3zM43 27h2v1h-2zM48 27h2v1h-2zM52 27h1v1h-1zM4 28h3v1h-3zM8 28h1v1h-1zM10 28h1v1h-1zM12 28h2v1h-2zM15 28h2v1h-2zM21 28h1v1h-1zM26 28h1v1h-1zM28 28h1v1h-1zM30 28h1v1h-1zM32 28h1v1h-1zM35 28h1v1h-1zM40 28h1v1h-1zM42 28h1v1h-1zM44 28h1v1h-1zM46 28h1v1h-1zM48 28h1v1h-1zM50 28h1v1h-1zM52 28h1v1h-1zM5 29h1v1h-1zM7 29h2v1h-2zM12 29h2v1h-2zM20 29h1v1h-1zM22 29h1v1h-1zM25 29h2v1h-2zM30 29h4v1h-4zM37 29h1v1h-1zM39 29h2v1h-2zM43 29h2v1h-2zM48 29h4v1h-4zM4 30h1v1h-1zM7 30h6v1h-6zM16 30h4v1h-4zM23 30h2v1h-2zM26 30h5v1h-5zM32 30h1v1h-1zM34 30h3v1h-3zM38 30h1v1h-1zM40 30h1v1h-1zM42 30h10v1h-10zM6 31h1v1h-1zM9 31h1v1h-1zM12 31h2v1h-2zM15 31h3v1h-3zM19 31h1v1h-1zM21 31h1v1h-1zM25 31h2v1h-2zM28 31h2v1h-2zM31 31h2v1h-2zM35 31h1v1h-1zM42 31h6v1h-6zM50 31h3v1h-3zM5 32h3v1h-3zM10 32h1v1h-1zM14 32h2v1h-2zM18 32h2v1h-2zM21 32h1v1h-1zM24 32h3v1h-3zM28 32h1v1h-1zM30 32h1v1h-1zM34 32h3v1h-3zM39 32h1v1h-1zM41 32h1v1h-1zM45 32h4v1h-4zM50 32h3v1h-3zM5 33h1v1h-1zM8 33h1v1h-1zM11 33h4v1h-4zM16 33h1v1h-1zM18 33h3v1h-3zM23 33h3v1h-3zM27 33h3v1h-3zM31 33h2v1h-2zM35 33h3v1h-3zM39 33h2v1h-2zM42 33h2v1h-2zM47 33h1v1h-1zM49 33h2v1h-2zM4 34h3v1h-3zM10 34h1v1h-1zM15 34h1v1h-1zM21 34h5v1h-5zM31 34h2v1h-2zM34 34h1v1h-1zM36 34h1v1h-1zM38 34h2v1h-2zM42 34h3v1h-3zM46 34h2v1h-2zM49 34h1v1h-1zM4 35h1v1h-1zM6 35h4v1h-4zM12 35h3v1h-3zM17 35h3v1h-3zM21 35h2v1h-2zM25 35h1v1h-1zM28 35h1v1h-1zM30 35h3v1h-3zM35 35h2v1h-2zM38 35h3v1h-3zM43 35h2v1h-2zM49 35h3v1h-3zM4 36h1v1h-1zM10 36h2v1h-2zM13 36h3v1h-3zM17 36h1v1h-1zM19 36h4v1h-4zM26 36h2v1h-2zM32 36h1v1h-1zM38 36h1v1h-1zM40 36h1v1h-1zM42 36h1v1h-1zM44 36h2v1h-2zM49 36h4v1h-4zM4 37h2v1h-2zM8 37h2v1h-2zM13 37h4v1h-4zM18 37h3v1h-3zM22 37h1v1h-1zM24 37h4v1h-4zM31 37h1v1h-1zM36 37h2v1h-2zM40 37h1v1h-1zM43 37h2v1h-2zM47 37h1v1h-1zM51 37h2v1h-2zM4 38h1v1h-1zM7 38h2v1h-2zM10 38h2v1h-2zM13 38h1v1h-1zM16 38h4v1h-4zM21 38h2v1h-2zM24 38h1v1h-1zM27 38h2v1h-2zM31 38h1v1h-1zM34 38h6v1h-6zM41 38h1v1h-1zM46 38h1v1h-1zM51 38h1v1h-1zM5 39h1v1h-1zM7 39h1v1h-1zM9 39h1v1h-1zM11 39h1v1h-1zM14 39h1v1h-1zM18 39h1v1h-1zM20 39h1v1h-1zM24 39h4v1h-4zM29 39h5v1h-5zM35 39h1v1h-1zM37 39h2v1h-2zM40 39h1v1h-1zM42 39h2v1h-2zM47 39h3v1h-3zM52 39h1v1h-1zM7 40h4v1h-4zM12 40h3v1h-3zM16 40h1v1h-1zM18 40h3v1h-3zM24 40h2v1h-2zM28 40h3v1h-3zM34 40h1v1h-1zM36 40h2v1h-2zM40 40h2v1h-2zM44 40h2v1h-2zM50 40h3v1h-3zM6 41h2v1h-2zM9 41h1v1h-1zM11 41h1v1h-1zM13 41h1v1h-1zM15 41h1v1h-1zM17 41h2v1h-2zM21 41h1v1h-1zM26 41h2v1h-2zM31 41h1v1h-1zM35 41h1v1h-1zM38 41h2v1h-2zM45 41h1v1h-1zM48 41h1v1h-1zM50 41h3v1h-3zM5 42h1v1h-1zM9 42h2v1h-2zM12 42h1v1h-1zM14 42h1v1h-1zM16 42h1v1h-1zM19 42h1v1h-1zM23 42h1v1h-1zM27 42h2v1h-2zM31 42h1v1h-1zM33 42h1v1h-1zM35 42h2v1h-2zM42 42h1v1h-1zM44 42h2v1h-2zM47 42h1v1h-1zM52 42h1v1h-1zM5 43h3v1h-3zM11 43h3v1h-3zM15 43h3v1h-3zM20 43h2v1h-2zM24 43h2v1h-2zM27 43h2v1h-2zM34 43h2v1h-2zM39 43h1v1h-1zM42 43h2v1h-2zM45 43h1v1h-1zM49 43h4v1h-4zM4 44h3v1h-3zM10 44h3v1h-3zM17 44h2v1h-2zM20 44h1v1h-1zM23 44h2v1h-2zM26 44h5v1h-5zM34 44h1v1h-1zM38 44h5v1h-5zM44 44h5v1h-5zM50 44h3v1h-3zM12 45h3v1h-3zM16 45h4v1h-4zM21 45h1v1h-1zM24 45h1v1h-1zM26 45h1v1h-1zM30 45h2v1h-2zM33 45h1v1h-1zM35 45h3v1h-3zM40 45h2v1h-2zM43 45h2v1h-2zM48 45h3v1h-3zM52 45h1v1h-1zM4 46h7v1h-7zM13 46h4v1h-4zM18 46h4v1h-4zM24 46h3v1h-3zM28 46h1v1h-1zM30 46h1v1h-1zM32 46h1v1h-1zM35 46h1v1h-1zM39 46h2v1h-2zM42 46h1v1h-1zM44 46h1v1h-1zM46 46h1v1h-1zM48 46h1v1h-1zM50 46h1v1h-1zM4 47h1v1h-1zM10 47h1v1h-1zM12 47h2v1h-2zM16 47h3v1h-3zM21 47h6v1h-6zM30 47h5v1h-5zM36 47h2v1h-2zM39 47h6v1h-6zM48 47h2v1h-2zM4 48h1v1h-1zM6 48h3v1h-3zM10 48h1v1h-1zM13 48h1v1h-1zM20 48h3v1h-3zM26 48h7v1h-7zM34 48h2v1h-2zM39 48h1v1h-1zM41 48h1v1h-1zM44 48h5v1h-5zM50 48h1v1h-1zM52 48h1v1h-1zM4 49h1v1h-1zM6 49h3v1h-3zM10 49h1v1h-1zM12 49h1v1h-1zM14 49h1v1h-1zM16 49h1v1h-1zM18 49h1v1h-1zM20 49h1v1h-1zM22 49h1v1h-1zM24 49h4v1h-4zM29 49h1v1h-1zM31 49h1v1h-1zM39 49h1v1h-1zM41 49h1v1h-1zM44 49h1v1h-1zM46 49h2v1h-2zM4 50h1v1h-1zM6 50h3v1h-3zM10 50h1v1h-1zM16 50h3v1h-3zM22 50h2v1h-2zM26 50h2v1h-2zM30 50h3v1h-3zM34 50h2v1h-2zM38 50h1v1h-1zM41 50h1v1h-1zM43 50h1v1h-1zM45 50h2v1h-2zM48 50h1v1h-1zM50 50h1v1h-1zM52 50h1v1h-1zM4 51h1v1h-1zM10 51h1v1h-1zM13 51h4v1h-4zM19 51h4v1h-4zM26 51h1v1h-1zM28 51h3v1h-3zM32 51h1v1h-1zM40 51h1v1h-1zM42 51h9v1h-9zM52 51h1v1h-1zM4 52h7v1h-7zM12 52h1v1h-1zM14 52h2v1h-2zM17 52h1v1h-1zM19 52h1v1h-1zM21 52h1v1h-1zM24 52h7v1h-7zM32 52h1v1h-1zM36 52h1v1h-1zM39 52h3v1h-3zM44 52h1v1h-1zM48 52h1v1h-1zM50 52h1v1h-1zM52 52h1v1h-1z" fill="#000"/>
 </svg>
-<text x="1450" y="261" text-anchor="middle" class="qrlabel">Pix — Apoio aos Estudos</text>
-<line x1="60" y1="294" x2="1540" y2="294" class="line"/>
-<g transform="translate(60 312)">
-  <rect width="700" height="66" rx="16" fill="#141f28" stroke="#304651" stroke-width="2"/>
-  <path d="M19 23h34v31H19zM28 15h34v31" class="icon"/>
-  <text x="88" y="30" class="benefit">Mantém projetos ativos</text>
-  <text x="88" y="54" class="detail">Mais tempo para cuidar do que já existe.</text>
-</g>
-<g transform="translate(840 312)">
-  <rect width="700" height="66" rx="16" fill="#141f28" stroke="#304651" stroke-width="2"/>
-  <path d="M19 24l20-11 20 11-20 11-20-11zm0 13 20 11 20-11" class="icon"/>
-  <text x="88" y="30" class="benefit">Viabiliza novas ideias</text>
-  <text x="88" y="54" class="detail">Abre espaço para novos projetos.</text>
-</g>
-<g transform="translate(60 390)">
-  <rect width="700" height="66" rx="16" fill="#141f28" stroke="#304651" stroke-width="2"/>
-  <path d="M19 52C23 31 38 17 61 11 57 34 43 49 19 52zm8-4 28-29" class="icon"/>
-  <text x="88" y="30" class="benefit">Acelera evoluções</text>
-  <text x="88" y="54" class="detail">Ajuda a implementar melhorias.</text>
-</g>
-<g transform="translate(840 390)">
-  <rect width="700" height="66" rx="16" fill="#141f28" stroke="#304651" stroke-width="2"/>
-  <path d="M19 22l20-11 20 11-20 11-20-11zm8 7v20q12 9 24 0V29m8-7v27" class="icon"/>
-  <text x="88" y="30" class="benefit">Apoia meus estudos</text>
-  <text x="88" y="54" class="detail">Contribui com minha formação.</text>
-</g>
-<line x1="60" y1="474" x2="1540" y2="474" class="line"/>
-<path d="M67 495l8 8 17-19" class="icon" style="stroke-width:2.6"/>
-<text x="108" y="503" class="footer">Contribuição 100% voluntária e segura.</text>
-<text x="1538" y="503" text-anchor="end" class="footer">Obrigado pelo apoio! <tspan fill="#83c9eb">💙</tspan></text>
+<path d="M1216 248h-17v17M1468 248h17v17M1216 512h-17v-17M1468 512h17v-17" fill="none" stroke="#45c8f4" stroke-width="4" stroke-linecap="round"/>
+<text x="1342" y="552" text-anchor="middle" class="pill">Pix — Apoio aos Estudos</text>
+<line x1="50" y1="578" x2="1550" y2="578" class="line"/>
+<path d="M74 607l9 9 18-21" class="icon" style="stroke-width:3"/>
+<text x="120" y="616" class="footer">Contribuição 100% voluntária e segura.</text>
+<line x1="735" y1="592" x2="735" y2="625" class="line"/>
+<g fill="#54c4ee"><rect x="785" y="603" width="10" height="18" rx="3"/><rect x="802" y="592" width="10" height="29" rx="3"/><rect x="819" y="582" width="10" height="39" rx="3"/></g>
+<text x="850" y="616" class="footer">Obrigado pelo apoio! <tspan fill="#62bdf0">💙</tspan></text>
 </svg>
