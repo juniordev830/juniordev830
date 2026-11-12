@@ -44,72 +44,13 @@
 
 <!-- CONTRIBUTIONS:START -->
 
-<!-- CONTRIBUTIONS:METRICS <strong>228</strong><strong>24</strong><strong>833</strong><strong>2.453</strong> -->
+<!-- CONTRIBUTIONS:METRICS <strong>230</strong><strong>24</strong><strong>835</strong><strong>2.455</strong> -->
 
 <p align="center">
 <a href="https://joao-github-dashboard.joaosilva42333.chatgpt.site">
-<img src="https://raw.githubusercontent.com/juniordev830/juniordev830/main/assets/contribuicoes-diarias.svg?v=10e3221e0438" width="1040" alt="Painel unificado de contribuições, evolução diária, intensidade e projetos em destaque."/>
+<img src="https://raw.githubusercontent.com/juniordev830/juniordev830/main/assets/contribuicoes-diarias.svg?v=a9241afe8c13" width="1040" alt="Painel unificado de contribuições, evolução diária, intensidade e projetos em destaque."/>
 </a>
 </p>
-
-<details>
-<summary>Ver contribuições por dia — últimos 14 dias</summary>
-
-| Data (RN) | Contribuições |
-| :--- | ---: |
-| 12/11/2026 | 228 |
-| 11/11/2026 | 24 |
-| 10/11/2026 | 123 |
-| 09/11/2026 | 111 |
-| 08/11/2026 | 142 |
-| 07/11/2026 | 91 |
-| 06/11/2026 | 114 |
-| 05/11/2026 | 166 |
-| 04/11/2026 | 80 |
-| 03/11/2026 | 227 |
-| 02/11/2026 | 553 |
-| 01/11/2026 | 428 |
-| 31/10/2026 | 2 |
-| 30/10/2026 | 5 |
-
-</details>
-
-<details>
-<summary>Análise complementar — dias da semana e ranking</summary>
-
-| Dia da semana | Contribuições nos 14 dias |
-| :--- | ---: |
-| Segunda | 664 |
-| Terça | 350 |
-| Quarta | 104 |
-| Quinta | 394 |
-| Sexta | 119 |
-| Sábado | 93 |
-| Domingo | 570 |
-
-Cinco dias mais ativos na janela:
-
-| Posição | Data | Contribuições |
-| ---: | :--- | ---: |
-| 1 | 02/11/2026 | 553 |
-| 2 | 01/11/2026 | 428 |
-| 3 | 12/11/2026 | 228 |
-| 4 | 03/11/2026 | 227 |
-| 5 | 05/11/2026 | 166 |
-
-</details>
-
-<p align="center"><sub>Dados de 12/11/2026. Consulta programada a cada 5 minutos, sujeita a atrasos do GitHub. O painel externo deve buscar o JSON atualizado independentemente. <a href="https://github.com/juniordev830/juniordev830/actions/workflows/contribuicoes-diarias.yml">Ver última execução</a>.</sub></p>
-
-<details>
-<summary>Links dos projetos em destaque</summary>
-
-<p align="center">
-<a href="https://github.com/juniordev830/plataforma-de-recrutamento">Plataforma de Recrutamento</a> · 
-<a href="https://github.com/juniordev830/sentinel-atlas">Atlas Sentinela</a> · 
-<a href="https://github.com/juniordev830/controle-gastos-residenciais">Controle de Gastos</a>
-</p>
-</details>
 
 <!-- CONTRIBUTIONS:END -->
 
@@ -117,11 +58,11 @@ Cinco dias mais ativos na janela:
 
 <div align="center">
   <h2>Andamento dos projetos</h2>
-  <p><sub>Evidencias verificaveis de codigo, testes e automacao. Sem percentuais estimados de conclusao.</sub></p>
+  <p><sub>Visao tecnica de documentacao, codigo, testes e automacao — sem percentuais inventados.</sub></p>
   <a href="docs/ANDAMENTO_DOS_PROJETOS.md">
-    <img src="https://raw.githubusercontent.com/juniordev830/juniordev830/main/assets/portfolio-andamento.svg" width="100%" alt="Evolucao tecnica dos repositorios GitHub"/>
+    <img src="https://raw.githubusercontent.com/juniordev830/juniordev830/main/assets/portfolio-andamento.svg?v=0ecdf30b0ced" width="100%" alt="Panorama tecnico de todos os repositorios"/>
   </a>
-  <p><a href="docs/ANDAMENTO_DOS_PROJETOS.md"><strong>Ver todos os projetos e seus indicadores</strong></a></p>
+  <p><a href="docs/ANDAMENTO_DOS_PROJETOS.md"><strong>Ver andamento individual de todos os projetos</strong></a></p>
 </div>
 
 <!-- PORTFOLIO-STATUS:END -->
