@@ -16,6 +16,8 @@ REPORT = ROOT / "docs" / "ANDAMENTO_DOS_PROJETOS.md"
 START = "<!-- PORTFOLIO-STATUS:START -->"
 END = "<!-- PORTFOLIO-STATUS:END -->"
 OWNER = "juniordev830"
+# Repositorios privados conhecidos, inacessiveis ao token do workflow.
+KNOWN_RESTRICTED = ("codvision", "adc-de-fuc-ebd")
 API = "https://api.github.com"
 CODE_EXTS = (".py", ".js", ".jsx", ".ts", ".tsx", ".java", ".cs", ".go", ".cpp",
              ".c", ".h", ".gd", ".rb", ".rs", ".php", ".html", ".css", ".sql",
@@ -69,10 +71,21 @@ def collect(token: str) -> list[dict]:
             break
     if not projects:
         raise ValueError("Nenhum repositorio recuperado; dados anteriores preservados")
+    listed = {project["name"] for project in projects}
+    for name in KNOWN_RESTRICTED:
+        if name not in listed:
+            projects.append({
+                "name": name, "url": f"https://github.com/{OWNER}/{name}",
+                "pushed": "", "docs": False, "code": False,
+                "tests": False, "ci": False, "archived": False,
+                "partial": True, "restricted": True,
+            })
     return sorted(projects, key=lambda project: project["name"].casefold())
 
 
 def stage(item: dict) -> str:
+    if item.get("restricted"):
+        return "Acesso restrito"
     if item["archived"]:
         return "Arquivado"
     if item["partial"]:
@@ -91,6 +104,8 @@ def stage(item: dict) -> str:
 def summaries(projects: list[dict]) -> dict:
     return {
         "repos": len(projects),
+        "scanned": sum(not p.get("restricted", False) for p in projects),
+        "restricted": sum(p.get("restricted", False) for p in projects),
         "docs": sum(p["docs"] for p in projects),
         "code": sum(p["code"] for p in projects),
         "tests": sum(p["tests"] for p in projects),
@@ -128,7 +143,7 @@ def render_svg(projects: list[dict]) -> str:
         rect(x, 150, 236, 92)
         txt(x + 18, 177, label, 14, "#9db1c3")
         txt(x + 18, 220, value, 33, "#e6f4ff", "700")
-        txt(x + 188, 216, f"/ {count['repos']}", 13, "#71899b")
+        txt(x + 188, 216, f"/ {count['scanned']}", 13, "#71899b")
 
     rect(34, 264, 616, 271)
     txt(55, 299, "FASES IDENTIFICADAS", 14, "#d7e6ef", "700")
@@ -138,13 +153,14 @@ def render_svg(projects: list[dict]) -> str:
         ("Testes sem pipeline", count["with_tests"], "#7ea6d3"),
         ("Implementacao", count["implementing"], "#8cb1ca"),
         ("Estruturacao / revisao", count["structuring"], "#8ca1b2"),
+        ("Acesso restrito", count["restricted"], "#9e93af"),
     ]
     for i, (name, qty, color) in enumerate(rows):
-        y = 352 + i * 45
+        y = 347 + i * 39
         txt(55, y, name, 14)
         rect(290, y - 13, 268, 13, "#263342", "#263342", 5)
         if qty:
-            rect(290, y - 13, max(4, round(268 * qty / count["repos"])), 13, color, color, 5)
+            rect(290, y - 13, max(4, round(268 * qty / max(1, count["repos"]))), 13, color, color, 5)
         txt(580, y, qty, 16, "#f0f5fa", "700")
 
     rect(668, 264, 358, 271)
@@ -159,7 +175,7 @@ def render_svg(projects: list[dict]) -> str:
         txt(950, y, item["pushed"][8:10] + "/" + item["pushed"][5:7] if item["pushed"] else "-", 12, "#8ca8bb")
         if i != 5:
             lines.append(f'<line x1="687" y1="{y+8}" x2="1004" y2="{y+8}" stroke="#2b3a48"/>')
-    txt(34, 567, f"Inventario: {count['repos']} repositorios  |  consultar relatorio completo para status individuais", 14, "#b1c7d7")
+    txt(34, 567, f"Catalogados: {count['repos']}  |  Auditados: {count['scanned']}  |  Restritos: {count['restricted']}", 14, "#b1c7d7")
     txt(34, 586, "Fonte: GitHub API  -  sinais tecnicos, nao medicao de entrega funcional", 12, "#748fa1")
     lines.append("</svg>")
     return "\n".join(lines) + "\n"
@@ -172,7 +188,7 @@ def render_report(projects: list[dict]) -> str:
         "",
         "Inventario automatizado a partir da API do GitHub. **Fase nao equivale a percentual de conclusao**; analisa apenas evidencias de arquivos na branch padrao.",
         "",
-        f"**Projetos avaliados:** {count['repos']} | Com codigo: {count['code']} | Com testes: {count['tests']} | Com CI: {count['ci']} | Com README: {count['docs']}",
+        f"**Projetos catalogados:** {count['repos']} | Auditados: {count['scanned']} | Acesso restrito: {count['restricted']} | Com codigo: {count['code']} | Com testes: {count['tests']} | Com CI: {count['ci']} | Com README: {count['docs']}",
         "",
         "As marcacoes significam presenca de arquivos, nao garantem cobertura, testes aprovados ou qualidade. Uma arvore de arquivos truncada e marcada como inspecao parcial.",
         "",
@@ -180,7 +196,8 @@ def render_report(projects: list[dict]) -> str:
         "| :-- | :-- | :--: | :--: | :--: | :--: | :-- |",
     ]
     for p in projects:
-        checks = ["Sim" if p[x] else "—" for x in ("code", "tests", "ci", "docs")]
+        checks = (["N/D"] * 4 if p.get("restricted") else
+                  ["Sim" if p[x] else "—" for x in ("code", "tests", "ci", "docs")])
         name = p["name"].replace("|", r"\|")
         lines.append(f"| [{name}]({p['url']}) | {stage(p)} | {' | '.join(checks)} | {p['pushed'] or 'Indisponivel'} |")
     lines += [
@@ -192,6 +209,7 @@ def render_report(projects: list[dict]) -> str:
         "- **Implementacao:** arquivos de codigo encontrados, sem evidencias de testes.",
         "- **Estruturacao:** README presente, sem codigo identificado.",
         "- **Inspecao parcial:** a API informou arvore truncada; indicadores podem estar incompletos.",
+        "- **Acesso restrito:** repositorio privado conhecido, mas sem permissao do GITHUB_TOKEN. N/D nao significa ausencia.",
         "- **Ultimo push:** data da alteracao mais recente no repositorio; nao indica maturidade.",
         "- Um nome de arquivo de teste nao garante que ele seja executado ou aprovado.",
         "",
@@ -215,7 +233,7 @@ def main():
     # O calendario de contribuicoes atualiza com frequencia; a auditoria de
     # arvores de dezenas de repositorios executa apenas uma vez ao dia (UTC).
     snapshot_day = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    freshness_marker = f"<!-- PORTFOLIO-SNAPSHOT:{snapshot_day} -->"
+    freshness_marker = f"<!-- PORTFOLIO-SNAPSHOT:v2:{snapshot_day} -->"
     if REPORT.exists() and freshness_marker in REPORT.read_text(encoding="utf-8"):
         print("Portfolio ja auditado hoje; snapshot preservado")
         return
