@@ -115,3 +115,23 @@ Cinco dias mais ativos na janela:
     <a href="https://github.com/juniordev830?tab=overview">Atividade e contribuições</a>
   </p>
 </div>
+
+---
+
+<div align="center">
+  <h3>🤝 Apoie meus projetos</h3>
+  <p>Se algum dos meus projetos ajudou você, considere apoiar voluntariamente o desenvolvimento de novas ferramentas e soluções open source.</p>
+</div>
+
+<table align="center">
+  <tr>
+    <td align="center" width="520">
+      <strong>💙 Contribua via Pix</strong><br />
+      <sub>Seu apoio faz a diferença!</sub><br /><br />
+      <strong>◉ Apoiar via Pix</strong><br />
+      <sub>Chave Pix a configurar — prévia, ainda sem pagamento ativo</sub>
+    </td>
+  </tr>
+</table>
+
+<p align="center"><sub>100% voluntário · Obrigado pelo apoio!</sub></p>
