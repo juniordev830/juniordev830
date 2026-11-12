@@ -44,11 +44,11 @@
 
 <!-- CONTRIBUTIONS:START -->
 
-<!-- CONTRIBUTIONS:METRICS <strong>151</strong><strong>24</strong><strong>756</strong><strong>2.376</strong> -->
+<!-- CONTRIBUTIONS:METRICS <strong>153</strong><strong>24</strong><strong>758</strong><strong>2.378</strong> -->
 
 <p align="center">
 <a href="https://joao-github-dashboard.joaosilva42333.chatgpt.site">
-<img src="https://raw.githubusercontent.com/juniordev830/juniordev830/main/assets/contribuicoes-diarias.svg?v=819fe182d762" width="1040" alt="Painel unificado de contribuições, evolução diária, intensidade e projetos em destaque."/>
+<img src="https://raw.githubusercontent.com/juniordev830/juniordev830/main/assets/contribuicoes-diarias.svg?v=c45c21b34c1b" width="1040" alt="Painel unificado de contribuições, evolução diária, intensidade e projetos em destaque."/>
 </a>
 </p>
 
@@ -57,7 +57,7 @@
 
 | Data (RN) | Contribuições |
 | :--- | ---: |
-| 12/11/2026 | 151 |
+| 12/11/2026 | 153 |
 | 11/11/2026 | 24 |
 | 10/11/2026 | 123 |
 | 09/11/2026 | 111 |
@@ -82,7 +82,7 @@
 | Segunda | 664 |
 | Terça | 350 |
 | Quarta | 104 |
-| Quinta | 317 |
+| Quinta | 319 |
 | Sexta | 119 |
 | Sábado | 93 |
 | Domingo | 570 |
@@ -95,11 +95,11 @@ Cinco dias mais ativos na janela:
 | 2 | 01/11/2026 | 428 |
 | 3 | 03/11/2026 | 227 |
 | 4 | 05/11/2026 | 166 |
-| 5 | 12/11/2026 | 151 |
+| 5 | 12/11/2026 | 153 |
 
 </details>
 
-<p align="center"><sub>Dados de 12/11/2026. Consulta programada a cada 5 minutos, sujeita a atrasos do GitHub. As novas contagens aparecem ao recarregar o perfil. <a href="https://github.com/juniordev830/juniordev830/actions/workflows/contribuicoes-diarias.yml">Ver última execução</a>.</sub></p>
+<p align="center"><sub>Dados de 12/11/2026. Consulta programada a cada 5 minutos, sujeita a atrasos do GitHub. O painel externo deve buscar o JSON atualizado independentemente. <a href="https://github.com/juniordev830/juniordev830/actions/workflows/contribuicoes-diarias.yml">Ver última execução</a>.</sub></p>
 
 <details>
 <summary>Links dos projetos em destaque</summary>

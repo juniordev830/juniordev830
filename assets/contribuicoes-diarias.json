@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "source": "github-contributions-graphql",
+  "login": "juniordev830",
+  "timezone": "America/Fortaleza",
+  "calendar_date": "2026-11-12",
+  "today": 153,
+  "yesterday": 24,
+  "last_7_days": 758,
+  "last_12_months": 2378,
+  "last_14_days": [
+    {
+      "date": "2026-10-30",
+      "contributions": 5
+    },
+    {
+      "date": "2026-10-31",
+      "contributions": 2
+    },
+    {
+      "date": "2026-11-01",
+      "contributions": 428
+    },
+    {
+      "date": "2026-11-02",
+      "contributions": 553
+    },
+    {
+      "date": "2026-11-03",
+      "contributions": 227
+    },
+    {
+      "date": "2026-11-04",
+      "contributions": 80
+    },
+    {
+      "date": "2026-11-05",
+      "contributions": 166
+    },
+    {
+      "date": "2026-11-06",
+      "contributions": 114
+    },
+    {
+      "date": "2026-11-07",
+      "contributions": 91
+    },
+    {
+      "date": "2026-11-08",
+      "contributions": 142
+    },
+    {
+      "date": "2026-11-09",
+      "contributions": 111
+    },
+    {
+      "date": "2026-11-10",
+      "contributions": 123
+    },
+    {
+      "date": "2026-11-11",
+      "contributions": 24
+    },
+    {
+      "date": "2026-11-12",
+      "contributions": 153
+    }
+  ]
+}
