@@ -10,6 +10,14 @@
   <p>Desenvolvendo soluções modernas com foco em aplicações web, APIs, automação e arquitetura de software.</p>
 </div>
 
+<!-- STUDY-SUPPORT:START -->
+<p align="center">
+  <a href="./assets/pix-estudos-qr.svg" title="Abrir QR Code Pix para apoiar meus estudos">
+    <img src="./assets/apoie-meus-estudos.svg" width="100%" alt="Apoie meus estudos: contribuições voluntárias via Pix para minha formação em tecnologia. Clique para ampliar o QR Code." />
+  </a>
+</p>
+<!-- STUDY-SUPPORT:END -->
+
 <h3 align="center">Principais Tecnologias</h3>
 
 <table align="center">
