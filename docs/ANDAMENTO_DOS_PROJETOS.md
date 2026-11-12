@@ -1,9 +1,9 @@
-<!-- PORTFOLIO-SNAPSHOT:2026-11-12 -->
+<!-- PORTFOLIO-SNAPSHOT:v2:2026-11-12 -->
 # Andamento dos projetos
 
 Inventario automatizado a partir da API do GitHub. **Fase nao equivale a percentual de conclusao**; analisa apenas evidencias de arquivos na branch padrao.
 
-**Projetos avaliados:** 69 | Com codigo: 54 | Com testes: 45 | Com CI: 58 | Com README: 69
+**Projetos catalogados:** 71 | Auditados: 69 | Acesso restrito: 2 | Com codigo: 54 | Com testes: 45 | Com CI: 58 | Com README: 69
 
 As marcacoes significam presenca de arquivos, nao garantem cobertura, testes aprovados ou qualidade. Uma arvore de arquivos truncada e marcada como inspecao parcial.
 
@@ -12,6 +12,7 @@ As marcacoes significam presenca de arquivos, nao garantem cobertura, testes apr
 | [2d-platformer-csharp](https://github.com/juniordev830/2d-platformer-csharp) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-12 |
 | [acessibilidade-checklist](https://github.com/juniordev830/acessibilidade-checklist) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-12 |
 | [achados-perdidos](https://github.com/juniordev830/achados-perdidos) | Estruturacao | — | — | — | Sim | 2026-11-12 |
+| [adc-de-fuc-ebd](https://github.com/juniordev830/adc-de-fuc-ebd) | Acesso restrito | N/D | N/D | N/D | N/D | Indisponivel |
 | [agenda-servicos](https://github.com/juniordev830/agenda-servicos) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-12 |
 | [ai-incident-analyzer](https://github.com/juniordev830/ai-incident-analyzer) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-12 |
 | [ai-service-python](https://github.com/juniordev830/ai-service-python) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-12 |
@@ -27,6 +28,7 @@ As marcacoes significam presenca de arquivos, nao garantem cobertura, testes apr
 | [cifras-transpositor](https://github.com/juniordev830/cifras-transpositor) | Implementacao | Sim | — | Sim | Sim | 2026-11-12 |
 | [codax-assirtende-engenharia-ia-](https://github.com/juniordev830/codax-assirtende-engenharia-ia-) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-12 |
 | [code-security-scanner](https://github.com/juniordev830/code-security-scanner) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-12 |
+| [codvision](https://github.com/juniordev830/codvision) | Acesso restrito | N/D | N/D | N/D | N/D | Indisponivel |
 | [comparador-json](https://github.com/juniordev830/comparador-json) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-12 |
 | [consumo-energia](https://github.com/juniordev830/consumo-energia) | Implementacao | Sim | — | Sim | Sim | 2026-11-12 |
 | [contratos-prazos](https://github.com/juniordev830/contratos-prazos) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-12 |
@@ -86,6 +88,7 @@ As marcacoes significam presenca de arquivos, nao garantem cobertura, testes apr
 - **Implementacao:** arquivos de codigo encontrados, sem evidencias de testes.
 - **Estruturacao:** README presente, sem codigo identificado.
 - **Inspecao parcial:** a API informou arvore truncada; indicadores podem estar incompletos.
+- **Acesso restrito:** repositorio privado conhecido, mas sem permissao do GITHUB_TOKEN. N/D nao significa ausencia.
 - **Ultimo push:** data da alteracao mais recente no repositorio; nao indica maturidade.
 - Um nome de arquivo de teste nao garante que ele seja executado ou aprovado.
 

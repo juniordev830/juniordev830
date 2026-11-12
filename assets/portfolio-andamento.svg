@@ -23,21 +23,25 @@
 <rect x="34" y="264" width="616" height="271" rx="10" fill="#14212d" stroke="#344555"/>
 <text x="55" y="299" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" fill="#d7e6ef">FASES IDENTIFICADAS</text>
 <text x="55" y="319" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" fill="#91a6b8">Criterio: evidencias de codigo, testes e workflow</text>
-<text x="55" y="352" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#e3ebf1">Validacao automatizada</text>
-<rect x="290" y="339" width="268" height="13" rx="5" fill="#263342" stroke="#263342"/>
-<rect x="290" y="339" width="175" height="13" rx="5" fill="#57b3da" stroke="#57b3da"/>
-<text x="580" y="352" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#f0f5fa">45</text>
-<text x="55" y="397" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#e3ebf1">Testes sem pipeline</text>
-<rect x="290" y="384" width="268" height="13" rx="5" fill="#263342" stroke="#263342"/>
-<text x="580" y="397" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#f0f5fa">0</text>
-<text x="55" y="442" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#e3ebf1">Implementacao</text>
-<rect x="290" y="429" width="268" height="13" rx="5" fill="#263342" stroke="#263342"/>
-<rect x="290" y="429" width="39" height="13" rx="5" fill="#8cb1ca" stroke="#8cb1ca"/>
-<text x="580" y="442" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#f0f5fa">10</text>
-<text x="55" y="487" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#e3ebf1">Estruturacao / revisao</text>
-<rect x="290" y="474" width="268" height="13" rx="5" fill="#263342" stroke="#263342"/>
-<rect x="290" y="474" width="54" height="13" rx="5" fill="#8ca1b2" stroke="#8ca1b2"/>
-<text x="580" y="487" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#f0f5fa">14</text>
+<text x="55" y="347" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#e3ebf1">Validacao automatizada</text>
+<rect x="290" y="334" width="268" height="13" rx="5" fill="#263342" stroke="#263342"/>
+<rect x="290" y="334" width="170" height="13" rx="5" fill="#57b3da" stroke="#57b3da"/>
+<text x="580" y="347" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#f0f5fa">45</text>
+<text x="55" y="386" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#e3ebf1">Testes sem pipeline</text>
+<rect x="290" y="373" width="268" height="13" rx="5" fill="#263342" stroke="#263342"/>
+<text x="580" y="386" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#f0f5fa">0</text>
+<text x="55" y="425" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#e3ebf1">Implementacao</text>
+<rect x="290" y="412" width="268" height="13" rx="5" fill="#263342" stroke="#263342"/>
+<rect x="290" y="412" width="38" height="13" rx="5" fill="#8cb1ca" stroke="#8cb1ca"/>
+<text x="580" y="425" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#f0f5fa">10</text>
+<text x="55" y="464" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#e3ebf1">Estruturacao / revisao</text>
+<rect x="290" y="451" width="268" height="13" rx="5" fill="#263342" stroke="#263342"/>
+<rect x="290" y="451" width="53" height="13" rx="5" fill="#8ca1b2" stroke="#8ca1b2"/>
+<text x="580" y="464" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#f0f5fa">14</text>
+<text x="55" y="503" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#e3ebf1">Acesso restrito</text>
+<rect x="290" y="490" width="268" height="13" rx="5" fill="#263342" stroke="#263342"/>
+<rect x="290" y="490" width="8" height="13" rx="5" fill="#9e93af" stroke="#9e93af"/>
+<text x="580" y="503" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#f0f5fa">2</text>
 <rect x="668" y="264" width="358" height="271" rx="10" fill="#14212d" stroke="#344555"/>
 <text x="688" y="299" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" fill="#d7e6ef">ULTIMAS MOVIMENTACOES</text>
 <text x="688" y="331" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="600" fill="#e0edf7">web-dashboard-ts</text>
@@ -57,6 +61,6 @@
 <line x1="687" y1="471" x2="1004" y2="471" stroke="#2b3a48"/>
 <text x="688" y="496" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="600" fill="#e0edf7">submarine-abyss</text>
 <text x="950" y="496" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" fill="#8ca8bb">12/11</text>
-<text x="34" y="567" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#b1c7d7">Inventario: 69 repositorios  |  consultar relatorio completo para status individuais</text>
+<text x="34" y="567" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#b1c7d7">Catalogados: 71  |  Auditados: 69  |  Restritos: 2</text>
 <text x="34" y="586" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" fill="#748fa1">Fonte: GitHub API  -  sinais tecnicos, nao medicao de entrega funcional</text>
 </svg>
