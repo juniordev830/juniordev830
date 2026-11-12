@@ -74,7 +74,9 @@ jobs:
             git fetch origin main
             git reset --hard origin/main
             python scripts/render_daily_contributions.py
-            python scripts/render_portfolio_progress.py
+            if ! python scripts/render_portfolio_progress.py; then
+              echo '::warning::Auditoria do portfolio falhou; o painel de contribuicoes continua independente.'
+            fi
             git add README.md assets/contribuicoes-diarias.svg assets/contribuicoes-diarias.json assets/portfolio-andamento.svg docs/ANDAMENTO_DOS_PROJETOS.md
 
             if git diff --cached --quiet; then
