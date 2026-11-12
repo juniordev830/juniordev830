@@ -17,6 +17,7 @@ from zoneinfo import ZoneInfo
 LOGIN = "juniordev830"
 README = Path("README.md")
 CHART = Path("assets/contribuicoes-diarias.svg")
+DATA = Path("assets/contribuicoes-diarias.json")
 START = "<!-- CONTRIBUTIONS:START -->"
 END = "<!-- CONTRIBUTIONS:END -->"
 TZ = ZoneInfo("America/Fortaleza")
@@ -266,6 +267,30 @@ def render_svg(data: dict, generated_at: datetime) -> str:
     return '\n'.join(parts)+'\n'
 
 
+def render_feed(data: dict) -> str:
+    """Export the same official calendar as a stable, machine-readable dashboard feed.
+
+    No synthetic increments and no moving timestamp that would create empty commits.
+    The app using the feed must refresh its HTTP request and handle GitHub cache delay.
+    """
+    payload = {
+        "schema_version": 1,
+        "source": "github-contributions-graphql",
+        "login": LOGIN,
+        "timezone": "America/Fortaleza",
+        "calendar_date": data["days"][-1].isoformat(),
+        "today": data["today"],
+        "yesterday": data["yesterday"],
+        "last_7_days": data["week_total"],
+        "last_12_months": data["year_total"],
+        "last_14_days": [
+            {"date": when.isoformat(), "contributions": count}
+            for when, count in zip(data["days"], data["counts"])
+        ],
+    }
+    return json.dumps(payload, ensure_ascii=False, indent=2) + "\\n"
+
+
 def render_chart(data: dict) -> str:
     """Version the image by its data so changed counts get a new cache URL."""
     from hashlib import sha256
@@ -322,7 +347,7 @@ def render_markdown(data: dict, generated_at: datetime) -> str:
         "</details>",
         "",
         f'<p align="center"><sub>Dados de {day}. Consulta programada a cada 5 minutos, '
-        'sujeita a atrasos do GitHub. As novas contagens aparecem ao recarregar o perfil. '
+        'sujeita a atrasos do GitHub. O painel externo deve buscar o JSON atualizado independentemente. '
         '<a href="https://github.com/juniordev830/juniordev830/actions/workflows/contribuicoes-diarias.yml">'
         'Ver última execução</a>.</sub></p>',
     ])
@@ -358,8 +383,12 @@ def main() -> None:
     data = metrics(calendar, now.date())
     panel = render_markdown(data, now)
     chart = render_svg(data, now)
+    feed = render_feed(data)
     original = README.read_text(encoding="utf-8")
     updated = update_readme(original, panel)
+    if not DATA.exists() or DATA.read_text(encoding="utf-8") != feed:
+        DATA.parent.mkdir(parents=True, exist_ok=True)
+        DATA.write_text(feed, encoding="utf-8")
     if not CHART.exists() or CHART.read_text(encoding="utf-8") != chart:
         CHART.parent.mkdir(parents=True, exist_ok=True)
         CHART.write_text(chart, encoding="utf-8")
