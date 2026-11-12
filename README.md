@@ -113,20 +113,57 @@ Cinco dias mais ativos na janela:
 
 <!-- CONTRIBUTIONS:END -->
 
-<p align="center">
-  <a href="https://joao-github-dashboard.joaosilva42333.chatgpt.site"><strong>📊 Abrir painel interativo completo ↗</strong></a><br>
-  <sub>Gráficos, filtros e exportação CSV · acesso pessoal com a conta ChatGPT do proprietário.</sub>
-</p>
-
+<!-- ENGINEERING-JOURNAL:START -->
 <div align="center">
-  <h3>Explore meu trabalho</h3>
-  <p>
-    <a href="https://github.com/juniordev830?tab=repositories">Todos os repositórios</a>
-    &nbsp;·&nbsp;
-    <a href="https://github.com/juniordev830?tab=overview">Atividade e contribuições</a>
-  </p>
+
+<sub>ENGENHARIA DE SOFTWARE · NOTAS DE DESENVOLVIMENTO</sub>
+
+<h2>DEV.LOG</h2>
+
+<p>O que existe por trás dos commits: problemas encontrados, decisões técnicas e entregas verificáveis.</p>
+
 </div>
 
-## Documentação de desenvolvimento
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <strong>01 · Investigar</strong>
+      <p><sub>Entender o comportamento, localizar a causa e definir o que precisa melhorar.</sub></p>
+    </td>
+    <td width="50%" valign="top">
+      <strong>02 · Construir</strong>
+      <p><sub>Implementar mudanças pequenas, úteis e fáceis de revisar.</sub></p>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <strong>03 · Validar</strong>
+      <p><sub>Testar casos relevantes e verificar regressões antes de integrar.</sub></p>
+    </td>
+    <td valign="top">
+      <strong>04 · Documentar</strong>
+      <p><sub>Registrar decisões, limitações e próximos passos de cada projeto.</sub></p>
+    </td>
+  </tr>
+</table>
 
-O [guia de validação e evolução](docs/MANUTENCAO_DO_PERFIL.md) registra o estado atual, os testes e os próximos incrementos deste projeto.
+### Notas de entrega
+
+<sub>Seleção de melhorias mescladas em 12/11/2026. Links para os PRs originais, sem números artificiais.</sub>
+
+| Área | Problema resolvido · alteração |
+| :-- | :-- |
+| **Confiabilidade** | [Validar pacote Windows e publicar checksum SHA-256](https://github.com/juniordev830/pixel-farm-seasons/pull/33) · `pixel-farm-seasons` |
+| **Regras de jogo** | [Limitar energia e saciedade ao intervalo de 0 a 100](https://github.com/juniordev830/pixel-farm-seasons/pull/32) · `pixel-farm-seasons` |
+| **Infraestrutura** | [Adicionar governança de custos e alertas ao laboratório Terraform](https://github.com/juniordev830/infrastructure-as-code-lab/pull/5) · `infrastructure-as-code-lab` |
+
+<p align="center">
+  <a href="https://github.com/pulls?q=author%3Ajuniordev830+is%3Apr+is%3Amerged"><strong>Histórico completo de entregas</strong></a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/juniordev830?tab=repositories">Repositórios</a>
+  &nbsp;·&nbsp;
+  <a href="docs/MANUTENCAO_DO_PERFIL.md">Notas técnicas do perfil</a>
+  &nbsp;·&nbsp;
+  <a href="https://joao-github-dashboard.joaosilva42333.chatgpt.site">Painel de dados</a>
+</p>
+<!-- ENGINEERING-JOURNAL:END -->
