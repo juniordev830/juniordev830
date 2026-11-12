@@ -212,9 +212,16 @@ def replace_section(readme: str, block: str) -> str:
 
 
 def main():
+    # O calendario de contribuicoes atualiza com frequencia; a auditoria de
+    # arvores de dezenas de repositorios executa apenas uma vez ao dia (UTC).
+    snapshot_day = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    freshness_marker = f"<!-- PORTFOLIO-SNAPSHOT:{snapshot_day} -->"
+    if REPORT.exists() and freshness_marker in REPORT.read_text(encoding="utf-8"):
+        print("Portfolio ja auditado hoje; snapshot preservado")
+        return
     projects = collect(os.environ.get("GITHUB_TOKEN", ""))
     svg = render_svg(projects)
-    report = render_report(projects)
+    report = freshness_marker + "\n" + render_report(projects)
     version = sha256(svg.encode("utf-8")).hexdigest()[:12]
     block = (
         '<div align="center">\n'
