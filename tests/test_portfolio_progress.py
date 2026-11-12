@@ -42,6 +42,17 @@ class PortfolioProgressTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             replace_section("without markers", "NEW")
 
+    def test_restricted_repositories_are_not_misclassified_as_empty(self):
+        restricted = sample("codvision", docs=False, code=False, partial=True)
+        restricted["restricted"] = True
+        public = sample("publico", tests=True, ci=True)
+        self.assertEqual(stage(restricted), "Acesso restrito")
+        overview = summaries([restricted, public])
+        self.assertEqual((overview["repos"], overview["scanned"], overview["restricted"]), (2, 1, 1))
+        report = render_report([restricted, public])
+        self.assertIn("N/D", report)
+        self.assertIn("Auditados: 1", report)
+
     def test_missing_token_prevents_invented_data(self):
         with self.assertRaises(ValueError):
             collect("")
