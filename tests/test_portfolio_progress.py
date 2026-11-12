@@ -23,8 +23,8 @@ class PortfolioProgressTests(unittest.TestCase):
         projects = [sample("foo", ci=True, tests=True), sample("bar", code=False)]
         svg = render_svg(projects)
         ElementTree.fromstring(svg)
-        self.assertIn("Com testes", svg)
-        self.assertIn("ULTIMAS MOVIMENTACOES", svg)
+        self.assertIn("COM TESTES", svg)
+        self.assertIn("Últimas movimentações", svg)
         self.assertNotIn("72%", svg)
         self.assertEqual(summaries(projects)["validated"], 1)
 
