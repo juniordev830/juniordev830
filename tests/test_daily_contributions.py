@@ -1,4 +1,5 @@
 """Testes do painel: dados reais, sem preencher dias ausentes artificialmente."""
+import json
 import unittest
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
@@ -7,7 +8,7 @@ from unittest.mock import patch
 from xml.etree import ElementTree
 
 from scripts.render_daily_contributions import (
-    START, END, metrics, period_insights, render_svg, render_chart, render_markdown, update_readme, fetch_calendar, main,
+    START, END, metrics, period_insights, render_svg, render_chart, render_feed, render_markdown, update_readme, fetch_calendar, main,
 )
 
 
@@ -123,6 +124,25 @@ class DashboardTests(unittest.TestCase):
         self.assertNotIn('NaN', output)
         self.assertNotRegex(output, r'(?i)\b(?:nan|inf)\b')
 
+    def test_json_feed_preserves_calendar_and_official_totals(self):
+        data = metrics(fake_calendar(), TODAY)
+        raw = render_feed(data)
+        self.assertTrue(raw.endswith("\n"))
+        feed = json.loads(raw)
+        self.assertEqual(feed["source"], "github-contributions-graphql")
+        self.assertEqual(feed["login"], "juniordev830")
+        self.assertEqual(feed["timezone"], "America/Fortaleza")
+        self.assertEqual(feed["calendar_date"], TODAY.isoformat())
+        self.assertEqual(feed["today"], 13)
+        self.assertEqual(feed["yesterday"], 12)
+        self.assertEqual(feed["last_7_days"], 70)
+        self.assertEqual(feed["last_12_months"], 2012)
+        self.assertEqual(feed["last_14_days"], [
+            {"date": day.isoformat(), "contributions": count}
+            for day, count in zip(data["days"], data["counts"])
+        ])
+        self.assertEqual(render_feed(data), raw)
+
     def test_chart_cache_changes_when_annual_total_changes(self):
         data = metrics(fake_calendar(), TODAY)
         original = render_chart(data)
@@ -229,18 +249,22 @@ class DashboardTests(unittest.TestCase):
         with TemporaryDirectory() as directory:
             readme = Path(directory) / "README.md"
             chart = Path(directory) / "assets/chart.svg"
+            feed = Path(directory) / "assets/chart.json"
             readme.write_text("perfil\n" + START + "\nanterior\n" + END)
             with patch("scripts.render_daily_contributions.README", readme), \
                  patch("scripts.render_daily_contributions.CHART", chart), \
+                 patch("scripts.render_daily_contributions.DATA", feed), \
                  patch("scripts.render_daily_contributions.fetch_calendar", return_value=fake_calendar()), \
                  patch("scripts.render_daily_contributions.datetime") as clock:
                 clock.now.return_value = datetime(2026, 11, 10, 17, tzinfo=timezone.utc)
                 main()
                 self.assertTrue(chart.exists())
+                self.assertTrue(feed.exists())
+                self.assertEqual(json.loads(feed.read_text(encoding="utf-8"))["today"], 13)
                 self.assertIn("<img", readme.read_text())
-                before = (readme.stat().st_mtime_ns, chart.stat().st_mtime_ns)
+                before = (readme.stat().st_mtime_ns, chart.stat().st_mtime_ns, feed.stat().st_mtime_ns)
                 main()
-                self.assertEqual(before, (readme.stat().st_mtime_ns, chart.stat().st_mtime_ns))
+                self.assertEqual(before, (readme.stat().st_mtime_ns, chart.stat().st_mtime_ns, feed.stat().st_mtime_ns))
 
 
 if __name__ == "__main__":
