@@ -113,57 +113,15 @@ Cinco dias mais ativos na janela:
 
 <!-- CONTRIBUTIONS:END -->
 
-<!-- ENGINEERING-JOURNAL:START -->
+<!-- PORTFOLIO-STATUS:START -->
+
 <div align="center">
-
-<sub>ENGENHARIA DE SOFTWARE · NOTAS DE DESENVOLVIMENTO</sub>
-
-<h2>DEV.LOG</h2>
-
-<p>O que existe por trás dos commits: problemas encontrados, decisões técnicas e entregas verificáveis.</p>
-
+  <h2>Andamento dos projetos</h2>
+  <p><sub>Evidencias verificaveis de codigo, testes e automacao. Sem percentuais estimados de conclusao.</sub></p>
+  <a href="docs/ANDAMENTO_DOS_PROJETOS.md">
+    <img src="https://raw.githubusercontent.com/juniordev830/juniordev830/main/assets/portfolio-andamento.svg" width="100%" alt="Evolucao tecnica dos repositorios GitHub"/>
+  </a>
+  <p><a href="docs/ANDAMENTO_DOS_PROJETOS.md"><strong>Ver todos os projetos e seus indicadores</strong></a></p>
 </div>
 
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <strong>01 · Investigar</strong>
-      <p><sub>Entender o comportamento, localizar a causa e definir o que precisa melhorar.</sub></p>
-    </td>
-    <td width="50%" valign="top">
-      <strong>02 · Construir</strong>
-      <p><sub>Implementar mudanças pequenas, úteis e fáceis de revisar.</sub></p>
-    </td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <strong>03 · Validar</strong>
-      <p><sub>Testar casos relevantes e verificar regressões antes de integrar.</sub></p>
-    </td>
-    <td valign="top">
-      <strong>04 · Documentar</strong>
-      <p><sub>Registrar decisões, limitações e próximos passos de cada projeto.</sub></p>
-    </td>
-  </tr>
-</table>
-
-### Notas de entrega
-
-<sub>Seleção de melhorias mescladas em 12/11/2026. Links para os PRs originais, sem números artificiais.</sub>
-
-| Área | Problema resolvido · alteração |
-| :-- | :-- |
-| **Confiabilidade** | [Validar pacote Windows e publicar checksum SHA-256](https://github.com/juniordev830/pixel-farm-seasons/pull/33) · `pixel-farm-seasons` |
-| **Regras de jogo** | [Limitar energia e saciedade ao intervalo de 0 a 100](https://github.com/juniordev830/pixel-farm-seasons/pull/32) · `pixel-farm-seasons` |
-| **Infraestrutura** | [Adicionar governança de custos e alertas ao laboratório Terraform](https://github.com/juniordev830/infrastructure-as-code-lab/pull/5) · `infrastructure-as-code-lab` |
-
-<p align="center">
-  <a href="https://github.com/pulls?q=author%3Ajuniordev830+is%3Apr+is%3Amerged"><strong>Histórico completo de entregas</strong></a>
-  &nbsp;·&nbsp;
-  <a href="https://github.com/juniordev830?tab=repositories">Repositórios</a>
-  &nbsp;·&nbsp;
-  <a href="docs/MANUTENCAO_DO_PERFIL.md">Notas técnicas do perfil</a>
-  &nbsp;·&nbsp;
-  <a href="https://joao-github-dashboard.joaosilva42333.chatgpt.site">Painel de dados</a>
-</p>
-<!-- ENGINEERING-JOURNAL:END -->
+<!-- PORTFOLIO-STATUS:END -->
