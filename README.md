@@ -13,7 +13,7 @@
 <!-- STUDY-SUPPORT:START -->
 <p align="center">
   <a href="./assets/pix-estudos-qr.svg" title="Abrir QR Code Pix para apoiar meus estudos">
-    <img src="./assets/apoie-meus-estudos.svg" width="100%" alt="Apoie meus estudos: contribuições voluntárias via Pix para minha formação em tecnologia. Clique para ampliar o QR Code." />
+    <img src="./assets/apoie-meus-estudos.svg?v=cb039087" width="100%" alt="Apoie meus estudos: contribuições voluntárias via Pix para minha formação em tecnologia. Clique para ampliar o QR Code." />
   </a>
 </p>
 <!-- STUDY-SUPPORT:END -->
