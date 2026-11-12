@@ -1,4 +1,4 @@
-<!-- PORTFOLIO-SNAPSHOT:v2:2026-11-12 -->
+<!-- PORTFOLIO-SNAPSHOT:v3:2026-11-12 -->
 # Andamento dos projetos
 
 Inventario automatizado a partir da API do GitHub. **Fase nao equivale a percentual de conclusao**; analisa apenas evidencias de arquivos na branch padrao.

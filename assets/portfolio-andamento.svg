@@ -1,66 +1,149 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="602" viewBox="0 0 1060 602" role="img" aria-label="Andamento tecnico dos projetos: documentacao, codigo, testes, pipelines e fases observadas">
-<rect width="1060" height="602" rx="18" fill="#0d141e"/>
-<rect x="1" y="1" width="1058" height="600" rx="17" fill="none" stroke="#303d49"/>
-<text x="34" y="47" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#83b7d3">PORTFOLIO  /  ENGENHARIA DE SOFTWARE</text>
-<text x="34" y="91" font-family="Arial,Helvetica,sans-serif" font-size="31" font-weight="700" fill="#f0f5fa">Andamento tecnico dos projetos</text>
-<text x="34" y="119" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#98aabd">Evidencias observaveis nos repositorios  |  nao representam percentual concluido</text>
-<rect x="34" y="150" width="236" height="92" rx="10" fill="#14212d" stroke="#344555"/>
-<text x="52" y="177" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#9db1c3">Com documentacao</text>
-<text x="52" y="220" font-family="Arial,Helvetica,sans-serif" font-size="33" font-weight="700" fill="#e6f4ff">69</text>
-<text x="222" y="216" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#71899b">/ 69</text>
-<rect x="288" y="150" width="236" height="92" rx="10" fill="#14212d" stroke="#344555"/>
-<text x="306" y="177" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#9db1c3">Com codigo</text>
-<text x="306" y="220" font-family="Arial,Helvetica,sans-serif" font-size="33" font-weight="700" fill="#e6f4ff">54</text>
-<text x="476" y="216" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#71899b">/ 69</text>
-<rect x="542" y="150" width="236" height="92" rx="10" fill="#14212d" stroke="#344555"/>
-<text x="560" y="177" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#9db1c3">Com testes</text>
-<text x="560" y="220" font-family="Arial,Helvetica,sans-serif" font-size="33" font-weight="700" fill="#e6f4ff">45</text>
-<text x="730" y="216" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#71899b">/ 69</text>
-<rect x="796" y="150" width="236" height="92" rx="10" fill="#14212d" stroke="#344555"/>
-<text x="814" y="177" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#9db1c3">Com pipelines</text>
-<text x="814" y="220" font-family="Arial,Helvetica,sans-serif" font-size="33" font-weight="700" fill="#e6f4ff">58</text>
-<text x="984" y="216" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#71899b">/ 69</text>
-<rect x="34" y="264" width="616" height="271" rx="10" fill="#14212d" stroke="#344555"/>
-<text x="55" y="299" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" fill="#d7e6ef">FASES IDENTIFICADAS</text>
-<text x="55" y="319" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" fill="#91a6b8">Criterio: evidencias de codigo, testes e workflow</text>
-<text x="55" y="347" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#e3ebf1">Validacao automatizada</text>
-<rect x="290" y="334" width="268" height="13" rx="5" fill="#263342" stroke="#263342"/>
-<rect x="290" y="334" width="170" height="13" rx="5" fill="#57b3da" stroke="#57b3da"/>
-<text x="580" y="347" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#f0f5fa">45</text>
-<text x="55" y="386" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#e3ebf1">Testes sem pipeline</text>
-<rect x="290" y="373" width="268" height="13" rx="5" fill="#263342" stroke="#263342"/>
-<text x="580" y="386" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#f0f5fa">0</text>
-<text x="55" y="425" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#e3ebf1">Implementacao</text>
-<rect x="290" y="412" width="268" height="13" rx="5" fill="#263342" stroke="#263342"/>
-<rect x="290" y="412" width="38" height="13" rx="5" fill="#8cb1ca" stroke="#8cb1ca"/>
-<text x="580" y="425" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#f0f5fa">10</text>
-<text x="55" y="464" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#e3ebf1">Estruturacao / revisao</text>
-<rect x="290" y="451" width="268" height="13" rx="5" fill="#263342" stroke="#263342"/>
-<rect x="290" y="451" width="53" height="13" rx="5" fill="#8ca1b2" stroke="#8ca1b2"/>
-<text x="580" y="464" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#f0f5fa">14</text>
-<text x="55" y="503" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#e3ebf1">Acesso restrito</text>
-<rect x="290" y="490" width="268" height="13" rx="5" fill="#263342" stroke="#263342"/>
-<rect x="290" y="490" width="8" height="13" rx="5" fill="#9e93af" stroke="#9e93af"/>
-<text x="580" y="503" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#f0f5fa">2</text>
-<rect x="668" y="264" width="358" height="271" rx="10" fill="#14212d" stroke="#344555"/>
-<text x="688" y="299" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" fill="#d7e6ef">ULTIMAS MOVIMENTACOES</text>
-<text x="688" y="331" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="600" fill="#e0edf7">web-dashboard-ts</text>
-<text x="950" y="331" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" fill="#8ca8bb">12/11</text>
-<line x1="687" y1="339" x2="1004" y2="339" stroke="#2b3a48"/>
-<text x="688" y="364" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="600" fill="#e0edf7">voluntariado-hub</text>
-<text x="950" y="364" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" fill="#8ca8bb">12/11</text>
-<line x1="687" y1="372" x2="1004" y2="372" stroke="#2b3a48"/>
-<text x="688" y="397" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="600" fill="#e0edf7">trilhas-locais</text>
-<text x="950" y="397" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" fill="#8ca8bb">12/11</text>
-<line x1="687" y1="405" x2="1004" y2="405" stroke="#2b3a48"/>
-<text x="688" y="430" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="600" fill="#e0edf7">train-logistics-puzzle</text>
-<text x="950" y="430" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" fill="#8ca8bb">12/11</text>
-<line x1="687" y1="438" x2="1004" y2="438" stroke="#2b3a48"/>
-<text x="688" y="463" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="600" fill="#e0edf7">tiny-theme-park</text>
-<text x="950" y="463" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" fill="#8ca8bb">12/11</text>
-<line x1="687" y1="471" x2="1004" y2="471" stroke="#2b3a48"/>
-<text x="688" y="496" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="600" fill="#e0edf7">submarine-abyss</text>
-<text x="950" y="496" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" fill="#8ca8bb">12/11</text>
-<text x="34" y="567" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#b1c7d7">Catalogados: 71  |  Auditados: 69  |  Restritos: 2</text>
-<text x="34" y="586" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" fill="#748fa1">Fonte: GitHub API  -  sinais tecnicos, nao medicao de entrega funcional</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="902" viewBox="0 0 1120 902" role="img" aria-label="Portfolio de projetos: inventario e sinais tecnicos auditados">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1724"/><stop offset="1" stop-color="#090e17"/></linearGradient>
+<linearGradient id="cyan" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#087daf"/><stop offset="1" stop-color="#36c2e8"/></linearGradient>
+<linearGradient id="navy" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#142538"/><stop offset="1" stop-color="#101b29"/></linearGradient>
+<linearGradient id="green" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#128e83"/><stop offset="1" stop-color="#39c9a9"/></linearGradient>
+<linearGradient id="violet" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5b67ae"/><stop offset="1" stop-color="#a48bdb"/></linearGradient>
+</defs>
+<rect width="1120" height="902" rx="20" fill="url(#bg)"/>
+<rect x="1" y="1" width="1118" height="900" rx="19" fill="none" stroke="#294052"/>
+<g fill="none" stroke="#4cbce5" stroke-width="4" stroke-linejoin="round">
+<path d="M34 40 L62 27 L90 40 L62 53 Z"/><path d="M34 53 L62 66 L90 53"/><path d="M34 66 L62 79 L90 66"/>
+</g>
+<text x="114" y="52" fill="#f2f6fa" font-family="Arial,Helvetica,sans-serif" font-size="30" font-weight="700">Portfólio de</text>
+<text x="312" y="52" fill="#36b7df" font-family="Arial,Helvetica,sans-serif" font-size="30" font-weight="700">Projetos</text>
+<text x="115" y="77" fill="#a4b9c9" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400">Andamento e saúde técnica do ecossistema de repositórios</text>
+<rect x="865" y="27" width="230" height="38" rx="19" fill="#102935" stroke="#356078"/>
+<circle cx="885" cy="46" r="6" fill="#36cfa8"/>
+<text x="900" y="51" fill="#d6eaf4" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700">INVENTÁRIO AUDITADO</text>
+<rect x="24" y="106" width="210" height="107" rx="12" fill="#121f2d" stroke="#2d4355"/>
+<rect x="38" y="120" width="45" height="43" rx="10" fill="#193046" stroke="#264b63"/>
+<circle cx="60" cy="141" r="9" fill="none" stroke="#46bde7" stroke-width="3"/>
+<text x="94" y="130" fill="#c1d2de" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700">REPOSITÓRIOS</text>
+<text x="94" y="164" fill="#f2f6fb" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700">71</text>
+<text x="40" y="195" fill="#90a9ba" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="400">2 com acesso restrito</text>
+<rect x="189" y="185" width="27" height="3" rx="1" fill="#46bde7" stroke="#46bde7"/>
+<rect x="244" y="106" width="210" height="107" rx="12" fill="#121f2d" stroke="#2d4355"/>
+<rect x="258" y="120" width="45" height="43" rx="10" fill="#193046" stroke="#264b63"/>
+<circle cx="280" cy="141" r="9" fill="none" stroke="#5fa8e7" stroke-width="3"/>
+<text x="314" y="130" fill="#c1d2de" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700">AUDITADOS</text>
+<text x="314" y="164" fill="#f2f6fb" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700">69</text>
+<text x="260" y="195" fill="#90a9ba" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="400">branches padrão</text>
+<rect x="409" y="185" width="27" height="3" rx="1" fill="#5fa8e7" stroke="#5fa8e7"/>
+<rect x="464" y="106" width="210" height="107" rx="12" fill="#121f2d" stroke="#2d4355"/>
+<rect x="478" y="120" width="45" height="43" rx="10" fill="#193046" stroke="#264b63"/>
+<circle cx="500" cy="141" r="9" fill="none" stroke="#79bdd6" stroke-width="3"/>
+<text x="534" y="130" fill="#c1d2de" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700">COM CÓDIGO</text>
+<text x="534" y="164" fill="#f2f6fb" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700">54</text>
+<text x="480" y="195" fill="#90a9ba" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="400">arquivos detectados</text>
+<rect x="629" y="185" width="27" height="3" rx="1" fill="#79bdd6" stroke="#79bdd6"/>
+<rect x="684" y="106" width="210" height="107" rx="12" fill="#121f2d" stroke="#2d4355"/>
+<rect x="698" y="120" width="45" height="43" rx="10" fill="#193046" stroke="#264b63"/>
+<circle cx="720" cy="141" r="9" fill="none" stroke="#a897e5" stroke-width="3"/>
+<text x="754" y="130" fill="#c1d2de" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700">COM TESTES</text>
+<text x="754" y="164" fill="#f2f6fb" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700">45</text>
+<text x="700" y="195" fill="#90a9ba" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="400">estrutura detectada</text>
+<rect x="849" y="185" width="27" height="3" rx="1" fill="#a897e5" stroke="#a897e5"/>
+<rect x="904" y="106" width="210" height="107" rx="12" fill="#121f2d" stroke="#2d4355"/>
+<rect x="918" y="120" width="45" height="43" rx="10" fill="#193046" stroke="#264b63"/>
+<circle cx="940" cy="141" r="9" fill="none" stroke="#45c0a8" stroke-width="3"/>
+<text x="974" y="130" fill="#c1d2de" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700">COM PIPELINES</text>
+<text x="974" y="164" fill="#f2f6fb" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700">58</text>
+<text x="920" y="195" fill="#90a9ba" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="400">workflows detectados</text>
+<rect x="1069" y="185" width="27" height="3" rx="1" fill="#45c0a8" stroke="#45c0a8"/>
+<rect x="24" y="232" width="448" height="317" rx="12" fill="url(#navy)" stroke="#2d4355"/>
+<text x="44" y="263" fill="#f0f6fb" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700">Distribuição técnica</text>
+<text x="44" y="284" fill="#98b1c2" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400">Fases identificadas por evidências dos arquivos</text>
+<line x1="44" y1="297" x2="452" y2="297" stroke="#294050" opacity="1"/>
+<circle cx="154" cy="415" r="70" fill="none" stroke="#223749" stroke-width="25"/>
+<circle cx="154" cy="415" r="70" fill="none" stroke="#36b8e5" stroke-width="25" stroke-dasharray="278.76 161.06" stroke-dashoffset="-0.00" transform="rotate(-90 154 415)"/>
+<circle cx="154" cy="415" r="70" fill="none" stroke="#48c3a9" stroke-width="25" stroke-dasharray="61.95 377.88" stroke-dashoffset="-278.76" transform="rotate(-90 154 415)"/>
+<circle cx="154" cy="415" r="70" fill="none" stroke="#f2ba5a" stroke-width="25" stroke-dasharray="86.73 353.10" stroke-dashoffset="-340.71" transform="rotate(-90 154 415)"/>
+<circle cx="154" cy="415" r="70" fill="none" stroke="#8495a7" stroke-width="25" stroke-dasharray="12.39 427.43" stroke-dashoffset="-427.43" transform="rotate(-90 154 415)"/>
+<text x="154" y="417" fill="#f3f7fb" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="700" text-anchor="middle">71</text>
+<text x="154" y="440" fill="#acbfcc" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" text-anchor="middle">projetos</text>
+<circle cx="270" cy="345" r="6" fill="#36b8e5"/>
+<text x="285" y="350" fill="#dce6ee" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400">Testes + pipeline</text>
+<text x="447" y="350" fill="#f2f5f9" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" text-anchor="end">45</text>
+<circle cx="270" cy="382" r="6" fill="#a68be1"/>
+<text x="285" y="387" fill="#dce6ee" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400">Testes, sem pipeline</text>
+<text x="447" y="387" fill="#f2f5f9" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" text-anchor="end">0</text>
+<circle cx="270" cy="419" r="6" fill="#48c3a9"/>
+<text x="285" y="424" fill="#dce6ee" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400">Implementação</text>
+<text x="447" y="424" fill="#f2f5f9" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" text-anchor="end">10</text>
+<circle cx="270" cy="456" r="6" fill="#f2ba5a"/>
+<text x="285" y="461" fill="#dce6ee" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400">Estruturação / revisão</text>
+<text x="447" y="461" fill="#f2f5f9" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" text-anchor="end">14</text>
+<circle cx="270" cy="493" r="6" fill="#8495a7"/>
+<text x="285" y="498" fill="#dce6ee" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400">Acesso restrito</text>
+<text x="447" y="498" fill="#f2f5f9" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" text-anchor="end">2</text>
+<rect x="489" y="232" width="607" height="317" rx="12" fill="url(#navy)" stroke="#2d4355"/>
+<text x="509" y="263" fill="#f0f6fb" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700">Projetos em foco</text>
+<text x="509" y="284" fill="#98b1c2" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400">Estágio técnico observado, sem percentuais de conclusão</text>
+<line x1="509" y1="297" x2="1076" y2="297" stroke="#294050" opacity="1"/>
+<rect x="508" y="315" width="274" height="96" rx="10" fill="#122334" stroke="#355067"/>
+<text x="522" y="341" fill="#f2f6fa" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700">pixel-farm-seasons</text>
+<text x="522" y="363" fill="#9dc6dc" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400">Testes + CI</text>
+<text x="522" y="392" fill="#95acbc" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="400">4/4 sinais técnicos</text>
+<rect x="659" y="382" width="103" height="8" rx="4.0" fill="#243746" stroke="#243746"/>
+<rect x="659" y="382" width="103" height="8" rx="4.0" fill="url(#cyan)" stroke="url(#cyan)"/>
+<rect x="796" y="315" width="274" height="96" rx="10" fill="#122334" stroke="#355067"/>
+<text x="810" y="341" fill="#f2f6fa" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700">sentinel-atlas</text>
+<text x="810" y="363" fill="#9dc6dc" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400">Testes + CI</text>
+<text x="810" y="392" fill="#95acbc" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="400">4/4 sinais técnicos</text>
+<rect x="947" y="382" width="103" height="8" rx="4.0" fill="#243746" stroke="#243746"/>
+<rect x="947" y="382" width="103" height="8" rx="4.0" fill="url(#violet)" stroke="url(#violet)"/>
+<rect x="508" y="425" width="274" height="96" rx="10" fill="#122334" stroke="#355067"/>
+<text x="522" y="451" fill="#f2f6fa" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700">plataforma-de-recrutamento</text>
+<text x="522" y="473" fill="#9dc6dc" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400">Testes + CI</text>
+<text x="522" y="502" fill="#95acbc" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="400">4/4 sinais técnicos</text>
+<rect x="659" y="492" width="103" height="8" rx="4.0" fill="#243746" stroke="#243746"/>
+<rect x="659" y="492" width="103" height="8" rx="4.0" fill="url(#cyan)" stroke="url(#cyan)"/>
+<rect x="796" y="425" width="274" height="96" rx="10" fill="#122334" stroke="#355067"/>
+<text x="810" y="451" fill="#f2f6fa" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700">infrastructure-as-code-lab</text>
+<text x="810" y="473" fill="#9dc6dc" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400">Testes + CI</text>
+<text x="810" y="502" fill="#95acbc" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="400">3/4 sinais técnicos</text>
+<rect x="947" y="492" width="103" height="8" rx="4.0" fill="#243746" stroke="#243746"/>
+<rect x="947" y="492" width="77.2" height="8" rx="4.0" fill="url(#violet)" stroke="url(#violet)"/>
+<rect x="24" y="567" width="618" height="232" rx="12" fill="url(#navy)" stroke="#2d4355"/>
+<text x="44" y="598" fill="#f0f6fb" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700">Fluxo de evolução</text>
+<text x="44" y="619" fill="#98b1c2" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400">Cada projeto pertence à fase mais avançada detectada</text>
+<line x1="44" y1="632" x2="622" y2="632" stroke="#294050" opacity="1"/>
+<rect x="43" y="660" width="135" height="109" rx="9" fill="#162a3c" stroke="#335268"/>
+<text x="56" y="687" fill="#e4b566" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700">ESTRUTURAÇÃO</text>
+<text x="56" y="734" fill="#f2f8fb" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="700">14</text>
+<text x="181" y="726" fill="#6999b2" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700">›</text>
+<rect x="191" y="660" width="135" height="109" rx="9" fill="#162a3c" stroke="#335268"/>
+<text x="204" y="687" fill="#51afd5" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700">IMPLEMENTAÇÃO</text>
+<text x="204" y="734" fill="#f2f8fb" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="700">10</text>
+<text x="329" y="726" fill="#6999b2" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700">›</text>
+<rect x="339" y="660" width="135" height="109" rx="9" fill="#162a3c" stroke="#335268"/>
+<text x="352" y="687" fill="#a392d9" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700">COM TESTES</text>
+<text x="352" y="734" fill="#f2f8fb" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="700">0</text>
+<text x="477" y="726" fill="#6999b2" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700">›</text>
+<rect x="487" y="660" width="135" height="109" rx="9" fill="#162a3c" stroke="#335268"/>
+<text x="500" y="687" fill="#45bf9f" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700">TESTES + CI</text>
+<text x="500" y="734" fill="#f2f8fb" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="700">45</text>
+<text x="45" y="790" fill="#9fb2c2" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="400">Acesso restrito: 2  ·  Qualidade e cobertura exigem testes adicionais</text>
+<rect x="658" y="567" width="438" height="232" rx="12" fill="url(#navy)" stroke="#2d4355"/>
+<text x="678" y="598" fill="#f0f6fb" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700">Últimas movimentações</text>
+<text x="678" y="619" fill="#98b1c2" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400">Projetos ordenados pela última atualização</text>
+<line x1="678" y1="632" x2="1076" y2="632" stroke="#294050" opacity="1"/>
+<text x="676" y="660" fill="#d9e7ef" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700">juniordev830</text>
+<text x="1070" y="660" fill="#81a6bc" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" text-anchor="end">12/11</text>
+<line x1="677" y1="669" x2="1072" y2="669" stroke="#284354" opacity="1"/>
+<text x="676" y="693" fill="#d9e7ef" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700">pixel-farm-seasons</text>
+<text x="1070" y="693" fill="#81a6bc" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" text-anchor="end">12/11</text>
+<line x1="677" y1="702" x2="1072" y2="702" stroke="#284354" opacity="1"/>
+<text x="676" y="726" fill="#d9e7ef" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700">ebd-planejador</text>
+<text x="1070" y="726" fill="#81a6bc" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" text-anchor="end">12/11</text>
+<line x1="677" y1="735" x2="1072" y2="735" stroke="#284354" opacity="1"/>
+<text x="676" y="759" fill="#d9e7ef" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700">infrastructure-as-code-lab</text>
+<text x="1070" y="759" fill="#81a6bc" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" text-anchor="end">12/11</text>
+<text x="677" y="787" fill="#96aebd" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="400">Datas de push não medem avanço funcional</text>
+<rect x="24" y="815" width="1072" height="63" rx="11" fill="#10202e" stroke="#2b4759"/>
+<text x="45" y="840" fill="#eff5f9" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700">71 projetos no inventário</text>
+<text x="45" y="863" fill="#a8becc" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400">Relatório individual • métodos e limitações • links por repositório</text>
+<text x="1070" y="852" fill="#73bedc" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700" text-anchor="end">DADOS: GITHUB API</text>
 </svg>
