@@ -63,6 +63,7 @@ def collect(token: str) -> list[dict]:
             projects.append({
                 "name": name, "url": repo["html_url"],
                 "pushed": (repo.get("pushed_at") or "")[:10],
+                "pushed_iso": repo.get("pushed_at") or "",
                 "docs": docs, "code": code, "tests": tests, "ci": ci,
                 "archived": repo.get("archived", False),
                 "partial": bool(tree.get("truncated", False)),
@@ -76,7 +77,7 @@ def collect(token: str) -> list[dict]:
         if name not in listed:
             projects.append({
                 "name": name, "url": f"https://github.com/{OWNER}/{name}",
-                "pushed": "", "docs": False, "code": False,
+                "pushed": "", "pushed_iso": "", "docs": False, "code": False,
                 "tests": False, "ci": False, "archived": False,
                 "partial": True, "restricted": True,
             })
@@ -119,66 +120,179 @@ def summaries(projects: list[dict]) -> dict:
 
 
 def render_svg(projects: list[dict]) -> str:
+    """Dashboard de portfolio. As barras medem evidencias, nunca conclusao.
+
+    Os cinco indicadores sao extraidos da auditoria do GitHub. Um projeto
+    com workflow e testes NAO e automaticamente considerado concluido.
+    """
+    from math import pi
+
     count = summaries(projects)
-    lines = [
-        '<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="602" viewBox="0 0 1060 602" role="img" aria-label="Andamento tecnico dos projetos: documentacao, codigo, testes, pipelines e fases observadas">',
-        '<rect width="1060" height="602" rx="18" fill="#0d141e"/>',
-        '<rect x="1" y="1" width="1058" height="600" rx="17" fill="none" stroke="#303d49"/>',
+    width, height = 1120, 902
+    output = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" '
+        'role="img" aria-label="Portfolio de projetos: inventario e sinais tecnicos auditados">',
+        '<defs>',
+        '<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1724"/><stop offset="1" stop-color="#090e17"/></linearGradient>',
+        '<linearGradient id="cyan" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#087daf"/><stop offset="1" stop-color="#36c2e8"/></linearGradient>',
+        '<linearGradient id="navy" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#142538"/><stop offset="1" stop-color="#101b29"/></linearGradient>',
+        '<linearGradient id="green" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#128e83"/><stop offset="1" stop-color="#39c9a9"/></linearGradient>',
+        '<linearGradient id="violet" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5b67ae"/><stop offset="1" stop-color="#a48bdb"/></linearGradient>',
+        '</defs>',
+        f'<rect width="{width}" height="{height}" rx="20" fill="url(#bg)"/>',
+        f'<rect x="1" y="1" width="{width-2}" height="{height-2}" rx="19" fill="none" stroke="#294052"/>',
     ]
+    def rect(x, y, w, h, fill="#121f2d", stroke="#2d4355", r=12):
+        output.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{r}" fill="{fill}" stroke="{stroke}"/>')
 
-    def rect(x, y, w, h, fill="#14212d", border="#344555", radius=10):
-        lines.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{radius}" fill="{fill}" stroke="{border}"/>')
+    def text(x, y, msg, size=15, color="#dce8f1", weight=400, anchor=None):
+        anchor_prop = f' text-anchor="{anchor}"' if anchor else ""
+        output.append(
+            f'<text x="{x}" y="{y}" fill="{color}" font-family="Arial,Helvetica,sans-serif" '
+            f'font-size="{size}" font-weight="{weight}"{anchor_prop}>{escape(str(msg))}</text>'
+        )
 
-    def txt(x, y, value, size=15, color="#e3ebf1", weight="400"):
-        lines.append(f'<text x="{x}" y="{y}" font-family="Arial,Helvetica,sans-serif" font-size="{size}" font-weight="{weight}" fill="{color}">{escape(str(value))}</text>')
+    def line(x1, y1, x2, y2, color="#294050", opacity="1"):
+        output.append(f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{color}" opacity="{opacity}"/>')
 
-    txt(34, 47, "PORTFOLIO  /  ENGENHARIA DE SOFTWARE", 13, "#83b7d3", "700")
-    txt(34, 91, "Andamento tecnico dos projetos", 31, "#f0f5fa", "700")
-    txt(34, 119, "Evidencias observaveis nos repositorios  |  nao representam percentual concluido", 15, "#98aabd")
+    def bar(x, y, w, ratio, gradient="url(#cyan)", height=9):
+        rect(x, y, w, height, "#243746", "#243746", height / 2)
+        actual = max(0, min(1, ratio))
+        if actual:
+            rect(x, y, round(w * actual, 1), height, gradient, gradient, height / 2)
 
-    cards = [("Com documentacao", count["docs"]), ("Com codigo", count["code"]),
-             ("Com testes", count["tests"]), ("Com pipelines", count["ci"])]
-    for i, (label, value) in enumerate(cards):
-        x = 34 + i * 254
-        rect(x, 150, 236, 92)
-        txt(x + 18, 177, label, 14, "#9db1c3")
-        txt(x + 18, 220, value, 33, "#e6f4ff", "700")
-        txt(x + 188, 216, f"/ {count['scanned']}", 13, "#71899b")
+    def section(x, y, w, h, title, subtitle=""):
+        rect(x, y, w, h, "url(#navy)")
+        text(x + 20, y + 31, title, 19, "#f0f6fb", 700)
+        if subtitle:
+            text(x + 20, y + 52, subtitle, 12, "#98b1c2")
+        line(x + 20, y + 65, x + w - 20, y + 65)
 
-    rect(34, 264, 616, 271)
-    txt(55, 299, "FASES IDENTIFICADAS", 14, "#d7e6ef", "700")
-    txt(55, 319, "Criterio: evidencias de codigo, testes e workflow", 12, "#91a6b8")
+    # Identidade visual: linhas limpas e pouco brilho, no estilo do README.
+    output.append('<g fill="none" stroke="#4cbce5" stroke-width="4" stroke-linejoin="round">')
+    output.append('<path d="M34 40 L62 27 L90 40 L62 53 Z"/><path d="M34 53 L62 66 L90 53"/><path d="M34 66 L62 79 L90 66"/>')
+    output.append('</g>')
+    text(114, 52, "Portfólio de", 30, "#f2f6fa", 700)
+    text(312, 52, "Projetos", 30, "#36b7df", 700)
+    text(115, 77, "Andamento e saúde técnica do ecossistema de repositórios", 15, "#a4b9c9")
+    rect(865, 27, 230, 38, "#102935", "#356078", 19)
+    output.append('<circle cx="885" cy="46" r="6" fill="#36cfa8"/>')
+    text(900, 51, "INVENTÁRIO AUDITADO", 12, "#d6eaf4", 700)
+
+    # Indicadores verificaveis; as contagens refletem arquivos observados, não entregas finais.
+    cards = [
+        ("REPOSITÓRIOS", count["repos"], f"{count['restricted']} com acesso restrito", "#46bde7"),
+        ("AUDITADOS", count["scanned"], "branches padrão", "#5fa8e7"),
+        ("COM CÓDIGO", count["code"], "arquivos detectados", "#79bdd6"),
+        ("COM TESTES", count["tests"], "estrutura detectada", "#a897e5"),
+        ("COM PIPELINES", count["ci"], "workflows detectados", "#45c0a8"),
+    ]
+    for i, (label, value, caption, color) in enumerate(cards):
+        x = 24 + i * 220
+        rect(x, 106, 210, 107)
+        rect(x + 14, 120, 45, 43, "#193046", "#264b63", 10)
+        output.append(f'<circle cx="{x+36}" cy="141" r="9" fill="none" stroke="{color}" stroke-width="3"/>')
+        text(x + 70, 130, label, 11, "#c1d2de", 700)
+        text(x + 70, 164, value, 28, "#f2f6fb", 700)
+        text(x + 16, 195, caption, 11, "#90a9ba")
+        rect(x + 165, 185, 27, 3, color, color, 1)
+
+    section(24, 232, 448, 317, "Distribuição técnica", "Fases identificadas por evidências dos arquivos")
     rows = [
-        ("Validacao automatizada", count["validated"], "#57b3da"),
-        ("Testes sem pipeline", count["with_tests"], "#7ea6d3"),
-        ("Implementacao", count["implementing"], "#8cb1ca"),
-        ("Estruturacao / revisao", count["structuring"], "#8ca1b2"),
-        ("Acesso restrito", count["restricted"], "#9e93af"),
+        ("Testes + pipeline", count["validated"], "#36b8e5"),
+        ("Testes, sem pipeline", count["with_tests"], "#a68be1"),
+        ("Implementação", count["implementing"], "#48c3a9"),
+        ("Estruturação / revisão", count["structuring"], "#f2ba5a"),
+        ("Acesso restrito", count["restricted"], "#8495a7"),
     ]
-    for i, (name, qty, color) in enumerate(rows):
-        y = 347 + i * 39
-        txt(55, y, name, 14)
-        rect(290, y - 13, 268, 13, "#263342", "#263342", 5)
-        if qty:
-            rect(290, y - 13, max(4, round(268 * qty / max(1, count["repos"]))), 13, color, color, 5)
-        txt(580, y, qty, 16, "#f0f5fa", "700")
+    # Donut: grupos técnicos; não é um gráfico de progresso funcional.
+    circumference = 2 * pi * 70
+    output.append('<circle cx="154" cy="415" r="70" fill="none" stroke="#223749" stroke-width="25"/>')
+    offset = 0.0
+    for name, amount, color in rows:
+        if amount:
+            size = circumference * amount / max(1, count["repos"])
+            output.append(
+                f'<circle cx="154" cy="415" r="70" fill="none" stroke="{color}" stroke-width="25" '
+                f'stroke-dasharray="{size:.2f} {circumference-size:.2f}" stroke-dashoffset="{-offset:.2f}" '
+                'transform="rotate(-90 154 415)"/>'
+            )
+            offset += size
+    text(154, 417, count["repos"], 32, "#f3f7fb", 700, "middle")
+    text(154, 440, "projetos", 12, "#acbfcc", 400, "middle")
+    for i, (name, amount, color) in enumerate(rows):
+        y = 350 + i * 37
+        output.append(f'<circle cx="270" cy="{y-5}" r="6" fill="{color}"/>')
+        text(285, y, name, 12, "#dce6ee")
+        text(447, y, amount, 14, "#f2f5f9", 700, "end")
 
-    rect(668, 264, 358, 271)
-    txt(688, 299, "ULTIMAS MOVIMENTACOES", 14, "#d7e6ef", "700")
-    latest = sorted(projects, key=lambda project: (project["pushed"], project["name"]), reverse=True)[:6]
-    for i, item in enumerate(latest):
-        y = 331 + i * 33
-        name = item["name"]
-        if len(name) > 27:
-            name = name[:25] + ".."
-        txt(688, y, name, 13, "#e0edf7", "600")
-        txt(950, y, item["pushed"][8:10] + "/" + item["pushed"][5:7] if item["pushed"] else "-", 12, "#8ca8bb")
-        if i != 5:
-            lines.append(f'<line x1="687" y1="{y+8}" x2="1004" y2="{y+8}" stroke="#2b3a48"/>')
-    txt(34, 567, f"Catalogados: {count['repos']}  |  Auditados: {count['scanned']}  |  Restritos: {count['restricted']}", 14, "#b1c7d7")
-    txt(34, 586, "Fonte: GitHub API  -  sinais tecnicos, nao medicao de entrega funcional", 12, "#748fa1")
-    lines.append("</svg>")
-    return "\n".join(lines) + "\n"
+    section(489, 232, 607, 317, "Projetos em foco", "Estágio técnico observado, sem percentuais de conclusão")
+    featured = [
+        "pixel-farm-seasons",
+        "sentinel-atlas",
+        "plataforma-de-recrutamento",
+        "infrastructure-as-code-lab",
+    ]
+    by_name = {p["name"]: p for p in projects}
+    for i, name in enumerate(featured):
+        if name not in by_name:
+            continue
+        project = by_name[name]
+        col = i % 2
+        row = i // 2
+        x = 508 + col * 288
+        y = 315 + row * 110
+        rect(x, y, 274, 96, "#122334", "#355067", 10)
+        short_name = name if len(name) < 27 else name[:25] + ".."
+        text(x + 14, y + 26, short_name, 13, "#f2f6fa", 700)
+        desc = stage(project)
+        if desc == "Validacao automatizada":
+            desc = "Testes + CI"
+        elif desc == "Implementacao":
+            desc = "Código identificado"
+        text(x + 14, y + 48, desc, 12, "#9dc6dc")
+        signals = sum(bool(project.get(k)) for k in ("docs", "code", "tests", "ci"))
+        text(x + 14, y + 77, f"{signals}/4 sinais técnicos", 11, "#95acbc")
+        bar(x + 151, y + 67, 103, signals/4, "url(#cyan)" if i % 2 == 0 else "url(#violet)", 8)
+
+    section(24, 567, 618, 232, "Fluxo de evolução", "Cada projeto pertence à fase mais avançada detectada")
+    stage_cards = [
+        ("ESTRUTURAÇÃO", count["structuring"], "#e4b566"),
+        ("IMPLEMENTAÇÃO", count["implementing"], "#51afd5"),
+        ("COM TESTES", count["with_tests"], "#a392d9"),
+        ("TESTES + CI", count["validated"], "#45bf9f"),
+    ]
+    for i, (name, val, color) in enumerate(stage_cards):
+        x = 43 + 148*i
+        rect(x, 660, 135, 109, "#162a3c", "#335268", 9)
+        text(x + 13, 687, name, 11, color, 700)
+        text(x + 13, 734, val, 32, "#f2f8fb", 700)
+        if i < len(stage_cards) - 1:
+            text(x + 138, 726, "›", 24, "#6999b2", 700)
+    text(45, 790, "Acesso restrito: " + str(count["restricted"]) + "  ·  Qualidade e cobertura exigem testes adicionais", 11, "#9fb2c2")
+
+    section(658, 567, 438, 232, "Últimas movimentações", "Projetos ordenados pela última atualização")
+    recent = sorted(
+        [p for p in projects if not p.get("restricted")],
+        key=lambda p: (p.get("pushed_iso") or p["pushed"], p["name"]),
+        reverse=True,
+    )[:4]
+    for i, p in enumerate(recent):
+        y = 660 + i * 33
+        short = p["name"] if len(p["name"]) < 32 else p["name"][:30] + ".."
+        text(676, y, short, 12, "#d9e7ef", 700)
+        day = p["pushed"][8:10] + "/" + p["pushed"][5:7] if p["pushed"] else "—"
+        text(1070, y, day, 12, "#81a6bc", 400, "end")
+        if i < 3:
+            line(677, y + 9, 1072, y + 9, "#284354")
+    text(677, 787, "Datas de push não medem avanço funcional", 11, "#96aebd")
+
+    rect(24, 815, 1072, 63, "#10202e", "#2b4759", 11)
+    text(45, 840, f"71 projetos no inventário" if count["repos"] == 71 else f"{count['repos']} projetos no inventário", 16, "#eff5f9", 700)
+    text(45, 863, "Relatório individual • métodos e limitações • links por repositório", 12, "#a8becc")
+    text(1070, 852, "DADOS: GITHUB API", 12, "#73bedc", 700, "end")
+    output.append("</svg>")
+    return "\n".join(output) + "\n"
 
 
 def render_report(projects: list[dict]) -> str:
@@ -233,7 +347,7 @@ def main():
     # O calendario de contribuicoes atualiza com frequencia; a auditoria de
     # arvores de dezenas de repositorios executa apenas uma vez ao dia (UTC).
     snapshot_day = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    freshness_marker = f"<!-- PORTFOLIO-SNAPSHOT:v2:{snapshot_day} -->"
+    freshness_marker = f"<!-- PORTFOLIO-SNAPSHOT:v3:{snapshot_day} -->"
     if REPORT.exists() and freshness_marker in REPORT.read_text(encoding="utf-8"):
         print("Portfolio ja auditado hoje; snapshot preservado")
         return
@@ -243,12 +357,12 @@ def main():
     version = sha256(svg.encode("utf-8")).hexdigest()[:12]
     block = (
         '<div align="center">\n'
-        '  <h2>Andamento dos projetos</h2>\n'
-        '  <p><sub>Visao tecnica de documentacao, codigo, testes e automacao — sem percentuais inventados.</sub></p>\n'
+        '  <h2>Portfólio de Projetos</h2>\n'
+        '  <p><sub>Visão executiva de estágio técnico, validação e últimas movimentações dos repositórios.</sub></p>\n'
         '  <a href="docs/ANDAMENTO_DOS_PROJETOS.md">\n'
         f'    <img src="https://raw.githubusercontent.com/{OWNER}/{OWNER}/main/assets/portfolio-andamento.svg?v={version}" width="100%" alt="Panorama tecnico de todos os repositorios"/>\n'
         '  </a>\n'
-        '  <p><a href="docs/ANDAMENTO_DOS_PROJETOS.md"><strong>Ver andamento individual de todos os projetos</strong></a></p>\n'
+        '  <p><a href="docs/ANDAMENTO_DOS_PROJETOS.md"><strong>Consultar detalhes dos projetos</strong></a></p>\n'
         '</div>'
     )
     readme = README.read_text(encoding="utf-8")
