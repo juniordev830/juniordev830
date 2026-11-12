@@ -308,62 +308,21 @@ def render_chart(data: dict) -> str:
 
 
 def render_markdown(data: dict, generated_at: datetime) -> str:
-    """Show the chart and history; retain raw metrics for the standalone dashboard."""
+    """Expose the verified metrics to the external dashboard without duplicating its UI.
+
+    The SVG already shows the chart, daily counts and portfolio. Detailed data
+    remains available through the linked dashboard and its JSON feed.
+    """
     numbers = (data["today"], data["yesterday"], data["week_total"], data["year_total"])
-    # The HTML dashboard reads these four values from the raw README. An HTML
-    # comment preserves that contract without duplicating the visible SVG KPIs.
     raw_metrics = "".join(
         f'<strong>{number:,}</strong>'.replace(",", ".")
         for number in numbers
     )
-    day = generated_at.astimezone(TZ).strftime("%d/%m/%Y")
-    parts = [
+    return "\n".join([
         f'<!-- CONTRIBUTIONS:METRICS {raw_metrics} -->',
         "",
         render_chart(data),
-        "",
-        "<details>",
-        "<summary>Ver contribuições por dia — últimos 14 dias</summary>",
-        "",
-        "| Data (RN) | Contribuições |",
-        "| :--- | ---: |",
-    ]
-    for when, count in reversed(list(zip(data["days"], data["counts"]))):
-        parts.append(f"| {when:%d/%m/%Y} | {count:,} |".replace(",", "."))
-    insights = period_insights(data)
-    parts.extend([
-        "", "</details>", "", "<details>",
-        "<summary>Análise complementar — dias da semana e ranking</summary>", "",
-        "| Dia da semana | Contribuições nos 14 dias |",
-        "| :--- | ---: |",
     ])
-    for label, value in zip(('Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'), insights['weekdays']):
-        parts.append(f'| {label} | {value:,} |'.replace(',', '.'))
-    parts.extend(["", "Cinco dias mais ativos na janela:", "", "| Posição | Data | Contribuições |", "| ---: | :--- | ---: |"])
-    for rank, (when, value) in enumerate(sorted(zip(data['days'], data['counts']), key=lambda pair: (-pair[1], pair[0]))[:5], 1):
-        parts.append(f'| {rank} | {when:%d/%m/%Y} | {value:,} |'.replace(',', '.'))
-    parts.extend([
-        "",
-        "</details>",
-        "",
-        f'<p align="center"><sub>Dados de {day}. Consulta programada a cada 5 minutos, '
-        'sujeita a atrasos do GitHub. O painel externo deve buscar o JSON atualizado independentemente. '
-        '<a href="https://github.com/juniordev830/juniordev830/actions/workflows/contribuicoes-diarias.yml">'
-        'Ver última execução</a>.</sub></p>',
-    ])
-    parts.extend([
-        '',
-        '<details>',
-        '<summary>Links dos projetos em destaque</summary>',
-        '',
-        '<p align="center">',
-        '<a href="https://github.com/juniordev830/plataforma-de-recrutamento">Plataforma de Recrutamento</a> · ',
-        '<a href="https://github.com/juniordev830/sentinel-atlas">Atlas Sentinela</a> · ',
-        '<a href="https://github.com/juniordev830/controle-gastos-residenciais">Controle de Gastos</a>',
-        '</p>',
-        '</details>',
-    ])
-    return "\n".join(parts)
 
 
 def update_readme(document: str, panel: str) -> str:
