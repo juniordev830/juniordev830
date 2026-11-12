@@ -23,10 +23,29 @@ class PortfolioProgressTests(unittest.TestCase):
         projects = [sample("foo", ci=True, tests=True), sample("bar", code=False)]
         svg = render_svg(projects)
         ElementTree.fromstring(svg)
-        self.assertIn("Com testes", svg)
-        self.assertIn("ULTIMAS MOVIMENTACOES", svg)
+        self.assertIn("COM TESTES", svg)
+        self.assertIn("Últimas movimentações", svg)
         self.assertNotIn("72%", svg)
         self.assertEqual(summaries(projects)["validated"], 1)
+
+    def test_visual_redesign_preserves_true_evidence_counts(self):
+        example = [
+            sample("pixel-farm-seasons", tests=True, ci=True),
+            sample("sentinel-atlas", tests=True, ci=True),
+            sample("plataforma-de-recrutamento", code=True),
+            sample("infrastructure-as-code-lab", code=True, tests=True),
+        ]
+        image = render_svg(example)
+        root = ElementTree.fromstring(image)
+        self.assertTrue(root.tag.endswith("svg"))
+        self.assertIn("Portfólio de", image)
+        self.assertIn("Distribuição técnica", image)
+        self.assertIn("Fluxo de evolução", image)
+        self.assertIn("Últimas movimentações", image)
+        self.assertIn("4/4 sinais técnicos", image)
+        self.assertNotIn("70%", image)
+        self.assertNotIn("<script", image)
+        self.assertNotIn("<foreignObject", image)
 
     def test_report_has_every_repo_and_methods(self):
         projects = [sample("foo"), sample("bar", tests=True)]
