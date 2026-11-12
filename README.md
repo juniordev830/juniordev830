@@ -13,7 +13,7 @@
 <!-- STUDY-SUPPORT:START -->
 <p align="center">
   <a href="./assets/pix-estudos-qr.svg" title="Abrir QR Code Pix para apoiar meus estudos">
-    <img src="https://raw.githubusercontent.com/juniordev830/juniordev830/96a9ff508e4708aaec3d08da8f8cb9ef9756246e/assets/apoie-meus-estudos.svg" width="100%" alt="Apoie meus estudos: contribuições voluntárias via Pix para minha formação em tecnologia. Clique para ampliar o QR Code." />
+    <img src="https://raw.githubusercontent.com/juniordev830/juniordev830/da2bcca4d654c5385e543d340153a4cc546e5d92/assets/apoie-meus-estudos.svg" width="100%" alt="Apoie meus estudos: contribuições voluntárias via Pix para minha formação em tecnologia. Clique para ampliar o QR Code." />
   </a>
 </p>
 <!-- STUDY-SUPPORT:END -->
