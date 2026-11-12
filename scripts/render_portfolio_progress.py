@@ -52,7 +52,7 @@ def collect(token: str) -> list[dict]:
             docs = any(path in ("readme.md", "readme.rst", "readme.txt") for path in low)
             code = any(path.endswith(CODE_EXTS) and not path.startswith(
                 ("node_modules/", "vendor/", "dist/", "build/", ".github/")) for path in low)
-            tests = any((part in ("tests", "test", "__tests__", "spec", "specs") for part in path.split("/"))
+            tests = any(any(part in ("tests", "test", "__tests__", "spec", "specs") for part in path.split("/"))
                         or path.split("/")[-1].startswith(("test_", "spec_"))
                         or path.split("/")[-1].endswith((".test.ts", ".test.js", ".spec.ts", ".spec.js"))
                         for path in low)
