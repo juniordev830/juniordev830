@@ -71,7 +71,7 @@
   </g>
 
   <g id="qr-action">
-    <rect x="58.5" y="224.5" width="467" height="45" rx="10" fill="url(#button)" stroke="#405c70"/>
+    <rect x="58.5" y="224.5" width="480" height="45" rx="10" fill="url(#button)" stroke="#405c70"/>
     <g class="icon" transform="translate(78 236)">
       <path d="M1 7V2h5m10 0h5v5M1 14v5h5m10 0h5v-5"/>
       <rect x="7" y="6" width="8" height="9" rx="1"/>
@@ -79,27 +79,27 @@
     <text x="111" y="252" class="muted" font-size="15" font-weight="550">QR Code Pix</text>
     <path d="M222.5 235v24" class="separator"/>
     <text x="244" y="252" font-size="15" font-weight="650">Abrir em tamanho maior</text>
-    <path class="icon" d="M485 238h11v11m0-11-12 12m9-4v8h-14v-14h8" />
+    <path class="icon" d="M498 238h11v11m0-11-12 12m9-4v8h-14v-14h8"/>
   </g>
 
   <g id="benefits" class="benefit">
-    <path d="M181.5 289v34m113-34v34m107-34v34" class="separator"/>
+    <path d="M185.5 289v34m120-34v34m111-34v34" class="separator"/>
     <g id="benefit-projects" transform="translate(58 286)">
       <path class="icon" d="m7 14-6 6 6 6m9-12 6 6-6 6m-2-15-5 18"/>
-      <text x="30" y="16">Mantém</text>
-      <text x="30" y="32">projetos ativos</text>
+      <text x="28" y="16">Mantém</text>
+      <text x="28" y="32">projetos ativos</text>
     </g>
-    <g id="benefit-ideas" transform="translate(188 286)">
+    <g id="benefit-ideas" transform="translate(194 286)">
       <path class="icon" d="m1 16 10-6 10 6-10 6Zm0 7 10 6 10-6"/>
-      <text x="29" y="16">Viabiliza</text>
-      <text x="29" y="32">novas ideias</text>
+      <text x="27" y="16">Viabiliza</text>
+      <text x="27" y="32">novas ideias</text>
     </g>
-    <g id="benefit-evolution" transform="translate(302 286)">
+    <g id="benefit-evolution" transform="translate(314 286)">
       <path class="icon" d="M4 22c2-8 9-13 19-14-1 10-6 17-14 19Zm2-6-5 3 1 4 5-1m9-2-1 6-5 4-1-4m-3-1-4 4m12-14h.1"/>
-      <text x="30" y="16">Acelera</text>
-      <text x="30" y="32">evoluções</text>
+      <text x="29" y="16">Acelera</text>
+      <text x="29" y="32">evoluções</text>
     </g>
-    <g id="benefit-studies" transform="translate(409 286)">
+    <g id="benefit-studies" transform="translate(425 286)">
       <path class="icon" d="m0 17 10-6 11 6-11 6Zm4 3v7c4 3 9 3 13 0v-7m4-3v11"/>
       <text x="29" y="16">Apoia</text>
       <text x="29" y="32">meus estudos</text>
