@@ -288,7 +288,7 @@ def render_feed(data: dict) -> str:
             for when, count in zip(data["days"], data["counts"])
         ],
     }
-    return json.dumps(payload, ensure_ascii=False, indent=2) + "\\n"
+    return json.dumps(payload, ensure_ascii=False, indent=2) + "\n"
 
 
 def render_chart(data: dict) -> str:
