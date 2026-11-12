@@ -72,11 +72,11 @@ class DashboardTests(unittest.TestCase):
         self.assertIn("Contribuições diárias", xml)
         self.assertNotIn("<image", xml)
 
-    def test_portfolio_links_remain_accessible_but_collapsed(self):
+    def test_generated_panel_keeps_a_single_chart_without_duplicate_links(self):
         result = render_markdown(metrics(fake_calendar(), TODAY),
                                  datetime(2026, 11, 10, tzinfo=timezone.utc))
-        self.assertIn("<summary>Links dos projetos em destaque</summary>", result)
-        self.assertIn("https://github.com/juniordev830/sentinel-atlas", result)
+        self.assertNotIn("<details>", result)
+        self.assertNotIn("Links dos projetos em destaque", result)
         self.assertEqual(result.count("<img"), 1)
 
     def test_exact_daily_counts_and_week_summary(self):
@@ -149,16 +149,14 @@ class DashboardTests(unittest.TestCase):
         data['year_total'] += 1
         self.assertNotEqual(original, render_chart(data))
 
-    def test_text_panel_includes_counts_and_expandable_daily_history(self):
+    def test_text_panel_exposes_metrics_without_duplicate_history(self):
         output = render_markdown(metrics(fake_calendar(), TODAY),
                                  datetime(2026, 11, 10, 17, tzinfo=timezone.utc))
         self.assertIn("<strong>13</strong>", output)
         self.assertIn("<strong>2.012</strong>", output)
-        self.assertIn("<details>", output)
-        self.assertIn("| 10/11/2026 | 13 |", output)
-        self.assertIn("| 28/10/2026 | 0 |", output)
-        self.assertLess(output.index("| 10/11/2026"), output.index("| 28/10/2026"))
-        self.assertIn("5 minutos", output)
+        self.assertIn("contribuicoes-diarias.svg", output)
+        self.assertNotIn("<details>", output)
+        self.assertNotIn("| 10/11/2026 |", output)
         for forbidden in ("<svg", "<script", "<iframe", "```mermaid"):
             self.assertNotIn(forbidden, output)
 
@@ -210,10 +208,11 @@ class DashboardTests(unittest.TestCase):
                     self.assertGreaterEqual(float(e.attrib["y"]), float(e.attrib["data-plot-top"]) - .01)
                     self.assertLessEqual(float(e.attrib["y"]) + float(e.attrib["height"]), float(e.attrib["data-plot-bottom"]) + .02)
 
-    def test_chart_is_outside_the_collapsed_daily_table_and_cache_tracks_data(self):
+    def test_chart_is_visible_without_redundant_tables_and_cache_tracks_data(self):
         data = metrics(fake_calendar(), TODAY)
         output = render_markdown(data, datetime(2026, 11, 10, 17, tzinfo=timezone.utc))
-        self.assertLess(output.index("<img"), output.index("<details>"))
+        self.assertIn("<img", output)
+        self.assertNotIn("<details>", output)
         self.assertNotIn("```mermaid", output)
         chart = render_chart(data)
         self.assertEqual(chart, render_chart(data))

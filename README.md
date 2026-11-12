@@ -113,20 +113,15 @@ Cinco dias mais ativos na janela:
 
 <!-- CONTRIBUTIONS:END -->
 
-<p align="center">
-  <a href="https://joao-github-dashboard.joaosilva42333.chatgpt.site"><strong>📊 Abrir painel interativo completo ↗</strong></a><br>
-  <sub>Gráficos, filtros e exportação CSV · acesso pessoal com a conta ChatGPT do proprietário.</sub>
-</p>
+<!-- PORTFOLIO-STATUS:START -->
 
 <div align="center">
-  <h3>Explore meu trabalho</h3>
-  <p>
-    <a href="https://github.com/juniordev830?tab=repositories">Todos os repositórios</a>
-    &nbsp;·&nbsp;
-    <a href="https://github.com/juniordev830?tab=overview">Atividade e contribuições</a>
-  </p>
+  <h2>Andamento dos projetos</h2>
+  <p><sub>Evidencias verificaveis de codigo, testes e automacao. Sem percentuais estimados de conclusao.</sub></p>
+  <a href="docs/ANDAMENTO_DOS_PROJETOS.md">
+    <img src="https://raw.githubusercontent.com/juniordev830/juniordev830/main/assets/portfolio-andamento.svg" width="100%" alt="Evolucao tecnica dos repositorios GitHub"/>
+  </a>
+  <p><a href="docs/ANDAMENTO_DOS_PROJETOS.md"><strong>Ver todos os projetos e seus indicadores</strong></a></p>
 </div>
 
-## Documentação de desenvolvimento
-
-O [guia de validação e evolução](docs/MANUTENCAO_DO_PERFIL.md) registra o estado atual, os testes e os próximos incrementos deste projeto.
+<!-- PORTFOLIO-STATUS:END -->
