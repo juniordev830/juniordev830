@@ -240,7 +240,7 @@ def render_svg(data: dict, generated_at: datetime) -> str:
     parts.append(f'<g data-summary-values="{achieved},{14-achieved}">')
     text(40,821,f'Meta cumprida: {achieved} de 14 dias · sequência limitada à janela exibida',9)
     parts.append('</g>')
-    text(1000,821,f'{generated_at.astimezone(TZ):%d/%m/%Y} (RN) · consulta programada: 5 min',9,anchor='end')
+    text(1000,821,f'{generated_at.astimezone(TZ):%d/%m/%Y} (RN) · intervalo solicitado: 5 min (pode atrasar)',9,anchor='end')
     # Portfolio stays inside the same SVG surface as the live activity charts.
     # No image embedding or external fonts: GitHub's README image sanitizer can render it.
     line(40,852,1000,852)
