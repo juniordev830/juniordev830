@@ -1,4 +1,4 @@
-<!-- PORTFOLIO-SNAPSHOT:v3:2026-11-13 -->
+<!-- PORTFOLIO-SNAPSHOT:v4:2026-11-13T00Z -->
 # Andamento dos projetos
 
 Inventario automatizado a partir da API do GitHub. **Fase nao equivale a percentual de conclusao**; analisa apenas evidencias de arquivos na branch padrao.
@@ -51,7 +51,7 @@ As marcacoes significam presenca de arquivos, nao garantem cobertura, testes apr
 | [garantias-compras](https://github.com/juniordev830/garantias-compras) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-12 |
 | [helpdesk-suporte](https://github.com/juniordev830/helpdesk-suporte) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-12 |
 | [infrastructure-as-code-lab](https://github.com/juniordev830/infrastructure-as-code-lab) | Validacao automatizada | — | Sim | Sim | Sim | 2026-11-12 |
-| [juniordev830](https://github.com/juniordev830/juniordev830) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-12 |
+| [juniordev830](https://github.com/juniordev830/juniordev830) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-13 |
 | [observability-platform](https://github.com/juniordev830/observability-platform) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-12 |
 | [oficina-digital](https://github.com/juniordev830/oficina-digital) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-12 |
 | [orcamento-freelancer](https://github.com/juniordev830/orcamento-freelancer) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-12 |
