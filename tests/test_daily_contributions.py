@@ -109,6 +109,12 @@ class DashboardTests(unittest.TestCase):
         self.assertIn(">13</text>", output)
         self.assertIn("Média (7 dias): 10,0", output)
 
+    def test_footer_does_not_promise_precise_scheduling(self):
+        data = metrics(fake_calendar(), TODAY)
+        svg = render_svg(data, datetime(2026, 11, 10, tzinfo=timezone.utc))
+        self.assertIn("intervalo solicitado: 5 min", svg)
+        self.assertIn("pode atrasar", svg)
+
     def test_missing_token_fails_before_network(self):
         with self.assertRaisesRegex(ValueError, "GITHUB_TOKEN"):
             fetch_calendar("")

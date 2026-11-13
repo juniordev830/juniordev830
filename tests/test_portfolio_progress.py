@@ -1,7 +1,8 @@
 """Testes do portfolio: evidencias verificaveis sem progresso inventado."""
 import unittest
 from xml.etree import ElementTree
-from scripts.render_portfolio_progress import stage, summaries, render_svg, render_report, replace_section, START, END, collect
+from datetime import datetime, timezone, timedelta
+from scripts.render_portfolio_progress import stage, summaries, render_svg, render_report, replace_section, START, END, collect, snapshot_marker
 
 
 def sample(name, docs=True, code=True, tests=False, ci=False, pushed="2026-11-12", archived=False, partial=False):
@@ -71,6 +72,18 @@ class PortfolioProgressTests(unittest.TestCase):
         report = render_report([restricted, public])
         self.assertIn("N/D", report)
         self.assertIn("Auditados: 1", report)
+
+    def test_snapshot_windows_are_six_hours_in_utc(self):
+        self.assertEqual(snapshot_marker(datetime(2026, 11, 12, 5, 59, tzinfo=timezone.utc)),
+                         "<!-- PORTFOLIO-SNAPSHOT:v4:2026-11-12T00Z -->")
+        self.assertEqual(snapshot_marker(datetime(2026, 11, 12, 6, 0, tzinfo=timezone.utc)),
+                         "<!-- PORTFOLIO-SNAPSHOT:v4:2026-11-12T06Z -->")
+        self.assertEqual(snapshot_marker(datetime(2026, 11, 12, 21, tzinfo=timezone.utc)),
+                         "<!-- PORTFOLIO-SNAPSHOT:v4:2026-11-12T18Z -->")
+        self.assertEqual(snapshot_marker(datetime(2026, 11, 12, 16, tzinfo=timezone(timedelta(hours=-3)))),
+                         "<!-- PORTFOLIO-SNAPSHOT:v4:2026-11-12T18Z -->")
+        with self.assertRaises(ValueError):
+            snapshot_marker(datetime(2026, 11, 12, 6))
 
     def test_missing_token_prevents_invented_data(self):
         with self.assertRaises(ValueError):

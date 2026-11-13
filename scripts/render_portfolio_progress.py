@@ -343,13 +343,22 @@ def replace_section(readme: str, block: str) -> str:
     return readme[:first] + "\n\n" + block + "\n\n" + readme[last:]
 
 
+def snapshot_marker(now: datetime) -> str:
+    """Janela UTC de seis horas para evitar auditorias a cada cinco minutos."""
+    if now.tzinfo is None:
+        raise ValueError("Horario do snapshot precisa de timezone")
+    utc = now.astimezone(timezone.utc)
+    window_hour = (utc.hour // 6) * 6
+    return f"<!-- PORTFOLIO-SNAPSHOT:v4:{utc:%Y-%m-%d}T{window_hour:02d}Z -->"
+
+
 def main():
-    # O calendario de contribuicoes atualiza com frequencia; a auditoria de
-    # arvores de dezenas de repositorios executa apenas uma vez ao dia (UTC).
-    snapshot_day = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    freshness_marker = f"<!-- PORTFOLIO-SNAPSHOT:v3:{snapshot_day} -->"
-    if REPORT.exists() and freshness_marker in REPORT.read_text(encoding="utf-8"):
-        print("Portfolio ja auditado hoje; snapshot preservado")
+    # O calendario recebe consultas frequentes; a varredura de dezenas de
+    # repositorios e limitada a quatro janelas de auditoria por dia (UTC).
+    freshness_marker = snapshot_marker(datetime.now(timezone.utc))
+    force_refresh = os.environ.get("FORCE_PORTFOLIO_REFRESH", "").lower() in ("true", "1", "yes")
+    if not force_refresh and REPORT.exists() and freshness_marker in REPORT.read_text(encoding="utf-8"):
+        print("Portfolio ja auditado nesta janela UTC; snapshot preservado")
         return
     projects = collect(os.environ.get("GITHUB_TOKEN", ""))
     svg = render_svg(projects)
