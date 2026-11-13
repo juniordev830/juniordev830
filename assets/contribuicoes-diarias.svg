@@ -9,24 +9,24 @@
 <text x="1000.00" y="70.00" fill="#a2aab1" font-size="11" font-weight="400" text-anchor="end">31/10 — 13/11/2026</text>
 <line x1="40" y1="91" x2="1000" y2="91" stroke="#353d45"/>
 <text x="40.00" y="124.00" fill="#a2aab1" font-size="11" font-weight="400" text-anchor="start">Hoje</text>
-<text x="40.00" y="159.00" fill="#d8dde1" font-size="30" font-weight="600" text-anchor="start">24</text>
+<text x="40.00" y="159.00" fill="#d8dde1" font-size="30" font-weight="600" text-anchor="start">25</text>
 <text x="40.00" y="182.00" fill="#a2aab1" font-size="10" font-weight="400" text-anchor="start">Dia atual parcial</text>
 <line x1="268" y1="117" x2="268" y2="179" stroke="#343b42"/>
 <text x="288.00" y="124.00" fill="#a2aab1" font-size="11" font-weight="400" text-anchor="start">Últimos 7 dias</text>
-<text x="288.00" y="159.00" fill="#d8dde1" font-size="30" font-weight="600" text-anchor="start">751</text>
+<text x="288.00" y="159.00" fill="#d8dde1" font-size="30" font-weight="600" text-anchor="start">752</text>
 <text x="288.00" y="182.00" fill="#a2aab1" font-size="10" font-weight="400" text-anchor="start">Contribuições</text>
 <line x1="516" y1="117" x2="516" y2="179" stroke="#343b42"/>
 <text x="536.00" y="124.00" fill="#a2aab1" font-size="11" font-weight="400" text-anchor="start">Últimos 12 meses</text>
-<text x="536.00" y="159.00" fill="#d8dde1" font-size="30" font-weight="600" text-anchor="start">2.485</text>
+<text x="536.00" y="159.00" fill="#d8dde1" font-size="30" font-weight="600" text-anchor="start">2.486</text>
 <text x="536.00" y="182.00" fill="#a2aab1" font-size="10" font-weight="400" text-anchor="start">Total do calendário</text>
 <line x1="764" y1="117" x2="764" y2="179" stroke="#343b42"/>
 <text x="784.00" y="124.00" fill="#a2aab1" font-size="11" font-weight="400" text-anchor="start">Meta diária</text>
-<text x="784.00" y="159.00" fill="#d8dde1" font-size="30" font-weight="600" text-anchor="start">24%</text>
+<text x="784.00" y="159.00" fill="#d8dde1" font-size="30" font-weight="600" text-anchor="start">25%</text>
 <text x="784.00" y="182.00" fill="#a2aab1" font-size="10" font-weight="400" text-anchor="start">Referência: 100/dia</text>
 <line x1="40" y1="204" x2="1000" y2="204" stroke="#353d45"/>
 <text x="40.00" y="238.00" fill="#d8dde1" font-size="15" font-weight="600" text-anchor="start">Contribuições diárias</text>
 <text x="40.00" y="260.00" fill="#a2aab1" font-size="10" font-weight="400" text-anchor="start">Últimos 14 dias</text>
-<text x="1000.00" y="238.00" fill="#a2aab1" font-size="11" font-weight="400" text-anchor="end">Média (7 dias): 107,3</text>
+<text x="1000.00" y="238.00" fill="#a2aab1" font-size="11" font-weight="400" text-anchor="end">Média (7 dias): 107,4</text>
 <text x="1000.00" y="260.00" fill="#a2aab1" font-size="10" font-weight="400" text-anchor="end">Linha tracejada · meta de 100/dia</text>
 <line x1="78" y1="430" x2="1000" y2="430" stroke="#30383f"/>
 <text x="65.00" y="434.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="end">0</text>
@@ -88,35 +88,35 @@
 <rect x="886.21" y="375.33" width="30.00" height="54.67" rx="3" fill="#8196a4" data-chart-bar="true" data-plot-top="291" data-plot-bottom="430"/>
 <text x="901.21" y="454.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">12/11</text>
 </g>
-<g data-date="2026-11-13" data-count="24"><title>13/11/2026: 24 contribuições</title>
-<rect x="952.07" y="424.44" width="30.00" height="5.56" rx="3" fill="#a3b9ac" data-chart-bar="true" data-plot-top="291" data-plot-bottom="430"/>
-<text x="967.07" y="414.44" fill="#d8dde1" font-size="10" font-weight="600" text-anchor="middle">24</text>
+<g data-date="2026-11-13" data-count="25"><title>13/11/2026: 25 contribuições</title>
+<rect x="952.07" y="424.21" width="30.00" height="5.79" rx="3" fill="#a3b9ac" data-chart-bar="true" data-plot-top="291" data-plot-bottom="430"/>
+<text x="967.07" y="414.21" fill="#d8dde1" font-size="10" font-weight="600" text-anchor="middle">25</text>
 <text x="967.07" y="454.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">13/11</text>
 </g>
 <line x1="40" y1="480" x2="1000" y2="480" stroke="#353d45"/>
 <text x="40.00" y="514.00" fill="#d8dde1" font-size="15" font-weight="600" text-anchor="start">Evolução acumulada</text>
-<text x="40.00" y="536.00" fill="#a2aab1" font-size="10" font-weight="400" text-anchor="start">Total: 2.321 · média em 14 dias: 165,8</text>
+<text x="40.00" y="536.00" fill="#a2aab1" font-size="10" font-weight="400" text-anchor="start">Total: 2.322 · média em 14 dias: 165,9</text>
 <line x1="82" y1="658" x2="621" y2="658" stroke="#30383f"/>
 <text x="70.00" y="661.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="end">0</text>
 <line x1="82" y1="563" x2="621" y2="563" stroke="#30383f"/>
-<text x="70.00" y="566.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="end">2.321</text>
-<polyline points="82.00,657.92 123.46,640.40 164.92,617.77 206.38,608.47 247.85,605.20 289.31,598.40 330.77,593.74 372.23,590.01 413.69,584.20 455.15,579.66 496.62,574.62 538.08,573.64 579.54,563.98 621.00,563.00" fill="none" stroke="#a6b7bd" stroke-width="2" stroke-linejoin="round"/>
+<text x="70.00" y="566.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="end">2.322</text>
+<polyline points="82.00,657.92 123.46,640.41 164.92,617.78 206.38,608.50 247.85,605.22 289.31,598.43 330.77,593.77 372.23,590.04 413.69,584.23 455.15,579.69 496.62,574.66 538.08,573.68 579.54,564.02 621.00,563.00" fill="none" stroke="#a6b7bd" stroke-width="2" stroke-linejoin="round"/>
 <circle cx="82.00" cy="657.92" r="2" fill="#adbec3" data-cumulative="2"/>
 <text x="82.00" y="681.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">31/10</text>
-<circle cx="123.46" cy="640.40" r="2" fill="#adbec3" data-cumulative="430"/>
-<circle cx="164.92" cy="617.77" r="2" fill="#adbec3" data-cumulative="983"/>
-<circle cx="206.38" cy="608.47" r="2" fill="#adbec3" data-cumulative="1210"/>
-<circle cx="247.85" cy="605.20" r="2" fill="#adbec3" data-cumulative="1290"/>
-<circle cx="289.31" cy="598.40" r="2" fill="#adbec3" data-cumulative="1456"/>
-<circle cx="330.77" cy="593.74" r="2" fill="#adbec3" data-cumulative="1570"/>
+<circle cx="123.46" cy="640.41" r="2" fill="#adbec3" data-cumulative="430"/>
+<circle cx="164.92" cy="617.78" r="2" fill="#adbec3" data-cumulative="983"/>
+<circle cx="206.38" cy="608.50" r="2" fill="#adbec3" data-cumulative="1210"/>
+<circle cx="247.85" cy="605.22" r="2" fill="#adbec3" data-cumulative="1290"/>
+<circle cx="289.31" cy="598.43" r="2" fill="#adbec3" data-cumulative="1456"/>
+<circle cx="330.77" cy="593.77" r="2" fill="#adbec3" data-cumulative="1570"/>
 <text x="330.77" y="681.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">06/11</text>
-<circle cx="372.23" cy="590.01" r="2" fill="#adbec3" data-cumulative="1661"/>
-<circle cx="413.69" cy="584.20" r="2" fill="#adbec3" data-cumulative="1803"/>
-<circle cx="455.15" cy="579.66" r="2" fill="#adbec3" data-cumulative="1914"/>
-<circle cx="496.62" cy="574.62" r="2" fill="#adbec3" data-cumulative="2037"/>
-<circle cx="538.08" cy="573.64" r="2" fill="#adbec3" data-cumulative="2061"/>
-<circle cx="579.54" cy="563.98" r="2" fill="#adbec3" data-cumulative="2297"/>
-<circle cx="621.00" cy="563.00" r="2" fill="#adbec3" data-cumulative="2321"/>
+<circle cx="372.23" cy="590.04" r="2" fill="#adbec3" data-cumulative="1661"/>
+<circle cx="413.69" cy="584.23" r="2" fill="#adbec3" data-cumulative="1803"/>
+<circle cx="455.15" cy="579.69" r="2" fill="#adbec3" data-cumulative="1914"/>
+<circle cx="496.62" cy="574.66" r="2" fill="#adbec3" data-cumulative="2037"/>
+<circle cx="538.08" cy="573.68" r="2" fill="#adbec3" data-cumulative="2061"/>
+<circle cx="579.54" cy="564.02" r="2" fill="#adbec3" data-cumulative="2297"/>
+<circle cx="621.00" cy="563.00" r="2" fill="#adbec3" data-cumulative="2322"/>
 <text x="621.00" y="681.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">13/11</text>
 <line x1="655" y1="506" x2="655" y2="684" stroke="#343b42"/>
 <text x="687.00" y="514.00" fill="#d8dde1" font-size="15" font-weight="600" text-anchor="start">Resumo do período</text>
@@ -127,11 +127,11 @@
 <text x="687.00" y="623.00" fill="#a2aab1" font-size="11" font-weight="400" text-anchor="start">Sequência na janela</text>
 <text x="1000.00" y="623.00" fill="#d8dde1" font-size="12" font-weight="600" text-anchor="end">14 dias</text>
 <text x="687.00" y="659.00" fill="#a2aab1" font-size="11" font-weight="400" text-anchor="start">Variação entre semanas</text>
-<text x="1000.00" y="659.00" fill="#d8dde1" font-size="12" font-weight="600" text-anchor="end">-52,2%</text>
+<text x="1000.00" y="659.00" fill="#d8dde1" font-size="12" font-weight="600" text-anchor="end">-52,1%</text>
 <line x1="40" y1="704" x2="1000" y2="704" stroke="#353d45"/>
 <text x="40.00" y="733.00" fill="#d8dde1" font-size="13" font-weight="600" text-anchor="start">Intensidade por dia</text>
-<g data-summary-values="751,1570">
-<text x="1000.00" y="733.00" fill="#a2aab1" font-size="10" font-weight="400" text-anchor="end">7 dias recentes: 751 · anteriores: 1.570</text>
+<g data-summary-values="752,1570">
+<text x="1000.00" y="733.00" fill="#a2aab1" font-size="10" font-weight="400" text-anchor="end">7 dias recentes: 752 · anteriores: 1.570</text>
 </g>
 <text x="66.00" y="754.00" fill="#a2aab1" font-size="8" font-weight="400" text-anchor="middle">31/10</text>
 <rect x="40.00" y="763.00" width="53.00" height="28.00" rx="4" fill="#43565d" data-heat-date="2026-10-31" data-heat-count="2"/>
@@ -173,8 +173,8 @@
 <rect x="868.00" y="763.00" width="53.00" height="28.00" rx="4" fill="#5d767b" data-heat-date="2026-11-12" data-heat-count="236"/>
 <text x="894.50" y="782.00" fill="#e1e7e7" font-size="10" font-weight="500" text-anchor="middle">236</text>
 <text x="963.00" y="754.00" fill="#a2aab1" font-size="8" font-weight="400" text-anchor="middle">13/11</text>
-<rect x="937.00" y="763.00" width="53.00" height="28.00" rx="4" fill="#43565d" data-heat-date="2026-11-13" data-heat-count="24"/>
-<text x="963.50" y="782.00" fill="#e1e7e7" font-size="10" font-weight="500" text-anchor="middle">24</text>
+<rect x="937.00" y="763.00" width="53.00" height="28.00" rx="4" fill="#43565d" data-heat-date="2026-11-13" data-heat-count="25"/>
+<text x="963.50" y="782.00" fill="#e1e7e7" font-size="10" font-weight="500" text-anchor="middle">25</text>
 <g data-summary-values="9,5">
 <text x="40.00" y="821.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="start">Meta cumprida: 9 de 14 dias · sequência limitada à janela exibida</text>
 </g>
