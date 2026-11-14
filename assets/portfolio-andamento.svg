@@ -21,35 +21,35 @@
 <rect x="38" y="120" width="45" height="43" rx="10" fill="#193046" stroke="#264b63"/>
 <circle cx="60" cy="141" r="9" fill="none" stroke="#46bde7" stroke-width="3"/>
 <text x="94" y="130" fill="#c1d2de" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700">REPOSITÓRIOS</text>
-<text x="94" y="164" fill="#f2f6fb" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700">71</text>
+<text x="94" y="164" fill="#f2f6fb" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700">81</text>
 <text x="40" y="195" fill="#90a9ba" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="400">2 com acesso restrito</text>
 <rect x="189" y="185" width="27" height="3" rx="1" fill="#46bde7" stroke="#46bde7"/>
 <rect x="244" y="106" width="210" height="107" rx="12" fill="#121f2d" stroke="#2d4355"/>
 <rect x="258" y="120" width="45" height="43" rx="10" fill="#193046" stroke="#264b63"/>
 <circle cx="280" cy="141" r="9" fill="none" stroke="#5fa8e7" stroke-width="3"/>
 <text x="314" y="130" fill="#c1d2de" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700">AUDITADOS</text>
-<text x="314" y="164" fill="#f2f6fb" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700">69</text>
+<text x="314" y="164" fill="#f2f6fb" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700">79</text>
 <text x="260" y="195" fill="#90a9ba" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="400">branches padrão</text>
 <rect x="409" y="185" width="27" height="3" rx="1" fill="#5fa8e7" stroke="#5fa8e7"/>
 <rect x="464" y="106" width="210" height="107" rx="12" fill="#121f2d" stroke="#2d4355"/>
 <rect x="478" y="120" width="45" height="43" rx="10" fill="#193046" stroke="#264b63"/>
 <circle cx="500" cy="141" r="9" fill="none" stroke="#79bdd6" stroke-width="3"/>
 <text x="534" y="130" fill="#c1d2de" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700">COM CÓDIGO</text>
-<text x="534" y="164" fill="#f2f6fb" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700">65</text>
+<text x="534" y="164" fill="#f2f6fb" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700">75</text>
 <text x="480" y="195" fill="#90a9ba" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="400">arquivos detectados</text>
 <rect x="629" y="185" width="27" height="3" rx="1" fill="#79bdd6" stroke="#79bdd6"/>
 <rect x="684" y="106" width="210" height="107" rx="12" fill="#121f2d" stroke="#2d4355"/>
 <rect x="698" y="120" width="45" height="43" rx="10" fill="#193046" stroke="#264b63"/>
 <circle cx="720" cy="141" r="9" fill="none" stroke="#a897e5" stroke-width="3"/>
 <text x="754" y="130" fill="#c1d2de" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700">COM TESTES</text>
-<text x="754" y="164" fill="#f2f6fb" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700">56</text>
+<text x="754" y="164" fill="#f2f6fb" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700">66</text>
 <text x="700" y="195" fill="#90a9ba" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="400">estrutura detectada</text>
 <rect x="849" y="185" width="27" height="3" rx="1" fill="#a897e5" stroke="#a897e5"/>
 <rect x="904" y="106" width="210" height="107" rx="12" fill="#121f2d" stroke="#2d4355"/>
 <rect x="918" y="120" width="45" height="43" rx="10" fill="#193046" stroke="#264b63"/>
 <circle cx="940" cy="141" r="9" fill="none" stroke="#45c0a8" stroke-width="3"/>
 <text x="974" y="130" fill="#c1d2de" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700">COM PIPELINES</text>
-<text x="974" y="164" fill="#f2f6fb" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700">69</text>
+<text x="974" y="164" fill="#f2f6fb" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700">79</text>
 <text x="920" y="195" fill="#90a9ba" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="400">workflows detectados</text>
 <rect x="1069" y="185" width="27" height="3" rx="1" fill="#45c0a8" stroke="#45c0a8"/>
 <rect x="24" y="232" width="448" height="317" rx="12" fill="url(#navy)" stroke="#2d4355"/>
@@ -57,15 +57,15 @@
 <text x="44" y="284" fill="#98b1c2" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400">Fases identificadas por evidências dos arquivos</text>
 <line x1="44" y1="297" x2="452" y2="297" stroke="#294050" opacity="1"/>
 <circle cx="154" cy="415" r="70" fill="none" stroke="#223749" stroke-width="25"/>
-<circle cx="154" cy="415" r="70" fill="none" stroke="#36b8e5" stroke-width="25" stroke-dasharray="346.90 92.92" stroke-dashoffset="-0.00" transform="rotate(-90 154 415)"/>
-<circle cx="154" cy="415" r="70" fill="none" stroke="#48c3a9" stroke-width="25" stroke-dasharray="61.95 377.88" stroke-dashoffset="-346.90" transform="rotate(-90 154 415)"/>
-<circle cx="154" cy="415" r="70" fill="none" stroke="#f2ba5a" stroke-width="25" stroke-dasharray="18.58 421.24" stroke-dashoffset="-408.85" transform="rotate(-90 154 415)"/>
-<circle cx="154" cy="415" r="70" fill="none" stroke="#8495a7" stroke-width="25" stroke-dasharray="12.39 427.43" stroke-dashoffset="-427.43" transform="rotate(-90 154 415)"/>
-<text x="154" y="417" fill="#f3f7fb" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="700" text-anchor="middle">71</text>
+<circle cx="154" cy="415" r="70" fill="none" stroke="#36b8e5" stroke-width="25" stroke-dasharray="358.37 81.45" stroke-dashoffset="-0.00" transform="rotate(-90 154 415)"/>
+<circle cx="154" cy="415" r="70" fill="none" stroke="#48c3a9" stroke-width="25" stroke-dasharray="54.30 385.52" stroke-dashoffset="-358.37" transform="rotate(-90 154 415)"/>
+<circle cx="154" cy="415" r="70" fill="none" stroke="#f2ba5a" stroke-width="25" stroke-dasharray="16.29 423.53" stroke-dashoffset="-412.67" transform="rotate(-90 154 415)"/>
+<circle cx="154" cy="415" r="70" fill="none" stroke="#8495a7" stroke-width="25" stroke-dasharray="10.86 428.96" stroke-dashoffset="-428.96" transform="rotate(-90 154 415)"/>
+<text x="154" y="417" fill="#f3f7fb" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="700" text-anchor="middle">81</text>
 <text x="154" y="440" fill="#acbfcc" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" text-anchor="middle">projetos</text>
 <circle cx="270" cy="345" r="6" fill="#36b8e5"/>
 <text x="285" y="350" fill="#dce6ee" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400">Testes + pipeline</text>
-<text x="447" y="350" fill="#f2f5f9" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" text-anchor="end">56</text>
+<text x="447" y="350" fill="#f2f5f9" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" text-anchor="end">66</text>
 <circle cx="270" cy="382" r="6" fill="#a68be1"/>
 <text x="285" y="387" fill="#dce6ee" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400">Testes, sem pipeline</text>
 <text x="447" y="387" fill="#f2f5f9" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" text-anchor="end">0</text>
@@ -124,26 +124,26 @@
 <text x="477" y="726" fill="#6999b2" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700">›</text>
 <rect x="487" y="660" width="135" height="109" rx="9" fill="#162a3c" stroke="#335268"/>
 <text x="500" y="687" fill="#45bf9f" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700">TESTES + CI</text>
-<text x="500" y="734" fill="#f2f8fb" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="700">56</text>
+<text x="500" y="734" fill="#f2f8fb" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="700">66</text>
 <text x="45" y="790" fill="#9fb2c2" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="400">Acesso restrito: 2  ·  Qualidade e cobertura exigem testes adicionais</text>
 <rect x="658" y="567" width="438" height="232" rx="12" fill="url(#navy)" stroke="#2d4355"/>
 <text x="678" y="598" fill="#f0f6fb" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700">Últimas movimentações</text>
 <text x="678" y="619" fill="#98b1c2" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400">Projetos ordenados pela última atualização</text>
 <line x1="678" y1="632" x2="1076" y2="632" stroke="#294050" opacity="1"/>
-<text x="676" y="660" fill="#d9e7ef" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700">juniordev830</text>
+<text x="676" y="660" fill="#d9e7ef" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700">biblia-plano-de-leitura</text>
 <text x="1070" y="660" fill="#81a6bc" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" text-anchor="end">14/11</text>
 <line x1="677" y1="669" x2="1072" y2="669" stroke="#284354" opacity="1"/>
-<text x="676" y="693" fill="#d9e7ef" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700">contratos-prazos</text>
-<text x="1070" y="693" fill="#81a6bc" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" text-anchor="end">13/11</text>
+<text x="676" y="693" fill="#d9e7ef" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700">laboratorio-hermeneutica</text>
+<text x="1070" y="693" fill="#81a6bc" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" text-anchor="end">14/11</text>
 <line x1="677" y1="702" x2="1072" y2="702" stroke="#284354" opacity="1"/>
-<text x="676" y="726" fill="#d9e7ef" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700">reserva-salas</text>
-<text x="1070" y="726" fill="#81a6bc" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" text-anchor="end">13/11</text>
+<text x="676" y="726" fill="#d9e7ef" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700">diario-devocional</text>
+<text x="1070" y="726" fill="#81a6bc" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" text-anchor="end">14/11</text>
 <line x1="677" y1="735" x2="1072" y2="735" stroke="#284354" opacity="1"/>
-<text x="676" y="759" fill="#d9e7ef" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700">cyber-detective-noir</text>
-<text x="1070" y="759" fill="#81a6bc" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" text-anchor="end">13/11</text>
+<text x="676" y="759" fill="#d9e7ef" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700">quiz-biblico-interativo</text>
+<text x="1070" y="759" fill="#81a6bc" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" text-anchor="end">14/11</text>
 <text x="677" y="787" fill="#96aebd" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="400">Datas de push não medem avanço funcional</text>
 <rect x="24" y="815" width="1072" height="63" rx="11" fill="#10202e" stroke="#2b4759"/>
-<text x="45" y="840" fill="#eff5f9" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700">71 projetos no inventário</text>
+<text x="45" y="840" fill="#eff5f9" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700">81 projetos no inventário</text>
 <text x="45" y="863" fill="#a8becc" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400">Relatório individual • métodos e limitações • links por repositório</text>
 <text x="1070" y="852" fill="#73bedc" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700" text-anchor="end">DADOS: GITHUB API</text>
 </svg>
