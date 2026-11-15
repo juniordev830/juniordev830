@@ -72,13 +72,15 @@
 <div align="center">
   <h2>Mapa dos meus projetos</h2>
   <p><sub>100 repositórios · 7 áreas · 17 subáreas</sub></p>
-  <p><sub>Explore as categorias abaixo. São 98 projetos públicos e 2 privados.</sub></p>
+  <p><sub>Abra uma área e expanda cada subárea para explorar os projetos. São 98 projetos públicos e 2 privados.</sub></p>
 </div>
 
 <details>
 <summary><strong>01 · Engenharia de Software, APIs e Infraestrutura</strong> — 20 projetos · 1 privado</summary>
 
-**Back-end e serviços** · 8 projetos
+<details>
+<summary><strong>Back-end e serviços</strong> · 8 projetos</summary>
+
 
 - [ai-service-python](https://github.com/juniordev830/ai-service-python)
 - [auth-service-go](https://github.com/juniordev830/auth-service-go)
@@ -89,7 +91,11 @@
 - [feature-flags-service](https://github.com/juniordev830/feature-flags-service)
 - [database-migration-auditor](https://github.com/juniordev830/database-migration-auditor)
 
-**DevOps, segurança e observabilidade** · 7 projetos
+</details>
+
+<details>
+<summary><strong>DevOps, segurança e observabilidade</strong> · 7 projetos</summary>
+
 
 - [devops-control-center](https://github.com/juniordev830/devops-control-center)
 - [code-security-scanner](https://github.com/juniordev830/code-security-scanner)
@@ -99,7 +105,11 @@
 - [ai-incident-analyzer](https://github.com/juniordev830/ai-incident-analyzer)
 - [sentinel-atlas](https://github.com/juniordev830/sentinel-atlas)
 
-**Interfaces, IA e ferramentas técnicas** · 5 projetos
+</details>
+
+<details>
+<summary><strong>Interfaces, IA e ferramentas técnicas</strong> · 5 projetos</summary>
+
 
 - [web-dashboard-ts](https://github.com/juniordev830/web-dashboard-ts)
 - [codax-assirtende-engenharia-ia-](https://github.com/juniordev830/codax-assirtende-engenharia-ia-)
@@ -109,17 +119,25 @@
 
 </details>
 
+</details>
+
 <details>
 <summary><strong>02 · Negócios, Sistemas de Gestão e Serviços</strong> — 16 projetos</summary>
 
-**Finanças, PJ e contratos** · 4 projetos
+<details>
+<summary><strong>Finanças, PJ e contratos</strong> · 4 projetos</summary>
+
 
 - [auxiliar-NF-pj](https://github.com/juniordev830/auxiliar-NF-pj)
 - [relatorio-altomatizado-de-contas-](https://github.com/juniordev830/relatorio-altomatizado-de-contas-)
 - [orcamento-freelancer](https://github.com/juniordev830/orcamento-freelancer)
 - [contratos-prazos](https://github.com/juniordev830/contratos-prazos)
 
-**Vendas, RH e atendimento** · 7 projetos
+</details>
+
+<details>
+<summary><strong>Vendas, RH e atendimento</strong> · 7 projetos</summary>
+
 
 - [plataforma-de-recrutamento](https://github.com/juniordev830/plataforma-de-recrutamento)
 - [site-e-commerce-](https://github.com/juniordev830/site-e-commerce-)
@@ -129,7 +147,11 @@
 - [fila-atendimento](https://github.com/juniordev830/fila-atendimento)
 - [candidaturas-tracker](https://github.com/juniordev830/candidaturas-tracker)
 
-**Operações, equipes e patrimônio** · 5 projetos
+</details>
+
+<details>
+<summary><strong>Operações, equipes e patrimônio</strong> · 5 projetos</summary>
+
 
 - [oficina-digital](https://github.com/juniordev830/oficina-digital)
 - [estoque-rastreavel](https://github.com/juniordev830/estoque-rastreavel)
@@ -139,10 +161,14 @@
 
 </details>
 
+</details>
+
 <details>
 <summary><strong>03 · Jogos e Simulações</strong> — 16 projetos</summary>
 
-**Ação, arcade e esportes** · 8 projetos
+<details>
+<summary><strong>Ação, arcade e esportes</strong> · 8 projetos</summary>
+
 
 - [corrida-maluca-](https://github.com/juniordev830/corrida-maluca-)
 - [2d-platformer-csharp](https://github.com/juniordev830/2d-platformer-csharp)
@@ -153,12 +179,20 @@
 - [submarine-abyss](https://github.com/juniordev830/submarine-abyss)
 - [rally-dunas-rn](https://github.com/juniordev830/rally-dunas-rn)
 
-**RPG e narrativas** · 2 projetos
+</details>
+
+<details>
+<summary><strong>RPG e narrativas</strong> · 2 projetos</summary>
+
 
 - [rpg-quest-python](https://github.com/juniordev830/rpg-quest-python)
 - [cyber-detective-noir](https://github.com/juniordev830/cyber-detective-noir)
 
-**Simulação, estratégia e puzzles** · 6 projetos
+</details>
+
+<details>
+<summary><strong>Simulação, estratégia e puzzles</strong> · 6 projetos</summary>
+
 
 - [puzzle-adventure-ts](https://github.com/juniordev830/puzzle-adventure-ts)
 - [pixel-farm-seasons](https://github.com/juniordev830/pixel-farm-seasons)
@@ -169,10 +203,14 @@
 
 </details>
 
+</details>
+
 <details>
 <summary><strong>04 · Bíblia, Teologia, EBD e Pregação</strong> — 23 projetos · 1 privado</summary>
 
-**Fontes, pesquisa e interpretação bíblica** · 13 projetos
+<details>
+<summary><strong>Fontes, pesquisa e interpretação bíblica</strong> · 13 projetos</summary>
+
 
 - [concordancia-biblica](https://github.com/juniordev830/concordancia-biblica)
 - [panorama-biblico-interativo](https://github.com/juniordev830/panorama-biblico-interativo)
@@ -188,7 +226,11 @@
 - [matriz-interpretacoes-biblicas](https://github.com/juniordev830/matriz-interpretacoes-biblicas)
 - *1 projeto privado*
 
-**EBD, leitura e devocionais** · 6 projetos
+</details>
+
+<details>
+<summary><strong>EBD, leitura e devocionais</strong> · 6 projetos</summary>
+
 
 - [ebd-planejador](https://github.com/juniordev830/ebd-planejador)
 - [biblia-plano-de-leitura](https://github.com/juniordev830/biblia-plano-de-leitura)
@@ -197,7 +239,11 @@
 - [diario-devocional](https://github.com/juniordev830/diario-devocional)
 - [roteiro-grupo-biblico](https://github.com/juniordev830/roteiro-grupo-biblico)
 
-**Pregação e sermões** · 4 projetos
+</details>
+
+<details>
+<summary><strong>Pregação e sermões</strong> · 4 projetos</summary>
+
 
 - [esboco-pregacao-expositiva](https://github.com/juniordev830/esboco-pregacao-expositiva)
 - [ensaio-tempo-sermao](https://github.com/juniordev830/ensaio-tempo-sermao)
@@ -206,10 +252,14 @@
 
 </details>
 
+</details>
+
 <details>
 <summary><strong>05 · Mobilidade Urbana, Transporte e Mapas</strong> — 12 projetos</summary>
 
-**Trânsito e transporte inteligente** · 8 projetos
+<details>
+<summary><strong>Trânsito e transporte inteligente</strong> · 8 projetos</summary>
+
 
 - [mobilidade-rotas-rn](https://github.com/juniordev830/mobilidade-rotas-rn)
 - [transito-horarios-rn](https://github.com/juniordev830/transito-horarios-rn)
@@ -220,7 +270,11 @@
 - [entregas-rotas-por-turno](https://github.com/juniordev830/entregas-rotas-por-turno)
 - [transito-google-routes-rn](https://github.com/juniordev830/transito-google-routes-rn)
 
-**Território e deslocamentos** · 4 projetos
+</details>
+
+<details>
+<summary><strong>Território e deslocamentos</strong> · 4 projetos</summary>
+
 
 - [catalogo-municipios](https://github.com/juniordev830/catalogo-municipios)
 - [trilhas-locais](https://github.com/juniordev830/trilhas-locais)
@@ -229,10 +283,14 @@
 
 </details>
 
+</details>
+
 <details>
 <summary><strong>06 · Produtividade, Estudos e Comunidade</strong> — 12 projetos</summary>
 
-**Aprendizagem e organização pessoal** · 6 projetos
+<details>
+<summary><strong>Aprendizagem e organização pessoal</strong> · 6 projetos</summary>
+
 
 - [cifras-transpositor](https://github.com/juniordev830/cifras-transpositor)
 - [revisao-espacada](https://github.com/juniordev830/revisao-espacada)
@@ -241,7 +299,11 @@
 - [diario-leitura](https://github.com/juniordev830/diario-leitura)
 - [documentos-validade](https://github.com/juniordev830/documentos-validade)
 
-**Casa, acessibilidade e comunidade** · 6 projetos
+</details>
+
+<details>
+<summary><strong>Casa, acessibilidade e comunidade</strong> · 6 projetos</summary>
+
 
 - [despensa-validades](https://github.com/juniordev830/despensa-validades)
 - [consumo-energia](https://github.com/juniordev830/consumo-energia)
@@ -252,12 +314,18 @@
 
 </details>
 
+</details>
+
 <details>
 <summary><strong>07 · Identidade Profissional e Portfólio</strong> — 1 projeto</summary>
 
-**Perfil GitHub** · 1 projeto
+<details>
+<summary><strong>Perfil GitHub</strong> · 1 projeto</summary>
+
 
 - [juniordev830](https://github.com/juniordev830/juniordev830)
+
+</details>
 
 </details>
 

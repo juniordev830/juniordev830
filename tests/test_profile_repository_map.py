@@ -17,11 +17,17 @@ class ProjectMapTests(unittest.TestCase):
         cls.section = readme.split(START, 1)[1].split(END, 1)[0]
 
     def test_seven_groups_and_seventeen_subgroups(self):
-        self.assertEqual(self.section.count("<details>"), 7)
-        self.assertEqual(self.section.count("</details>"), 7)
-        self.assertEqual(self.section.count("<summary>"), 7)
-        self.assertEqual(len(re.findall(r"^\*\*[^*\n]+\*\* · \d+ projetos?$",
-                                        self.section, flags=re.MULTILINE)), 17)
+        # Sete áreas e dezessete subáreas, todas expansíveis.
+        self.assertEqual(self.section.count("<details>"), 24)
+        self.assertEqual(self.section.count("</details>"), 24)
+        self.assertEqual(self.section.count("<summary>"), 24)
+        self.assertEqual(len(re.findall(
+            r"^<summary><strong>0[1-7] · ", self.section, flags=re.MULTILINE
+        )), 7)
+        self.assertEqual(len(re.findall(
+            r"^<summary><strong>[^<]+</strong> · \d+ projetos?</summary>$",
+            self.section, flags=re.MULTILINE
+        )), 17)
 
     def test_group_counts_total_one_hundred(self):
         counts = [int(n) for n in re.findall(
