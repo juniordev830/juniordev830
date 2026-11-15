@@ -29,7 +29,7 @@ class ProjectMapTests(unittest.TestCase):
             self.section, flags=re.MULTILINE
         )), 17)
 
-        def test_group_counts_total_one_hundred(self):
+    def test_group_counts_total_one_hundred(self):
         counts = [int(n) for n in re.findall(
             r"<summary>.*?— (\d+) projetos?", self.section
         )]
