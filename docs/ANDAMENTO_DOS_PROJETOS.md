@@ -1,4 +1,4 @@
-<!-- PORTFOLIO-SNAPSHOT:v4:2026-11-15T18Z -->
+<!-- PORTFOLIO-SNAPSHOT:v4:2026-11-16T00Z -->
 # Andamento dos projetos
 
 Inventario automatizado a partir da API do GitHub. **Fase nao equivale a percentual de conclusao**; analisa apenas evidencias de arquivos na branch padrao.
@@ -79,7 +79,7 @@ As marcacoes significam presenca de arquivos, nao garantem cobertura, testes apr
 | [panorama-biblico-interativo](https://github.com/juniordev830/panorama-biblico-interativo) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-14 |
 | [payment-service-java](https://github.com/juniordev830/payment-service-java) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-12 |
 | [physics-lab-playground](https://github.com/juniordev830/physics-lab-playground) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-15 |
-| [pixel-farm-seasons](https://github.com/juniordev830/pixel-farm-seasons) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-12 |
+| [pixel-farm-seasons](https://github.com/juniordev830/pixel-farm-seasons) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-15 |
 | [plataforma-de-recrutamento](https://github.com/juniordev830/plataforma-de-recrutamento) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-12 |
 | [puzzle-adventure-ts](https://github.com/juniordev830/puzzle-adventure-ts) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-15 |
 | [quiz-biblico-interativo](https://github.com/juniordev830/quiz-biblico-interativo) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-14 |
@@ -97,7 +97,7 @@ As marcacoes significam presenca de arquivos, nao garantem cobertura, testes apr
 | [sentinel-atlas](https://github.com/juniordev830/sentinel-atlas) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-12 |
 | [series-de-pregacao](https://github.com/juniordev830/series-de-pregacao) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-14 |
 | [site-e-commerce-](https://github.com/juniordev830/site-e-commerce-) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-12 |
-| [space-miner-2d](https://github.com/juniordev830/space-miner-2d) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-12 |
+| [space-miner-2d](https://github.com/juniordev830/space-miner-2d) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-15 |
 | [space-shooter-js](https://github.com/juniordev830/space-shooter-js) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-15 |
 | [submarine-abyss](https://github.com/juniordev830/submarine-abyss) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-15 |
 | [temas-e-contexto-biblico](https://github.com/juniordev830/temas-e-contexto-biblico) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-15 |
