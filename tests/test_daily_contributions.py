@@ -2,9 +2,11 @@
 import json
 import unittest
 from datetime import date, datetime, timedelta, timezone
+from io import BytesIO
 from pathlib import Path
 from tempfile import TemporaryDirectory
-from unittest.mock import patch
+from unittest.mock import call, patch
+from urllib.error import HTTPError, URLError
 from xml.etree import ElementTree
 
 from scripts.render_daily_contributions import (
@@ -118,6 +120,26 @@ class DashboardTests(unittest.TestCase):
     def test_missing_token_fails_before_network(self):
         with self.assertRaisesRegex(ValueError, "GITHUB_TOKEN"):
             fetch_calendar("")
+
+    def test_calendar_retries_transient_network_and_server_errors(self):
+        calendar = fake_calendar()
+        payload = {"data": {"user": {"contributionsCollection": {"contributionCalendar": calendar}}}}
+        failed = HTTPError("https://api.github.com/graphql", 503, "Unavailable", {}, BytesIO())
+        with patch("scripts.render_daily_contributions.urlopen", side_effect=[
+            URLError("network interrupted"), failed, BytesIO(json.dumps(payload).encode("utf-8")),
+        ]) as request, patch("scripts.render_daily_contributions.sleep") as wait:
+            self.assertEqual(fetch_calendar("test-token"), calendar)
+        self.assertEqual(request.call_count, 3)
+        self.assertEqual(wait.call_args_list, [call(1), call(2)])
+
+    def test_calendar_does_not_retry_an_authentication_error(self):
+        failed = HTTPError("https://api.github.com/graphql", 401, "Unauthorized", {}, BytesIO())
+        with patch("scripts.render_daily_contributions.urlopen", side_effect=failed) as request, \
+             patch("scripts.render_daily_contributions.sleep") as wait:
+            with self.assertRaises(HTTPError):
+                fetch_calendar("test-token")
+        request.assert_called_once()
+        wait.assert_not_called()
 
     def test_summary_totals_use_disjoint_weeks_and_observed_days(self):
         data = metrics(fake_calendar(), TODAY)
