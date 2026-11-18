@@ -11,6 +11,8 @@ import json
 import os
 from datetime import date, datetime, timedelta
 from pathlib import Path
+from time import sleep
+from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 from zoneinfo import ZoneInfo
 
@@ -52,8 +54,19 @@ def fetch_calendar(token: str) -> dict:
         },
         method="POST",
     )
-    with urlopen(req, timeout=25) as response:
-        result = json.load(response)
+    for attempt in range(3):
+        try:
+            with urlopen(req, timeout=15) as response:
+                result = json.load(response)
+            break
+        except HTTPError as error:
+            if attempt == 2 or not 500 <= error.code < 600:
+                raise
+            error.close()
+        except (URLError, TimeoutError):
+            if attempt == 2:
+                raise
+        sleep(2 ** attempt)
     if result.get("errors"):
         raise ValueError("GitHub GraphQL: " + str(result["errors"])[:350])
     try:
