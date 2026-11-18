@@ -1,4 +1,4 @@
-<!-- PORTFOLIO-SNAPSHOT:v4:2026-11-18T06Z -->
+<!-- PORTFOLIO-SNAPSHOT:v4:2026-11-18T12Z -->
 # Andamento dos projetos
 
 Inventario automatizado a partir da API do GitHub. **Fase nao equivale a percentual de conclusao**; analisa apenas evidencias de arquivos na branch padrao.
@@ -23,16 +23,16 @@ As marcacoes significam presenca de arquivos, nao garantem cobertura, testes apr
 | [auth-service-go](https://github.com/juniordev830/auth-service-go) | Implementacao | Sim | — | Sim | Sim | 2026-11-18 |
 | [auxiliar-NF-pj](https://github.com/juniordev830/auxiliar-NF-pj) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
 | [biblia-plano-de-leitura](https://github.com/juniordev830/biblia-plano-de-leitura) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
-| [bike-care](https://github.com/juniordev830/bike-care) | Implementacao | Sim | — | Sim | Sim | 2026-11-17 |
-| [caderno-offline](https://github.com/juniordev830/caderno-offline) | Estruturacao | — | — | Sim | Sim | 2026-11-17 |
-| [candidaturas-tracker](https://github.com/juniordev830/candidaturas-tracker) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-17 |
+| [bike-care](https://github.com/juniordev830/bike-care) | Implementacao | Sim | — | Sim | Sim | 2026-11-18 |
+| [caderno-offline](https://github.com/juniordev830/caderno-offline) | Estruturacao | — | — | Sim | Sim | 2026-11-18 |
+| [candidaturas-tracker](https://github.com/juniordev830/candidaturas-tracker) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
 | [catalogo-comentarios-biblicos](https://github.com/juniordev830/catalogo-comentarios-biblicos) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
-| [catalogo-municipios](https://github.com/juniordev830/catalogo-municipios) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-17 |
+| [catalogo-municipios](https://github.com/juniordev830/catalogo-municipios) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
 | [cifras-transpositor](https://github.com/juniordev830/cifras-transpositor) | Implementacao | Sim | — | Sim | Sim | 2026-11-18 |
-| [codax-assirtende-engenharia-ia-](https://github.com/juniordev830/codax-assirtende-engenharia-ia-) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-17 |
+| [codax-assirtende-engenharia-ia-](https://github.com/juniordev830/codax-assirtende-engenharia-ia-) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
 | [code-security-scanner](https://github.com/juniordev830/code-security-scanner) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
 | [codvision](https://github.com/juniordev830/codvision) | Acesso restrito | N/D | N/D | N/D | N/D | Indisponivel |
-| [comparador-json](https://github.com/juniordev830/comparador-json) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-17 |
+| [comparador-json](https://github.com/juniordev830/comparador-json) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
 | [concordancia-biblica](https://github.com/juniordev830/concordancia-biblica) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
 | [consumo-energia](https://github.com/juniordev830/consumo-energia) | Implementacao | Sim | — | Sim | Sim | 2026-11-18 |
 | [contratos-prazos](https://github.com/juniordev830/contratos-prazos) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
@@ -44,10 +44,10 @@ As marcacoes significam presenca de arquivos, nao garantem cobertura, testes apr
 | [diario-devocional](https://github.com/juniordev830/diario-devocional) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
 | [diario-leitura](https://github.com/juniordev830/diario-leitura) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
 | [distributed-task-queue](https://github.com/juniordev830/distributed-task-queue) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
-| [divide-viagem](https://github.com/juniordev830/divide-viagem) | Implementacao | Sim | — | Sim | Sim | 2026-11-17 |
-| [documentos-validade](https://github.com/juniordev830/documentos-validade) | Implementacao | Sim | — | Sim | Sim | 2026-11-17 |
+| [divide-viagem](https://github.com/juniordev830/divide-viagem) | Implementacao | Sim | — | Sim | Sim | 2026-11-18 |
+| [documentos-validade](https://github.com/juniordev830/documentos-validade) | Implementacao | Sim | — | Sim | Sim | 2026-11-18 |
 | [ebd-jovens-planner](https://github.com/juniordev830/ebd-jovens-planner) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
-| [ebd-planejador](https://github.com/juniordev830/ebd-planejador) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-17 |
+| [ebd-planejador](https://github.com/juniordev830/ebd-planejador) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
 | [empresta-comunidade](https://github.com/juniordev830/empresta-comunidade) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
 | [ensaio-tempo-sermao](https://github.com/juniordev830/ensaio-tempo-sermao) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
 | [entregas-rotas-por-turno](https://github.com/juniordev830/entregas-rotas-por-turno) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
@@ -83,13 +83,13 @@ As marcacoes significam presenca de arquivos, nao garantem cobertura, testes apr
 | [plataforma-de-recrutamento](https://github.com/juniordev830/plataforma-de-recrutamento) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
 | [puzzle-adventure-ts](https://github.com/juniordev830/puzzle-adventure-ts) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
 | [quiz-biblico-interativo](https://github.com/juniordev830/quiz-biblico-interativo) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
-| [quiz-sala](https://github.com/juniordev830/quiz-sala) | Estruturacao | — | — | Sim | Sim | 2026-11-17 |
+| [quiz-sala](https://github.com/juniordev830/quiz-sala) | Estruturacao | — | — | Sim | Sim | 2026-11-18 |
 | [rally-dunas-rn](https://github.com/juniordev830/rally-dunas-rn) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
 | [referencias-cruzadas-biblia](https://github.com/juniordev830/referencias-cruzadas-biblia) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
 | [relatorio-altomatizado-de-contas-](https://github.com/juniordev830/relatorio-altomatizado-de-contas-) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
 | [reserva-salas](https://github.com/juniordev830/reserva-salas) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
 | [retro-arcade-cpp](https://github.com/juniordev830/retro-arcade-cpp) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
-| [revisao-espacada](https://github.com/juniordev830/revisao-espacada) | Implementacao | Sim | — | Sim | Sim | 2026-11-17 |
+| [revisao-espacada](https://github.com/juniordev830/revisao-espacada) | Implementacao | Sim | — | Sim | Sim | 2026-11-18 |
 | [robot-arena-duel](https://github.com/juniordev830/robot-arena-duel) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
 | [roteiro-grupo-biblico](https://github.com/juniordev830/roteiro-grupo-biblico) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
 | [rpg-quest-python](https://github.com/juniordev830/rpg-quest-python) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
