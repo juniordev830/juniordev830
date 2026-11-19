@@ -59,7 +59,7 @@ def verify(readme: str, feed: dict, daily_svg: str, portfolio_svg: str, report: 
     ElementTree.fromstring(portfolio_svg)
     if "assets/portfolio-andamento.svg" not in readme:
         raise ValueError("README não aponta para o SVG do portfólio")
-    if not re.search(r"<!-- PORTFOLIO-SNAPSHOT:v[34]:[^>]+ -->", report):
+    if not re.search(r"^<!-- PORTFOLIO-SNAPSHOT:v[1-9][0-9]*:\d{4}-\d{2}-\d{2}T(?:[01]\d|2[0-3])Z -->$", report, re.MULTILINE):
         raise ValueError("Relatório do portfólio não tem referência de auditoria")
     if not re.search(r"\*\*Projetos catalogados:\*\* \d+", report):
         raise ValueError("Relatório do portfólio não contém inventário")
