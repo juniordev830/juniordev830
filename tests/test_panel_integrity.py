@@ -4,7 +4,7 @@ import unittest
 from datetime import date, datetime, timedelta, timezone
 
 from scripts.render_daily_contributions import render_feed, render_markdown, render_svg as render_daily
-from scripts.render_portfolio_progress import render_svg as render_portfolio, render_report
+from scripts.render_portfolio_progress import render_svg as render_portfolio, render_report, snapshot_marker
 from scripts.verify_profile_panels import verify
 
 
@@ -33,13 +33,20 @@ class PanelIntegrityTests(unittest.TestCase):
                        docs=True, code=True, tests=True, ci=True,
                        archived=False, partial=False)
         self.portfolio_svg = render_portfolio([project])
-        self.report = "<!-- PORTFOLIO-SNAPSHOT:v4:2026-11-12T18Z -->\n" + render_report([project])
+        self.report = snapshot_marker(datetime(2026, 11, 12, 18, tzinfo=timezone.utc)) + "\n" + render_report([project])
 
     def check(self):
         verify(self.readme, self.feed, self.daily_svg, self.portfolio_svg, self.report)
 
     def test_matching_panels_are_accepted(self):
         self.check()
+
+    def test_existing_portfolio_snapshot_can_be_preserved(self):
+        _, report = self.report.split("\n", 1)
+        for version in (3, 4):
+            with self.subTest(version=version):
+                self.report = f"<!-- PORTFOLIO-SNAPSHOT:v{version}:2026-11-12T18Z -->\n" + report
+                self.check()
 
     def test_wrong_feed_counts_are_rejected(self):
         self.feed["today"] = 999
