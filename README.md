@@ -42,6 +42,14 @@
   </tr>
 </table>
 
+## Projetos em destaque
+
+| Projeto | O que experimentar |
+| --- | --- |
+| [Sentinel Atlas](https://github.com/juniordev830/sentinel-atlas) | Explore o mapa 3D e simule posições com a API FastAPI e o WebSocket. |
+| [Plataforma de Recrutamento](https://github.com/juniordev830/plataforma-de-recrutamento) | Cadastre um candidato, salve vagas e acompanhe candidaturas. |
+| [Planejador EBD Jovens](https://github.com/juniordev830/ebd-jovens-planner) | Monte uma aula, distribua o tempo e gere um PDF com o roteiro. |
+
 <!-- CONTRIBUTIONS:START -->
 
 <!-- CONTRIBUTIONS:METRICS <strong>0</strong><strong>122</strong><strong>991</strong><strong>3.802</strong> -->
