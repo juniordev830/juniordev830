@@ -102,13 +102,13 @@ class PortfolioProgressTests(unittest.TestCase):
 
     def test_snapshot_windows_are_six_hours_in_utc(self):
         self.assertEqual(snapshot_marker(datetime(2026, 11, 12, 5, 59, tzinfo=timezone.utc)),
-                         "<!-- PORTFOLIO-SNAPSHOT:v4:2026-11-12T00Z -->")
+                         "<!-- PORTFOLIO-SNAPSHOT:v5:2026-11-12T00Z -->")
         self.assertEqual(snapshot_marker(datetime(2026, 11, 12, 6, 0, tzinfo=timezone.utc)),
-                         "<!-- PORTFOLIO-SNAPSHOT:v4:2026-11-12T06Z -->")
+                         "<!-- PORTFOLIO-SNAPSHOT:v5:2026-11-12T06Z -->")
         self.assertEqual(snapshot_marker(datetime(2026, 11, 12, 21, tzinfo=timezone.utc)),
-                         "<!-- PORTFOLIO-SNAPSHOT:v4:2026-11-12T18Z -->")
+                         "<!-- PORTFOLIO-SNAPSHOT:v5:2026-11-12T18Z -->")
         self.assertEqual(snapshot_marker(datetime(2026, 11, 12, 16, tzinfo=timezone(timedelta(hours=-3)))),
-                         "<!-- PORTFOLIO-SNAPSHOT:v4:2026-11-12T18Z -->")
+                         "<!-- PORTFOLIO-SNAPSHOT:v5:2026-11-12T18Z -->")
         with self.assertRaises(ValueError):
             snapshot_marker(datetime(2026, 11, 12, 6))
 

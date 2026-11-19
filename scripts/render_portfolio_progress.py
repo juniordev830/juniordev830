@@ -395,7 +395,7 @@ def snapshot_marker(now: datetime) -> str:
         raise ValueError("Horario do snapshot precisa de timezone")
     utc = now.astimezone(timezone.utc)
     window_hour = (utc.hour // 6) * 6
-    return f"<!-- PORTFOLIO-SNAPSHOT:v4:{utc:%Y-%m-%d}T{window_hour:02d}Z -->"
+    return f"<!-- PORTFOLIO-SNAPSHOT:v5:{utc:%Y-%m-%d}T{window_hour:02d}Z -->"
 
 
 def main():
