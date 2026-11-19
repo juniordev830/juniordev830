@@ -1,4 +1,4 @@
-<!-- PORTFOLIO-SNAPSHOT:v4:2026-11-18T18Z -->
+<!-- PORTFOLIO-SNAPSHOT:v4:2026-11-19T00Z -->
 # Andamento dos projetos
 
 Inventario automatizado a partir da API do GitHub. **Fase nao equivale a percentual de conclusao**; analisa apenas evidencias de arquivos na branch padrao.
@@ -19,7 +19,7 @@ As marcacoes significam presenca de arquivos, nao garantem cobertura, testes apr
 | [airport-control-mini](https://github.com/juniordev830/airport-control-mini) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
 | [api-test-studio](https://github.com/juniordev830/api-test-studio) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
 | [arduino-lab](https://github.com/juniordev830/arduino-lab) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
-| [atlas-biblico-digital](https://github.com/juniordev830/atlas-biblico-digital) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
+| [atlas-biblico-digital](https://github.com/juniordev830/atlas-biblico-digital) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-19 |
 | [auth-service-go](https://github.com/juniordev830/auth-service-go) | Implementacao | Sim | — | Sim | Sim | 2026-11-18 |
 | [auxiliar-NF-pj](https://github.com/juniordev830/auxiliar-NF-pj) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
 | [biblia-plano-de-leitura](https://github.com/juniordev830/biblia-plano-de-leitura) | Validacao automatizada | Sim | Sim | Sim | Sim | 2026-11-18 |
