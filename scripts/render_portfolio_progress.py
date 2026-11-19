@@ -1,11 +1,13 @@
 """Inventario verificavel do portfolio: evidencias tecnicas, nao percentual de conclusao."""
 from __future__ import annotations
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from hashlib import sha256
 from html import escape
 import json
 import os
 from pathlib import Path
+from urllib.error import URLError
 from urllib.parse import quote
 from urllib.request import Request, urlopen
 
@@ -21,7 +23,19 @@ KNOWN_RESTRICTED = ("codvision", "adc-de-fuc-ebd")
 API = "https://api.github.com"
 CODE_EXTS = (".py", ".js", ".jsx", ".ts", ".tsx", ".java", ".cs", ".go", ".cpp",
              ".c", ".h", ".gd", ".rb", ".rs", ".php", ".html", ".css", ".sql",
-             ".sh", ".ps1", ".kt", ".swift", ".vue", ".svelte")
+             ".sh", ".ps1", ".kt", ".swift", ".vue", ".svelte", ".dart", ".lua",
+             ".tf", ".tf.json", ".mjs", ".cjs", ".kts", ".scala", ".ex", ".exs")
+GENERATED_DIRS = {"node_modules", "vendor", "dist", "build", ".github"}
+TEST_DIRS = {"test", "tests", "__tests__", "spec", "specs"}
+CI_RESULTS = {
+    "success": "Aprovada",
+    "failure": "Falhou",
+    "timed_out": "Tempo limite",
+    "cancelled": "Cancelada",
+    "skipped": "Ignorada",
+    "neutral": "Neutra",
+    "action_required": "Requer intervenção",
+}
 
 
 def github_json(path: str, token: str):
@@ -37,41 +51,70 @@ def github_json(path: str, token: str):
         return json.load(response)
 
 
+def is_test_file(path: str) -> bool:
+    parts = path.split("/")
+    name, _, extension = parts[-1].rpartition(".")
+    return f".{extension}" in CODE_EXTS and (
+        bool(TEST_DIRS.intersection(parts[:-1]))
+        or name.startswith(("test_", "spec_"))
+        or name.endswith(("_test", "_spec", ".test", ".spec"))
+        or (extension in {"java", "kt", "cs", "swift"} and name.endswith(("test", "tests")))
+    )
+
+
+def latest_ci(endpoint: str, branch: str, token: str) -> str:
+    try:
+        payload = github_json(f"{endpoint}/actions/runs?branch={branch}&per_page=1", token)
+    except (URLError, TimeoutError, ValueError):
+        return "Indisponível"
+    runs = payload.get("workflow_runs") if isinstance(payload, dict) else None
+    if not isinstance(runs, list):
+        return "Indisponível"
+    if not runs:
+        return "Sem execução"
+    run = runs[0]
+    if run.get("status") != "completed":
+        return "Em andamento"
+    return CI_RESULTS.get(run.get("conclusion"), "Indisponível")
+
+
+def inspect_repo(repo: dict, token: str) -> dict:
+    name = repo["name"]
+    endpoint = f"/repos/{OWNER}/{quote(name, safe='')}"
+    branch = quote(repo.get("default_branch") or "main", safe="")
+    tree = github_json(f"{endpoint}/git/trees/{branch}?recursive=1", token)
+    if "tree" not in tree:
+        raise ValueError(f"Arvore indisponivel em {name}")
+    files = [entry["path"].lower() for entry in tree["tree"] if entry.get("type") == "blob"]
+    source = [path for path in files if not GENERATED_DIRS.intersection(path.split("/")[:-1])]
+    ci = any(path.startswith(".github/workflows/") and path.endswith((".yaml", ".yml"))
+             for path in files)
+    return {
+        "name": name, "url": repo["html_url"],
+        "pushed": (repo.get("pushed_at") or "")[:10],
+        "pushed_iso": repo.get("pushed_at") or "",
+        "docs": any(path in ("readme.md", "readme.rst", "readme.txt") for path in files),
+        "code": any(path.endswith(CODE_EXTS) and not is_test_file(path) for path in source),
+        "tests": any(is_test_file(path) for path in source),
+        "ci": ci, "ci_result": latest_ci(endpoint, branch, token) if ci else "—",
+        "archived": repo.get("archived", False),
+        "partial": bool(tree.get("truncated", False)),
+    }
+
+
 def collect(token: str) -> list[dict]:
-    projects = []
+    repositories = []
     for page in range(1, 11):
         items = github_json(f"/users/{OWNER}/repos?type=owner&per_page=100&page={page}", token)
         if not isinstance(items, list):
             raise ValueError("Listagem invalida do GitHub")
-        for repo in items:
-            name = repo["name"]
-            branch = quote(repo.get("default_branch") or "main", safe="")
-            tree = github_json(f"/repos/{OWNER}/{quote(name, safe='')}/git/trees/{branch}?recursive=1", token)
-            if "tree" not in tree:
-                raise ValueError(f"Arvore indisponivel em {name}")
-            files = [entry["path"] for entry in tree["tree"] if entry.get("type") == "blob"]
-            low = [path.lower() for path in files]
-            docs = any(path in ("readme.md", "readme.rst", "readme.txt") for path in low)
-            code = any(path.endswith(CODE_EXTS) and not path.startswith(
-                ("node_modules/", "vendor/", "dist/", "build/", ".github/")) for path in low)
-            tests = any(any(part in ("tests", "test", "__tests__", "spec", "specs") for part in path.split("/"))
-                        or path.split("/")[-1].startswith(("test_", "spec_"))
-                        or path.split("/")[-1].endswith((".test.ts", ".test.js", ".spec.ts", ".spec.js"))
-                        for path in low)
-            ci = any(path.startswith(".github/workflows/") and path.endswith((".yaml", ".yml"))
-                     for path in low)
-            projects.append({
-                "name": name, "url": repo["html_url"],
-                "pushed": (repo.get("pushed_at") or "")[:10],
-                "pushed_iso": repo.get("pushed_at") or "",
-                "docs": docs, "code": code, "tests": tests, "ci": ci,
-                "archived": repo.get("archived", False),
-                "partial": bool(tree.get("truncated", False)),
-            })
+        repositories.extend(items)
         if len(items) < 100:
             break
-    if not projects:
+    if not repositories:
         raise ValueError("Nenhum repositorio recuperado; dados anteriores preservados")
+    with ThreadPoolExecutor(max_workers=6) as workers:
+        projects = list(workers.map(lambda repo: inspect_repo(repo, token), repositories))
     listed = {project["name"] for project in projects}
     for name in KNOWN_RESTRICTED:
         if name not in listed:
@@ -306,19 +349,22 @@ def render_report(projects: list[dict]) -> str:
         "",
         "As marcacoes significam presenca de arquivos, nao garantem cobertura, testes aprovados ou qualidade. Uma arvore de arquivos truncada e marcada como inspecao parcial.",
         "",
-        "| Repositorio | Fase tecnica | Codigo | Testes | CI | README | Ultimo push |",
-        "| :-- | :-- | :--: | :--: | :--: | :--: | :-- |",
+        "| Repositorio | Fase tecnica | Codigo | Testes | Workflow | Ultima execucao | README | Ultimo push |",
+        "| :-- | :-- | :--: | :--: | :--: | :-- | :--: | :-- |",
     ]
     for p in projects:
-        checks = (["N/D"] * 4 if p.get("restricted") else
-                  ["Sim" if p[x] else "—" for x in ("code", "tests", "ci", "docs")])
+        checks = (["N/D"] * 5 if p.get("restricted") else [
+            *("Sim" if p[x] else "—" for x in ("code", "tests", "ci")),
+            p.get("ci_result", "—"), "Sim" if p["docs"] else "—",
+        ])
         name = p["name"].replace("|", r"\|")
         lines.append(f"| [{name}]({p['url']}) | {stage(p)} | {' | '.join(checks)} | {p['pushed'] or 'Indisponivel'} |")
     lines += [
         "",
         "## Metodologia",
         "",
-        "- **Validacao automatizada:** arquivos de teste e workflow GitHub Actions identificados (execucao nao verificada).",
+        "- **Validacao automatizada:** arquivos de teste e workflow GitHub Actions identificados.",
+        "- **Ultima execucao:** resultado da execução mais recente na branch padrão. Indisponível indica que a API não forneceu o estado.",
         "- **Com testes:** arquivos de teste encontrados; nenhum workflow detectado.",
         "- **Implementacao:** arquivos de codigo encontrados, sem evidencias de testes.",
         "- **Estruturacao:** README presente, sem codigo identificado.",
