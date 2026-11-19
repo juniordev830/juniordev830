@@ -35,14 +35,14 @@
 <rect x="478" y="120" width="45" height="43" rx="10" fill="#193046" stroke="#264b63"/>
 <circle cx="500" cy="141" r="9" fill="none" stroke="#79bdd6" stroke-width="3"/>
 <text x="534" y="130" fill="#c1d2de" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700">COM CÓDIGO</text>
-<text x="534" y="164" fill="#f2f6fb" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700">94</text>
+<text x="534" y="164" fill="#f2f6fb" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700">98</text>
 <text x="480" y="195" fill="#90a9ba" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="400">arquivos detectados</text>
 <rect x="629" y="185" width="27" height="3" rx="1" fill="#79bdd6" stroke="#79bdd6"/>
 <rect x="684" y="106" width="210" height="107" rx="12" fill="#121f2d" stroke="#2d4355"/>
 <rect x="698" y="120" width="45" height="43" rx="10" fill="#193046" stroke="#264b63"/>
 <circle cx="720" cy="141" r="9" fill="none" stroke="#a897e5" stroke-width="3"/>
 <text x="754" y="130" fill="#c1d2de" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700">COM TESTES</text>
-<text x="754" y="164" fill="#f2f6fb" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700">86</text>
+<text x="754" y="164" fill="#f2f6fb" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700">91</text>
 <text x="700" y="195" fill="#90a9ba" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="400">estrutura detectada</text>
 <rect x="849" y="185" width="27" height="3" rx="1" fill="#a897e5" stroke="#a897e5"/>
 <rect x="904" y="106" width="210" height="107" rx="12" fill="#121f2d" stroke="#2d4355"/>
@@ -57,24 +57,23 @@
 <text x="44" y="284" fill="#98b1c2" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400">Fases identificadas por evidências dos arquivos</text>
 <line x1="44" y1="297" x2="452" y2="297" stroke="#294050" opacity="1"/>
 <circle cx="154" cy="415" r="70" fill="none" stroke="#223749" stroke-width="25"/>
-<circle cx="154" cy="415" r="70" fill="none" stroke="#36b8e5" stroke-width="25" stroke-dasharray="378.25 61.58" stroke-dashoffset="-0.00" transform="rotate(-90 154 415)"/>
-<circle cx="154" cy="415" r="70" fill="none" stroke="#48c3a9" stroke-width="25" stroke-dasharray="39.58 400.24" stroke-dashoffset="-378.25" transform="rotate(-90 154 415)"/>
-<circle cx="154" cy="415" r="70" fill="none" stroke="#f2ba5a" stroke-width="25" stroke-dasharray="13.19 426.63" stroke-dashoffset="-417.83" transform="rotate(-90 154 415)"/>
+<circle cx="154" cy="415" r="70" fill="none" stroke="#36b8e5" stroke-width="25" stroke-dasharray="400.24 39.58" stroke-dashoffset="-0.00" transform="rotate(-90 154 415)"/>
+<circle cx="154" cy="415" r="70" fill="none" stroke="#48c3a9" stroke-width="25" stroke-dasharray="30.79 409.04" stroke-dashoffset="-400.24" transform="rotate(-90 154 415)"/>
 <circle cx="154" cy="415" r="70" fill="none" stroke="#8495a7" stroke-width="25" stroke-dasharray="8.80 431.03" stroke-dashoffset="-431.03" transform="rotate(-90 154 415)"/>
 <text x="154" y="417" fill="#f3f7fb" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="700" text-anchor="middle">100</text>
 <text x="154" y="440" fill="#acbfcc" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" text-anchor="middle">projetos</text>
 <circle cx="270" cy="345" r="6" fill="#36b8e5"/>
 <text x="285" y="350" fill="#dce6ee" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400">Testes + pipeline</text>
-<text x="447" y="350" fill="#f2f5f9" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" text-anchor="end">86</text>
+<text x="447" y="350" fill="#f2f5f9" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" text-anchor="end">91</text>
 <circle cx="270" cy="382" r="6" fill="#a68be1"/>
 <text x="285" y="387" fill="#dce6ee" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400">Testes, sem pipeline</text>
 <text x="447" y="387" fill="#f2f5f9" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" text-anchor="end">0</text>
 <circle cx="270" cy="419" r="6" fill="#48c3a9"/>
 <text x="285" y="424" fill="#dce6ee" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400">Implementação</text>
-<text x="447" y="424" fill="#f2f5f9" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" text-anchor="end">9</text>
+<text x="447" y="424" fill="#f2f5f9" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" text-anchor="end">7</text>
 <circle cx="270" cy="456" r="6" fill="#f2ba5a"/>
 <text x="285" y="461" fill="#dce6ee" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400">Estruturação / revisão</text>
-<text x="447" y="461" fill="#f2f5f9" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" text-anchor="end">3</text>
+<text x="447" y="461" fill="#f2f5f9" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" text-anchor="end">0</text>
 <circle cx="270" cy="493" r="6" fill="#8495a7"/>
 <text x="285" y="498" fill="#dce6ee" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400">Acesso restrito</text>
 <text x="447" y="498" fill="#f2f5f9" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" text-anchor="end">2</text>
@@ -102,7 +101,7 @@
 <rect x="659" y="492" width="103" height="8" rx="4.0" fill="url(#cyan)" stroke="url(#cyan)"/>
 <rect x="796" y="425" width="274" height="96" rx="10" fill="#122334" stroke="#355067"/>
 <text x="810" y="451" fill="#f2f6fa" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700">infrastructure-as-code-lab</text>
-<text x="810" y="473" fill="#9dc6dc" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400">Testes + CI</text>
+<text x="810" y="473" fill="#9dc6dc" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400">Código identificado</text>
 <text x="810" y="502" fill="#95acbc" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="400">3/4 sinais técnicos</text>
 <rect x="947" y="492" width="103" height="8" rx="4.0" fill="#243746" stroke="#243746"/>
 <rect x="947" y="492" width="77.2" height="8" rx="4.0" fill="url(#violet)" stroke="url(#violet)"/>
@@ -112,11 +111,11 @@
 <line x1="44" y1="632" x2="622" y2="632" stroke="#294050" opacity="1"/>
 <rect x="43" y="660" width="135" height="109" rx="9" fill="#162a3c" stroke="#335268"/>
 <text x="56" y="687" fill="#e4b566" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700">ESTRUTURAÇÃO</text>
-<text x="56" y="734" fill="#f2f8fb" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="700">3</text>
+<text x="56" y="734" fill="#f2f8fb" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="700">0</text>
 <text x="181" y="726" fill="#6999b2" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700">›</text>
 <rect x="191" y="660" width="135" height="109" rx="9" fill="#162a3c" stroke="#335268"/>
 <text x="204" y="687" fill="#51afd5" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700">IMPLEMENTAÇÃO</text>
-<text x="204" y="734" fill="#f2f8fb" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="700">9</text>
+<text x="204" y="734" fill="#f2f8fb" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="700">7</text>
 <text x="329" y="726" fill="#6999b2" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700">›</text>
 <rect x="339" y="660" width="135" height="109" rx="9" fill="#162a3c" stroke="#335268"/>
 <text x="352" y="687" fill="#a392d9" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700">COM TESTES</text>
@@ -124,23 +123,23 @@
 <text x="477" y="726" fill="#6999b2" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700">›</text>
 <rect x="487" y="660" width="135" height="109" rx="9" fill="#162a3c" stroke="#335268"/>
 <text x="500" y="687" fill="#45bf9f" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700">TESTES + CI</text>
-<text x="500" y="734" fill="#f2f8fb" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="700">86</text>
+<text x="500" y="734" fill="#f2f8fb" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="700">91</text>
 <text x="45" y="790" fill="#9fb2c2" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="400">Acesso restrito: 2  ·  Qualidade e cobertura exigem testes adicionais</text>
 <rect x="658" y="567" width="438" height="232" rx="12" fill="url(#navy)" stroke="#2d4355"/>
 <text x="678" y="598" fill="#f0f6fb" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700">Últimas movimentações</text>
 <text x="678" y="619" fill="#98b1c2" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400">Projetos ordenados pela última atualização</text>
 <line x1="678" y1="632" x2="1076" y2="632" stroke="#294050" opacity="1"/>
-<text x="676" y="660" fill="#d9e7ef" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700">atlas-biblico-digital</text>
+<text x="676" y="660" fill="#d9e7ef" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700">juniordev830</text>
 <text x="1070" y="660" fill="#81a6bc" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" text-anchor="end">19/11</text>
 <line x1="677" y1="669" x2="1072" y2="669" stroke="#284354" opacity="1"/>
-<text x="676" y="693" fill="#d9e7ef" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700">juniordev830</text>
-<text x="1070" y="693" fill="#81a6bc" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" text-anchor="end">18/11</text>
+<text x="676" y="693" fill="#d9e7ef" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700">fila-atendimento</text>
+<text x="1070" y="693" fill="#81a6bc" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" text-anchor="end">19/11</text>
 <line x1="677" y1="702" x2="1072" y2="702" stroke="#284354" opacity="1"/>
-<text x="676" y="726" fill="#d9e7ef" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700">referencias-cruzadas-biblia</text>
-<text x="1070" y="726" fill="#81a6bc" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" text-anchor="end">18/11</text>
+<text x="676" y="726" fill="#d9e7ef" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700">concordancia-biblica</text>
+<text x="1070" y="726" fill="#81a6bc" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" text-anchor="end">19/11</text>
 <line x1="677" y1="735" x2="1072" y2="735" stroke="#284354" opacity="1"/>
-<text x="676" y="759" fill="#d9e7ef" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700">quiz-biblico-interativo</text>
-<text x="1070" y="759" fill="#81a6bc" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" text-anchor="end">18/11</text>
+<text x="676" y="759" fill="#d9e7ef" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700">acessibilidade-checklist</text>
+<text x="1070" y="759" fill="#81a6bc" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" text-anchor="end">19/11</text>
 <text x="677" y="787" fill="#96aebd" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="400">Datas de push não medem avanço funcional</text>
 <rect x="24" y="815" width="1072" height="63" rx="11" fill="#10202e" stroke="#2b4759"/>
 <text x="45" y="840" fill="#eff5f9" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700">100 projetos no inventário</text>
