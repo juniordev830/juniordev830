@@ -1,8 +1,10 @@
 """Testes do portfolio: evidencias verificaveis sem progresso inventado."""
 import unittest
+from unittest.mock import patch
 from xml.etree import ElementTree
 from datetime import datetime, timezone, timedelta
-from scripts.render_portfolio_progress import stage, summaries, render_svg, render_report, replace_section, START, END, collect, snapshot_marker
+from urllib.error import URLError
+from scripts.render_portfolio_progress import stage, summaries, render_svg, render_report, replace_section, START, END, collect, inspect_repo, latest_ci, snapshot_marker
 
 
 def sample(name, docs=True, code=True, tests=False, ci=False, pushed="2026-11-12", archived=False, partial=False):
@@ -54,6 +56,31 @@ class PortfolioProgressTests(unittest.TestCase):
         self.assertEqual(report.count("github.com/juniordev830/"), 2)
         self.assertIn("Metodologia", report)
         self.assertIn("nao equivale", report)
+
+    def test_detects_dart_and_go_tests_and_shows_latest_run(self):
+        tree = {"tree": [
+            {"type": "blob", "path": path}
+            for path in ("bin/main.dart", "bin/notebook_test.dart", "main_test.go",
+                         ".github/workflows/ci.yml", "test/README.md")
+        ]}
+        with patch("scripts.render_portfolio_progress.github_json", side_effect=[
+            tree, {"workflow_runs": [{"status": "completed", "conclusion": "failure"}]},
+        ]) as github:
+            repo = inspect_repo({"name": "demo", "html_url": "local", "default_branch": "release/stable"}, "token")
+        self.assertTrue(repo["code"])
+        self.assertTrue(repo["tests"])
+        self.assertTrue(repo["ci"])
+        self.assertIn("branch=release%2Fstable", github.call_args.args[0])
+        self.assertIn("| Sim | Sim | Sim | Falhou |", render_report([repo]))
+
+    def test_distinguishes_unavailable_and_absent_workflow_runs(self):
+        with patch("scripts.render_portfolio_progress.github_json", side_effect=[
+            URLError("forbidden"), {"workflow_runs": []},
+            {"workflow_runs": [{"status": "queued", "conclusion": None}]},
+        ]):
+            self.assertEqual(latest_ci("/repo", "main", "token"), "Indisponível")
+            self.assertEqual(latest_ci("/repo", "main", "token"), "Sem execução")
+            self.assertEqual(latest_ci("/repo", "main", "token"), "Em andamento")
 
     def test_preserves_rest_of_profile_and_rejects_bad_markers(self):
         original = "topo\n" + START + "\nold\n" + END + "\nrodape"
