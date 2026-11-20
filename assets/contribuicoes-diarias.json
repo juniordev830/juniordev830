@@ -4,10 +4,16 @@
   "login": "juniordev830",
   "timezone": "America/Fortaleza",
   "calendar_date": "2026-11-20",
-  "today": 0,
-  "yesterday": 312,
-  "last_7_days": 1278,
-  "last_12_months": 4114,
+  "today": 49,
+  "yesterday": 314,
+  "last_7_days": 1338,
+  "last_12_months": 4174,
+  "daily_goal": 250,
+  "goal_progress": {
+    "remaining_today": 201,
+    "reached_today": false,
+    "percent_today": 19.6
+  },
   "last_14_days": [
     {
       "date": "2026-11-07",
@@ -47,7 +53,7 @@
     },
     {
       "date": "2026-11-16",
-      "contributions": 2
+      "contributions": 3
     },
     {
       "date": "2026-11-17",
@@ -55,15 +61,15 @@
     },
     {
       "date": "2026-11-18",
-      "contributions": 122
+      "contributions": 130
     },
     {
       "date": "2026-11-19",
-      "contributions": 312
+      "contributions": 314
     },
     {
       "date": "2026-11-20",
-      "contributions": 0
+      "contributions": 49
     }
   ]
 }
