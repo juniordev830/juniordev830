@@ -47,7 +47,7 @@
 <div align="center">
   <a href="https://github.com/juniordev830/plataforma-de-recrutamento"><img src="assets/projetos/recrutamento.svg" width="32%" alt="Plataforma de Recrutamento: vagas, candidaturas e API REST com autenticação. Node.js, Express e SQLite." /></a>
   <a href="https://github.com/juniordev830/sentinel-atlas"><img src="assets/projetos/sentinel.svg" width="32%" alt="Sentinel Atlas: monitoramento geoespacial experimental e globo 3D. Python e FastAPI." /></a>
-  <a href="https://github.com/juniordev830/controle-gastos-residenciais"><img src="assets/projetos/gastos.svg" width="32%" alt="Controle de Gastos: API para organizar receitas e despesas familiares. C#, .NET e SQLite." /></a>
+  <a href="https://github.com/juniordev830/ebd-jovens-planner"><img src="assets/projetos/ebd.svg" width="32%" alt="Planejador EBD Jovens: planeje aulas, distribua o tempo e organize referências bíblicas." /></a>
 </div>
 
 <!-- CONTRIBUTIONS:START -->
