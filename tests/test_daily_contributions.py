@@ -165,11 +165,44 @@ class DashboardTests(unittest.TestCase):
         self.assertEqual(feed["yesterday"], 12)
         self.assertEqual(feed["last_7_days"], 70)
         self.assertEqual(feed["last_12_months"], 2012)
+        self.assertEqual(feed["daily_goal"], 250)
+        self.assertEqual(feed["goal_progress"], {
+            "remaining_today": 237,
+            "reached_today": False,
+            "percent_today": 5.2,
+        })
         self.assertEqual(feed["last_14_days"], [
             {"date": day.isoformat(), "contributions": count}
             for day, count in zip(data["days"], data["counts"])
         ])
         self.assertEqual(render_feed(data), raw)
+
+    def test_annual_total_cannot_be_less_than_observed_fourteen_days(self):
+        calendar = fake_calendar()
+        calendar["totalContributions"] = 90  # Os últimos 14 dias somam 91.
+        with self.assertRaisesRegex(ValueError, "excede o total"):
+            metrics(calendar, TODAY)
+
+    def test_daily_goal_250_is_consistent_in_svg_feed_and_cache(self):
+        data = metrics(fake_calendar(), TODAY)
+        svg = render_svg(data, datetime(2026, 11, 10, tzinfo=timezone.utc))
+        self.assertIn("Referência: 250/dia", svg)
+        self.assertIn("meta de 250/dia", svg)
+        self.assertIn(">5%</text>", svg)
+        original = render_chart(data)
+        with patch("scripts.render_daily_contributions.DAILY_GOAL", 300):
+            self.assertNotEqual(original, render_chart(data))
+
+    def test_daily_goal_progress_is_not_capped_above_one_hundred_percent(self):
+        data = metrics(fake_calendar(), TODAY)
+        data["today"] = 300
+        data["counts"][-1] = 300
+        progress = json.loads(render_feed(data))["goal_progress"]
+        self.assertEqual(progress, {
+            "remaining_today": 0,
+            "reached_today": True,
+            "percent_today": 120.0,
+        })
 
     def test_chart_cache_changes_when_annual_total_changes(self):
         data = metrics(fake_calendar(), TODAY)
