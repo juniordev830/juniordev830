@@ -262,6 +262,11 @@ class DashboardTests(unittest.TestCase):
             day["contributionCount"] = 0
         for peak in (0, 553, 10000):
             calendar["weeks"][0]["contributionDays"][-1]["contributionCount"] = peak
+            # Keep the synthetic annual total consistent with its observed days.
+            calendar["totalContributions"] = max(
+                2012,
+                sum(day["contributionCount"] for day in calendar["weeks"][0]["contributionDays"]),
+            )
             svg = render_svg(metrics(calendar, TODAY), datetime(2026, 11, 10, tzinfo=timezone.utc))
             root = ElementTree.fromstring(svg)
             for e in root.iter():
