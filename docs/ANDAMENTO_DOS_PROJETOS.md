@@ -1,4 +1,4 @@
-<!-- PORTFOLIO-SNAPSHOT:v5:2026-11-21T12Z -->
+<!-- PORTFOLIO-SNAPSHOT:v5:2026-11-21T18Z -->
 # Andamento dos projetos
 
 Inventario automatizado a partir da API do GitHub. **Fase nao equivale a percentual de conclusao**; analisa apenas evidencias de arquivos na branch padrao.
@@ -50,7 +50,7 @@ As marcacoes significam presenca de arquivos, nao garantem cobertura, testes apr
 | [ebd-planejador](https://github.com/juniordev830/ebd-planejador) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-19 |
 | [empresta-comunidade](https://github.com/juniordev830/empresta-comunidade) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-19 |
 | [ensaio-tempo-sermao](https://github.com/juniordev830/ensaio-tempo-sermao) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-19 |
-| [entregas-rotas-por-turno](https://github.com/juniordev830/entregas-rotas-por-turno) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-19 |
+| [entregas-rotas-por-turno](https://github.com/juniordev830/entregas-rotas-por-turno) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-21 |
 | [esboco-pregacao-expositiva](https://github.com/juniordev830/esboco-pregacao-expositiva) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-19 |
 | [escala-equipes](https://github.com/juniordev830/escala-equipes) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-19 |
 | [estacionamento-ultima-milha](https://github.com/juniordev830/estacionamento-ultima-milha) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-19 |
