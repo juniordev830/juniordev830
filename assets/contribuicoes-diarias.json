@@ -3,22 +3,18 @@
   "source": "github-contributions-graphql",
   "login": "juniordev830",
   "timezone": "America/Fortaleza",
-  "calendar_date": "2026-11-21",
-  "today": 273,
-  "yesterday": 74,
-  "last_7_days": 1478,
+  "calendar_date": "2026-11-22",
+  "today": 0,
+  "yesterday": 273,
+  "last_7_days": 1278,
   "last_12_months": 4472,
   "daily_goal": 250,
   "goal_progress": {
-    "remaining_today": 0,
-    "reached_today": true,
-    "percent_today": 109.2
+    "remaining_today": 250,
+    "reached_today": false,
+    "percent_today": 0.0
   },
   "last_14_days": [
-    {
-      "date": "2026-11-08",
-      "contributions": 257
-    },
     {
       "date": "2026-11-09",
       "contributions": 183
@@ -70,6 +66,10 @@
     {
       "date": "2026-11-21",
       "contributions": 273
+    },
+    {
+      "date": "2026-11-22",
+      "contributions": 0
     }
   ]
 }
