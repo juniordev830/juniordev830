@@ -4,15 +4,15 @@
   "login": "juniordev830",
   "timezone": "America/Fortaleza",
   "calendar_date": "2026-11-22",
-  "today": 0,
+  "today": 78,
   "yesterday": 273,
-  "last_7_days": 1278,
-  "last_12_months": 4472,
+  "last_7_days": 1356,
+  "last_12_months": 4550,
   "daily_goal": 250,
   "goal_progress": {
-    "remaining_today": 250,
+    "remaining_today": 172,
     "reached_today": false,
-    "percent_today": 0.0
+    "percent_today": 31.2
   },
   "last_14_days": [
     {
@@ -69,7 +69,7 @@
     },
     {
       "date": "2026-11-22",
-      "contributions": 0
+      "contributions": 78
     }
   ]
 }
