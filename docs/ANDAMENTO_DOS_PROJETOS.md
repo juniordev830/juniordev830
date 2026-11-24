@@ -1,4 +1,4 @@
-<!-- PORTFOLIO-SNAPSHOT:v5:2026-11-24T00Z -->
+<!-- PORTFOLIO-SNAPSHOT:v5:2026-11-24T12Z -->
 # Andamento dos projetos
 
 Inventario automatizado a partir da API do GitHub. **Fase nao equivale a percentual de conclusao**; analisa apenas evidencias de arquivos na branch padrao.
@@ -66,7 +66,7 @@ As marcacoes significam presenca de arquivos, nao garantem cobertura, testes apr
 | [helpdesk-suporte](https://github.com/juniordev830/helpdesk-suporte) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-19 |
 | [ilustracoes-para-pregacao](https://github.com/juniordev830/ilustracoes-para-pregacao) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-22 |
 | [infrastructure-as-code-lab](https://github.com/juniordev830/infrastructure-as-code-lab) | Implementacao | Sim | — | Sim | Aprovada | Sim | 2026-11-19 |
-| [juniordev830](https://github.com/juniordev830/juniordev830) | Validacao automatizada | Sim | Sim | Sim | Em andamento | Sim | 2026-11-23 |
+| [juniordev830](https://github.com/juniordev830/juniordev830) | Validacao automatizada | Sim | Sim | Sim | Em andamento | Sim | 2026-11-24 |
 | [laboratorio-hermeneutica](https://github.com/juniordev830/laboratorio-hermeneutica) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-20 |
 | [mapa-acessibilidade-urbana](https://github.com/juniordev830/mapa-acessibilidade-urbana) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-22 |
 | [mapa-ocorrencias-transito](https://github.com/juniordev830/mapa-ocorrencias-transito) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-22 |
