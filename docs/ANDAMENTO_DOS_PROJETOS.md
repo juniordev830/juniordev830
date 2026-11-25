@@ -1,4 +1,4 @@
-<!-- PORTFOLIO-SNAPSHOT:v5:2026-11-25T06Z -->
+<!-- PORTFOLIO-SNAPSHOT:v5:2026-11-25T18Z -->
 # Andamento dos projetos
 
 Inventario automatizado a partir da API do GitHub. **Fase nao equivale a percentual de conclusao**; analisa apenas evidencias de arquivos na branch padrao.
@@ -94,7 +94,7 @@ As marcacoes significam presenca de arquivos, nao garantem cobertura, testes apr
 | [roteiro-grupo-biblico](https://github.com/juniordev830/roteiro-grupo-biblico) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-25 |
 | [rpg-quest-python](https://github.com/juniordev830/rpg-quest-python) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-22 |
 | [secure-api-gateway](https://github.com/juniordev830/secure-api-gateway) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-25 |
-| [sentinel-atlas](https://github.com/juniordev830/sentinel-atlas) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-21 |
+| [sentinel-atlas](https://github.com/juniordev830/sentinel-atlas) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-25 |
 | [series-de-pregacao](https://github.com/juniordev830/series-de-pregacao) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-22 |
 | [site-e-commerce-](https://github.com/juniordev830/site-e-commerce-) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-21 |
 | [space-miner-2d](https://github.com/juniordev830/space-miner-2d) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-19 |
