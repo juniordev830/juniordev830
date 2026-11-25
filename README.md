@@ -52,11 +52,11 @@
 
 <!-- CONTRIBUTIONS:START -->
 
-<!-- CONTRIBUTIONS:METRICS <strong>2</strong><strong>0</strong><strong>871</strong><strong>4.552</strong> -->
+<!-- CONTRIBUTIONS:METRICS <strong>0</strong><strong>50</strong><strong>789</strong><strong>4.600</strong> -->
 
 <p align="center">
 <a href="https://joao-github-dashboard.joaosilva42333.chatgpt.site">
-<img src="https://raw.githubusercontent.com/juniordev830/juniordev830/main/assets/contribuicoes-diarias.svg?v=6d760d7c6be7" width="1040" alt="Painel unificado de contribuições, evolução diária, intensidade e projetos em destaque."/>
+<img src="https://raw.githubusercontent.com/juniordev830/juniordev830/main/assets/contribuicoes-diarias.svg?v=ce49bdb347d2" width="1040" alt="Painel unificado de contribuições, evolução diária, intensidade e projetos em destaque."/>
 </a>
 </p>
 
@@ -68,7 +68,7 @@
   <h2>Portfólio de Projetos</h2>
   <p><sub>Visão executiva de estágio técnico, validação e últimas movimentações dos repositórios.</sub></p>
   <a href="docs/ANDAMENTO_DOS_PROJETOS.md">
-    <img src="https://raw.githubusercontent.com/juniordev830/juniordev830/main/assets/portfolio-andamento.svg?v=4e60e93dfa16" width="100%" alt="Panorama tecnico de todos os repositorios"/>
+    <img src="https://raw.githubusercontent.com/juniordev830/juniordev830/main/assets/portfolio-andamento.svg?v=1f0994fbbbab" width="100%" alt="Panorama tecnico de todos os repositorios"/>
   </a>
   <p><a href="docs/ANDAMENTO_DOS_PROJETOS.md"><strong>Consultar detalhes dos projetos</strong></a></p>
 </div>
