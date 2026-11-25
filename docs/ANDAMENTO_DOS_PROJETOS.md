@@ -1,4 +1,4 @@
-<!-- PORTFOLIO-SNAPSHOT:v5:2026-11-24T12Z -->
+<!-- PORTFOLIO-SNAPSHOT:v5:2026-11-25T00Z -->
 # Andamento dos projetos
 
 Inventario automatizado a partir da API do GitHub. **Fase nao equivale a percentual de conclusao**; analisa apenas evidencias de arquivos na branch padrao.
@@ -39,12 +39,12 @@ As marcacoes significam presenca de arquivos, nao garantem cobertura, testes apr
 | [corrida-maluca-](https://github.com/juniordev830/corrida-maluca-) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-19 |
 | [cyber-detective-noir](https://github.com/juniordev830/cyber-detective-noir) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-19 |
 | [database-migration-auditor](https://github.com/juniordev830/database-migration-auditor) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-22 |
-| [despensa-validades](https://github.com/juniordev830/despensa-validades) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-21 |
+| [despensa-validades](https://github.com/juniordev830/despensa-validades) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-25 |
 | [devops-control-center](https://github.com/juniordev830/devops-control-center) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-19 |
 | [diario-devocional](https://github.com/juniordev830/diario-devocional) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-20 |
 | [diario-leitura](https://github.com/juniordev830/diario-leitura) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-21 |
 | [distributed-task-queue](https://github.com/juniordev830/distributed-task-queue) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-19 |
-| [divide-viagem](https://github.com/juniordev830/divide-viagem) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-20 |
+| [divide-viagem](https://github.com/juniordev830/divide-viagem) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-25 |
 | [documentos-validade](https://github.com/juniordev830/documentos-validade) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-21 |
 | [ebd-jovens-planner](https://github.com/juniordev830/ebd-jovens-planner) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-20 |
 | [ebd-planejador](https://github.com/juniordev830/ebd-planejador) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-22 |
