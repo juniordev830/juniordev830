@@ -1,4 +1,4 @@
-<!-- PORTFOLIO-SNAPSHOT:v5:2026-11-25T18Z -->
+<!-- PORTFOLIO-SNAPSHOT:v5:2026-11-26T00Z -->
 # Andamento dos projetos
 
 Inventario automatizado a partir da API do GitHub. **Fase nao equivale a percentual de conclusao**; analisa apenas evidencias de arquivos na branch padrao.
@@ -86,7 +86,7 @@ As marcacoes significam presenca de arquivos, nao garantem cobertura, testes apr
 | [quiz-sala](https://github.com/juniordev830/quiz-sala) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-19 |
 | [rally-dunas-rn](https://github.com/juniordev830/rally-dunas-rn) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-19 |
 | [referencias-cruzadas-biblia](https://github.com/juniordev830/referencias-cruzadas-biblia) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-20 |
-| [relatorio-altomatizado-de-contas-](https://github.com/juniordev830/relatorio-altomatizado-de-contas-) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-19 |
+| [relatorio-altomatizado-de-contas-](https://github.com/juniordev830/relatorio-altomatizado-de-contas-) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-25 |
 | [reserva-salas](https://github.com/juniordev830/reserva-salas) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-20 |
 | [retro-arcade-cpp](https://github.com/juniordev830/retro-arcade-cpp) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-25 |
 | [revisao-espacada](https://github.com/juniordev830/revisao-espacada) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-21 |
