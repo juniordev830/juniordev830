@@ -1,4 +1,4 @@
-<!-- PORTFOLIO-SNAPSHOT:v5:2026-11-26T18Z -->
+<!-- PORTFOLIO-SNAPSHOT:v5:2026-11-27T00Z -->
 # Andamento dos projetos
 
 Inventario automatizado a partir da API do GitHub. **Fase nao equivale a percentual de conclusao**; analisa apenas evidencias de arquivos na branch padrao.
@@ -21,7 +21,7 @@ As marcacoes significam presenca de arquivos, nao garantem cobertura, testes apr
 | [arduino-lab](https://github.com/juniordev830/arduino-lab) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-19 |
 | [atlas-biblico-digital](https://github.com/juniordev830/atlas-biblico-digital) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-19 |
 | [auth-service-go](https://github.com/juniordev830/auth-service-go) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-21 |
-| [auxiliar-NF-pj](https://github.com/juniordev830/auxiliar-NF-pj) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-25 |
+| [auxiliar-NF-pj](https://github.com/juniordev830/auxiliar-NF-pj) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-27 |
 | [biblia-plano-de-leitura](https://github.com/juniordev830/biblia-plano-de-leitura) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-20 |
 | [bike-care](https://github.com/juniordev830/bike-care) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-21 |
 | [caderno-offline](https://github.com/juniordev830/caderno-offline) | Validacao automatizada | Sim | Sim | Sim | Aprovada | Sim | 2026-11-19 |
