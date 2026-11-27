@@ -6,14 +6,14 @@
 <text x="40.00" y="35.00" fill="#a2aab1" font-size="10" font-weight="600" text-anchor="start">VISÃO GERAL  /  GITHUB</text>
 <text x="40.00" y="70.00" fill="#d8dde1" font-size="25" font-weight="600" text-anchor="start">Atividade de desenvolvimento</text>
 <text x="1000.00" y="35.00" fill="#a2aab1" font-size="11" font-weight="400" text-anchor="end">João Júnior · @juniordev830</text>
-<text x="1000.00" y="70.00" fill="#a2aab1" font-size="11" font-weight="400" text-anchor="end">13/11 — 26/11/2026</text>
+<text x="1000.00" y="70.00" fill="#a2aab1" font-size="11" font-weight="400" text-anchor="end">14/11 — 27/11/2026</text>
 <line x1="40" y1="91" x2="1000" y2="91" stroke="#353d45"/>
 <text x="40.00" y="124.00" fill="#a2aab1" font-size="11" font-weight="400" text-anchor="start">Hoje</text>
-<text x="40.00" y="159.00" fill="#d8dde1" font-size="30" font-weight="600" text-anchor="start">1</text>
+<text x="40.00" y="159.00" fill="#d8dde1" font-size="30" font-weight="600" text-anchor="start">0</text>
 <text x="40.00" y="182.00" fill="#a2aab1" font-size="10" font-weight="400" text-anchor="start">Dia atual parcial</text>
 <line x1="268" y1="117" x2="268" y2="179" stroke="#343b42"/>
 <text x="288.00" y="124.00" fill="#a2aab1" font-size="11" font-weight="400" text-anchor="start">Últimos 7 dias</text>
-<text x="288.00" y="159.00" fill="#d8dde1" font-size="30" font-weight="600" text-anchor="start">509</text>
+<text x="288.00" y="159.00" fill="#d8dde1" font-size="30" font-weight="600" text-anchor="start">435</text>
 <text x="288.00" y="182.00" fill="#a2aab1" font-size="10" font-weight="400" text-anchor="start">Contribuições</text>
 <line x1="516" y1="117" x2="516" y2="179" stroke="#343b42"/>
 <text x="536.00" y="124.00" fill="#a2aab1" font-size="11" font-weight="400" text-anchor="start">Últimos 12 meses</text>
@@ -26,7 +26,7 @@
 <line x1="40" y1="204" x2="1000" y2="204" stroke="#353d45"/>
 <text x="40.00" y="238.00" fill="#d8dde1" font-size="15" font-weight="600" text-anchor="start">Contribuições diárias</text>
 <text x="40.00" y="260.00" fill="#a2aab1" font-size="10" font-weight="400" text-anchor="start">Últimos 14 dias</text>
-<text x="1000.00" y="238.00" fill="#a2aab1" font-size="11" font-weight="400" text-anchor="end">Média (7 dias): 72,7</text>
+<text x="1000.00" y="238.00" fill="#a2aab1" font-size="11" font-weight="400" text-anchor="end">Média (7 dias): 62,1</text>
 <text x="1000.00" y="260.00" fill="#a2aab1" font-size="10" font-weight="400" text-anchor="end">Linha tracejada · meta de 250/dia</text>
 <line x1="78" y1="430" x2="1000" y2="430" stroke="#30383f"/>
 <text x="65.00" y="434.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="end">0</text>
@@ -35,149 +35,148 @@
 <line x1="78" y1="291" x2="1000" y2="291" stroke="#30383f"/>
 <text x="65.00" y="295.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="end">500</text>
 <line x1="78" y1="360.5" x2="1000" y2="360.5" stroke="#65716f" stroke-dasharray="4 6"/>
-<g data-date="2026-11-13" data-count="25"><title>13/11/2026: 25 contribuições</title>
-<rect x="95.93" y="423.05" width="30.00" height="6.95" rx="3" fill="#8196a4" data-chart-bar="true" data-plot-top="291" data-plot-bottom="430"/>
-<text x="110.93" y="454.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">13/11</text>
-</g>
 <g data-date="2026-11-14" data-count="158"><title>14/11/2026: 158 contribuições</title>
-<rect x="161.79" y="386.08" width="30.00" height="43.92" rx="3" fill="#8196a4" data-chart-bar="true" data-plot-top="291" data-plot-bottom="430"/>
-<text x="176.79" y="454.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">14/11</text>
+<rect x="95.93" y="386.08" width="30.00" height="43.92" rx="3" fill="#8196a4" data-chart-bar="true" data-plot-top="291" data-plot-bottom="430"/>
+<text x="110.93" y="454.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">14/11</text>
 </g>
 <g data-date="2026-11-15" data-count="200"><title>15/11/2026: 200 contribuições</title>
-<rect x="227.64" y="374.40" width="30.00" height="55.60" rx="3" fill="#8196a4" data-chart-bar="true" data-plot-top="291" data-plot-bottom="430"/>
-<text x="242.64" y="454.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">15/11</text>
+<rect x="161.79" y="374.40" width="30.00" height="55.60" rx="3" fill="#8196a4" data-chart-bar="true" data-plot-top="291" data-plot-bottom="430"/>
+<text x="176.79" y="454.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">15/11</text>
 </g>
 <g data-date="2026-11-16" data-count="3"><title>16/11/2026: 3 contribuições</title>
-<rect x="293.50" y="429.17" width="30.00" height="0.83" rx="3" fill="#8196a4" data-chart-bar="true" data-plot-top="291" data-plot-bottom="430"/>
-<text x="308.50" y="454.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">16/11</text>
+<rect x="227.64" y="429.17" width="30.00" height="0.83" rx="3" fill="#8196a4" data-chart-bar="true" data-plot-top="291" data-plot-bottom="430"/>
+<text x="242.64" y="454.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">16/11</text>
 </g>
 <g data-date="2026-11-17" data-count="484"><title>17/11/2026: 484 contribuições</title>
-<rect x="359.36" y="295.45" width="30.00" height="134.55" rx="3" fill="#8196a4" data-chart-bar="true" data-plot-top="291" data-plot-bottom="430"/>
-<text x="374.36" y="285.45" fill="#d8dde1" font-size="10" font-weight="600" text-anchor="middle">484</text>
-<text x="374.36" y="454.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">17/11</text>
+<rect x="293.50" y="295.45" width="30.00" height="134.55" rx="3" fill="#8196a4" data-chart-bar="true" data-plot-top="291" data-plot-bottom="430"/>
+<text x="308.50" y="285.45" fill="#d8dde1" font-size="10" font-weight="600" text-anchor="middle">484</text>
+<text x="308.50" y="454.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">17/11</text>
 </g>
 <g data-date="2026-11-18" data-count="130"><title>18/11/2026: 130 contribuições</title>
-<rect x="425.21" y="393.86" width="30.00" height="36.14" rx="3" fill="#8196a4" data-chart-bar="true" data-plot-top="291" data-plot-bottom="430"/>
-<text x="440.21" y="454.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">18/11</text>
+<rect x="359.36" y="393.86" width="30.00" height="36.14" rx="3" fill="#8196a4" data-chart-bar="true" data-plot-top="291" data-plot-bottom="430"/>
+<text x="374.36" y="454.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">18/11</text>
 </g>
 <g data-date="2026-11-19" data-count="314"><title>19/11/2026: 314 contribuições</title>
-<rect x="491.07" y="342.71" width="30.00" height="87.29" rx="3" fill="#8196a4" data-chart-bar="true" data-plot-top="291" data-plot-bottom="430"/>
-<text x="506.07" y="454.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">19/11</text>
+<rect x="425.21" y="342.71" width="30.00" height="87.29" rx="3" fill="#8196a4" data-chart-bar="true" data-plot-top="291" data-plot-bottom="430"/>
+<text x="440.21" y="454.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">19/11</text>
 </g>
 <g data-date="2026-11-20" data-count="74"><title>20/11/2026: 74 contribuições</title>
-<rect x="556.93" y="409.43" width="30.00" height="20.57" rx="3" fill="#8196a4" data-chart-bar="true" data-plot-top="291" data-plot-bottom="430"/>
-<text x="571.93" y="454.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">20/11</text>
+<rect x="491.07" y="409.43" width="30.00" height="20.57" rx="3" fill="#8196a4" data-chart-bar="true" data-plot-top="291" data-plot-bottom="430"/>
+<text x="506.07" y="454.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">20/11</text>
 </g>
 <g data-date="2026-11-21" data-count="273"><title>21/11/2026: 273 contribuições</title>
-<rect x="622.79" y="354.11" width="30.00" height="75.89" rx="3" fill="#8196a4" data-chart-bar="true" data-plot-top="291" data-plot-bottom="430"/>
-<text x="637.79" y="454.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">21/11</text>
+<rect x="556.93" y="354.11" width="30.00" height="75.89" rx="3" fill="#8196a4" data-chart-bar="true" data-plot-top="291" data-plot-bottom="430"/>
+<text x="571.93" y="454.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">21/11</text>
 </g>
 <g data-date="2026-11-22" data-count="78"><title>22/11/2026: 78 contribuições</title>
-<rect x="688.64" y="408.32" width="30.00" height="21.68" rx="3" fill="#8196a4" data-chart-bar="true" data-plot-top="291" data-plot-bottom="430"/>
-<text x="703.64" y="454.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">22/11</text>
+<rect x="622.79" y="408.32" width="30.00" height="21.68" rx="3" fill="#8196a4" data-chart-bar="true" data-plot-top="291" data-plot-bottom="430"/>
+<text x="637.79" y="454.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">22/11</text>
 </g>
 <g data-date="2026-11-23" data-count="0"><title>23/11/2026: 0 contribuições</title>
-<text x="769.50" y="454.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">23/11</text>
+<text x="703.64" y="454.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">23/11</text>
 </g>
 <g data-date="2026-11-24" data-count="50"><title>24/11/2026: 50 contribuições</title>
-<rect x="820.36" y="416.10" width="30.00" height="13.90" rx="3" fill="#8196a4" data-chart-bar="true" data-plot-top="291" data-plot-bottom="430"/>
-<text x="835.36" y="454.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">24/11</text>
+<rect x="754.50" y="416.10" width="30.00" height="13.90" rx="3" fill="#8196a4" data-chart-bar="true" data-plot-top="291" data-plot-bottom="430"/>
+<text x="769.50" y="454.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">24/11</text>
 </g>
 <g data-date="2026-11-25" data-count="33"><title>25/11/2026: 33 contribuições</title>
-<rect x="886.21" y="420.83" width="30.00" height="9.17" rx="3" fill="#8196a4" data-chart-bar="true" data-plot-top="291" data-plot-bottom="430"/>
-<text x="901.21" y="454.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">25/11</text>
+<rect x="820.36" y="420.83" width="30.00" height="9.17" rx="3" fill="#8196a4" data-chart-bar="true" data-plot-top="291" data-plot-bottom="430"/>
+<text x="835.36" y="454.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">25/11</text>
 </g>
 <g data-date="2026-11-26" data-count="1"><title>26/11/2026: 1 contribuições</title>
-<rect x="952.07" y="429.72" width="30.00" height="0.28" rx="3" fill="#a3b9ac" data-chart-bar="true" data-plot-top="291" data-plot-bottom="430"/>
-<text x="967.07" y="419.72" fill="#d8dde1" font-size="10" font-weight="600" text-anchor="middle">1</text>
-<text x="967.07" y="454.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">26/11</text>
+<rect x="886.21" y="429.72" width="30.00" height="0.28" rx="3" fill="#8196a4" data-chart-bar="true" data-plot-top="291" data-plot-bottom="430"/>
+<text x="901.21" y="454.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">26/11</text>
+</g>
+<g data-date="2026-11-27" data-count="0"><title>27/11/2026: 0 contribuições</title>
+<text x="967.07" y="420.00" fill="#d8dde1" font-size="10" font-weight="600" text-anchor="middle">0</text>
+<text x="967.07" y="454.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">27/11</text>
 </g>
 <line x1="40" y1="480" x2="1000" y2="480" stroke="#353d45"/>
 <text x="40.00" y="514.00" fill="#d8dde1" font-size="15" font-weight="600" text-anchor="start">Evolução acumulada</text>
-<text x="40.00" y="536.00" fill="#a2aab1" font-size="10" font-weight="400" text-anchor="start">Total: 1.823 · média em 14 dias: 130,2</text>
+<text x="40.00" y="536.00" fill="#a2aab1" font-size="10" font-weight="400" text-anchor="start">Total: 1.798 · média em 14 dias: 128,4</text>
 <line x1="82" y1="658" x2="621" y2="658" stroke="#30383f"/>
 <text x="70.00" y="661.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="end">0</text>
 <line x1="82" y1="563" x2="621" y2="563" stroke="#30383f"/>
-<text x="70.00" y="566.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="end">1.823</text>
-<polyline points="82.00,656.70 123.46,648.46 164.92,638.04 206.38,637.88 247.85,612.66 289.31,605.89 330.77,589.52 372.23,585.67 413.69,571.44 455.15,567.38 496.62,567.38 538.08,564.77 579.54,563.05 621.00,563.00" fill="none" stroke="#a6b7bd" stroke-width="2" stroke-linejoin="round"/>
-<circle cx="82.00" cy="656.70" r="2" fill="#adbec3" data-cumulative="25"/>
-<text x="82.00" y="681.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">13/11</text>
-<circle cx="123.46" cy="648.46" r="2" fill="#adbec3" data-cumulative="183"/>
-<circle cx="164.92" cy="638.04" r="2" fill="#adbec3" data-cumulative="383"/>
-<circle cx="206.38" cy="637.88" r="2" fill="#adbec3" data-cumulative="386"/>
-<circle cx="247.85" cy="612.66" r="2" fill="#adbec3" data-cumulative="870"/>
-<circle cx="289.31" cy="605.89" r="2" fill="#adbec3" data-cumulative="1000"/>
-<circle cx="330.77" cy="589.52" r="2" fill="#adbec3" data-cumulative="1314"/>
-<text x="330.77" y="681.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">19/11</text>
-<circle cx="372.23" cy="585.67" r="2" fill="#adbec3" data-cumulative="1388"/>
-<circle cx="413.69" cy="571.44" r="2" fill="#adbec3" data-cumulative="1661"/>
-<circle cx="455.15" cy="567.38" r="2" fill="#adbec3" data-cumulative="1739"/>
-<circle cx="496.62" cy="567.38" r="2" fill="#adbec3" data-cumulative="1739"/>
-<circle cx="538.08" cy="564.77" r="2" fill="#adbec3" data-cumulative="1789"/>
-<circle cx="579.54" cy="563.05" r="2" fill="#adbec3" data-cumulative="1822"/>
-<circle cx="621.00" cy="563.00" r="2" fill="#adbec3" data-cumulative="1823"/>
-<text x="621.00" y="681.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">26/11</text>
+<text x="70.00" y="566.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="end">1.798</text>
+<polyline points="82.00,649.65 123.46,639.08 164.92,638.93 206.38,613.35 247.85,606.48 289.31,589.89 330.77,585.98 372.23,571.56 413.69,567.44 455.15,567.44 496.62,564.80 538.08,563.05 579.54,563.00 621.00,563.00" fill="none" stroke="#a6b7bd" stroke-width="2" stroke-linejoin="round"/>
+<circle cx="82.00" cy="649.65" r="2" fill="#adbec3" data-cumulative="158"/>
+<text x="82.00" y="681.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">14/11</text>
+<circle cx="123.46" cy="639.08" r="2" fill="#adbec3" data-cumulative="358"/>
+<circle cx="164.92" cy="638.93" r="2" fill="#adbec3" data-cumulative="361"/>
+<circle cx="206.38" cy="613.35" r="2" fill="#adbec3" data-cumulative="845"/>
+<circle cx="247.85" cy="606.48" r="2" fill="#adbec3" data-cumulative="975"/>
+<circle cx="289.31" cy="589.89" r="2" fill="#adbec3" data-cumulative="1289"/>
+<circle cx="330.77" cy="585.98" r="2" fill="#adbec3" data-cumulative="1363"/>
+<text x="330.77" y="681.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">20/11</text>
+<circle cx="372.23" cy="571.56" r="2" fill="#adbec3" data-cumulative="1636"/>
+<circle cx="413.69" cy="567.44" r="2" fill="#adbec3" data-cumulative="1714"/>
+<circle cx="455.15" cy="567.44" r="2" fill="#adbec3" data-cumulative="1714"/>
+<circle cx="496.62" cy="564.80" r="2" fill="#adbec3" data-cumulative="1764"/>
+<circle cx="538.08" cy="563.05" r="2" fill="#adbec3" data-cumulative="1797"/>
+<circle cx="579.54" cy="563.00" r="2" fill="#adbec3" data-cumulative="1798"/>
+<circle cx="621.00" cy="563.00" r="2" fill="#adbec3" data-cumulative="1798"/>
+<text x="621.00" y="681.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="middle">27/11</text>
 <line x1="655" y1="506" x2="655" y2="684" stroke="#343b42"/>
 <text x="687.00" y="514.00" fill="#d8dde1" font-size="15" font-weight="600" text-anchor="start">Resumo do período</text>
 <text x="687.00" y="551.00" fill="#a2aab1" font-size="11" font-weight="400" text-anchor="start">Melhor dia</text>
 <text x="1000.00" y="551.00" fill="#d8dde1" font-size="12" font-weight="600" text-anchor="end">484 · 17/11</text>
 <text x="687.00" y="587.00" fill="#a2aab1" font-size="11" font-weight="400" text-anchor="start">Dias ativos</text>
-<text x="1000.00" y="587.00" fill="#d8dde1" font-size="12" font-weight="600" text-anchor="end">13 de 14</text>
+<text x="1000.00" y="587.00" fill="#d8dde1" font-size="12" font-weight="600" text-anchor="end">12 de 14</text>
 <text x="687.00" y="623.00" fill="#a2aab1" font-size="11" font-weight="400" text-anchor="start">Sequência na janela</text>
-<text x="1000.00" y="623.00" fill="#d8dde1" font-size="12" font-weight="600" text-anchor="end">3 dias</text>
+<text x="1000.00" y="623.00" fill="#d8dde1" font-size="12" font-weight="600" text-anchor="end">0 dias</text>
 <text x="687.00" y="659.00" fill="#a2aab1" font-size="11" font-weight="400" text-anchor="start">Variação entre semanas</text>
-<text x="1000.00" y="659.00" fill="#d8dde1" font-size="12" font-weight="600" text-anchor="end">-61,3%</text>
+<text x="1000.00" y="659.00" fill="#d8dde1" font-size="12" font-weight="600" text-anchor="end">-68,1%</text>
 <line x1="40" y1="704" x2="1000" y2="704" stroke="#353d45"/>
 <text x="40.00" y="733.00" fill="#d8dde1" font-size="13" font-weight="600" text-anchor="start">Intensidade por dia</text>
-<g data-summary-values="509,1314">
-<text x="1000.00" y="733.00" fill="#a2aab1" font-size="10" font-weight="400" text-anchor="end">7 dias recentes: 509 · anteriores: 1.314</text>
+<g data-summary-values="435,1363">
+<text x="1000.00" y="733.00" fill="#a2aab1" font-size="10" font-weight="400" text-anchor="end">7 dias recentes: 435 · anteriores: 1.363</text>
 </g>
-<text x="66.00" y="754.00" fill="#a2aab1" font-size="8" font-weight="400" text-anchor="middle">13/11</text>
-<rect x="40.00" y="763.00" width="53.00" height="28.00" rx="4" fill="#43565d" data-heat-date="2026-11-13" data-heat-count="25"/>
-<text x="66.50" y="782.00" fill="#e1e7e7" font-size="10" font-weight="500" text-anchor="middle">25</text>
-<text x="135.00" y="754.00" fill="#a2aab1" font-size="8" font-weight="400" text-anchor="middle">14/11</text>
-<rect x="109.00" y="763.00" width="53.00" height="28.00" rx="4" fill="#43565d" data-heat-date="2026-11-14" data-heat-count="158"/>
-<text x="135.50" y="782.00" fill="#e1e7e7" font-size="10" font-weight="500" text-anchor="middle">158</text>
-<text x="204.00" y="754.00" fill="#a2aab1" font-size="8" font-weight="400" text-anchor="middle">15/11</text>
-<rect x="178.00" y="763.00" width="53.00" height="28.00" rx="4" fill="#5d767b" data-heat-date="2026-11-15" data-heat-count="200"/>
-<text x="204.50" y="782.00" fill="#e1e7e7" font-size="10" font-weight="500" text-anchor="middle">200</text>
-<text x="273.00" y="754.00" fill="#a2aab1" font-size="8" font-weight="400" text-anchor="middle">16/11</text>
-<rect x="247.00" y="763.00" width="53.00" height="28.00" rx="4" fill="#43565d" data-heat-date="2026-11-16" data-heat-count="3"/>
-<text x="273.50" y="782.00" fill="#e1e7e7" font-size="10" font-weight="500" text-anchor="middle">3</text>
-<text x="342.00" y="754.00" fill="#a2aab1" font-size="8" font-weight="400" text-anchor="middle">17/11</text>
-<rect x="316.00" y="763.00" width="53.00" height="28.00" rx="4" fill="#a5bfb1" data-heat-date="2026-11-17" data-heat-count="484"/>
-<text x="342.50" y="782.00" fill="#e1e7e7" font-size="10" font-weight="500" text-anchor="middle">484</text>
-<text x="411.00" y="754.00" fill="#a2aab1" font-size="8" font-weight="400" text-anchor="middle">18/11</text>
-<rect x="385.00" y="763.00" width="53.00" height="28.00" rx="4" fill="#43565d" data-heat-date="2026-11-18" data-heat-count="130"/>
-<text x="411.50" y="782.00" fill="#e1e7e7" font-size="10" font-weight="500" text-anchor="middle">130</text>
-<text x="480.00" y="754.00" fill="#a2aab1" font-size="8" font-weight="400" text-anchor="middle">19/11</text>
-<rect x="454.00" y="763.00" width="53.00" height="28.00" rx="4" fill="#5d767b" data-heat-date="2026-11-19" data-heat-count="314"/>
-<text x="480.50" y="782.00" fill="#e1e7e7" font-size="10" font-weight="500" text-anchor="middle">314</text>
-<text x="549.00" y="754.00" fill="#a2aab1" font-size="8" font-weight="400" text-anchor="middle">20/11</text>
-<rect x="523.00" y="763.00" width="53.00" height="28.00" rx="4" fill="#43565d" data-heat-date="2026-11-20" data-heat-count="74"/>
-<text x="549.50" y="782.00" fill="#e1e7e7" font-size="10" font-weight="500" text-anchor="middle">74</text>
-<text x="618.00" y="754.00" fill="#a2aab1" font-size="8" font-weight="400" text-anchor="middle">21/11</text>
-<rect x="592.00" y="763.00" width="53.00" height="28.00" rx="4" fill="#5d767b" data-heat-date="2026-11-21" data-heat-count="273"/>
-<text x="618.50" y="782.00" fill="#e1e7e7" font-size="10" font-weight="500" text-anchor="middle">273</text>
-<text x="687.00" y="754.00" fill="#a2aab1" font-size="8" font-weight="400" text-anchor="middle">22/11</text>
-<rect x="661.00" y="763.00" width="53.00" height="28.00" rx="4" fill="#43565d" data-heat-date="2026-11-22" data-heat-count="78"/>
-<text x="687.50" y="782.00" fill="#e1e7e7" font-size="10" font-weight="500" text-anchor="middle">78</text>
-<text x="756.00" y="754.00" fill="#a2aab1" font-size="8" font-weight="400" text-anchor="middle">23/11</text>
-<rect x="730.00" y="763.00" width="53.00" height="28.00" rx="4" fill="#303b42" data-heat-date="2026-11-23" data-heat-count="0"/>
-<text x="756.50" y="782.00" fill="#e1e7e7" font-size="10" font-weight="500" text-anchor="middle">0</text>
-<text x="825.00" y="754.00" fill="#a2aab1" font-size="8" font-weight="400" text-anchor="middle">24/11</text>
-<rect x="799.00" y="763.00" width="53.00" height="28.00" rx="4" fill="#43565d" data-heat-date="2026-11-24" data-heat-count="50"/>
-<text x="825.50" y="782.00" fill="#e1e7e7" font-size="10" font-weight="500" text-anchor="middle">50</text>
-<text x="894.00" y="754.00" fill="#a2aab1" font-size="8" font-weight="400" text-anchor="middle">25/11</text>
-<rect x="868.00" y="763.00" width="53.00" height="28.00" rx="4" fill="#43565d" data-heat-date="2026-11-25" data-heat-count="33"/>
-<text x="894.50" y="782.00" fill="#e1e7e7" font-size="10" font-weight="500" text-anchor="middle">33</text>
-<text x="963.00" y="754.00" fill="#a2aab1" font-size="8" font-weight="400" text-anchor="middle">26/11</text>
-<rect x="937.00" y="763.00" width="53.00" height="28.00" rx="4" fill="#43565d" data-heat-date="2026-11-26" data-heat-count="1"/>
-<text x="963.50" y="782.00" fill="#e1e7e7" font-size="10" font-weight="500" text-anchor="middle">1</text>
+<text x="66.00" y="754.00" fill="#a2aab1" font-size="8" font-weight="400" text-anchor="middle">14/11</text>
+<rect x="40.00" y="763.00" width="53.00" height="28.00" rx="4" fill="#43565d" data-heat-date="2026-11-14" data-heat-count="158"/>
+<text x="66.50" y="782.00" fill="#e1e7e7" font-size="10" font-weight="500" text-anchor="middle">158</text>
+<text x="135.00" y="754.00" fill="#a2aab1" font-size="8" font-weight="400" text-anchor="middle">15/11</text>
+<rect x="109.00" y="763.00" width="53.00" height="28.00" rx="4" fill="#5d767b" data-heat-date="2026-11-15" data-heat-count="200"/>
+<text x="135.50" y="782.00" fill="#e1e7e7" font-size="10" font-weight="500" text-anchor="middle">200</text>
+<text x="204.00" y="754.00" fill="#a2aab1" font-size="8" font-weight="400" text-anchor="middle">16/11</text>
+<rect x="178.00" y="763.00" width="53.00" height="28.00" rx="4" fill="#43565d" data-heat-date="2026-11-16" data-heat-count="3"/>
+<text x="204.50" y="782.00" fill="#e1e7e7" font-size="10" font-weight="500" text-anchor="middle">3</text>
+<text x="273.00" y="754.00" fill="#a2aab1" font-size="8" font-weight="400" text-anchor="middle">17/11</text>
+<rect x="247.00" y="763.00" width="53.00" height="28.00" rx="4" fill="#a5bfb1" data-heat-date="2026-11-17" data-heat-count="484"/>
+<text x="273.50" y="782.00" fill="#e1e7e7" font-size="10" font-weight="500" text-anchor="middle">484</text>
+<text x="342.00" y="754.00" fill="#a2aab1" font-size="8" font-weight="400" text-anchor="middle">18/11</text>
+<rect x="316.00" y="763.00" width="53.00" height="28.00" rx="4" fill="#43565d" data-heat-date="2026-11-18" data-heat-count="130"/>
+<text x="342.50" y="782.00" fill="#e1e7e7" font-size="10" font-weight="500" text-anchor="middle">130</text>
+<text x="411.00" y="754.00" fill="#a2aab1" font-size="8" font-weight="400" text-anchor="middle">19/11</text>
+<rect x="385.00" y="763.00" width="53.00" height="28.00" rx="4" fill="#5d767b" data-heat-date="2026-11-19" data-heat-count="314"/>
+<text x="411.50" y="782.00" fill="#e1e7e7" font-size="10" font-weight="500" text-anchor="middle">314</text>
+<text x="480.00" y="754.00" fill="#a2aab1" font-size="8" font-weight="400" text-anchor="middle">20/11</text>
+<rect x="454.00" y="763.00" width="53.00" height="28.00" rx="4" fill="#43565d" data-heat-date="2026-11-20" data-heat-count="74"/>
+<text x="480.50" y="782.00" fill="#e1e7e7" font-size="10" font-weight="500" text-anchor="middle">74</text>
+<text x="549.00" y="754.00" fill="#a2aab1" font-size="8" font-weight="400" text-anchor="middle">21/11</text>
+<rect x="523.00" y="763.00" width="53.00" height="28.00" rx="4" fill="#5d767b" data-heat-date="2026-11-21" data-heat-count="273"/>
+<text x="549.50" y="782.00" fill="#e1e7e7" font-size="10" font-weight="500" text-anchor="middle">273</text>
+<text x="618.00" y="754.00" fill="#a2aab1" font-size="8" font-weight="400" text-anchor="middle">22/11</text>
+<rect x="592.00" y="763.00" width="53.00" height="28.00" rx="4" fill="#43565d" data-heat-date="2026-11-22" data-heat-count="78"/>
+<text x="618.50" y="782.00" fill="#e1e7e7" font-size="10" font-weight="500" text-anchor="middle">78</text>
+<text x="687.00" y="754.00" fill="#a2aab1" font-size="8" font-weight="400" text-anchor="middle">23/11</text>
+<rect x="661.00" y="763.00" width="53.00" height="28.00" rx="4" fill="#303b42" data-heat-date="2026-11-23" data-heat-count="0"/>
+<text x="687.50" y="782.00" fill="#e1e7e7" font-size="10" font-weight="500" text-anchor="middle">0</text>
+<text x="756.00" y="754.00" fill="#a2aab1" font-size="8" font-weight="400" text-anchor="middle">24/11</text>
+<rect x="730.00" y="763.00" width="53.00" height="28.00" rx="4" fill="#43565d" data-heat-date="2026-11-24" data-heat-count="50"/>
+<text x="756.50" y="782.00" fill="#e1e7e7" font-size="10" font-weight="500" text-anchor="middle">50</text>
+<text x="825.00" y="754.00" fill="#a2aab1" font-size="8" font-weight="400" text-anchor="middle">25/11</text>
+<rect x="799.00" y="763.00" width="53.00" height="28.00" rx="4" fill="#43565d" data-heat-date="2026-11-25" data-heat-count="33"/>
+<text x="825.50" y="782.00" fill="#e1e7e7" font-size="10" font-weight="500" text-anchor="middle">33</text>
+<text x="894.00" y="754.00" fill="#a2aab1" font-size="8" font-weight="400" text-anchor="middle">26/11</text>
+<rect x="868.00" y="763.00" width="53.00" height="28.00" rx="4" fill="#43565d" data-heat-date="2026-11-26" data-heat-count="1"/>
+<text x="894.50" y="782.00" fill="#e1e7e7" font-size="10" font-weight="500" text-anchor="middle">1</text>
+<text x="963.00" y="754.00" fill="#a2aab1" font-size="8" font-weight="400" text-anchor="middle">27/11</text>
+<rect x="937.00" y="763.00" width="53.00" height="28.00" rx="4" fill="#303b42" data-heat-date="2026-11-27" data-heat-count="0"/>
+<text x="963.50" y="782.00" fill="#e1e7e7" font-size="10" font-weight="500" text-anchor="middle">0</text>
 <g data-summary-values="3,11">
 <text x="40.00" y="821.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="start">Meta cumprida: 3 de 14 dias · sequência limitada à janela exibida</text>
 </g>
-<text x="1000.00" y="821.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="end">26/11/2026 (RN) · intervalo solicitado: 5 min (pode atrasar)</text>
+<text x="1000.00" y="821.00" fill="#a2aab1" font-size="9" font-weight="400" text-anchor="end">27/11/2026 (RN) · intervalo solicitado: 5 min (pode atrasar)</text>
 <line x1="40" y1="852" x2="1000" y2="852" stroke="#353d45"/>
 <text x="40.00" y="879.00" fill="#a2aab1" font-size="10" font-weight="600" text-anchor="start">PORTFÓLIO  /  GITHUB</text>
 <text x="40.00" y="912.00" fill="#d8dde1" font-size="20" font-weight="600" text-anchor="start">Projetos em destaque</text>
