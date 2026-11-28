@@ -75,6 +75,18 @@
 
 <!-- PORTFOLIO-STATUS:END -->
 
+<!-- REVERSE-ENGINEERING:START -->
+
+## Engenharia Reversa — Documentação Técnica dos Projetos
+
+Catálogo técnico dos 100 repositórios, com descrição de objetivos, arquitetura declarada, funcionalidades, tecnologias, execução e limitações. As 98 fichas públicas estão organizadas em sete partes, com mapas de código vinculados; os dois projetos privados têm documentação interna separada.
+
+**[Explorar a documentação técnica dos projetos →](docs/engenharia-reversa/README.md)**
+
+<sub>Levantamento inicial com READMEs, árvores Git e leitura amostral de código; revisão integral e testes permanecem pendentes.</sub>
+
+<!-- REVERSE-ENGINEERING:END -->
+
 <!-- PROJECT-MAP:START -->
 
 <div align="center">
